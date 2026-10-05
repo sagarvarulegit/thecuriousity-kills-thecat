@@ -67,7 +67,10 @@ def run_jev_quality_audit(ep_num: int = 3):
     # --- GATE 1: Zero Media Repetition Invariant ---
     print("\n[GATE 1] AUDITING ZERO MEDIA REPETITION...")
     try:
-        if ep_num == 3:
+        if ep_num == 4:
+            from assemble_episode_04_full import MANIFEST
+            all_media = [item[1] for item in MANIFEST]
+        elif ep_num == 3:
             from assemble_episode_03_full import MANIFEST
             all_media = [item[1] for item in MANIFEST]
         else:
@@ -100,7 +103,50 @@ def run_jev_quality_audit(ep_num: int = 3):
 
     # --- GATE 2: Narration & Action Visual Sync Audit ---
     print("\n[GATE 2] AUDITING NARRATION-TO-VISUAL SPOKEN ALIGNMENT...")
-    if ep_num == 3:
+    if ep_num == 4:
+        sync_checkpoints = [
+            {
+                "action": "Morning Deccan mist slowly clearing beneath the suspended stone bridge silhouette",
+                "spoken": "From below, they look impossibly light.",
+                "asset": "gf_01_smoke_quarry_dissipate.mp4"
+            },
+            {
+                "action": "Master builder stepping forward onto the rocky precipice reviewing spatial alignment",
+                "spoken": "The builders had to reveal a route and preserve its connection at the same time.",
+                "asset": "gf_02_kokasa_stepping_forward.mp4"
+            },
+            {
+                "action": "Quarry supervisor snapping dyed chalk line establishing the straight bridge axis",
+                "spoken": "It is a carved line through space that makes the whole complex read as one deliberate design.",
+                "asset": "gf_05_snapping_chalk_line.mp4"
+            },
+            {
+                "action": "Iron point chisel driving into basalt beneath the bridge span, casting stone chips",
+                "spoken": "Stonecutters open the surrounding space in controlled stages, removing rock beside and beneath the intended passage.",
+                "asset": "gf_03_chisel_striking_flawless.mp4"
+            },
+            {
+                "action": "Heavy hammer blow striking iron wedge, producing sparks as basalt breaks clean",
+                "spoken": "The absence around the bridge was made deliberately, one removed surface at a time.",
+                "asset": "gf_06_first_hammer_strike_sparks.mp4"
+            },
+            {
+                "action": "Craftsman delicately dressing the curved underside cornice of the suspended span",
+                "spoken": "The void is part of the design, as carefully composed as the stone that remains.",
+                "asset": "gf_08_chipping_ceiling_sparks.mp4"
+            },
+            {
+                "action": "Sunlight and shadow sweeping across the southern cliff scarp throughout the day",
+                "spoken": "The missing stone is evidence too, but it does not answer every question.",
+                "asset": "gf_04_shanku_solar_shadow_timelapse.mp4"
+            },
+            {
+                "action": "Sculptors suspended on heavy hemp ropes dressing the outer courtyard scarp",
+                "spoken": "At Kailasa, what was removed shapes the experience as powerfully as what remains.",
+                "asset": "gf_07_sculptors_suspended_ropes.mp4"
+            }
+        ]
+    elif ep_num == 3:
         sync_checkpoints = [
             {
                 "action": "Dense woodsmoke and stone dust clearing from the 33-meter trench canyon after perimeter excavation",
