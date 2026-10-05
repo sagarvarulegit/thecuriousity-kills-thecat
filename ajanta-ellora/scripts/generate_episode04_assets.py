@@ -126,7 +126,7 @@ UNIQUE_BEATS_DATA = [
     ("image", "ep04_infographic_02_continuous_stone_vs_masonry.jpg", "Technical Blueprint Card: Comparative schematic of wooden timber beam vs monolithic living rock cantilever.", "slow_drift"),
     ("image", "ep04_03_no_keystones_macro_PAN_ZOOM.jpg", "Close macro inspection of the bridge underside showing zero mortar lines, zero keystones, and solid monolithic basalt.", "pan_right"),
     ("image", "ep04_04_monolith_mountain_reveal_PAN_ZOOM.jpg", "High-angle panoramic view of the entire Kailasa rock trench showing the temple and bridges carved from a single ridge.", "slow_zoom_out"),
-    ("video", "gf_01_smoke_quarry_dissipate.mp4", "Action Video: Morning Deccan mist slowly clearing beneath the suspended stone bridge silhouette.", "action_clip"),
+    ("video", "ep04_gf_01_mist_clearing_bridge.mp4", "Action Video: Morning Deccan mist slowly clearing beneath the suspended stone bridge silhouette.", "action_clip"),
     ("image", "ep04_05_upper_bridge_ridge_walkway_PAN_ZOOM.jpg", "Upper terrace perspective walking along the narrow rock ridge connecting the gateway to the upper Nandi shrine.", "slow_dolly_forward"),
     ("image", "ep04_06_southern_cliff_broken_scar_PAN_ZOOM.jpg", "Telephoto close-up of the southern basalt cliff face displaying the jagged fracture scar of the collapsed span.", "pan_left"),
     ("image", "ep04_07_courtyard_shadow_silhouette_PAN_ZOOM.jpg", "Dramatic chiaroscuro silhouette of the floating bridge casting a sharp diagonal shadow across the carved courtyard wall.", "slow_zoom_in"),
@@ -140,7 +140,7 @@ UNIQUE_BEATS_DATA = [
     ("image", "ep04_09_continuous_basalt_veins_PAN_ZOOM.jpg", "Extreme macro detail tracing identical basalt mineral grain and vesicle bands passing unbroken through the bridge anchor.", "slow_zoom_in"),
     ("image", "ep04_archive_15_copper_charter_PAN_ZOOM.jpg", "Archive Still: Rashtrakuta royal copper plate charter detailing 8th-century monolithic construction.", "slow_drift"),
     ("image", "ep04_archive_22_first_chisel_strike_GENERATE_VIDEO.jpg", "Archive Still: Quarrymen clearing rock masses adjacent to preserved structural spans.", "slow_drift"),
-    ("video", "gf_02_kokasa_stepping_forward.mp4", "Action Video: Master builder stepping forward onto the rocky precipice reviewing spatial alignment.", "action_clip"),
+    ("video", "ep04_gf_02_kokasa_precipice_survey.mp4", "Action Video: Master builder stepping forward onto the rocky precipice reviewing spatial alignment.", "action_clip"),
 
     # Act III — The Route Through the Air (Beats 19–27)
     ("image", "ep04_10_gateway_two_storey_threshold_PAN_ZOOM.jpg", "Direct frontal view of the two-storeyed entrance gopuram gateway rising from the west courtyard floor.", "slow_tilt_up"),
@@ -151,18 +151,18 @@ UNIQUE_BEATS_DATA = [
     ("image", "ep04_14_connected_composition_wide_PAN_ZOOM.jpg", "Sweeping wide shot showing how the bridges visually integrate separate stone masses into a cohesive cathedral.", "slow_zoom_out"),
     ("image", "ep04_15_framed_court_view_vimana_PAN_ZOOM.jpg", "Compositional frame through the opening beneath the stone bridge, focusing directly on the towering carved vimana spire.", "slow_zoom_in"),
     ("image", "ep04_16_carved_ridge_detail_PAN_ZOOM.jpg", "Raking sunlight illuminating the molded parapet and decorative base moldings along the bridge flank.", "pan_left"),
-    ("video", "gf_05_snapping_chalk_line.mp4", "Action Video: Quarry supervisor snapping dyed chalk line establishing the straight bridge axis.", "action_clip"),
+    ("video", "ep04_gf_03_snapping_chalk_axis.mp4", "Action Video: Quarry supervisor snapping dyed chalk line establishing the straight bridge axis.", "action_clip"),
 
     # Act IV — How to Leave a Bridge (Beats 28–36)
     ("image", "ep04_infographic_03_staged_subtraction_reconstruction.jpg", "Technical Blueprint Card: 4-Stage Reconstruction: (1) Trench isolation, (2) Flank channeling, (3) Underbelly undercut, (4) Parapet dressing.", "slow_drift"),
     ("image", "ep04_17_protected_bedrock_strip_PAN_ZOOM.jpg", "Staged reconstruction illustration: The bridge corridor left as an uncarved horizontal basalt bar while flanking trenches sink.", "slow_zoom_in"),
-    ("video", "gf_03_chisel_striking_flawless.mp4", "Action Video: Iron point chisel driving into basalt beneath the bridge span, casting stone chips.", "action_clip"),
+    ("video", "ep04_gf_04_chisel_undercutting_span.mp4", "Action Video: Iron point chisel driving into basalt beneath the bridge span, casting stone chips.", "action_clip"),
     ("image", "ep04_18_void_growing_under_span_PAN_ZOOM.jpg", "Mid-excavation reconstruction: Void expanding beneath the bridge span while solid rock anchors remain untouched.", "slow_dolly_forward"),
     ("image", "ep04_19_critical_depth_boundary_PAN_ZOOM.jpg", "Close technical focus on the underside boundary where cutting stopped to maintain adequate bridge thickness.", "slow_zoom_in"),
     ("image", "ep04_archive_06_kokasa_entrance_PAN_ZOOM.jpg", "Archive Still: Historical architects inspecting structural rock thickness with sounding sticks.", "slow_drift"),
     ("image", "ep04_archive_21_clay_model_seal_GENERATE_VIDEO.jpg", "Archive Still: Sun-dried clay study model showing monolithic proportions.", "slow_drift"),
     ("image", "ep04_20_continuous_bedrock_supports_PAN_ZOOM.jpg", "Detailed perspective looking down into the root where the stone bridge enters the monolithic pavilion wall.", "pan_right"),
-    ("video", "gf_06_first_hammer_strike_sparks.mp4", "Action Video: Heavy hammer blow striking iron wedge, producing sparks as basalt breaks clean.", "action_clip"),
+    ("video", "ep04_gf_05_hammer_wedge_sparks.mp4", "Action Video: Heavy hammer blow striking iron wedge, producing sparks as basalt breaks clean.", "action_clip"),
 
     # Act V — Reading the Stone (Beats 37–45)
     ("image", "ep04_21_negative_evidence_joints_PAN_ZOOM.jpg", "Extreme close-up panning along the bridge span demonstrating absolute absence of mortar joints or clamp holes.", "pan_left"),
@@ -173,7 +173,7 @@ UNIQUE_BEATS_DATA = [
     ("image", "ep04_25_chisel_fluting_underside_PAN_ZOOM.jpg", "High-resolution detail of ancient flat-chisel fluting marks preserved on the bridge soffit.", "pan_right"),
     ("image", "ep04_26_subtractive_structure_concept_PAN_ZOOM.jpg", "Striking architectural photograph of the bridge glowing at golden hour, framing the sky as sculpted solid.", "slow_zoom_in"),
     ("image", "ep04_27_few_steps_walkway_PAN_ZOOM.jpg", "Top-down view of the worn rock-cut walkway steps spanning from the gateway portal across open air.", "slow_dolly_forward"),
-    ("video", "gf_08_chipping_ceiling_sparks.mp4", "Action Video: Craftsman delicately dressing the curved underside cornice of the suspended span.", "action_clip"),
+    ("video", "ep04_gf_06_chipping_cornice_sparks.mp4", "Action Video: Craftsman delicately dressing the curved underside cornice of the suspended span.", "action_clip"),
 
     # Act VI — The Missing Span (Beats 46–54)
     ("image", "ep04_28_collapsed_span_wide_courtyard_PAN_ZOOM.jpg", "Wide view of the southern courtyard void showing the great gap where the lost bridge once connected to the cliff.", "slow_zoom_in"),
@@ -184,7 +184,7 @@ UNIQUE_BEATS_DATA = [
     ("image", "ep04_archive_18_artisan_camp_PAN_ZOOM.jpg", "Archive Still: Ancient artisan settlement outside Ellora scarp under monsoon rains.", "slow_drift"),
     ("image", "ep04_31_surviving_vs_lost_span_comparison_PAN_ZOOM.jpg", "Split visual juxtaposition: Intact northern bridge span compared directly to the open southern void.", "slow_zoom_in"),
     ("image", "ep04_32_interpretive_reconstruction_ghost_PAN_ZOOM.jpg", "Semi-transparent interpretive architectural rendering showing hypothetical ghost line of the fallen bridge.", "slow_fade_in"),
-    ("video", "gf_04_shanku_solar_shadow_timelapse.mp4", "Action Video: Sunlight and shadow sweeping across the southern cliff scarp throughout the day.", "action_clip"),
+    ("video", "ep04_gf_07_scarp_shadow_timelapse.mp4", "Action Video: Sunlight and shadow sweeping across the southern cliff scarp throughout the day.", "action_clip"),
 
     # Act VII — Architecture as Procession (Beats 55–63)
     ("image", "ep04_33_sacred_procession_gateway_entry_PAN_ZOOM.jpg", "View looking east from gateway interior along the sacred alignment through the suspended bridge corridor.", "slow_dolly_forward"),
@@ -195,7 +195,7 @@ UNIQUE_BEATS_DATA = [
     ("image", "ep04_archive_07_kokasa_scroll_PAN_ZOOM.jpg", "Archive Still: Classical Nagara and Dravidian architectural treatise diagrams of constructed temples.", "slow_drift"),
     ("image", "ep04_38_infrastructure_and_image_PAN_ZOOM.jpg", "Medium shot of the bridge framing intricate relief sculptures of deities and mythical animals along the hall facade.", "slow_zoom_in"),
     ("image", "ep04_39_light_and_void_legibility_PAN_ZOOM.jpg", "Deep courtyard shadow contrasted with glowing limestone plaster remnants on the upper bridge wall.", "pan_right"),
-    ("video", "gf_07_sculptors_suspended_ropes.mp4", "Action Video: Sculptors suspended on heavy hemp ropes dressing the outer courtyard scarp.", "action_clip"),
+    ("video", "ep04_gf_08_sculptors_on_ropes.mp4", "Action Video: Sculptors suspended on heavy hemp ropes dressing the outer courtyard scarp.", "action_clip"),
 
     # Act VIII — The Mountain Reconnected (Beats 64–72)
     ("image", "ep04_40_courtyard_return_full_bridge_PAN_ZOOM.jpg", "Sweeping return to the main courtyard view, tilting upward along the full length of the surviving spans.", "slow_tilt_up"),
