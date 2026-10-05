@@ -13,7 +13,7 @@ import json
 import wave
 import subprocess
 from pathlib import Path
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Tuple
 
 # Default official voice: Adam Stone (British, smooth, relaxed and deep)
 ADAM_STONE_VOICE_ID = "auq43ws1oslv0tO4BDa7"
@@ -110,13 +110,13 @@ def apply_sidechain_ducking(
         "-i", str(bgm_path),
         "-i", str(vocal_path),
         "-filter_complex", filter_complex,
-        "-map", "[out]",
-        "-c:a", "pcm_s16le" if out_path.suffix == ".wav" else "aac",
-        "-b:a", "192k" if out_path.suffix != ".wav" else None,
-        str(out_path)
+        "-map", "[out]"
     ]
-    # Filter out None arguments
-    cmd = [c for c in cmd if c is not None]
+    if out_path.suffix.lower() == ".wav":
+        cmd.extend(["-c:a", "pcm_s16le"])
+    else:
+        cmd.extend(["-c:a", "aac", "-b:a", "192k"])
+    cmd.append(str(out_path))
     
     res = subprocess.run(cmd, capture_output=True, text=True)
     if res.returncode != 0:
@@ -132,3 +132,43 @@ def apply_sidechain_ducking(
         subprocess.run(cmd_fallback, check=True, capture_output=True)
 
     return out_path
+
+def get_media_duration(file_path: Path) -> float:
+    """Extracts exact media duration in seconds via ffprobe or wave."""
+    if not file_path.exists():
+        raise FileNotFoundError(f"Media file not found: {file_path}")
+
+    # If WAV file, fast header parse
+    if file_path.suffix.lower() == ".wav":
+        try:
+            with wave.open(str(file_path), "rb") as wf:
+                return wf.getnframes() / float(wf.getframerate())
+        except Exception:
+            pass
+
+    cmd = [
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        str(file_path)
+    ]
+    res = subprocess.run(cmd, capture_output=True, text=True, check=True)
+    return float(res.stdout.strip())
+
+def verify_audio_stems_drift(
+    master_audio_path: Path,
+    act_audio_paths: List[Path],
+    max_drift_ms: float = 10.0
+) -> Tuple[bool, float]:
+    """
+    Mathematically compares the duration of the concatenated master narration
+    against the mathematical sum of the individual act audio stems.
+    Returns (is_in_sync: bool, drift_ms: float).
+    """
+    master_dur = get_media_duration(master_audio_path)
+    acts_dur = sum(get_media_duration(act_p) for act_p in act_audio_paths)
+
+    drift_ms = abs(master_dur - acts_dur) * 1000.0
+    is_in_sync = drift_ms <= max_drift_ms
+    return is_in_sync, drift_ms
+
