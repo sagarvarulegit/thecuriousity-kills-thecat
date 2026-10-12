@@ -39,13 +39,13 @@
 - Consumes: Historical research from `ajanta-ellora/ajanta-ellora-comprehensive-research.md` (Satavahana origins, Waghur gorge, podhi water cisterns)
 - Produces: 55–65 micro-beats with timed duration, spoken narration, visual subject, and camera motion instructions.
 
-- [ ] **Step 1: Draft the 5-Act narrative script for Episode 07**
+- [x] **Step 1: Draft the 5-Act narrative script for Episode 07**
   Incorporate the Ep 07 Pivot Hook (*"Kailasa was not the beginning..."*), early Satavahana Theravada caves, basalt hydrology, and acoustic resonance.
-- [ ] **Step 2: Assign visual types per beat obeying Law 9**
+- [x] **Step 2: Assign visual types per beat obeying Law 9**
   Ensure max 1–2 technical diagrams (hydraulic runoff gutter elevation), 0 text dossier cards, and 7–10 action video beats.
-- [ ] **Step 3: Validate micro-beat pacing**
+- [x] **Step 3: Validate micro-beat pacing**
   Verify cut durations range between 2.5s and 8.0s, matching sentence-level cadence.
-- [ ] **Step 4: Commit script and storyboard**
+- [x] **Step 4: Commit script and storyboard**
   Run: `git add ajanta-ellora/episode07/script_and_storyboard/; git commit -m "feat(ep07): Create Episode 07 script and micro-beat storyboard"`
 
 ---
