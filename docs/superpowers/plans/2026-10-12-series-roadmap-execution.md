@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Execute the definitive series roadmap by finalizing Episode 05 to broadcast quality and launching production for Episode 07 (*The Secret Canyon of Waghur*), enforcing the Google Flow video gate, 0 duplicate media invariant, and Content ID immunity.
+**Goal:** Launch full production for Episode 07 (*The Secret Canyon of Waghur*) as the inaugural episode of Act II (The Lost Predecessor), enforcing the Google Flow video gate, 0 duplicate media invariant, and Content ID immunity. (Note: Episodes 01–05 are completed and published on YouTube; Episode 06 is fully assembled and audited).
 
-**Architecture:** A multi-stage production pipeline adhering to `AGENTS.md` laws: Episode 05 audio scoring and audit verification, followed by Episode 07 script/storyboard generation, ElevenLabs Adam Stone narration synthesis (drift $\le 10$ ms), Google Flow prompt isolation, and companion Shorts metadata packaging.
+**Architecture:** A multi-stage production pipeline adhering to `AGENTS.md` laws: Episode 07 script/storyboard generation, ElevenLabs Adam Stone narration synthesis (drift $\le 10$ ms), Google Flow prompt isolation, internal sound design bed mix, and companion Shorts metadata packaging.
 
 **Tech Stack:** Python 3.11, FFmpeg, ElevenLabs API (`eleven_multilingual_v2`), YouTube Audio Library (Patrick Patrikios), OpenMontage, Pillow.
 
@@ -29,32 +29,7 @@
 
 ---
 
-### Task 1: Finalize Episode 05 Audio Scoring & Broadcast Audit
-
-**Files:**
-- Modify: `ajanta-ellora/scripts/mix_episode_05_audio.py`
-- Test: `ajanta-ellora/scripts/audit_episode_reviewer.py`
-
-**Interfaces:**
-- Consumes: `ajanta-ellora/episode05/audio/narration/` and YouTube Audio Library tracks in `ajanta-ellora/episode06/audio/youtube_audio_library/`
-- Produces: `ajanta-ellora/episode05/final_videos/episode_05_master_audio.wav` (EBU R128 normalized to -16 LUFS)
-
-- [ ] **Step 1: Inspect Episode 05 audio mix configuration**
-  Verify background music sources to ensure zero Pixabay or third-party stock tracks are used.
-- [ ] **Step 2: Update audio mixing script with Patrick Patrikios YouTube Audio tracks**
-  Crossfade YouTube Audio Library tracks across the duration of Episode 05 with -16 dB sidechain ducking.
-- [ ] **Step 3: Run audio mixing and check EBU R128 compliance**
-  Run: `python ajanta-ellora/scripts/mix_episode_05_audio.py`
-  Expected: Integrated loudness at $-16.0 \pm 1.0\text{ LUFS}$, True Peak $< -1.5\text{ dBFS}$.
-- [ ] **Step 4: Run audit reviewer on Episode 05**
-  Run: `python ajanta-ellora/scripts/audit_episode_reviewer.py --episode 5`
-  Expected: Score 3.0/3.0, passing all 5 quality gates.
-- [ ] **Step 5: Commit changes**
-  Run: `git add ajanta-ellora/scripts/mix_episode_05_audio.py; git commit -m "fix(audio): Enforce YouTube Audio Library and EBU R128 on Episode 05"`
-
----
-
-### Task 2: Scaffold Episode 07 Script & Micro-Beat Storyboard
+### Task 1: Scaffold Episode 07 Script & Micro-Beat Storyboard
 
 **Files:**
 - Create: `ajanta-ellora/episode07/script_and_storyboard/episode-07-the-secret-canyon-of-waghur.md`
@@ -75,7 +50,7 @@
 
 ---
 
-### Task 3: Synthesize Episode 07 Narration & Generate Synchronized SRT
+### Task 2: Synthesize Episode 07 Narration & Generate Synchronized SRT
 
 **Files:**
 - Create: `ajanta-ellora/scripts/synthesize_episode_07_narration.py`
@@ -97,7 +72,7 @@
 
 ---
 
-### Task 4: Generate Episode 07 Base Visual Stills & Isolate Google Flow Inputs (Law 1 & 2 Gate)
+### Task 3: Generate Episode 07 Base Visual Stills & Isolate Google Flow Inputs (Law 1 & 2 Gate)
 
 **Files:**
 - Create: `ajanta-ellora/scripts/generate_episode_07_visuals.py`
@@ -120,7 +95,7 @@
 
 ---
 
-### Task 5: Package Episode 07 YouTube Publish Kit & Companion Shorts Funnel
+### Task 4: Package Episode 07 YouTube Publish Kit & Companion Shorts Funnel
 
 **Files:**
 - Create: `ajanta-ellora/episode07/publish_kit/master_publish_kit.md`
