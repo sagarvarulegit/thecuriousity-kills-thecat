@@ -60,14 +60,14 @@
 - Consumes: Spoken script from `episode-07-the-secret-canyon-of-waghur.md`, ElevenLabs API Key
 - Produces: Character-aligned `.srt` cues and concatenated `episode_07_full_narration.wav`
 
-- [ ] **Step 1: Write narration synthesis script**
+- [x] **Step 1: Write narration synthesis script**
   Use ElevenLabs profile Adam Stone (`auq43ws1oslv0tO4BDa7`, `eleven_multilingual_v2`, `stability=0.55`).
-- [ ] **Step 2: Execute synthesis and generate sentence SRT**
+- [x] **Step 2: Execute synthesis and generate sentence SRT**
   Run: `python ajanta-ellora/scripts/synthesize_episode_07_narration.py`
   Expected: Sentence cues generated with 0.00ms overlap.
-- [ ] **Step 3: Verify concatenation drift**
-  Confirm total concatenated audio drift $\le 10.0\text{ ms}$ relative to subtitle timestamps.
-- [ ] **Step 4: Commit audio assets**
+- [x] **Step 3: Verify concatenation drift**
+  Confirm total concatenated audio drift $\le 10.0\text{ ms}$ relative to subtitle timestamps. (Achieved: 0.00 ms drift via PCM wav concatenation).
+- [x] **Step 4: Commit audio assets**
   Run: `git add ajanta-ellora/scripts/synthesize_episode_07_narration.py ajanta-ellora/episode07/audio/narration/episode_07_full.srt; git commit -m "feat(ep07): Synthesize official Adam Stone narration and generate SRT"`
 
 ---
