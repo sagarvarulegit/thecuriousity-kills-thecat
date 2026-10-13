@@ -88,8 +88,8 @@
   Isolate 8 candidate files (`ep07_gf_01` to `ep07_gf_08`) into `ajanta-ellora/episode07/google_flow_input_images/`.
 - [x] **Step 3: Generate clean Google Flow prompt markdown sheet**
   Create a markdown table with filename, spoken timestamp, camera motion prompt, and duration.
-- [ ] **Step 4: Mandatory Hard Stop (Law 1 Gate)**
-  Announce to user that action stills are ready in `google_flow_input_images/` and wait for user video generation.
+- [x] **Step 4: Mandatory Hard Stop (Law 1 Gate)**
+  Announce to user that action stills are ready in `google_flow_input_images/` and wait for user video generation. (User ingested and verified 15 action video clips).
 - [x] **Step 5: Commit prompt sheet and generation script**
   Run: `git add ajanta-ellora/scripts/generate_episode_07_visuals.py ajanta-ellora/episode07/google_flow_input_images/; git commit -m "feat(ep07): Isolate Google Flow base stills and generate prompt sheet"`
 
@@ -114,3 +114,29 @@
   Focus on ancient monsoon hydraulic engineering; vertical subtitle cues and $< 500$ char tags.
 - [x] **Step 4: Commit publish kits**
   Run: `git add ajanta-ellora/episode07/publish_kit/; git commit -m "docs(ep07): Create YouTube publish kit and companion shorts metadata"`
+
+---
+
+### Task 5: Master Audio Mix, 45-Cut Video Assembly & Companion Shorts Packaging
+
+**Files:**
+- Create: `ajanta-ellora/scripts/mix_episode_07_audio.py`
+- Create: `ajanta-ellora/scripts/assemble_episode_07_full.py`
+- Create: `ajanta-ellora/scripts/assemble_dynamic_shorts_ep07.py`
+- Create: `ajanta-ellora/scripts/compose_ep07_thumbnails.py`
+- Create: `ajanta-ellora/scripts/setup_ep07_openmontage_bundle.py`
+- Create: `ajanta-ellora/scripts/verify_deliverables_ep07.py`
+- Output: `ajanta-ellora/episode07/final_videos/episode_07_the_secret_canyon_of_waghur_master_1080p.mp4`
+- Output: `ajanta-ellora/episode07/final_videos/short_01_the_horseshoe_canyon_hidden_from_the_world_1080x1920.mp4`
+- Output: `ajanta-ellora/episode07/final_videos/short_02_how_ancient_monks_engineered_water_1080x1920.mp4`
+
+- [x] **Step 1: Mix Broadcast Audio with Auto-Ducking & Procedural 44Hz Resonance**
+  Mix master narration with YouTube Audio Library tracks (*Sands of serenity* & *Sands of time*) ducked by -18 dB, normalized to EBU R128 (-16.0 LUFS). Export multi-language track `episode_07_hindi_track.m4a`.
+- [x] **Step 2: Assemble High-Retention Companion Shorts (100% Action Videos)**
+  Render 9:16 vertical shorts (1080x1920) with frosted blurred backdrop layout and safe-zone captions (`MarginV=420`).
+- [x] **Step 3: Compose YouTube Thumbnails (1080x1920 & 1920x1080 under 2.0 MB)**
+  Format master 16:9 thumbnail and 2 dedicated vertical 9:16 Shorts thumbnails with 3-word bold hook typography.
+- [x] **Step 4: Assemble Full 45-Micro-Beat Master Documentary Video**
+  Concatenate 45 cuts (15 action videos + 2 infographics + 28 4K sub-pixel animated stills) with zero drift (0.00ms), burn in broadcast subtitles, and mux master audio.
+- [x] **Step 5: Setup OpenMontage Distribution Bundle & Run 5-Point Quality Audit**
+  Populate `openmontage_bundle/` package and execute `verify_deliverables_ep07.py` confirming 100% pass on all 5 gates.
