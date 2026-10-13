@@ -281,6 +281,70 @@ ACTION_SHOTS = [
         "motion_prompt": "Time-lapse impression of dense teak jungle vines, wild bamboo, and wet silt slowly creeping over the carved stone facade and entrance steps of Cave 10. Seasons shift from dry golden scrub to torrential green monsoon, swallowing the cave entrance into shadow.",
         "camera_movement": "Slow atmospheric pull-back into darkness",
         "duration": "5.5s"
+    },
+    {
+        "id": "ep07_gf_09",
+        "filename": "ep07_gf_09_dakshinapatha_caravan_crossing_GENERATE_VIDEO.jpg",
+        "spoken_line": "A band of Buddhist monks and wandering ascetics walked along the trade artery of the Dakshinapatha...",
+        "motion_prompt": "Ancient trade caravan crossing a rocky Sahyadri mountain ridge at sunrise. Bullock carts with wooden spoke wheels and merchants leading pack horses through golden dust haze, sheer volcanic cliffs rising in the background.",
+        "camera_movement": "Low-angle dynamic tracking shot alongside moving wheels and feet",
+        "duration": "5.5s"
+    },
+    {
+        "id": "ep07_gf_10",
+        "filename": "ep07_gf_10_columnar_basalt_quarry_split_GENERATE_VIDEO.jpg",
+        "spoken_line": "volcanic geology offered something unique: a continuous, seventy-five-meter face of dense, microcrystalline columnar basalt.",
+        "motion_prompt": "Ancient quarryman in loincloth swinging a heavy wooden sledgehammer, striking an iron wedge into a vertical joint of dark columnar basalt. Bright friction sparks erupt as the massive vertical rock column splits and shears forward with a burst of gray dust.",
+        "camera_movement": "120fps ultra slow-motion punch-in on impact",
+        "duration": "5.0s"
+    },
+    {
+        "id": "ep07_gf_11",
+        "filename": "ep07_gf_11_inward_slant_pillar_alignment_GENERATE_VIDEO.jpg",
+        "spoken_line": "Along the sides, they chiseled rows of austere octagonal columns, slanting them slightly inward by three degrees...",
+        "motion_prompt": "Master ancient surveyor holding a bronze plumb bob on a dyed string against the smooth carved surface of an octagonal basalt pillar inside Cave 10. The plumb line sways gently as dust motes float through sunbeams, measuring the subtle 3-degree inward lean.",
+        "camera_movement": "Slow vertical jib descent following the swinging bronze plumb bob",
+        "duration": "5.0s"
+    },
+    {
+        "id": "ep07_gf_12",
+        "filename": "ep07_gf_12_carpentry_peg_socket_carving_GENERATE_VIDEO.jpg",
+        "spoken_line": "Even in stone, their hands remembered wood; but the mountain demanded an entirely different mastery.",
+        "motion_prompt": "Extreme macro shot of a sharp steel claw chisel carving an imitation timber peg socket in the basalt ceiling. The tool bites into dark volcanic stone, chipping out fine stone ribbons under the warm flickering light of an earthenware oil lamp.",
+        "camera_movement": "Macro probe lens gliding parallel to the chisel edge",
+        "duration": "5.0s"
+    },
+    {
+        "id": "ep07_gf_13",
+        "filename": "ep07_gf_13_monsoon_waterfall_clearing_portal_GENERATE_VIDEO.jpg",
+        "spoken_line": "Every summer, torrential downpours cascade off the high Deccan plateau, sending millions of gallons of water hurtling over the cliff edge...",
+        "motion_prompt": "A massive, thundering sheet waterfall plunging violently off the high plateau overhanging cliff, arcing outward into the air and crashing into the emerald canyon river far below, perfectly clearing the dry cave portal beneath the rock curtain.",
+        "camera_movement": "Dynamic vertical crane drop through billowing water spray",
+        "duration": "5.5s"
+    },
+    {
+        "id": "ep07_gf_14",
+        "filename": "ep07_gf_14_torchlit_podhi_descent_GENERATE_VIDEO.jpg",
+        "spoken_line": "They carved deep subterranean cisterns known as podhis beneath the cave courtyards.",
+        "motion_prompt": "A Buddhist monk in saffron robes carrying a small burning brass butter lamp, walking down a flight of dark, wet stone steps cut into solid basalt, descending into the pitch-black mirror waters of an underground cistern.",
+        "camera_movement": "Low-angle following tracking shot moving into deep subterranean shadows",
+        "duration": "5.0s"
+    },
+    {
+        "id": "ep07_gf_15",
+        "filename": "ep07_gf_15_stupa_pradakshina_ritual_GENERATE_VIDEO.jpg",
+        "spoken_line": "When monks gathered in the darkness around the monolithic stupa to chant sacred mantras...",
+        "motion_prompt": "Five Buddhist monks in deep orange robes slowly walking in solemn pradakshina clockwise circumambulation around the towering rock stupa in Cave 9. Golden candlelight from small floor lamps reflects against the smooth dark stone and monolithic vault.",
+        "camera_movement": "Slow 360-degree arc orbit around the stupa and monks",
+        "duration": "5.5s"
+    },
+    {
+        "id": "ep07_gf_16",
+        "filename": "ep07_gf_16_flash_flood_canyon_river_rush_GENERATE_VIDEO.jpg",
+        "spoken_line": "The Waghur River carved a jagged, horseshoe-shaped canyon seventy-five meters deep.",
+        "motion_prompt": "Low-altitude rapid FPV flyover across the turbulent, foaming white water rapids of the swollen Waghur River rushing between towering black volcanic basalt canyon walls, water spray glistening in dawn sunbeams.",
+        "camera_movement": "High-speed low-altitude skimming forward rush over rapids",
+        "duration": "5.0s"
     }
 ]
 
@@ -289,7 +353,7 @@ def generate_google_flow_prompt_sheet():
     sheet_path = GOOGLE_FLOW_INPUT / "GOOGLE_FLOW_PROMPT_SHEET.md"
     lines = [
         "# Episode 07: The Secret Canyon of Waghur — Google Flow Action Video Batch Sheet",
-        "## Dedicated Image-to-Video (I2V) Prompts for Google Flow / Veo / Runway",
+        "## Dedicated Image-to-Video (I2V) Prompts for Google Flow / Veo / Runway (16 Action Shots)",
         "",
         "> **Operational Protocol (Law 1 & 2 Gate)**:",
         "> 1. Take each input image from `ajanta-ellora/episode07/google_flow_input_images/`.",
@@ -318,6 +382,14 @@ def generate_google_flow_prompt_sheet():
         "- [ ] `ep07_gf_06_podhi_cistern_water_filtration.mp4`",
         "- [ ] `ep07_gf_07_monk_chanting_acoustic_resonance.mp4`",
         "- [ ] `ep07_gf_08_jungle_overgrowth_dormancy.mp4`",
+        "- [ ] `ep07_gf_09_dakshinapatha_caravan_crossing.mp4`",
+        "- [ ] `ep07_gf_10_columnar_basalt_quarry_split.mp4`",
+        "- [ ] `ep07_gf_11_inward_slant_pillar_alignment.mp4`",
+        "- [ ] `ep07_gf_12_carpentry_peg_socket_carving.mp4`",
+        "- [ ] `ep07_gf_13_monsoon_waterfall_clearing_portal.mp4`",
+        "- [ ] `ep07_gf_14_torchlit_podhi_descent.mp4`",
+        "- [ ] `ep07_gf_15_stupa_pradakshina_ritual.mp4`",
+        "- [ ] `ep07_gf_16_flash_flood_canyon_river_rush.mp4`",
         ""
     ])
     
@@ -330,7 +402,7 @@ def generate_google_flow_prompt_sheet():
 # ==============================================================================
 
 IMAGES_TO_GENERATE = [
-    # 8 Google Flow Action Candidates
+    # 16 Google Flow Action Candidates
     {
         "id": "GF-01",
         "filename": "ep07_gf_01_fpv_canyon_reveal_GENERATE_VIDEO.jpg",
@@ -370,6 +442,46 @@ IMAGES_TO_GENERATE = [
         "id": "GF-08",
         "filename": "ep07_gf_08_jungle_overgrowth_dormancy_GENERATE_VIDEO.jpg",
         "prompt": "Cinematic 16:9 1080p action still. The entrance of Cave 10 partially buried under four feet of dried river silt, tangled wild teak vines, and dense bamboo scrub. Ancient carved rock pillars peeking through wild jungle foliage, melancholic abandoned atmosphere, twilight shadows, 8k"
+    },
+    {
+        "id": "GF-09",
+        "filename": "ep07_gf_09_dakshinapatha_caravan_crossing_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. Ancient Indian merchant caravan on the Dakshinapatha mountain trail at dawn. Wooden ox carts with spiked wheels, merchant travelers in linen robes, pack horses traversing a dry rocky pass, dust glowing in golden sunbeams, 8k"
+    },
+    {
+        "id": "GF-10",
+        "filename": "ep07_gf_10_columnar_basalt_quarry_split_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. Ancient stonemasons driving an iron wedge into a vertical joint of dark volcanic columnar basalt with a heavy wooden sledgehammer. Orange sparks bursting, stone fragment splitting cleanly off the cliff face, ultra-sharp detail, 8k"
+    },
+    {
+        "id": "GF-11",
+        "filename": "ep07_gf_11_inward_slant_pillar_alignment_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. Master ancient architect holding a bronze plumb bob suspended on a dyed cord against an octagonal stone pillar in Cave 10, checking the inward 3-degree slant. Raking warm morning sunlight streaming through the arched entrance, 8k"
+    },
+    {
+        "id": "GF-12",
+        "filename": "ep07_gf_12_carpentry_peg_socket_carving_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. Extreme macro shot of a sharp pointed steel punch chisel carving an imitation wooden mortise-and-tenon peg socket in a basalt ceiling. Basalt grit scattering, flickering bronze oil lamp casting dynamic shadows, 8k"
+    },
+    {
+        "id": "GF-13",
+        "filename": "ep07_gf_13_monsoon_waterfall_clearing_portal_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. A colossal roaring monsoon sheet waterfall cascading off an overhanging Deccan cliff, falling 50 meters into the ravine while curving cleanly past the sheltered dark cave portal beneath, water mist catching sunlight, 8k"
+    },
+    {
+        "id": "GF-14",
+        "filename": "ep07_gf_14_torchlit_podhi_descent_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. A solitary monk in saffron robes holding a burning oil torch, walking down a steep rock-cut flight of stairs into the dark, reflective subterranean pool of a rock cistern, golden reflections on dark volcanic basalt, 8k"
+    },
+    {
+        "id": "GF-15",
+        "filename": "ep07_gf_15_stupa_pradakshina_ritual_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. Group of five Buddhist monks in orange robes performing solemn pradakshina circumambulation around the monolithic stupa in Cave 9. Warm candlelight from earthenware lamps casting long dancing shadows on vaulted ceiling, 8k"
+    },
+    {
+        "id": "GF-16",
+        "filename": "ep07_gf_16_flash_flood_canyon_river_rush_GENERATE_VIDEO.jpg",
+        "prompt": "Cinematic 16:9 1080p action still. High-angle kinetic view of the swollen, muddy brown Waghur River roaring through the basalt canyon below Ajanta after heavy rain. Churning rapids, foaming white water splashing against black boulders, dramatic moody sky, 8k"
     },
     # Master Hero Stills
     {
@@ -518,7 +630,7 @@ def main():
     
     print("\n" + "=" * 65)
     print(f"  GENERATION RUN COMPLETE: {success_count}/{len(IMAGES_TO_GENERATE)} VISUALS READY")
-    print(f"  All 8 Google Flow Base Action Stills isolated in: {GOOGLE_FLOW_INPUT}")
+    print(f"  All 16 Google Flow Base Action Stills isolated in: {GOOGLE_FLOW_INPUT}")
     print("=" * 65)
 
 if __name__ == "__main__":
