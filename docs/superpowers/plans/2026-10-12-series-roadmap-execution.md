@@ -82,15 +82,15 @@
 - Consumes: Storyboard asset requirements (7–10 action candidate stills, 50–55 master stills)
 - Produces: Base 16:9 stills, isolated images in `google_flow_input_images/`, and copy-paste prompt table.
 
-- [ ] **Step 1: Write visual asset prompt generator**
+- [x] **Step 1: Write visual asset prompt generator**
   Generate prompts for Waghur gorge landscape, early chaitya cave portals, water cisterns, and drone fly-throughs.
-- [ ] **Step 2: Generate 16:9 stills and copy action candidates to `google_flow_input_images/`**
-  Isolate 7–10 candidate files (`ep07_gf_01` to `ep07_gf_10`) into `ajanta-ellora/episode07/google_flow_input_images/`.
-- [ ] **Step 3: Generate clean Google Flow prompt markdown sheet**
+- [x] **Step 2: Generate 16:9 stills and copy action candidates to `google_flow_input_images/`**
+  Isolate 8 candidate files (`ep07_gf_01` to `ep07_gf_08`) into `ajanta-ellora/episode07/google_flow_input_images/`.
+- [x] **Step 3: Generate clean Google Flow prompt markdown sheet**
   Create a markdown table with filename, spoken timestamp, camera motion prompt, and duration.
 - [ ] **Step 4: Mandatory Hard Stop (Law 1 Gate)**
   Announce to user that action stills are ready in `google_flow_input_images/` and wait for user video generation.
-- [ ] **Step 5: Commit prompt sheet and generation script**
+- [x] **Step 5: Commit prompt sheet and generation script**
   Run: `git add ajanta-ellora/scripts/generate_episode_07_visuals.py ajanta-ellora/episode07/google_flow_input_images/; git commit -m "feat(ep07): Isolate Google Flow base stills and generate prompt sheet"`
 
 ---
@@ -106,11 +106,11 @@
 - Consumes: Episode 07 metadata, virality hooks, SEO keywords
 - Produces: Titles, descriptions, pinned comments, tag lists (< 500 chars), and thumbnail specs.
 
-- [ ] **Step 1: Write master documentary publish kit**
+- [x] **Step 1: Write master documentary publish kit**
   Include 3-Word hook thumbnail concept, description, and SEO tags verified $< 500$ chars.
-- [ ] **Step 2: Write Companion Short 01 publish kit**
+- [x] **Step 2: Write Companion Short 01 publish kit**
   Repurpose Google Flow drone gorge footage; vertical subtitle cues and $< 500$ char tags.
-- [ ] **Step 3: Write Companion Short 02 publish kit**
+- [x] **Step 3: Write Companion Short 02 publish kit**
   Focus on ancient monsoon hydraulic engineering; vertical subtitle cues and $< 500$ char tags.
-- [ ] **Step 4: Commit publish kits**
+- [x] **Step 4: Commit publish kits**
   Run: `git add ajanta-ellora/episode07/publish_kit/; git commit -m "docs(ep07): Create YouTube publish kit and companion shorts metadata"`
