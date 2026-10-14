@@ -1,0 +1,8 @@
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_01_the_bridges_in_the_sky.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_02_the_queens_vow_and_the_shikhara.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_03_carving_the_void.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_04_the_courtyard_monoliths.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_05_the_living_epics_in_basalt.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_06_the_white_mountain_of_ellora.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_07_the_mountain_that_refused_to_fall.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode06/audio_hindi/act_08_the_architects_confession.mp3'

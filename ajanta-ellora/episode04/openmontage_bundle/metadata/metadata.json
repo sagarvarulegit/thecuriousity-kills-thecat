@@ -1,0 +1,14 @@
+{
+  "title": "The Floating Bridges of Kailasa",
+  "episode": 4,
+  "series": "Kailasa: The Mountain Carved From Above",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "fps": 30,
+  "format": "16:9",
+  "audio": "EBU R128 (-16 LUFS)",
+  "cuts_count": 72,
+  "zero_repetition_verified": true
+}

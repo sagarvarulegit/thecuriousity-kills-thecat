@@ -1,0 +1,8 @@
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_01_the_animals_beneath.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_02_a_mountain_as_temple.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_03_reading_the_plinth.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_04_the_illusion_of_support.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_05_animals_and_the_sacred_mountain.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_06_one_stone_many_images.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_07_the_viewer_completes_the_image.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode05/audio_hindi/act_08_beneath_the_mountain.mp3'

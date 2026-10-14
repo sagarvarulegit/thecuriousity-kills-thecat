@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:06,362
+But the early masters of Ajanta did not just sculpt for the eye; they engineered for the ear.
+
+2
+00:00:07,059 --> 00:00:12,945
+The apsidal prayer halls of Caves Nine and Ten were sculpted as acoustic resonators.
+
+3
+00:00:13,386 --> 00:00:26,087
+The dense, non-porous basalt walls possess minimal sound absorption, creating sustained reverberation times that specifically amplify low-frequency sound.
+
+4
+00:00:27,039 --> 00:00:35,085
+When monks gathered in the darkness around the monolithic stupa to chant sacred mantras, something remarkable occurred.
+
+5
+00:00:35,329 --> 00:00:46,185
+The human voice, pitched between one hundred and one hundred and twenty hertz, locked into the natural acoustic resonance of the basalt chamber.
+
+6
+00:00:46,997 --> 00:00:59,710
+The sound did not merely echo; it vibrated physically through the stone floor and columns, creating an immersive acoustic field that seemed to emerge from the mountain itself.
+
+7
+00:01:00,523 --> 00:01:09,660
+In an era without microphones or amplification, the monks turned the living bedrock into a colossal musical instrument.

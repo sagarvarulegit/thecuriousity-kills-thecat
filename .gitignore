@@ -1,0 +1,35 @@
+# Project Dependencies & Environment
+OpenMontage
+.env
+*.env
+__pycache__/
+*.pyc
+
+# Heavy Audio & Video Binaries
+*.mp4
+*.mp3
+*.wav
+*.m4a
+*.zip
+**/final_videos/
+**/openmontage_bundle/video/
+
+# 3D Render Frames & Test Sequences
+**/frames_3d/
+**/explainers_3d/
+**/poc_ogl2/
+
+# Raw AI-Generated Scene Stills & Staging Folders
+# (Preserves master/short thumbnails, infographics, and diagrams)
+*_PAN_ZOOM.jpg
+*_GENERATE_VIDEO.jpg
+*_raw_*.jpg
+**/google_flow_input_images/
+**/google_flow_new_images/
+**/assets/episode-*/
+
+# Sensitive Keys & Local Scratch
+client_secret*.json
+token.json
+channel_data.json
+scratch/
