@@ -5,12 +5,13 @@ OpenMontage
 __pycache__/
 *.pyc
 
-# Heavy Audio & Video Binaries
+# Heavy Audio & Video Binaries & Working Video Folders
 *.mp4
 *.mp3
 *.wav
 *.m4a
 *.zip
+**/videos/
 **/final_videos/
 **/openmontage_bundle/video/
 
@@ -20,13 +21,17 @@ __pycache__/
 **/poc_ogl2/
 
 # Raw AI-Generated Scene Stills & Staging Folders
-# (Preserves master/short thumbnails, infographics, and diagrams)
+# (Preserves master/short thumbnails and technical infographics)
 *_PAN_ZOOM.jpg
 *_GENERATE_VIDEO.jpg
+*_raw.jpg
 *_raw_*.jpg
 **/google_flow_input_images/
 **/google_flow_new_images/
 **/assets/episode-*/
+**/review_frames/
+**/openmontage_bundle/thumbnails/
+**/images/thumbnail_*.jpg
 
 # Sensitive Keys & Local Scratch
 client_secret*.json
