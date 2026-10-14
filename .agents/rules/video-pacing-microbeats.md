@@ -77,13 +77,15 @@ Every episode production bible must provide:
   - `Motion Video Prompt` (Camera and subject movement)
   - `SFX / BGM Cue`
 - **Companion Shorts Funnels**:
-  - 2 companion 9:16 vertical Shorts scripts (25–58s) with dedicated hooks, visual prompts, and pinned comment conversion CTAs pointing to the main video.
+  - 2 companion 9:16 vertical Shorts scripts (25–58s) with dedicated hooks, visual prompts, and cliffhanger CTAs pointing directly to YouTube's native "Related Video" button.
+  - **SHORTS-TO-LONGFORM RELATED VIDEO CLIFFHANGER**: The final 3.0 seconds of every Short must NOT be a generic outro or sign-off. It must terminate on an unresolved cognitive cliffhanger with on-screen directive graphics and spoken prompt explicitly pointing to the native "Related Video" pill linking the full documentary episode.
   - **DYNAMIC MULTI-BEAT EDITING (0% INFOGRAPHICS)**: Every Short must contain 5–7 micro-beat cuts (every 2.5s to 7.5s), splicing 100% Google Flow action video clips and cinematic visuals. Never loop a single static image, and NEVER use technical infographic cards or text slides in Shorts.
   - **FROSTED BACKDROP FRAMING FOR 16:9 MEDIA IN SHORTS**: When repurposing 16:9 action footage into 9:16 vertical Shorts, NEVER center-crop if it cuts off key focal action. Use the frosted blurred backdrop layout (blurred 1080x1920 background with sharp 1080x608 foreground overlay) to preserve 100% of the cinematic frame.
   - **MOBILE SUBTITLE SAFE-ZONE PROTOCOL**: Subtitle styling in FFmpeg must explicitly declare `PlayResX=1080,PlayResY=1920,MarginV=420,FontSize=56,Outline=4` to anchor in the lower safe area above platform UI buttons without clipping.
   - **NO EPISODIC LABELS**: Never include `(Ep. 1)`, `(Ep. 2)`, or `Episode X` in Shorts titles. Frame each Short as a self-contained, shocking question or mystery to protect the 70%+ retention breakout threshold.
   - **MANDATORY DEDICATED 9:16 THUMBNAILS (EPISODE 05 ONWARD)**: Generate dedicated 9:16 vertical thumbnails (`short_01_thumbnail_9x16.jpg`, `short_02_thumbnail_9x16.jpg`) at 1080x1920 with high-contrast text hooks obeying the Mobile 3-Word Rule (<2.0 MB).
 - **YouTube Publish Kit Constraints (Master + 2 Shorts)**:
+  - **3-Way A/B/C Thumbnail Hook Testing**: Master publish kits must generate 3 distinct psychological thumbnail variants (Scale Contrast, Impossible Engineering Blueprint, and Extreme Curiosity Gap) ready for YouTube's native "Test & Compare" feature.
   - Title: 5 high-CTR A/B options per kit.
   - SEO Tags: Full comma-separated tag list strictly capped under **500 characters** (YouTube limit) for Master, Short 1, and Short 2.
   - Chapter Timestamps: Formatted starting at `00:00`.

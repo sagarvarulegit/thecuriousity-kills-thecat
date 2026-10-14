@@ -87,3 +87,25 @@ When an episode reaches Step 3 (Asset Generation):
 - **ONLY TWO APPROVED MUSIC SOURCES**:
   1. **YouTube Audio Library**: Officially pre-cleared tracks provided by Google inside YouTube Studio with a 100% Content ID immunity guarantee.
   2. **Dedicated Bespoke Procedural Audio Synthesis**: Custom Python/scipy audio beds, subterranean basalt resonant drones (44Hz), canyon wind, and procedural orchestral harmonic beds generated mathematically from scratch with zero sample reuse.
+
+## 12. SHORTS-TO-LONGFORM "RELATED VIDEO" CLIFFHANGER LAW
+- **PROHIBITION OF GENERIC OUTROS**: The final 3.0 seconds of every YouTube Short must NEVER contain a generic sign-off ("Subscribe for more", "Thanks for watching", or fading to black).
+- **OPEN COGNITIVE CLIFFHANGER**: Every Short must terminate on an unresolved, high-stakes mystery or engineering paradox that is directly resolved in the full long-form documentary.
+- **NATIVE UI DIRECTIVE**: Explicitly prompt the viewer visually and vocally to tap YouTube's native **"Related Video"** pill positioned directly above the Short's title (e.g., *"What they uncovered behind the subterranean false wall broke every known law of geology. Tap the linked documentary below to see the full excavation."*).
+
+## 13. 3-WAY A/B/C THUMBNAIL PACKAGING (YOUTUBE TEST & COMPARE)
+- For every long-form release, generate **3 distinct psychological hook thumbnails** (<2.0 MB, Mobile 3-Word Rule) to feed YouTube's native "Test & Compare" multi-thumbnail engine:
+  1. **Variant A (Scale Contrast)**: Tiny human or surveyor figure contrasted against a colossal, dizzying monolithic basalt chasm or cliff face.
+  2. **Variant B (Impossible Engineering Blueprint)**: High-contrast technical elevation cutaway with cyan/amber dimension arrows, structural failure points, and a bold question mark.
+  3. **Variant C (Curiosity Gap / Forbidden Chamber)**: Darkened interior sanctum or subterranean void illuminated by a solitary golden torchbeam with extreme shadow contrast.
+
+## 14. YPP MONETIZATION AUDIT DEFENSE & PROGRAMMATIC MOTION
+- To pass YouTube's strict manual and algorithmic "Inauthentic / Repetitive Content" Partner Program (YPP) review:
+  - **Dynamic Programmatic Motion**: Never present architectural diagrams or infographics as static still slides. Use programmatic stroke-drawing, real-time numerical counters, and animated stress fractures.
+  - **Acoustic Sound Design Mastery**: Pacing lives or dies on audio. Every visual cutaway or diagram reveal must be anchored with time-synced physical SFX (chisel strikes, acoustic basalt clinks, 40Hz sub-bass booms, fire-setting crackles) and automated -16dB background music ducking under narration.
+  - **Investigative Voice Identity**: Anchor every investigation with a consistent narrative voice and stylized visual investigator profile (via `higgsfield-soul-id`).
+
+## 15. THE 4,000 WATCH HOUR ACCELERATOR: BINGEABLE SUPERCUTS & MULTI-LANGUAGE AUDIO
+- **Automated Long-Form Supercuts**: Upon publishing a complete series arc (e.g., Ajanta-Ellora Episodes 01–07), execute an automated compilation pipeline to stitch all episodes into a continuous 1.5-to-2-hour "Complete Megastructure Documentary" with cinematic act bridges. Long-form compilations receive priority algorithmic distribution on YouTube Connected TVs, yielding the 4,000 required public watch hours with minimal friction.
+- **Multi-Language Audio (MLA) Expansion**: Translate `.srt` subtitle cue sheets into Hindi (and Spanish) and synthesize multi-language audio tracks to pool massive domestic and global viewership onto a single master video asset.
+
