@@ -98,10 +98,12 @@ def apply_sidechain_ducking(
     # [1:a] is vocal, [0:a] is BGM
     # split vocal so it can act as sidechain trigger and final mix
     # sidechaincompress lowers bgm when vocal rises above threshold
+    vol_linear = 10 ** (ducking_db / 20.0) if ducking_db < 0 else 0.20
     filter_complex = (
+        f"[0:a]volume={vol_linear:.3f}[bgm_base];"
         "[1:a]asplit=2[sc][vox];"
-        f"[0:a][sc]sidechaincompress=threshold=0.08:ratio=6:attack=80:release=450[ducked_bgm];"
-        "[ducked_bgm][vox]amix=inputs=2:duration=first:dropout_transition=2[mixed];"
+        "[bgm_base][sc]sidechaincompress=threshold=0.08:ratio=4:attack=50:release=350[ducked_bgm];"
+        "[vox][ducked_bgm]amix=inputs=2:duration=first:dropout_transition=2[mixed];"
         f"[mixed]loudnorm=I={target_lufs}:TP=-1.5:LRA=11[out]"
     )
 
@@ -114,6 +116,8 @@ def apply_sidechain_ducking(
     ]
     if out_path.suffix.lower() == ".wav":
         cmd.extend(["-c:a", "pcm_s16le"])
+    elif out_path.suffix.lower() == ".mp3":
+        cmd.extend(["-c:a", "libmp3lame", "-b:a", "192k"])
     else:
         cmd.extend(["-c:a", "aac", "-b:a", "192k"])
     cmd.append(str(out_path))

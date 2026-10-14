@@ -67,7 +67,13 @@ def run_jev_quality_audit(ep_num: int = 3):
     # --- GATE 1: Zero Media Repetition Invariant ---
     print("\n[GATE 1] AUDITING ZERO MEDIA REPETITION...")
     try:
-        if ep_num == 4:
+        if ep_num == 6:
+            from assemble_episode_06_full import MANIFEST
+            all_media = [item[1] for item in MANIFEST]
+        elif ep_num == 5:
+            from assemble_episode_05_full import MANIFEST
+            all_media = [item[1] for item in MANIFEST]
+        elif ep_num == 4:
             from assemble_episode_04_full import MANIFEST
             all_media = [item[1] for item in MANIFEST]
         elif ep_num == 3:
@@ -103,47 +109,173 @@ def run_jev_quality_audit(ep_num: int = 3):
 
     # --- GATE 2: Narration & Action Visual Sync Audit ---
     print("\n[GATE 2] AUDITING NARRATION-TO-VISUAL SPOKEN ALIGNMENT...")
-    if ep_num == 4:
+    if ep_num == 6:
+        sync_checkpoints = [
+            {
+                "action": "A solitary Hindu priest in saffron robes holding a burning torch descends a narrow steep staircase hollowed directly inside the solid stone temple wall",
+                "spoken": "When you descend into the deep trench of Cave 16, your eyes are drawn upward by a physical impossibility.",
+                "asset": "ep06_gf_14_torch_priest_stairwell_descent.mp4"
+            },
+            {
+                "action": "Dense morning mist billows through the 30-foot deep volcanic rock chasm. A silhouetted ancient surveyor walks across the narrow suspended monolithic rock bridge at dawn",
+                "spoken": "Suspended thirty feet in the open air, a monolithic stone bridge spans the chasm between the entrance gateway and the inner shrine.",
+                "asset": "ep06_gf_01_sky_bridge_dawn_mist.mp4"
+            },
+            {
+                "action": "Chief architect Kokasa on the windy mountain cliff summit at dawn, holding a bronze plumb-line and shadow-pole, snapping red chalk lines across volcanic rock",
+                "spoken": "Kokasa promised that the queen would behold the gleaming temple spire in just seven days.",
+                "asset": "ep06_gf_02_kokasa_summit_geometry.mp4"
+            },
+            {
+                "action": "A Rashtrakuta royal queen in regal silks stands on a palace balcony at dawn, gazing with awe toward the cliff peak where the carved temple finial catches the first beam of sunlight",
+                "spoken": "Within seven days, the soaring shikhara stood fully formed on the mountaintop, allowing the queen to break her fast.",
+                "asset": "ep06_gf_08_queen_balcony_seven_days.mp4"
+            },
+            {
+                "action": "Two muscular ancient quarrymen suspended in thick hemp rope harnesses hanging 30 feet in mid-air beneath the rock bridge underside, striking iron picks upward against basalt ceiling",
+                "spoken": "Then came the dangerous stage: quarrymen were suspended in hemp rope harnesses over a thirty-foot abyss to hollow out the underbelly.",
+                "asset": "ep06_gf_03_quarrymen_hemp_rope_void.mp4"
+            },
+            {
+                "action": "Ancient surveyor testing the carved rock arch joint for fissures, checking basalt density and structural integrity before void excavation",
+                "spoken": "They had to listen to the stone; dull hollow thuds signaled thin basalt, while crisp ringing rings meant solid load-bearing rock.",
+                "asset": "ep06_gf_05_water_quench_fissure_check.mp4"
+            },
+            {
+                "action": "Macro close-up of heavy wooden mallet smashing iron wedge into natural rock fissure beneath hanging arch, bright orange friction sparks flying",
+                "spoken": "Every single cubic foot of the void had to be cut through sheer manual percussion with tempered carbon-steel chisels.",
+                "asset": "ep06_gf_04_hammer_wedge_sparks_void.mp4"
+            },
+            {
+                "action": "Twilight inside upper story of Nandi mandapa. Bronze oil lamps flickering with warm golden flames casting amber shadows across carved window grilles and aerial bridge",
+                "spoken": "When the void was cleared, the bridge hung unsupported—a permanent aerial monument suspended between two worlds.",
+                "asset": "ep06_gf_10_twilight_nandi_oil_lamps.mp4"
+            },
+            {
+                "action": "Time-lapse impression of quarrymen clearing debris around massive 17-meter fluted victory pillar emerging standing tall in the courtyard sunlight",
+                "spoken": "Rather than clearing the trench into a flat floor, they left two towering columns of living basalt standing fifty feet tall.",
+                "asset": "ep06_gf_06_dhwajasthambha_quarry_reveal.mp4"
+            },
+            {
+                "action": "Master stone sculptor carving a colossal monolithic courtyard elephant, tapping a chisel along the curve of the tusk as the life-size elephant emerges from solid rock",
+                "spoken": "Their massive flanks, carved ears, and wrinkled trunks were freed from the surrounding stone without a single joint.",
+                "asset": "ep06_gf_07_courtyard_elephant_tusk_carve.mp4"
+            },
+            {
+                "action": "Extreme macro of pointed steel punch striking basalt, carving miniature warrior drawing bow on war chariot in Ramayana frieze with mineral sparks",
+                "spoken": "Across miniature horizontal tiers, master sculptors chiseled hundreds of dynamic figures into the hard volcanic stone.",
+                "asset": "ep06_gf_11_ramayana_frieze_chisel_macro.mp4"
+            },
+            {
+                "action": "Atmospheric low-angle shot in deep southern recess. Flickering torchlight sweeping across colossal high-relief of multi-armed Ravana trapped under roots of mountain",
+                "spoken": "The demon king exerts all twenty arms against the roots of the mountain, straining with bulging muscles and grimacing fury.",
+                "asset": "ep06_gf_12_ravana_shaking_mountain_torch.mp4"
+            },
+            {
+                "action": "Ancient artisan vigorously rubbing smooth polished agate river stone against wet white shell-lime plaster on carved temple wall, creating high-gloss porcelain finish",
+                "spoken": "Formulated from calcined river shells, slaked lime, marble dust, and organic plant binders, this coating was burnished with smooth agate stones.",
+                "asset": "ep06_gf_09_white_chuna_plaster_burnish.mp4"
+            },
+            {
+                "action": "17th-century reconstruction: Demolition workers striking heavy iron sledgehammers against solid monolithic wall of Kailasa, hammers bouncing off basalt with sparks",
+                "spoken": "For over a year, demolition teams hammered relentlessly against the temple facade, day and night.",
+                "asset": "ep06_gf_13_aurangzeb_demolition_siege.mp4"
+            },
+            {
+                "action": "Architect Kokasa standing alone on damp basalt courtyard floor at blue twilight, staring straight up at soaring vimana and hanging sky bridges in disbelief",
+                "spoken": "Standing on the cleared courtyard floor, looking up at the sky bridges, the victory pillars, and the soaring vimana, he cried out:",
+                "asset": "ep06_gf_15_kokasa_architect_breakdown.mp4"
+            },
+            {
+                "action": "Grand cinematic climax: Wide drone shot soaring from floor of 100-foot chasm, gliding under suspended sky bridge toward soaring shikhara in golden god-rays",
+                "spoken": "And that remains the eternal mystery of Kailasa: a monument that surpasses the comprehension of its own creators.",
+                "asset": "ep06_gf_16_climax_crepuscular_rays_chasm.mp4"
+            }
+        ]
+    elif ep_num == 5:
+        sync_checkpoints = [
+            {
+                "action": "Dramatic slow push forward into the deep 100-foot volcanic basalt chasm at dawn, revealing the colossal carved elephant head emerging from living bedrock",
+                "spoken": "At Ellora, the answer begins with a distinction between what stone does and what sculpture makes us feel.",
+                "asset": "ep05_gf_01_first_encounter_chasm_dawn.mp4"
+            },
+            {
+                "action": "Slow vertical tilt down from the towering basalt wall to a lone human visitor standing before the life-size carved elephant flank",
+                "spoken": "The base therefore has two jobs for the visitor’s eye: it establishes height and gives that height a living edge.",
+                "asset": "ep05_gf_02_life_size_scale_human_silhouette.mp4"
+            },
+            {
+                "action": "Continuous lateral tracking camera moving along the curving monumental basalt plinth, revealing the unbroken ring of sculpted elephants marching in cosmic procession",
+                "spoken": "The first clue is visual: the animals create a living threshold between the ground and the sacred structure above.",
+                "asset": "ep05_gf_03_continuous_ring_elephant_procession.mp4"
+            },
+            {
+                "action": "Slow cinematic pan right across the dynamic plinth frieze, moving from an adult elephant in combat to reveal the tender baby elephant tucked beneath the mother's leg",
+                "spoken": "The animal band transforms a heavy base into a scene of effort, movement, and upward force.",
+                "asset": "ep05_gf_04_dynamic_combat_and_baby_elephant.mp4"
+            },
+            {
+                "action": "Cinematic low-angle dolly forward through dense morning mist billowing across the courtyard floor, making the temple float like a mythical cloud-island",
+                "spoken": "It is an evocative interpretation, not a certainty that the original sculptors left us in writing.",
+                "asset": "ep05_gf_05_havell_cloud_island_mist.mp4"
+            },
+            {
+                "action": "Three-quarter orbiting tracking shot around the sharp 90-degree corner of the monumental plinth, capturing the fully rounded corner elephant breaking out of bedrock",
+                "spoken": "A single rock mass can become architecture, ornament, and an imagined procession at the same time.",
+                "asset": "ep05_gf_06_3d_corner_projection_elephant.mp4"
+            },
+            {
+                "action": "Slow intimate pan across the weathered elephant head at dusk as flickering torchlight dances over the volcanic basalt contours, creating the breathing illusion",
+                "spoken": "The temple’s height feels physical, but the carved creatures make that height feel supported and alive.",
+                "asset": "ep05_gf_07_breathing_basalt_torchlight_dusk.mp4"
+            },
+            {
+                "action": "Dramatic upward pedestal crane shot rising from between the monumental carved elephant backs into sunbeams illuminating the soaring vimana, showing the rock-cut mountain temple made to seem alive around its edges as if hoisted toward heaven",
+                "spoken": "At Kailasa, a mountain was not only cut into a temple; it was made to seem alive around its edges.",
+                "asset": "ep05_gf_08_mountain_hoisted_celestial_ascent.mp4"
+            }
+        ]
+    elif ep_num == 4:
         sync_checkpoints = [
             {
                 "action": "Morning Deccan mist slowly clearing beneath the suspended stone bridge silhouette",
                 "spoken": "From below, they look impossibly light.",
-                "asset": "gf_01_smoke_quarry_dissipate.mp4"
+                "asset": "ep04_gf_01_mist_clearing_bridge.mp4"
             },
             {
                 "action": "Master builder stepping forward onto the rocky precipice reviewing spatial alignment",
                 "spoken": "The builders had to reveal a route and preserve its connection at the same time.",
-                "asset": "gf_02_kokasa_stepping_forward.mp4"
+                "asset": "ep04_gf_02_kokasa_precipice_survey.mp4"
             },
             {
                 "action": "Quarry supervisor snapping dyed chalk line establishing the straight bridge axis",
                 "spoken": "It is a carved line through space that makes the whole complex read as one deliberate design.",
-                "asset": "gf_05_snapping_chalk_line.mp4"
+                "asset": "ep04_gf_03_snapping_chalk_axis.mp4"
             },
             {
                 "action": "Iron point chisel driving into basalt beneath the bridge span, casting stone chips",
                 "spoken": "Stonecutters open the surrounding space in controlled stages, removing rock beside and beneath the intended passage.",
-                "asset": "gf_03_chisel_striking_flawless.mp4"
+                "asset": "ep04_gf_04_chisel_undercutting_span.mp4"
             },
             {
                 "action": "Heavy hammer blow striking iron wedge, producing sparks as basalt breaks clean",
                 "spoken": "The absence around the bridge was made deliberately, one removed surface at a time.",
-                "asset": "gf_06_first_hammer_strike_sparks.mp4"
+                "asset": "ep04_gf_05_hammer_wedge_sparks.mp4"
             },
             {
                 "action": "Craftsman delicately dressing the curved underside cornice of the suspended span",
                 "spoken": "The void is part of the design, as carefully composed as the stone that remains.",
-                "asset": "gf_08_chipping_ceiling_sparks.mp4"
+                "asset": "ep04_gf_06_chipping_cornice_sparks.mp4"
             },
             {
                 "action": "Sunlight and shadow sweeping across the southern cliff scarp throughout the day",
                 "spoken": "The missing stone is evidence too, but it does not answer every question.",
-                "asset": "gf_04_shanku_solar_shadow_timelapse.mp4"
+                "asset": "ep04_gf_07_scarp_shadow_timelapse.mp4"
             },
             {
                 "action": "Sculptors suspended on heavy hemp ropes dressing the outer courtyard scarp",
-                "spoken": "At Kailasa, what was removed shapes the experience as powerfully as what remains.",
-                "asset": "gf_07_sculptors_suspended_ropes.mp4"
+                "spoken": "From below, sculpted passages cut across the sky above the court.",
+                "asset": "ep04_gf_08_sculptors_on_ropes.mp4"
             }
         ]
     elif ep_num == 3:
@@ -251,7 +383,11 @@ def run_jev_quality_audit(ep_num: int = 3):
     # --- GATE 3.5: Mathematical Audio Drift Verification ---
     print("\n[GATE 3.5] MATHEMATICALLY AUDITING AUDIO CONCATENATION DRIFT...")
     audio_dir = ep_path / "audio"
-    master_audio = audio_dir / f"episode_{ep_num:02d}_full_narration.mp3"
+    master_candidates = [
+        audio_dir / f"episode_{ep_num:02d}_narration_master.mp3",
+        audio_dir / f"episode_{ep_num:02d}_full_narration.mp3"
+    ]
+    master_audio = next((p for p in master_candidates if p.exists()), master_candidates[0])
     act_audios = sorted([p for p in audio_dir.glob("act_*.mp3")])
     measured_drift_ms = 0.0
     if master_audio.exists() and act_audios:

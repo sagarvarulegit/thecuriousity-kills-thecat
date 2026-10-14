@@ -1,0 +1,44 @@
+1
+00:00:00,100 --> 00:00:07,968
+Kokasa understood a structural truth that modern engineers still revere: You do not carve a rock-cut monument from the bottom up.
+
+2
+00:00:07,978 --> 00:00:10,507
+You carve it from the top down.
+
+3
+00:00:10,507 --> 00:00:17,447
+Traditional construction is additive: you assemble stone on stone, correcting errors as you rise.
+
+4
+00:00:17,447 --> 00:00:21,901
+Monolithic rock-cut architecture is ruthlessly subtractive.
+
+5
+00:00:21,901 --> 00:00:24,895
+Every blow of the hammer is permanent.
+
+6
+00:00:24,895 --> 00:00:32,877
+There was no scaffolding resting on the courtyard floor, because the courtyard was still trapped beneath one hundred feet of solid mountain.
+
+7
+00:00:32,877 --> 00:00:38,059
+If an artisan cuts two inches too deep into a lintel, the roof shears.
+
+8
+00:00:38,059 --> 00:00:44,661
+If a rock fissure is miscalculated, hundreds of tons of overhead basalt can fracture and collapse.
+
+9
+00:00:44,661 --> 00:00:47,656
+You cannot glue a mountain back together.
+
+10
+00:00:47,656 --> 00:00:52,005
+To carve the spire, Kokasa would not dig into the earth.
+
+11
+00:00:52,005 --> 00:00:54,375
+He would climb to the sky.
+
