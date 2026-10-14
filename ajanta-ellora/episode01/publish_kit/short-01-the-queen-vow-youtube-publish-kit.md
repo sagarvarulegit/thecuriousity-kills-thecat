@@ -8,6 +8,13 @@
 
 ---
 
+
+> [!IMPORTANT]
+> **NATIVE 'RELATED VIDEO' CLIFFHANGER HOOK**:
+> In YouTube Studio mobile packaging:
+> 1. Set **'Related video'** to: **The Impossible Subterranean Megastructures of Ancient India (Full Documentary)**
+> 2. Ensure the final 3 seconds of the Short points viewers directly to the pill above the title.
+
 ## 1. High-CTR Titles (A/B Test Options)
 
 > [!IMPORTANT]

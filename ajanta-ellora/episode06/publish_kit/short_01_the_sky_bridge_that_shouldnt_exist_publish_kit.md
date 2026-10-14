@@ -7,6 +7,13 @@
 4. They Scanned This Ancient Rock Bridge... And Were Shocked
 5. The Impossible Floating Bridge of Kailasa
 
+> [!IMPORTANT]
+> **NATIVE 'RELATED VIDEO' CLIFFHANGER HOOK**:
+> In YouTube Studio mobile packaging:
+> 1. Set **'Related video'** to: **The Impossible Subterranean Megastructures of Ancient India (Full Documentary)**
+> 2. Ensure the final 3 seconds of the Short points viewers directly to the pill above the title.
+
+
 ## Description (The Zeigarnik Conversion Hook)
 Structural engineers 3D-scanned this 1,200-year-old monolithic stone bridge hanging 30 feet in mid-air over a 100-foot chasm. Zero mortar. Zero keystones. Zero joints. 
 

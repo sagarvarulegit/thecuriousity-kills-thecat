@@ -6,6 +6,13 @@
 ### High-CTR Title Options (No Episodic Labels)
 1. **Why This Ancient Temple Was Carved Roof-First 🤯**
 2. **Zero Scaffolding: The Secret of Subtractive Architecture**
+
+> [!IMPORTANT]
+> **NATIVE 'RELATED VIDEO' CLIFFHANGER HOOK**:
+> In YouTube Studio mobile packaging:
+> 1. Set **'Related video'** to: **The Impossible Subterranean Megastructures of Ancient India (Full Documentary)**
+> 2. Ensure the final 3 seconds of the Short points viewers directly to the pill above the title.
+
 3. **How They Carved a 100-Foot Temple Without Any Foundations**
 4. **The Terrifying Physics of Carving a Temple from the Top Down**
 5. **What Happens When You Can't Glue a Mountain Back Together?**

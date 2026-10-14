@@ -7,6 +7,13 @@
 4. What Happened When 1,000 Workers Attacked Cave 16
 5. The Indestructible Mountain Temple of Ellora
 
+> [!IMPORTANT]
+> **NATIVE 'RELATED VIDEO' CLIFFHANGER HOOK**:
+> In YouTube Studio mobile packaging:
+> 1. Set **'Related video'** to: **The Impossible Subterranean Megastructures of Ancient India (Full Documentary)**
+> 2. Ensure the final 3 seconds of the Short points viewers directly to the pill above the title.
+
+
 ## Description (The Zeigarnik Conversion Hook)
 In 1682, Mughal Emperor Aurangzeb ordered 1,000 demolition engineers to level the Kailasa Temple. For three brutal years, shifts hammered with heavy iron sledges, crowbars, and siege fires.
 

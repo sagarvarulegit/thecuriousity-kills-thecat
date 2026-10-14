@@ -7,6 +7,13 @@
 4. The Illusion of Support at Kailasa Temple
 5. Did Ancient Indians Carve Weightless Stone?
 
+> [!IMPORTANT]
+> **NATIVE 'RELATED VIDEO' CLIFFHANGER HOOK**:
+> In YouTube Studio mobile packaging:
+> 1. Set **'Related video'** to: **The Impossible Subterranean Megastructures of Ancient India (Full Documentary)**
+> 2. Ensure the final 3 seconds of the Short points viewers directly to the pill above the title.
+
+
 ## Description
 Look beneath the Kailasa Temple at Ellora. A carved procession of elephants seems to hold the temple above the ground. But these figures are sculpted into the lower storey; they are not separate pillars carrying a building. The rock-cut plinth supports the architecture, while the elephants make that weight feel alive. The stone does the structural work. The sculpture gives the mountain a story.
 

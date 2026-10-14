@@ -38,3 +38,4 @@ client_secret*.json
 token.json
 channel_data.json
 scratch/
+**/supercut/staging/

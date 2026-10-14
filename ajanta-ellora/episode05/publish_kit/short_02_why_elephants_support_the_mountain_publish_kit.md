@@ -7,6 +7,13 @@
 4. What Historians Missed at Ellora Cave 16
 5. The Living Foundation of Kailasa
 
+> [!IMPORTANT]
+> **NATIVE 'RELATED VIDEO' CLIFFHANGER HOOK**:
+> In YouTube Studio mobile packaging:
+> 1. Set **'Related video'** to: **The Impossible Subterranean Megastructures of Ancient India (Full Documentary)**
+> 2. Ensure the final 3 seconds of the Short points viewers directly to the pill above the title.
+
+
 ## Description
 Why are elephants carved beneath Kailasa Temple’s raised base? They appear to bear the temple on their backs, turning its plinth into a living procession. One older interpretation compared the elephants to clouds gathered beneath a Himalayan peak. That is a compelling reading, but not a proven statement of the sculptors’ intent. What the carving shows clearly is a sacred mountain made to feel animated at its base.
 
