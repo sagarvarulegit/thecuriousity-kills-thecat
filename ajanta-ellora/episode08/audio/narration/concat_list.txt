@@ -1,0 +1,5 @@
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode08/audio/narration/act_01_the_golden_reawakening.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode08/audio/narration/act_02_the_basalt_problem_and_mud_chemistry.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode08/audio/narration/act_03_the_silk_road_blue.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode08/audio/narration/act_04_the_sootless_cave.mp3'
+file 'C:/Sagar/Projects/thecuriousity-kills-thecat/ajanta-ellora/episode08/audio/narration/act_05_the_masterpieces_of_humanity.mp3'

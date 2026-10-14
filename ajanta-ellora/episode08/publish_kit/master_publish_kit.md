@@ -29,10 +29,10 @@ To see in total darkness, ancient engineers bounced collimated natural sunlight 
 
 TIMESTAMPS:
 0:00 - The Golden Reawakening (Harishena's Renaissance)
-1:18 - The Basalt Problem & The 3-Layer Mud Chemistry Secret
-3:02 - The Silk Road Blue (Badakhshan Lapis Lazuli Alchemy)
-4:45 - The Sootless Cave: Subterranean Optical Engineering
-6:30 - Masterpieces of Humanity: Padmapani & The Looming Shadow
+1:32 - The Basalt Problem & The 3-Layer Mud Chemistry Secret
+3:58 - The Silk Road Blue (Badakhshan Lapis Lazuli Alchemy)
+5:41 - The Sootless Cave: Subterranean Optical Engineering
+7:41 - Masterpieces of Humanity: Padmapani & The Looming Shadow
 
 🔔 Subscribe to @thecuriousity-kills-thecat for deep-dive historical engineering documentaries.
 
