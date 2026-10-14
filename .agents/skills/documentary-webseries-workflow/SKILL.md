@@ -142,3 +142,29 @@ Every episode must pass the calibrated **TypeSafe Jev System 1** decision engine
 2. **Narration-to-Visual Spoken Alignment (`jev_noul`)**: Calibrated check asserting that every action video cut matches the physical action spoken in the corresponding SRT subtitle line (probability >= 0.70).
 3. **YouTube Tag Compliance (`jev_noul`)**: Verifying that tag blocks are strictly <= 500 characters.
 4. **Production Readiness Score (`jev_score`)**: Ordinal tier evaluation (`unusable`, `needs_rework`, `acceptable`, `production_ready`) requiring >= 2.50 / 3.00 and high probability of `production_ready`.
+
+## 9. Automated Series Supercut Compilation Pipeline (`build_series_supercut.py`)
+Upon completing an episodic arc, stitch all episodes into a continuous 1-to-2-hour feature documentary:
+1. **Dynamic Normalization & Trimming**:
+   - Strip redundant Act recaps and cliffhanger outros between episodes to protect long-form watch time.
+   - Insert 4-second chapter transition title bumpers with deep 40Hz sub-bass booms.
+   - Prepend a 60–90 second Master Cold Open and append an Epilogue Synthesis to guarantee classification as a distinct, transformative Director's Cut documentary under YouTube Partner Program (YPP) reused content policies.
+2. **Cumulative SRT & Chapter Timeline Math**:
+   - Use `ffprobe` to determine the exact duration of each segment.
+   - Increment `cumulative_offset_ms` to shift sentence-level subtitles across the entire feature (500+ cues, 0.00ms drift).
+   - Generate a single unified `supercut_chapters.txt` file (starting at `00:00:00`) so Google Search indexes all chapters in video search carousels.
+3. **Theatrical Broadcast Audio Leveling**:
+   - Apply single-pass FFmpeg EBU R128 / ATSC A/85 audio normalization:
+     `-af "loudnorm=I=-14:TP=-1.5:LRA=11"`
+   - Ensures consistent living room TV sound levels across voice and music.
+
+## 10. YouTube API Publishing & Conversion Funnel Engine
+Automate video, thumbnail, and caption publishing while converting cold Shorts viewers:
+1. **Mutable Metadata Sanitization (HTTP 400 Prevention)**:
+   - When updating video snippets via `youtube.videos().update(part='snippet')`, NEVER pass raw dictionaries from `videos().list()`.
+   - Strip read-only fields (`publishedAt`, `channelId`, `channelTitle`, `thumbnails`, `localized`).
+   - Pass strictly: `['title', 'description', 'categoryId', 'tags', 'defaultLanguage', 'defaultAudioLanguage']`.
+2. **Automated Conversion Commenting**:
+   - Use `youtube.commentThreads().insert()` to post high-converting top-level comments on breakout Shorts linking directly to long-form documentaries.
+3. **Studio UI Action Protocol**:
+   - Because comment pinning and mobile "Related video" link selection are restricted from the YouTube Data API, output direct deep-links to YouTube Studio (`https://studio.youtube.com/video/<VIDEO_ID>/edit`) with a 30-second manual checklist.

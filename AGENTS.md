@@ -105,7 +105,17 @@ When an episode reaches Step 3 (Asset Generation):
   - **Acoustic Sound Design Mastery**: Pacing lives or dies on audio. Every visual cutaway or diagram reveal must be anchored with time-synced physical SFX (chisel strikes, acoustic basalt clinks, 40Hz sub-bass booms, fire-setting crackles) and automated -16dB background music ducking under narration.
   - **Investigative Voice Identity**: Anchor every investigation with a consistent narrative voice and stylized visual investigator profile (via `higgsfield-soul-id`).
 
-## 15. THE 4,000 WATCH HOUR ACCELERATOR: BINGEABLE SUPERCUTS & MULTI-LANGUAGE AUDIO
-- **Automated Long-Form Supercuts**: Upon publishing a complete series arc (e.g., Ajanta-Ellora Episodes 01–07), execute an automated compilation pipeline to stitch all episodes into a continuous 1.5-to-2-hour "Complete Megastructure Documentary" with cinematic act bridges. Long-form compilations receive priority algorithmic distribution on YouTube Connected TVs, yielding the 4,000 required public watch hours with minimal friction.
+## 15. THE 4,000 WATCH HOUR ACCELERATOR: BINGEABLE SUPERCUTS & ANTI-REUSED CONTENT ARCHITECTURE
+- **Automated Long-Form Supercuts**: Upon publishing a complete series arc (e.g., Ajanta-Ellora Episodes 01–07), execute an automated compilation pipeline to stitch all episodes into a continuous 1-to-2-hour "Complete Megastructure Documentary" with cinematic act bridges. Long-form compilations receive priority algorithmic distribution on YouTube Connected TVs, yielding the 4,000 required public watch hours with minimal friction.
+- **Anti-Reused Content YPP Defense (The 4 Directives)**:
+  1. **Strip Internal Recaps & Outros**: Trim the repetitive Act 01 recaps (e.g. Queen's Vow, origin stories) and Act 08 cliffhanger outros between episodes, replacing them with 4-second Chapter Title Bumpers backed by an acoustic sub-bass boom.
+  2. **Transformative Master Framing**: Prepend a 60–90 second Master Cold Open previewing the full multi-part architectural arc, and append an Epilogue / Engineering Synthesis at the end to guarantee classification as a distinct, transformative Director's Cut documentary.
+  3. **Cumulative SRT & Chapter Mathematics**: Dynamically read trimmed durations via `ffprobe`, maintaining a running cumulative offset to generate a unified master subtitle file and complete chapter timestamps starting at `00:00:00`.
+  4. **Theatrical Audio Leveling**: Enforce `loudnorm=I=-14:TP=-1.5:LRA=11` across the stitched master audio track.
 - **Multi-Language Audio (MLA) Expansion**: Translate `.srt` subtitle cue sheets into Hindi (and Spanish) and synthesize multi-language audio tracks to pool massive domestic and global viewership onto a single master video asset.
+
+## 16. YOUTUBE API METADATA SANITIZATION & STUDIO UI BOUNDARY LAW
+- **Mutable Snippet Sanitization**: When updating existing videos via `youtube.videos().update(part='snippet')`, strip read-only fields (`publishedAt`, `channelId`, `channelTitle`, `thumbnails`, `localized`) to prevent HTTP 400 `invalidVideoMetadata` errors. Pass only mutable keys (`title`, `description`, `categoryId`, `tags`, `defaultLanguage`, `defaultAudioLanguage`).
+- **Funnel Conversion Automation**: Post high-converting top-level comments on breakout Shorts programmatically via `youtube.commentThreads().insert()`.
+- **Studio UI Action Protocol**: Because YouTube Data API restricts comment pinning and mobile "Related video" pill selection, agents must provide direct YouTube Studio URLs (`https://studio.youtube.com/video/<VIDEO_ID>/edit`) and precise 30-second checklists for the user.
 

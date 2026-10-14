@@ -76,9 +76,11 @@ Every episode production bible must provide:
   - `Visual Image Prompt` (16:9 for Midjourney v6 / Flux / Gemini Imagen 3 with style anchor)
   - `Motion Video Prompt` (Camera and subject movement)
   - `SFX / BGM Cue`
-- **Companion Shorts Funnels**:
-  - 2 companion 9:16 vertical Shorts scripts (25–58s) with dedicated hooks, visual prompts, and cliffhanger CTAs pointing directly to YouTube's native "Related Video" button.
-  - **SHORTS-TO-LONGFORM RELATED VIDEO CLIFFHANGER**: The final 3.0 seconds of every Short must NOT be a generic outro or sign-off. It must terminate on an unresolved cognitive cliffhanger with on-screen directive graphics and spoken prompt explicitly pointing to the native "Related Video" pill linking the full documentary episode.
+-- **Companion Shorts Funnels**:
+  - 2 companion 9:16 vertical Shorts scripts (30–42s) with dedicated hooks, visual prompts, and cliffhanger CTAs pointing directly to YouTube's native "Related Video" button.
+  - **0.5-SECOND CONFLICT HOOK INVARIANT**: The opening frame and very first spoken line (0:00–0:01) must present active human conflict, physical catastrophe, or a survival paradox (e.g., "1,000 Men Tried to Destroy This Temple", "Monsoon Floods Tried to Drown This Monastery"). Never open with passive or academic narration ("This canyon holds 30 temples...").
+  - **SUB-48S DURATION CEILING**: Shorts must target 30–42 seconds and terminate strictly before 48 seconds to eliminate the steep 46–50s drop-off cliff revealed by YouTube Studio retention analytics.
+  - **SHORTS-TO-LONGFORM RELATED VIDEO CLIFFHANGER (LAW 12)**: The final 3.0 seconds of every Short must NOT be a generic outro or sign-off. It must terminate on an unresolved cognitive cliffhanger with on-screen directive graphics and spoken prompt explicitly pointing to the native "Related Video" pill linking the full documentary episode.
   - **DYNAMIC MULTI-BEAT EDITING (0% INFOGRAPHICS)**: Every Short must contain 5–7 micro-beat cuts (every 2.5s to 7.5s), splicing 100% Google Flow action video clips and cinematic visuals. Never loop a single static image, and NEVER use technical infographic cards or text slides in Shorts.
   - **FROSTED BACKDROP FRAMING FOR 16:9 MEDIA IN SHORTS**: When repurposing 16:9 action footage into 9:16 vertical Shorts, NEVER center-crop if it cuts off key focal action. Use the frosted blurred backdrop layout (blurred 1080x1920 background with sharp 1080x608 foreground overlay) to preserve 100% of the cinematic frame.
   - **MOBILE SUBTITLE SAFE-ZONE PROTOCOL**: Subtitle styling in FFmpeg must explicitly declare `PlayResX=1080,PlayResY=1920,MarginV=420,FontSize=56,Outline=4` to anchor in the lower safe area above platform UI buttons without clipping.
@@ -92,3 +94,10 @@ Every episode production bible must provide:
 - **Automated Verification & Jev Quality Gate Assertion Before Handoff**:
   - Run the automated deliverables audit script (`verify_deliverables_ep0X.py`) ensuring 100% pass across audio stems, SRT monotonic timing, stream integrity (0 packet errors), zero media repetition (45-55 cuts with 0 duplicates), and YouTube publish kit constraints.
   - Run the TypeSafe Jev System 1 Quality Gate (`jev_quality_gate.py`) ensuring calibrated verification on zero repetition (`jev_noul`), spoken narration-to-visual action alignment (`jev_noul` >= 0.70 across all action cuts), YouTube SEO tag compliance, and production readiness score (`jev_score` >= 2.50 / 3.00).
+
+## 6. Series Supercut Compilation Standards (Anti-Reused Content YPP Defense)
+When assembling multi-episode documentary feature films (e.g. 50–90+ minute series supercuts):
+1. **Recap & Outro Stripping**: Programmatically trim intermediate Act 01 recap hooks and Act 08 cliffhanger outros between episodes. Insert 4-second Chapter Title Bumpers with deep sub-bass acoustic booms.
+2. **Transformative Framing**: Prepend a 60–90s Master Cold Open and append an Epilogue Synthesis to ensure the feature is classified as a transformative Director's Cut documentary under YouTube's Partner Program policies.
+3. **Cumulative Millisecond Timing**: Dynamically read exact trimmed durations via `ffprobe` to shift subtitle timestamps and chapter markers with 0.00ms drift.
+4. **Theatrical Leveling**: Normalize full feature audio with FFmpeg `loudnorm=I=-14:TP=-1.5:LRA=11`.
