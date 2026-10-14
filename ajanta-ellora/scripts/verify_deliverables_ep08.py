@@ -174,16 +174,16 @@ def test_5_google_flow_gate():
     print("=" * 60)
     
     input_stills = list(GOOGLE_FLOW_DIR.glob("*_GENERATE_VIDEO.jpg"))
-    print(f"  [OK] Isolated Action Input Stills in google_flow_input_images/: {len(input_stills)} / 10 stills")
-    assert len(input_stills) == 10, f"Expected 10 action input stills, found {len(input_stills)}"
+    print(f"  [OK] Isolated Action Input Stills in google_flow_input_images/: {len(input_stills)} / 16 stills")
+    assert len(input_stills) == 16, f"Expected 16 action input stills, found {len(input_stills)}"
     
     video_clips = list(VIDEOS_DIR.glob("*.mp4"))
-    print(f"  [STATUS] User Generated Action Videos in videos/: {len(video_clips)} / 10 clips")
-    if len(video_clips) == 10:
-        print("  [GATE PASSED] All 10 user action videos are present! Master assembly unlocked.")
+    print(f"  [STATUS] User Generated Action Videos in videos/: {len(video_clips)} / 16 clips")
+    if len(video_clips) == 16:
+        print("  [GATE PASSED] All 16 user action videos are present! Master assembly unlocked.")
     else:
-        print(f"  [GATE ACTIVE] Waiting for user video generation ({len(video_clips)}/10 present).")
-        print("                Production remains at Internal Development Draft until all 10 are added.")
+        print(f"  [GATE ACTIVE] Waiting for user video generation ({len(video_clips)}/16 present).")
+        print("                Production remains at Internal Development Draft until all 16 are added.")
 
 def test_6_infographic_ceiling():
     print("\n" + "=" * 60)

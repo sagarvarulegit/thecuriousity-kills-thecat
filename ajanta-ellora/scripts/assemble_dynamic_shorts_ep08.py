@@ -49,24 +49,24 @@ SHORT_01_BEATS = [
     },
     {
         "cut_id": "s1_c2",
-        "video_asset": "ep08_gf_05_chipping_basalt_key_sparks.mp4",
-        "still_asset": "ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4",
+        "still_asset": "ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg",
         "dur": 9.10,
-        "desc": "Basalt moisture problem: why standard fresco fails"
+        "desc": "Basalt moisture problem: cold groundwater seeping through volcanic rock"
     },
     {
         "cut_id": "s1_c3",
-        "video_asset": "ep08_gf_06_agate_burnishing_intonaco.mp4",
-        "still_asset": "ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_05_chipping_basalt_key_sparks.mp4",
+        "still_asset": "ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg",
         "dur": 12.18,
-        "desc": "Living mud plaster: cow dung cellulose netting & rice husks"
+        "desc": "Chipping mechanical key into basalt wall"
     },
     {
         "cut_id": "s1_c4",
-        "video_asset": "ep08_gf_03_mortar_grinding_lapis_powder.mp4",
-        "still_asset": "ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_06_agate_burnishing_intonaco.mp4",
+        "still_asset": "ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg",
         "dur": 9.80,
-        "desc": "Sealed with crushed shells & burnished with agate pebbles"
+        "desc": "Agate river stone burnishing lime plaster to porcelain sheen"
     },
     {
         "cut_id": "s1_c5",
@@ -90,31 +90,31 @@ SHORT_02_BEATS = [
     },
     {
         "cut_id": "s2_c2",
-        "video_asset": "ep08_gf_08_brush_applying_lapis_eyelash.mp4",
-        "still_asset": "ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4",
+        "still_asset": "ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg",
         "dur": 11.08,
-        "desc": "Step inside Cave 1: zero soot found on ancient ceilings"
+        "desc": "Torches produce thick soot; yet cave ceilings have zero carbon smoke"
     },
     {
         "cut_id": "s2_c3",
         "video_asset": "ep08_gf_07_bronze_mirror_sunlight_beam.mp4",
         "still_asset": "ep08_gf_07_bronze_mirror_sunlight_beam_GENERATE_VIDEO.jpg",
         "dur": 9.21,
-        "desc": "Polished bronze mirrors reflecting focused beams of sun"
+        "desc": "Polished cast-bronze mirrors reflecting focused beams of sun"
     },
     {
         "cut_id": "s2_c4",
-        "video_asset": "ep08_gf_01_harishena_imperial_cavalry.mp4",
-        "still_asset": "ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_15_wet_linen_diffuser_light_beam.mp4",
+        "still_asset": "ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg",
         "dur": 9.50,
-        "desc": "Wet white linen diffusers filling chambers with shadowless glow"
+        "desc": "Wet white linen diffusers filling chambers with shadowless daylight"
     },
     {
         "cut_id": "s2_c5",
-        "video_asset": "ep08_gf_10_harishena_shadow_cliffhanger.mp4",
-        "still_asset": "ep08_gf_10_harishena_shadow_cliffhanger_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_16_abandoned_chisel_dropped_brush.mp4",
+        "still_asset": "ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg",
         "dur": 12.69,
-        "desc": "477 CE sudden collapse: Related Video CTA"
+        "desc": "477 CE sudden abandonment: Related Video CTA"
     }
 ]
 

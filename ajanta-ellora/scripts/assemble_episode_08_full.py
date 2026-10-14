@@ -47,7 +47,7 @@ def get_manifest():
         # 1. "For nearly four centuries, the horseshoe canyon of Ajanta lay in absolute silence."
         ("image", "ep08_01_silent_canyon_dormancy_PAN_ZOOM.jpg", "slow_drift"),
         # 2. "The austere stone stupas carved by early Satavahana monks had been swallowed by jungle vines..."
-        ("image", "ep08_02_satavahana_chaitya_silt_floor_PAN_ZOOM.jpg", "pan_right"),
+        ("video", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4").exists() else ("image", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg", "pan_right"),
         # 3. "Then—around the year 460 of the common era—a volcanic explosion of royal power transformed the ravine forever."
         ("image", "ep08_03_harishena_coronation_royal_court_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 4. "From the north, Emperor Harishena of the Vakataka dynasty united the Deccan..."
@@ -57,7 +57,7 @@ def get_manifest():
         # 6. "Harishena’s royal ministers, feudatory kings, and merchant guilds began an unprecedented architectural assault..."
         ("image", "ep08_05_dakshinapatha_trade_merchants_PAN_ZOOM.jpg", "pan_left"),
         # 7. "Within just seventeen feverish years, master stonecutters carved twenty colossal new sanctuaries into the sheer basalt."
-        ("image", "ep08_06_royal_patron_architect_scroll_PAN_ZOOM.jpg", "slow_tilt_up"),
+        ("video", "ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4").exists() else ("image", "ep08_gf_12_cliffside_bamboo_scaffolding_army_GENERATE_VIDEO.jpg", "slow_tilt_up"),
         # 8. "But these were no longer simple ascetic retreats; they were multi-story rock-cut university palaces..."
         ("image", "ep08_07_canyon_cliff_construction_activity_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 9. "And upon their smooth interior walls, ancient painters were about to achieve a visual miracle..."
@@ -67,7 +67,7 @@ def get_manifest():
         # 10. "To paint inside Ajanta, ancient craftsmen faced an impossible geological reality."
         ("image", "ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 11. "The walls were not made of smooth limestone or dry sandstone; they were carved out of dense, volcanic flood basalt."
-        ("image", "ep08_10_raw_volcanic_basalt_seepage_PAN_ZOOM.jpg", "pan_right"),
+        ("video", "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4").exists() else ("image", "ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg", "pan_right"),
         # 12. "Basalt is an igneous rock formed by cooling lava—glassy, non-porous, and constantly weeping subterranean moisture."
         ("image", "ep08_11_flaking_paint_moisture_failure_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 13. "If you apply paint directly to raw basalt, the moisture pushes the pigment off within months..."
@@ -99,7 +99,7 @@ def get_manifest():
         # 25. "For reds and yellows, they crushed local volcanic ochres scooped from Deccan soil."
         ("image", "ep08_20_crushed_oyster_shells_gypsum_powder_PAN_ZOOM.jpg", "pan_left"),
         # 26. "For forest greens, they ground mineral glauconite; for black, they gathered pure soot from burning mustard oil lamps."
-        ("image", "ep08_21_agate_burnishing_stone_collection_PAN_ZOOM.jpg", "slow_zoom_in"),
+        ("video", "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4").exists() else ("image", "ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg", "slow_zoom_in"),
         # 27. "But across the royal ceilings of Cave One and Cave Seventeen glows a color that did not come from the Indian subcontinent."
         ("image", "ep08_22_polished_ivory_smooth_intonaco_sheen_PAN_ZOOM.jpg", "slow_drift"),
         # 28. "It is a blinding, celestial ultramarine blue that still burns on the stone walls after fifteen hundred years."
@@ -145,7 +145,7 @@ def get_manifest():
         # 47. "These beams were bounced through the cave doorways and intercepted by wet, bleached white cotton and silk sheets..."
         ("image", "ep08_archive_07_bronze_mirror_harappan_vakataka_museum_scan_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 48. "The wet fabric diffused the harsh solar glare into a soft, ambient glow..."
-        ("image", "ep08_33_wet_linen_sheet_light_diffuser_PAN_ZOOM.jpg", "pan_right"),
+        ("video", "ep08_gf_15_wet_linen_diffuser_light_beam.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_15_wet_linen_diffuser_light_beam.mp4").exists() else ("image", "ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg", "pan_right"),
         # 49. "The painters were literally painting with captured sunlight."
         ("video", "ep08_gf_09_cave_interior_sunlit_murals.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_09_cave_interior_sunlit_murals.mp4").exists() else ("image", "ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
 
@@ -173,7 +173,7 @@ def get_manifest():
         # 60. "In caves down the cliff face, half-finished pillars were abandoned mid-strike..."
         ("image", "ep08_40_cave_1_ceiling_medallion_museum_scan_PAN_ZOOM.jpg", "slow_drift"),
         # 61. "Within months, the golden city in the volcanic cliff went completely silent."
-        ("image", "ep08_archive_10_harishena_sudden_abandonment_cliff_shadow_PAN_ZOOM.jpg", "slow_zoom_out"),
+        ("video", "ep08_gf_16_abandoned_chisel_dropped_brush.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_16_abandoned_chisel_dropped_brush.mp4").exists() else ("image", "ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg", "slow_zoom_out"),
         # 62. "In our next episode, we will investigate the overnight silence..."
         ("video", "ep08_gf_10_harishena_shadow_cliffhanger.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_10_harishena_shadow_cliffhanger.mp4").exists() else ("image", "ep08_gf_10_harishena_shadow_cliffhanger_GENERATE_VIDEO.jpg", "slow_dolly_forward")
     ]
