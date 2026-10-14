@@ -38,7 +38,8 @@ API_VERSION = "v3"
 WORKSPACE_ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_VIDEO_PATH = WORKSPACE_ROOT / "ajanta-ellora" / "episode07" / "final_videos" / "episode_07_the_secret_canyon_of_waghur_master_1080p.mp4"
 DEFAULT_THUMBNAIL_PATH = WORKSPACE_ROOT / "ajanta-ellora" / "episode07" / "thumbnail" / "ep07_thumbnail_16x9_the_secret_canyon.jpg"
-DEFAULT_CAPTIONS_PATH = WORKSPACE_ROOT / "ajanta-ellora" / "episode07" / "subtitles" / "episode_07_narration.srt"
+DEFAULT_CAPTIONS_PATH = WORKSPACE_ROOT / "ajanta-ellora" / "episode07" / "subtitles" / "episode_07_full.srt"
+DEFAULT_HINDI_CAPTIONS_PATH = WORKSPACE_ROOT / "ajanta-ellora" / "episode07" / "subtitles_hindi" / "episode_07_hindi_full.srt"
 DEFAULT_TOKEN_PATH = WORKSPACE_ROOT / "token.json"
 DEFAULT_CLIENT_SECRETS = WORKSPACE_ROOT / "client_secret.json"
 
@@ -55,11 +56,11 @@ Then—in the 1st century CE—work abruptly stopped. For 400 uninterrupted year
 
 TIMESTAMPS:
 0:00 - The Monolith in the Abyss (The Pivot from Kailasa)
-0:48 - The Hidden Amphitheater of Waghur
-1:38 - The Satavahana Inception & Top-Down Chisel Strikes
-2:30 - Taming the Monsoon: Subterranean Hydraulic Defense
-3:55 - The Sound of the Living Stone: Acoustic Archaeology
-5:21 - The 400-Year Hibernation & The Mystery to Come
+0:32 - The Hidden Amphitheater of Waghur
+1:16 - The Satavahana Inception & Top-Down Chisel Strikes
+2:55 - Taming the Monsoon: Subterranean Hydraulic Defense
+4:25 - The Sound of the Living Stone: Acoustic Archaeology
+5:35 - The 400-Year Hibernation & The Mystery to Come
 
 #AjantaCaves #AncientEngineering #KailasaTemple #IndianArchaeology #HistoryDocumentary #AncientIndia #Architecture"""
 
@@ -194,20 +195,20 @@ def upload_thumbnail(youtube, video_id: str, thumbnail_path: Path):
         return False
 
 
-def upload_captions(youtube, video_id: str, captions_path: Path):
-    """Upload English subtitles to YouTube."""
+def upload_captions(youtube, video_id: str, captions_path: Path, language: str = "en", name: str = "English (Full Narration)"):
+    """Upload subtitles to YouTube in specified language."""
     if not captions_path.exists():
         print(f"[WARN] Captions file not found at {captions_path}. Skipping.")
         return False
 
-    print(f"\n[CAPTIONS] Uploading .srt subtitles from {captions_path.name}...")
+    print(f"\n[CAPTIONS] Uploading {name} ({language}) subtitles from {captions_path.name}...")
     try:
         media = MediaFileUpload(str(captions_path), mimetype="text/plain")
         body = {
             "snippet": {
                 "videoId": video_id,
-                "language": "en",
-                "name": "English (Full Narration)",
+                "language": language,
+                "name": name,
                 "isDraft": False
             }
         }
@@ -216,10 +217,10 @@ def upload_captions(youtube, video_id: str, captions_path: Path):
             body=body,
             media_body=media
         ).execute()
-        print("[CAPTIONS] Subtitles attached and published successfully!")
+        print(f"[CAPTIONS] {name} subtitles attached and published successfully!")
         return True
     except Exception as e:
-        print(f"[ERROR] Failed to upload captions: {e}")
+        print(f"[ERROR] Failed to upload {name} captions: {e}")
         return False
 
 
@@ -228,6 +229,7 @@ def main():
     parser.add_argument("--video", type=Path, default=DEFAULT_VIDEO_PATH, help="Path to master .mp4")
     parser.add_argument("--thumbnail", type=Path, default=DEFAULT_THUMBNAIL_PATH, help="Path to 16:9 thumbnail")
     parser.add_argument("--captions", type=Path, default=DEFAULT_CAPTIONS_PATH, help="Path to .srt captions")
+    parser.add_argument("--captions-hindi", type=Path, default=DEFAULT_HINDI_CAPTIONS_PATH, help="Path to Hindi .srt captions")
     parser.add_argument("--secrets", type=Path, default=DEFAULT_CLIENT_SECRETS, help="Path to client_secret.json")
     parser.add_argument("--token", type=Path, default=DEFAULT_TOKEN_PATH, help="Path to token.json")
     parser.add_argument("--title", type=str, default=DEFAULT_TITLE, help="Video title")
@@ -253,7 +255,8 @@ def main():
         )
 
         upload_thumbnail(youtube, video_id, args.thumbnail)
-        upload_captions(youtube, video_id, args.captions)
+        upload_captions(youtube, video_id, args.captions, language="en", name="English (Full Narration)")
+        upload_captions(youtube, video_id, args.captions_hindi, language="hi", name="Hindi")
 
         print("\n" + "=" * 70)
         print("  PUBLICATION COMPLETED SUCCESSFULLY")

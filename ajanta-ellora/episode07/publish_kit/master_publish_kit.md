@@ -27,11 +27,11 @@ Then—in the 1st century CE—work abruptly stopped. For 400 uninterrupted year
 
 TIMESTAMPS:
 0:00 - The Monolith in the Abyss (The Pivot from Kailasa)
-0:48 - The Hidden Amphitheater of Waghur
-1:38 - The Satavahana Inception & Top-Down Chisel Strikes
-2:30 - Taming the Monsoon: Subterranean Hydraulic Defense
-3:55 - The Sound of the Living Stone: Acoustic Archaeology
-5:21 - The 400-Year Hibernation & The Mystery to Come
+0:32 - The Hidden Amphitheater of Waghur
+1:16 - The Satavahana Inception & Top-Down Chisel Strikes
+2:55 - Taming the Monsoon: Subterranean Hydraulic Defense
+4:25 - The Sound of the Living Stone: Acoustic Archaeology
+5:35 - The 400-Year Hibernation & The Mystery to Come
 
 #AjantaCaves #AncientEngineering #KailasaTemple #IndianArchaeology #HistoryDocumentary #AncientIndia #Architecture
 ```

@@ -76,7 +76,7 @@ MANIFEST = [
     # 16. "Without scaffolding, they hollowed out monumental apsidal chaitya halls..."
     ("video", "ep07_gf_04_vaulted_chaitya_ribbing_macro.mp4", "action_clip"),
     # 17. "Along the sides, they chiseled rows of austere octagonal columns, slanting them slightly inward by three degrees..."
-    ("image", "ep07_17_octagonal_inward_slant_pillars_PAN_ZOOM.jpg", "slow_tilt_down"),
+    ("video", "ep07_gf_11_inward_slant_pillar_alignment.mp4", "action_clip") if (VIDEOS_DIR / "ep07_gf_11_inward_slant_pillar_alignment.mp4").exists() else ("image", "ep07_17_octagonal_inward_slant_pillars_PAN_ZOOM.jpg", "slow_tilt_down"),
     # 18. "Even in stone, their hands remembered wood; but the mountain demanded an entirely different mastery."
     ("video", "ep07_gf_12_carpentry_peg_socket_carving.mp4", "action_clip"),
 
