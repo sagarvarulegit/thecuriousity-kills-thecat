@@ -65,7 +65,7 @@ def get_manifest():
 
         # Act II: The Basalt Problem & The Mud Chemistry Secret (Cuts 10-23)
         # 10. "To paint inside Ajanta, ancient craftsmen faced an impossible geological problem."
-        ("image", "ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        ("image", "ep08_07_canyon_cliff_construction_activity_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 11. "The walls were not made of smooth, dry stone; they were carved out of dense, volcanic flood basalt rock."
         ("image", "ep08_10_raw_volcanic_basalt_seepage_PAN_ZOOM.jpg", "pan_right"),
         # 12. "Basalt is cold, hard lava rock that constantly sweats underground water droplets through tiny cracks."
@@ -73,7 +73,7 @@ def get_manifest():
         # 13. "If you paint directly on wet basalt rock, the water pushes the paint off within months, causing it to peel and turn to dust."
         ("image", "ep08_11_flaking_paint_moisture_failure_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 14. "European fresco painters put wet lime plaster on walls, but inside a cold, damp volcanic cave, that technique fails completely."
-        ("image", "ep08_12_chitrasutra_palm_leaf_manuscript_PAN_ZOOM.jpg", "slow_drift"),
+        ("image", "ep08_12_european_fresco_lime_plaster_moisture_failure_PAN_ZOOM.jpg", "slow_drift"),
         # 15. "The master guilds of Ajanta invented a revolutionary, multi-layered bio-mud formula that modern scientists still study today."
         ("image", "ep08_infographic_01_plaster_stratigraphy.jpg", "slow_zoom_in"),
         # 16. "First, stonecutters used pointed iron picks to peck thousands of small pits into the rock, creating a rough surface for the mud to grip."
@@ -97,7 +97,7 @@ def get_manifest():
         # 24. "Once the plaster dried, the painters uncapped their earthenware pigment bowls."
         ("image", "ep08_23_terracotta_pigment_bowls_palette_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 25. "For red and yellow colors, they crushed local volcanic ochre rocks dug right from the Deccan soil."
-        ("image", "ep08_19_slaked_lime_chuna_kiln_calcining_PAN_ZOOM.jpg", "pan_left"),
+        ("image", "ep08_19_volcanic_red_yellow_ochre_crushing_PAN_ZOOM.jpg", "pan_left"),
         # 26. "For green, they ground green earth minerals; for pure black, they collected soot from burning mustard oil lamps."
         ("video", "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4").exists() else ("image", "ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg", "slow_zoom_in"),
         # 27. "But across the ceilings of Cave One and Cave Seventeen shines a brilliant color that came from thousands of kilometers away."
@@ -125,17 +125,17 @@ def get_manifest():
         # 37. "Caves One, Two, Sixteen, and Seventeen go thirty to forty meters deep inside solid mountain rock."
         ("image", "ep08_30_pitch_black_cave_interior_void_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 38. "When you step inside these cave halls, you enter total pitch-black darkness where you cannot see your own hand in front of your face."
-        ("image", "ep08_archive_03_james_fergusson_1845_ajanta_cave_1_plate_PAN_ZOOM.jpg", "slow_drift"),
+        ("image", "ep08_archive_03_pitch_black_subterranean_darkness_hand_PAN_ZOOM.jpg", "slow_drift"),
         # 39. "Yet in the deepest, darkest corners of these caves, ancient artists painted microscopic details: eyelashes thinner than a hair, tiny pearls, and detailed gold jewelry."
-        ("image", "ep08_archive_04_robert_gill_1850_canvas_replica_plate_PAN_ZOOM.jpg", "pan_right"),
+        ("image", "ep08_archive_04_microscopic_eyelash_pearl_jewelry_macro_PAN_ZOOM.jpg", "pan_right"),
         # 40. "How could they paint these masterworks forty meters underground without any electric light?"
-        ("image", "ep08_archive_05_asi_chemical_conservation_cross_section_1955_PAN_ZOOM.jpg", "slow_zoom_in"),
+        ("image", "ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 41. "When modern scientists tested the cave ceilings, they searched for smoke stains and soot from burning oil lamps or torches."
-        ("image", "ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg", "slow_tilt_up"),
+        ("image", "ep08_archive_05_asi_chemical_conservation_cross_section_1955_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 42. "They found zero soot. The ceilings were completely clean."
-        ("image", "ep08_archive_01_harishena_royal_copper_plate_charter_PAN_ZOOM.jpg", "pan_left"),
+        ("image", "ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg", "slow_tilt_up"),
         # 43. "Burning fire torches inside these closed underground rooms would have choked the artists with smoke and blackened the white plaster walls."
-        ("image", "ep08_24_mustard_oil_lamp_soot_collection_PAN_ZOOM.jpg", "slow_zoom_in"),
+        ("image", "ep08_24_burning_torch_smoke_choking_cave_hazard_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 44. "So how did they see? Ancient engineers invented an ingenious natural light diversion system."
         ("image", "ep08_infographic_02_bronze_mirror_optics.jpg", "slow_zoom_in"),
         # 45. "Outside in the blazing sunshine, assistants positioned large, circular mirrors made of highly polished cast bronze."
@@ -157,7 +157,7 @@ def get_manifest():
         # 52. "Look closely at his gentle expression, his regal crown, and the downward curve of his eyes full of compassion."
         ("image", "ep08_34_padmapani_tribhanga_posture_mural_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 53. "Notice the realistic three-dimensional shading along his nose and jawline, making his body look soft and alive against the flat stone."
-        ("image", "ep08_archive_06_chitrasutra_ancient_canons_proportions_PAN_ZOOM.jpg", "slow_drift"),
+        ("image", "ep08_archive_06_padmapani_3d_shading_face_macro_PAN_ZOOM.jpg", "slow_drift"),
         # 54. "A thousand years before Leonardo da Vinci painted in Europe, Indian painters had already mastered human anatomy, emotion, and realistic 3D depth."
         ("image", "ep08_archive_09_vajrapani_cave_1_regal_bodhisattva_PAN_ZOOM.jpg", "pan_right"),
         # 55. "All across these walls, you can see real life from fifteen hundred years ago: royal courts with foreign Persian visitors, forest animals, and joyful celebrations."

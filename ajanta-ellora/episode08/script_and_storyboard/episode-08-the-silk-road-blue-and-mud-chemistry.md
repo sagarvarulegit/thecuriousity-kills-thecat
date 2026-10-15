@@ -89,8 +89,8 @@
 10. **To paint inside Ajanta, ancient craftsmen faced an impossible geological problem.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg" alt="ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg</code> | Motion: <em>slow_dolly_forward</em></div>
+     <img src="../images/ep08_07_canyon_cliff_construction_activity_PAN_ZOOM.jpg" alt="ep08_07_canyon_cliff_construction_activity_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_07_canyon_cliff_construction_activity_PAN_ZOOM.jpg</code> | Motion: <em>slow_dolly_forward</em></div>
    </div>
 
 11. **The walls were not made of smooth, dry stone; they were carved out of dense, volcanic flood basalt rock.**
@@ -117,8 +117,8 @@
 14. **European fresco painters put wet lime plaster on walls, but inside a cold, damp volcanic cave, that technique fails completely.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_12_chitrasutra_palm_leaf_manuscript_PAN_ZOOM.jpg" alt="ep08_12_chitrasutra_palm_leaf_manuscript_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_12_chitrasutra_palm_leaf_manuscript_PAN_ZOOM.jpg</code> | Motion: <em>slow_drift</em></div>
+     <img src="../images/ep08_12_european_fresco_lime_plaster_moisture_failure_PAN_ZOOM.jpg" alt="ep08_12_european_fresco_lime_plaster_moisture_failure_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_12_european_fresco_lime_plaster_moisture_failure_PAN_ZOOM.jpg</code> | Motion: <em>slow_drift</em></div>
    </div>
 
 15. **The master guilds of Ajanta invented a revolutionary, multi-layered bio-mud formula that modern scientists still study today.**
@@ -196,8 +196,8 @@
 25. **For red and yellow colors, they crushed local volcanic ochre rocks dug right from the Deccan soil.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_19_slaked_lime_chuna_kiln_calcining_PAN_ZOOM.jpg" alt="ep08_19_slaked_lime_chuna_kiln_calcining_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_19_slaked_lime_chuna_kiln_calcining_PAN_ZOOM.jpg</code> | Motion: <em>pan_left</em></div>
+     <img src="../images/ep08_19_volcanic_red_yellow_ochre_crushing_PAN_ZOOM.jpg" alt="ep08_19_volcanic_red_yellow_ochre_crushing_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_19_volcanic_red_yellow_ochre_crushing_PAN_ZOOM.jpg</code> | Motion: <em>pan_left</em></div>
    </div>
 
 26. **For green, they ground green earth minerals; for pure black, they collected soot from burning mustard oil lamps.**
@@ -289,43 +289,43 @@
 38. **When you step inside these cave halls, you enter total pitch-black darkness where you cannot see your own hand in front of your face.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_archive_03_james_fergusson_1845_ajanta_cave_1_plate_PAN_ZOOM.jpg" alt="ep08_archive_03_james_fergusson_1845_ajanta_cave_1_plate_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_03_james_fergusson_1845_ajanta_cave_1_plate_PAN_ZOOM.jpg</code> | Motion: <em>slow_drift</em></div>
+     <img src="../images/ep08_archive_03_pitch_black_subterranean_darkness_hand_PAN_ZOOM.jpg" alt="ep08_archive_03_pitch_black_subterranean_darkness_hand_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_03_pitch_black_subterranean_darkness_hand_PAN_ZOOM.jpg</code> | Motion: <em>slow_drift</em></div>
    </div>
 
 39. **Yet in the deepest, darkest corners of these caves, ancient artists painted microscopic details: eyelashes thinner than a hair, tiny pearls, and detailed gold jewelry.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_archive_04_robert_gill_1850_canvas_replica_plate_PAN_ZOOM.jpg" alt="ep08_archive_04_robert_gill_1850_canvas_replica_plate_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_04_robert_gill_1850_canvas_replica_plate_PAN_ZOOM.jpg</code> | Motion: <em>pan_right</em></div>
+     <img src="../images/ep08_archive_04_microscopic_eyelash_pearl_jewelry_macro_PAN_ZOOM.jpg" alt="ep08_archive_04_microscopic_eyelash_pearl_jewelry_macro_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_04_microscopic_eyelash_pearl_jewelry_macro_PAN_ZOOM.jpg</code> | Motion: <em>pan_right</em></div>
    </div>
 
 40. **How could they paint these masterworks forty meters underground without any electric light?**
+
+   <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
+     <img src="../images/ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg" alt="ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg</code> | Motion: <em>slow_dolly_forward</em></div>
+   </div>
+
+41. **When modern scientists tested the cave ceilings, they searched for smoke stains and soot from burning oil lamps or torches.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
      <img src="../images/ep08_archive_05_asi_chemical_conservation_cross_section_1955_PAN_ZOOM.jpg" alt="ep08_archive_05_asi_chemical_conservation_cross_section_1955_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
      <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_05_asi_chemical_conservation_cross_section_1955_PAN_ZOOM.jpg</code> | Motion: <em>slow_zoom_in</em></div>
    </div>
 
-41. **When modern scientists tested the cave ceilings, they searched for smoke stains and soot from burning oil lamps or torches.**
+42. **They found zero soot. The ceilings were completely clean.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
      <img src="../images/ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg" alt="ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
      <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg</code> | Motion: <em>slow_tilt_up</em></div>
    </div>
 
-42. **They found zero soot. The ceilings were completely clean.**
-
-   <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_archive_01_harishena_royal_copper_plate_charter_PAN_ZOOM.jpg" alt="ep08_archive_01_harishena_royal_copper_plate_charter_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_01_harishena_royal_copper_plate_charter_PAN_ZOOM.jpg</code> | Motion: <em>pan_left</em></div>
-   </div>
-
 43. **Burning fire torches inside these closed underground rooms would have choked the artists with smoke and blackened the white plaster walls.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_24_mustard_oil_lamp_soot_collection_PAN_ZOOM.jpg" alt="ep08_24_mustard_oil_lamp_soot_collection_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_24_mustard_oil_lamp_soot_collection_PAN_ZOOM.jpg</code> | Motion: <em>slow_zoom_in</em></div>
+     <img src="../images/ep08_24_burning_torch_smoke_choking_cave_hazard_PAN_ZOOM.jpg" alt="ep08_24_burning_torch_smoke_choking_cave_hazard_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🖼️ **Hero Still (4K Zoompan)**: <code>ep08_24_burning_torch_smoke_choking_cave_hazard_PAN_ZOOM.jpg</code> | Motion: <em>slow_zoom_in</em></div>
    </div>
 
 44. **So how did they see? Ancient engineers invented an ingenious natural light diversion system.**
@@ -396,8 +396,8 @@
 53. **Notice the realistic three-dimensional shading along his nose and jawline, making his body look soft and alive against the flat stone.**
 
    <div class="storyboard-card" style="background:#131b2e; border:1px solid #2a3754; border-radius:8px; padding:12px; margin:10px 0 16px 0; max-width:760px;">
-     <img src="../images/ep08_archive_06_chitrasutra_ancient_canons_proportions_PAN_ZOOM.jpg" alt="ep08_archive_06_chitrasutra_ancient_canons_proportions_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
-     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_06_chitrasutra_ancient_canons_proportions_PAN_ZOOM.jpg</code> | Motion: <em>slow_drift</em></div>
+     <img src="../images/ep08_archive_06_padmapani_3d_shading_face_macro_PAN_ZOOM.jpg" alt="ep08_archive_06_padmapani_3d_shading_face_macro_PAN_ZOOM.jpg" style="width:100%; border-radius:6px; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid #1e293b;" />
+     <div style="font-size:0.82rem; color:#94a3b8; font-family:monospace; margin-top:8px;">🏛️ **Authentic Museum Scan / Historical Archive**: <code>ep08_archive_06_padmapani_3d_shading_face_macro_PAN_ZOOM.jpg</code> | Motion: <em>slow_drift</em></div>
    </div>
 
 54. **A thousand years before Leonardo da Vinci painted in Europe, Indian painters had already mastered human anatomy, emotion, and realistic 3D depth.**
