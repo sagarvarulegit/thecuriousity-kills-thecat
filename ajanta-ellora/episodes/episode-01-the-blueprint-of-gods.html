@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episode 01 The Blueprint Of Gods — Curiosity Kills The Cat</title>
+<style>
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-gold: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --border-color: #334155;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar TOC */
+#sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+#sidebar .doc-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    word-break: break-all;
+}
+
+#toc {
+    list-style: none;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+#toc li {
+    margin-bottom: 8px;
+}
+
+#toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: block;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+#toc a:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Main Container */
+#content-container {
+    flex: 1;
+    max-width: 960px;
+    padding: 40px 48px;
+    margin: 0 auto;
+}
+
+/* Header Banner */
+.doc-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.channel-tag {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; }
+h2 { font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+h3 { font-size: 1.25rem; color: var(--accent-blue); }
+h4 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--text-secondary);
+}
+
+ul, ol {
+    margin-bottom: 1.2em;
+    padding-left: 1.6em;
+    color: var(--text-secondary);
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid var(--accent-gold);
+    padding: 12px 18px;
+    background: rgba(245, 158, 11, 0.08);
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8em 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: #1e293b;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Code Blocks */
+pre {
+    background: #090d16;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.4em 0;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: #e2e8f0;
+}
+
+code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--accent-blue);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* FEEDBACK & COMMENT SYSTEM */
+#feedback-panel {
+    width: 360px;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feedback-badge {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.feedback-input-box {
+    margin-bottom: 16px;
+}
+
+.feedback-textarea {
+    width: 100%;
+    height: 90px;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.feedback-textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.feedback-select, .feedback-target {
+    flex: 1;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: #000000;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    padding: 6px 10px;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.action-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.feedback-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.comment-card {
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.85rem;
+}
+
+.comment-card.type-approval { border-left: 3px solid var(--accent-emerald); }
+.comment-card.type-change { border-left: 3px solid var(--accent-gold); }
+.comment-card.type-issue { border-left: 3px solid var(--accent-rose); }
+.comment-card.type-note { border-left: 3px solid var(--accent-blue); }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.comment-tag {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.comment-body {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.comment-delete:hover {
+    color: var(--accent-rose);
+}
+
+/* Toast notification */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent-emerald);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    body { flex-direction: column; }
+    #sidebar, #feedback-panel { width: 100%; height: auto; position: relative; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<aside id="sidebar">
+    <div class="channel-tag">Curiosity Kills The Cat</div>
+    <div class="doc-badge">ajanta-ellora/episodes/episode-01-the-blueprint-of-gods.md</div>
+    <h3>Sections</h3>
+    <ul id="toc"></ul>
+</aside>
+
+<!-- MAIN DOCUMENT CONTENT -->
+<main id="content-container">
+    <div class="doc-header">
+        <div class="channel-tag">Ajanta & Ellora Production Series</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Source: <code>ajanta-ellora/episodes/episode-01-the-blueprint-of-gods.md</code></p>
+    </div>
+    <div id="rendered-content">
+<h1>Episode 1: The Blueprint of the Gods</h1>
+<h3><em>Conception, Capital &amp; The Impossible Plan</em></h3>
+<p><strong>Target Duration</strong>: 07:30 – 08:00 mins (450 – 480 seconds)<br />
+<strong>Total Production Micro-Beats</strong>: 75 Cinematic Shots (Average 5.5 to 6.0 seconds per cut)<br />
+<strong>Retention Target</strong>: 55%+ Average Percentage Viewed (YouTube Mid-roll Monetization Optimized)<br />
+<strong>Format</strong>: 16:9 4K UHD Master (Series) | 9:16 Vertical (2x Funnel Shorts)</p>
+<hr />
+<h2>The Video Pacing &amp; Cut Architecture</h2>
+<p>In high-retention cinematic documentary filmmaking (e.g., Vox, Lemmino, MagnatesMedia, National Geographic), holding a single static image for more than 6 seconds causes rapid viewer drop-off. </p>
+<pre><code>+---------------------------------------------------------------------------------------------------------+
+|                                    7.5-MINUTE RETENTION PACING MATRIX                                    |
++-------------------+---------------------+----------------+-----------------------+----------------------+
+| Act / Sequence    | Duration (Seconds)  | Micro-Beats    | Avg Cut Speed         | Narrative Energy     |
++-------------------+---------------------+----------------+-----------------------+----------------------+
+| Scene 1: The Vow  | 00:00 - 01:10 (70s) | Beats 01 to 10 | 7.0s (Deliberate)     | Somber, Grave, Drama |
+| Scene 2: Kokasa   | 01:10 - 02:15 (65s) | Beats 11 to 20 | 6.5s (Building)       | Skepticism, Heresy   |
+| Scene 3: Geology  | 02:15 - 03:25 (70s) | Beats 21 to 30 | 7.0s (Investigative)  | Vast, Scientific     |
+| Scene 4: Finance  | 03:25 - 04:35 (70s) | Beats 31 to 40 | 7.0s (Dynamic)        | Wealth, Power, Scale |
+| Scene 5: Guilds   | 04:35 - 05:40 (65s) | Beats 41 to 50 | 6.5s (Industrial)     | Sparks, Fire, Muscle |
+| Scene 6: Survey   | 05:40 - 06:40 (60s) | Beats 51 to 60 | 6.0s (Mathematical)   | Precision, Geometry  |
+| Scene 7: Council  | 06:40 - 07:25 (45s) | Beats 61 to 68 | 5.6s (Formal)         | Imperial Decree      |
+| Scene 8: Strike   | 07:25 - 08:00 (35s) | Beats 69 to 75 | 5.0s (Accelerating)   | Climax, Spark, Cut   |
++-------------------+---------------------+----------------+-----------------------+----------------------+
+| TOTALS            | ~460 Seconds        | 75 Shots       | ~6.1s Average / Cut   | High YouTube Binge   |
++-------------------+---------------------+----------------+-----------------------+----------------------+
+</code></pre>
+<hr />
+<h2>The Smart Production Pyramid (API Budget Optimization)</h2>
+<p><strong>75 Micro-beats does NOT mean 75 separate AI image or video calls.</strong><br />
+To maintain an ultra-low production budget ($3.50 – $5.00 total API cost per episode):<br />
+* <strong>Generate only 22 Master Hero Images (4K/8K)</strong>: We use the <strong>1-to-3 Multi-Cam Crop Technique</strong> (Wide establishing $\rightarrow$ 200% punch-in close-up $\rightarrow$ pan/scan detail) to extract 50+ cuts from these master images.<br />
+* <strong>Animate only 7 Key Action Moments</strong>: Reserve video generation (Runway Gen-3 / Kling 1.5) strictly for physical/particle moments (sparks, steam, molten wax, explosive impact).<br />
+* <strong>Motion Graphics &amp; Archival (15+ cuts)</strong>: Utilize 2D animated blueprints, statistical metric cards ("140 MPa"), and public domain satellite/archival visuals at $0 cost.</p>
+<h3>Master Image Generation Batch Sheet (Only 22 Images to Generate)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Master Image Filename</th>
+<th style="text-align: left;">Midjourney / Flux Prompt Focus</th>
+<th style="text-align: left;">Satisfies Beats</th>
+<th style="text-align: left;">Multi-Cam Cut Instructions</th>
+<th style="text-align: left;">Kling/Runway Video?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>IMG-01</strong></td>
+<td style="text-align: left;"><code>ep01_01_palace_dusk.png</code></td>
+<td style="text-align: left;">Rashtrakuta Palace at Dusk</td>
+<td style="text-align: left;">Beats 01, 02</td>
+<td style="text-align: left;">Full Wide (Beat 01) $\rightarrow$ Slow crop on sentry doorway (Beat 02)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-02</strong></td>
+<td style="text-align: left;"><code>ep01_02_king_sickbed.png</code></td>
+<td style="text-align: left;">King Krishna I ill on teak daybed</td>
+<td style="text-align: left;">Beats 03, 06</td>
+<td style="text-align: left;">Wide bedchamber (Beat 03) $\rightarrow$ Punch-in on King's shocked eyes (Beat 06)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-03</strong></td>
+<td style="text-align: left;"><code>ep01_03_queen_vow.png</code></td>
+<td style="text-align: left;">Queen praying at basalt Shiva Lingam</td>
+<td style="text-align: left;">Beats 04, 05, 07</td>
+<td style="text-align: left;">Medium altar (Beat 04) $\rightarrow$ Extreme Close-up vow (Beat 05) $\rightarrow$ Frail hands (Beat 07)</td>
+<td style="text-align: left;"><strong>YES (Beat 05: Smoke/tears)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-04</strong></td>
+<td style="text-align: left;"><code>ep01_04_architects_council.png</code></td>
+<td style="text-align: left;">Senior architects shaking heads</td>
+<td style="text-align: left;">Beats 08, 09, 10</td>
+<td style="text-align: left;">Wide council hall (Beat 08) $\rightarrow$ Close-up defeated architect (Beat 09)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-05</strong></td>
+<td style="text-align: left;"><code>ep01_05_water_clock.png</code></td>
+<td style="text-align: left;">Ancient water clock (<em>ghatika yantra</em>)</td>
+<td style="text-align: left;">Beat 10</td>
+<td style="text-align: left;">Macro water clock dripping into copper basin</td>
+<td style="text-align: left;"><strong>YES (Beat 10: Water drop)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-06</strong></td>
+<td style="text-align: left;"><code>ep01_06_kokasa_entrance.png</code></td>
+<td style="text-align: left;">Kokasa walking down aisle to throne</td>
+<td style="text-align: left;">Beats 11, 12</td>
+<td style="text-align: left;">Wide aisle tracking (Beat 11) $\rightarrow$ Close-up Kokasa's intense face (Beat 12)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-07</strong></td>
+<td style="text-align: left;"><code>ep01_07_kokasa_scroll.png</code></td>
+<td style="text-align: left;">Kokasa unrolling cloth blueprint</td>
+<td style="text-align: left;">Beats 13, 14, 17, 19</td>
+<td style="text-align: left;">Wide unrolling (Beat 13) $\rightarrow$ King's disbelief (Beat 14) $\rightarrow$ Pointing to spire (Beat 17)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-08</strong></td>
+<td style="text-align: left;"><code>ep01_08_blueprint_cutaway.png</code></td>
+<td style="text-align: left;">3D cutaway: additive vs subtractive</td>
+<td style="text-align: left;">Beats 15, 16, 18</td>
+<td style="text-align: left;">Additive blocks (Beat 15) $\rightarrow$ Mountain laser slice (Beat 16) $\rightarrow$ Palm manuscript (Beat 18)</td>
+<td style="text-align: left;">Motion Graphics Overlay</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-09</strong></td>
+<td style="text-align: left;"><code>ep01_09_king_command.png</code></td>
+<td style="text-align: left;">King Krishna I giving royal decree</td>
+<td style="text-align: left;">Beat 20</td>
+<td style="text-align: left;">Hero close-up command with outstretched hand</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-10</strong></td>
+<td style="text-align: left;"><code>ep01_10_deccan_riders.png</code></td>
+<td style="text-align: left;">Horsemen scouting Deccan basalt plains</td>
+<td style="text-align: left;">Beat 21</td>
+<td style="text-align: left;">Wide panoramic landscape with riders</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-11</strong></td>
+<td style="text-align: left;"><code>ep01_11_prehistoric_lava.png</code></td>
+<td style="text-align: left;">66 Ma Deccan volcanic lava flood</td>
+<td style="text-align: left;">Beats 22, 23</td>
+<td style="text-align: left;">Aerial fissure vents (Beat 22) $\rightarrow$ Macro basalt cliff strata (Beat 23)</td>
+<td style="text-align: left;"><strong>YES (Beat 22: Flowing lava)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-12</strong></td>
+<td style="text-align: left;"><code>ep01_12_charanandri_ridge.png</code></td>
+<td style="text-align: left;">Rugged Ellora cliff scarp at sunrise</td>
+<td style="text-align: left;">Beats 24, 25, 26</td>
+<td style="text-align: left;">Scarp drone shot (Beat 24) $\rightarrow$ Trade map (Beat 25) $\rightarrow$ Kokasa palm on rock (Beat 26)</td>
+<td style="text-align: left;">Google Earth 3D / Pan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-13</strong></td>
+<td style="text-align: left;"><code>ep01_13_testing_basalt.png</code></td>
+<td style="text-align: left;">Bronze mallet striking porous vs dense</td>
+<td style="text-align: left;">Beats 27, 28, 29, 30</td>
+<td style="text-align: left;">Dull porous thud (Beat 27) $\rightarrow$ Metallic ring spark (Beat 28) $\rightarrow$ Hero ridge pose (Beat 30)</td>
+<td style="text-align: left;"><strong>YES (Beat 28: Spark chime)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-14</strong></td>
+<td style="text-align: left;"><code>ep01_14_treasury_chests.png</code></td>
+<td style="text-align: left;">Royal treasury overflowing with gold</td>
+<td style="text-align: left;">Beats 31, 32, 33, 40</td>
+<td style="text-align: left;">Wide gold vault (Beat 31) $\rightarrow$ Chalukya war spoils (Beat 32) $\rightarrow$ Cavalry victory (Beat 33)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-15</strong></td>
+<td style="text-align: left;"><code>ep01_15_copper_charter.png</code></td>
+<td style="text-align: left;">Scribe engraving Sanskrit copper plate</td>
+<td style="text-align: left;">Beats 34, 38</td>
+<td style="text-align: left;">Macro burin on copper (Beat 34) $\rightarrow$ Merchant receiving wax charter (Beat 38)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-16</strong></td>
+<td style="text-align: left;"><code>ep01_16_agrarian_supply.png</code></td>
+<td style="text-align: left;">Irrigated harvest &amp; bullock convoy</td>
+<td style="text-align: left;">Beats 35, 36</td>
+<td style="text-align: left;">Farmland harvest (Beat 35) $\rightarrow$ Supply cart convoy winding to mountain (Beat 36)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-17</strong></td>
+<td style="text-align: left;"><code>ep01_17_merchant_guild.png</code></td>
+<td style="text-align: left;">Silk Road merchants trading gold</td>
+<td style="text-align: left;">Beats 37, 39</td>
+<td style="text-align: left;">Merchant meeting (Beat 37) $\rightarrow$ Monastic bank ledger counting (Beat 39)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-18</strong></td>
+<td style="text-align: left;"><code>ep01_18_artisan_camp.png</code></td>
+<td style="text-align: left;">Sprawling worker village at cliff base</td>
+<td style="text-align: left;">Beats 41, 42, 43, 44, 45, 50</td>
+<td style="text-align: left;">Wide tents (Beat 41) $\rightarrow$ Plumb bob (Beat 43) $\rightarrow$ Quarryman muscle (Beat 44) $\rightarrow$ Army (Beat 50)</td>
+<td style="text-align: left;">Static Ken Burns</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-19</strong></td>
+<td style="text-align: left;"><code>ep01_19_blacksmith_forge.png</code></td>
+<td style="text-align: left;">Charcoal forges with anvil sparks</td>
+<td style="text-align: left;">Beats 46, 47, 48, 49</td>
+<td style="text-align: left;">Roaring furnace (Beat 46) $\rightarrow$ Anvil strike sparks (Beat 47) $\rightarrow$ Steam quench (Beat 48) $\rightarrow$ 3 Chisels (49)</td>
+<td style="text-align: left;"><strong>YES (Beat 47: Sparks / 48: Steam)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-20</strong></td>
+<td style="text-align: left;"><code>ep01_20_survey_summit.png</code></td>
+<td style="text-align: left;">Sun gnomon &amp; red cinnabar chalk snap</td>
+<td style="text-align: left;">Beats 51, 52, 53, 54, 55, 56, 58, 60</td>
+<td style="text-align: left;">Sun gnomon (Beat 52) $\rightarrow$ Taut cord (Beat 54) $\rightarrow$ Exploding red dust (Beat 55) $\rightarrow$ Grid (Beat 56)</td>
+<td style="text-align: left;"><strong>YES (Beat 55: Red chalk snap)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-21</strong></td>
+<td style="text-align: left;"><code>ep01_21_clay_model_seal.png</code></td>
+<td style="text-align: left;">Miniature clay temple &amp; red wax seal</td>
+<td style="text-align: left;">Beats 61, 62, 63, 64, 65, 66, 67</td>
+<td style="text-align: left;">Clay model table (Beat 61) $\rightarrow$ King traces spire (Beat 62) $\rightarrow$ Garuda wax stamp (Beat 65)</td>
+<td style="text-align: left;"><strong>YES (Beat 65: Molten wax stamp)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IMG-22</strong></td>
+<td style="text-align: left;"><code>ep01_22_first_chisel_strike.png</code></td>
+<td style="text-align: left;">Striker swinging sledgehammer on punch</td>
+<td style="text-align: left;">Beats 68, 69, 70, 71, 72, 73, 74, 75</td>
+<td style="text-align: left;">Night torches (Beat 68) $\rightarrow$ Dawn line (Beat 69) $\rightarrow$ Hammer apex (Beat 71) $\rightarrow$ Impact spark (Beat 73)</td>
+<td style="text-align: left;"><strong>YES (Beat 73: Impact sparks)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Style Consistency Prompt Anchor</h2>
+<p>To keep visual character and lighting consistency across Midjourney v6 / Flux:</p>
+<blockquote>
+<p><strong>Universal Style Anchor</strong>: <code>cinematic film still from 8k historical epic, ancient India 8th century Rashtrakuta Dynasty, directed by Christopher Nolan, anamorphic 35mm lens, Kodachrome color grading, realistic historical textures, authentic Deccan architecture, volumetric atmospheric lighting, photorealistic, ultra-detailed --ar 16:9 --style raw --v 6.0</code></p>
+</blockquote>
+<hr />
+<h2>Complete 75 Micro-Beat Storyboard &amp; Prompt Bible</h2>
+<h3>ACT I: THE CRISIS &amp; THE FATAL VOW (00:00 – 01:10)</h3>
+<h4><strong>Beat 01 (00:00 - 00:07)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Extreme Wide Establishing Shot — Royal Rashtrakuta Palace at Dusk.</li>
+<li><strong>Narration</strong>: <em>"In the year 756 of our common era, an impossible crisis gripped the royal court of the Rashtrakuta Empire."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>extreme wide establishing shot, magnificent 8th-century ancient Indian stone palace complex on a Deccan plateau at dusk, warm torchlight glowing in windows, dramatic purple and orange sunset sky, silhouetted sentries on battlements, cinematic, photorealistic --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow panoramic pan right across palace battlements as twilight deepens, torch flames fluttering in evening breeze.</code></li>
+<li><strong>SFX</strong>: Low orchestral cello drone; distant temple gong chime.</li>
+</ul>
+<h4><strong>Beat 02 (00:07 - 00:14)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Tracking Shot — Palace Corridor with Guards.</li>
+<li><strong>Narration</strong>: <em>"Deep within the stone corridors of the capital, King Krishna the First lay struck down by a mysterious, wasting illness."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium tracking shot, ornate stone palace corridor with carved basalt pillars, ancient Indian royal guards holding spears in silhouette, soft flickering oil lamp light casting long shadows, moody historical drama --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Forward tracking dolly down shadowy columned hallway toward a closed carved wooden doorway.</code></li>
+<li><strong>SFX</strong>: Muffled footsteps of armored sentries; soft wind whistling through stone jali screens.</li>
+</ul>
+<h4><strong>Beat 03 (00:14 - 00:21)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Close-up — The Sick King in Bedchamber.</li>
+<li><strong>Narration</strong>: <em>"Imperial physicians could do nothing. With each passing night, the ruler of western India slipped closer to the grave."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>intimate cinematic interior, King Krishna I lying weakened on an ornate carved teak daybed draped in Indian silks, faint sweat on brow, ancient bronze medicine bowls and herbal pastes on low stone table, candlelit --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow, subtle push-in on the king’s pale face, eyelids fluttering, flickering candle flame reflecting in brass bowl.</code></li>
+<li><strong>SFX</strong>: Faint, ragged breathing; slow low-tempo heartbeat thud.</li>
+</ul>
+<h4><strong>Beat 04 (00:21 - 00:28)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The Queen Praying Before Shiva Lingam.</li>
+<li><strong>Narration</strong>: <em>"According to the ancient chronicles of the Katha-Kalpataru, his queen made a desperate, terrifying vow."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic medium shot, ancient Indian queen wearing red silk saree and gold temple jewelry kneeling in prayer, tear on her cheek, folding hands before a black basalt Shiva lingam bathed in holy oil, warm lamp glow --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Camera tilts down slowly from the top of the dark stone lingam to the queen’s folded trembling hands.</code></li>
+<li><strong>SFX</strong>: Sitar string drone; soft whisper of Sanskrit prayer chants.</li>
+</ul>
+<h4><strong>Beat 05 (00:28 - 00:35)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The Sacred Vow to Shiva.</li>
+<li><strong>Narration</strong>: <em>"She swore an oath to Shiva: she would touch no food—she would fast to death—until she could gaze upon the finished spire of a temple raised in his honor."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up shot, intense emotional expression on the ancient Indian queen's face, eyes closed in fierce devotion, golden diya lamp light illuminating her features, incense smoke wafting across frame --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Static close-up with volumetric smoke drifting past face; depth of field sharpens on queen's tear.</code></li>
+<li><strong>SFX</strong>: Dramatic musical swell; chime of small brass prayer bells.</li>
+</ul>
+<h4><strong>Beat 06 (00:35 - 00:42)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The King Recovers.</li>
+<li><strong>Narration</strong>: <em>"The King miraculously recovered. The royal court rejoiced. But their celebration turned instantly to horror."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, King Krishna I sitting upright in bed, eyes wide with sudden shock and realization, royal ministers whispering urgently behind him, tense atmosphere --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Rack focus from the smiling ministers in background to the king’s dread-filled expression in foreground.</code></li>
+<li><strong>SFX</strong>: Sudden silence in music; sharp intake of breath.</li>
+</ul>
+<h4><strong>Beat 07 (00:42 - 00:49)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-up — The Starving Queen.</li>
+<li><strong>Narration</strong>: <em>"The queen was already weakening. The vow could not be broken. She would not eat until she saw the shikhara—the pinnacle of the temple."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic close-up, pale and frail ancient Indian queen resting against silk pillows, eyes resolute with sacred devotion, fasting, golden jewelry heavy on fragile shoulders --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Gentle slow zoom-out revealing the queen’s growing frailty against the opulent palace cushions.</code></li>
+<li><strong>SFX</strong>: Faint wind sound; mournful flute phrase.</li>
+</ul>
+<h4><strong>Beat 08 (00:49 - 00:56)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — Assembly of Imperial Architects in the Council Hall.</li>
+<li><strong>Narration</strong>: <em>"The King summoned the greatest master builders of the Deccan. He demanded an immediate solution."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot, imperial council chamber, King Krishna I standing before a gathering of elderly royal architects holding measuring rods and palm-leaf scrolls, tense royal court drama --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Wide lateral dolly tracking past the row of anxious master builders bowing before the throne.</code></li>
+<li><strong>SFX</strong>: Murmur of anxious male voices; clinking of royal scepter against stone floor.</li>
+</ul>
+<h4><strong>Beat 09 (00:56 - 01:03)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Chief Architect Shaking His Head.</li>
+<li><strong>Narration</strong>: <em>"Their reply was a death sentence. To quarry stone, build foundations, and erect timber scaffolding to raise a spire would take twenty years."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, senior ancient Indian royal architect with gray beard shaking head in despair, holding wooden dividers over a scroll, King visible out of focus in background looking furious --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow tilt up from the unrolled blueprint scroll to the defeat in the architect's eyes.</code></li>
+<li><strong>SFX</strong>: Rustling of stiff parchment; somber brass horn blast.</li>
+</ul>
+<h4><strong>Beat 10 (01:03 - 01:10)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Extreme Close-up — An Hourglass / Water Clock Running Out.</li>
+<li><strong>Narration</strong>: <em>"Before the foundation stones could even settle into the earth [...] the queen would starve to death."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>macro extreme close-up, ancient Indian water clock (ghatika yantra), water droplets falling through a perforated copper bowl into stone basin, measuring fleeting time, dramatic moody shadows --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>High-speed macro of single water droplet hitting surface, ripples expanding outward in slow motion.</code></li>
+<li><strong>SFX</strong>: Amplified hollow water droplet drop (<em>plink</em>); deep reverberating bass boom.</li>
+</ul>
+<hr />
+<h3>ACT II: THE ARCHITECT'S HERESY (01:10 – 02:15)</h3>
+<h4><strong>Beat 11 (01:10 - 01:17)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — A Lone Figure Stepping Forward.</li>
+<li><strong>Narration</strong>: <em>"Into the despair of the imperial council stepped a solitary master builder whose name would live for twelve hundred years: Kokasa."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot, ancient Indian royal council, a solitary confident middle-aged architect in simple cotton dhoti walking down the center aisle between rows of seated courtiers toward the throne, cinematic --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Low-angle tracking shot following Kokasa's bare feet walking steadily forward across polished flagstones.</code></li>
+<li><strong>SFX</strong>: Firm footsteps on stone; sudden quiet in the hall.</li>
+</ul>
+<h4><strong>Beat 12 (01:17 - 01:23)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Close-up — Kokasa's Face.</li>
+<li><strong>Narration</strong>: <em>"Kokasa was a master Sthapati from central India—an engineer who did not merely follow tradition; he commanded the laws of physics."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic character portrait, Kokasa the master architect, sharp piercing eyes, sun-baked weathered skin, calm focused expression, simple cotton shawl, 8k photorealistic historical portrait --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Subtle slow zoom into Kokasa’s intense, calculating eyes; dust particles catching golden rim light.</code></li>
+<li><strong>SFX</strong>: Swelling string harmony; rhythmic wooden tapping.</li>
+</ul>
+<h4><strong>Beat 13 (01:23 - 01:30)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Kokasa Unrolling the Cloth Canvas.</li>
+<li><strong>Narration</strong>: <em>"Before the astonished king, Kokasa made an outrageous declaration: 'Your Majesty, the Queen will behold the temple's pinnacle in seven days.'"</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Kokasa kneeling gracefully on one knee, unrolling a large stiff cotton cloth drawing covered in geometric Sanskrit architectural diagrams before the King's feet --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Camera tracks downward as the cloth scroll rolls open, revealing intricate temple blueprints in red mineral ink.</code></li>
+<li><strong>SFX</strong>: Heavy fabric unrolling across stone; gasp from royal court.</li>
+</ul>
+<h4><strong>Beat 14 (01:30 - 01:36)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-up — King Krishna I's Disbelief.</li>
+<li><strong>Narration</strong>: <em>"The court scoffed. Seven days? Seven days was impossible even to clear the brushwood, let alone build a spire."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, King Krishna I leaning forward on his carved armrest, eyebrows raised in skepticism and desperate hope, golden crown reflecting torch flame --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Quick punch-in zoom onto the king’s face, catching the sudden shift from despair to disbelief.</code></li>
+<li><strong>SFX</strong>: Sharp low cello scrape; mutters of "Impossible!"</li>
+</ul>
+<h4><strong>Beat 15 (01:36 - 01:43)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Diagrammatic 2D/3D Animation Overlay — The Conventional Method.</li>
+<li><strong>Narration</strong>: <em>"Every temple in the world was additive: quarried blocks stacked from the ground up, requiring years of wooden scaffolding."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>3D architectural cross-section diagram, ancient Indian stone temple being built from the ground up, wooden timber scaffolding surrounding stone walls, technical blueprint aesthetic, sepia parchment look --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Animated architectural motion graphic showing stone blocks stacking upward slowly from ground level.</code></li>
+<li><strong>SFX</strong>: Sounds of stone grinding; creaking timber scaffolding.</li>
+</ul>
+<h4><strong>Beat 16 (01:43 - 01:50)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Diagrammatic Inversion — The Mountain Shaved from the Top Down.</li>
+<li><strong>Narration</strong>: <em>"Kokasa's plan was pure subtractive heresy. They would not build up. They would climb to the mountain's crest [...] and carve downward."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic concept art, a giant solid mountain cliff with phantom glowing blue outline of a temple inside it, giant stonecutter chisels carving from the summit down into the bedrock, conceptual architecture --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Animated blue technical laser-like lines slicing through solid mountain, revealing a temple hidden inside stone.</code></li>
+<li><strong>SFX</strong>: Whoosh of air; deep electronic-acoustic sub-bass boom.</li>
+</ul>
+<h4><strong>Beat 17 (01:50 - 01:56)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Kokasa Gesturing to the Shikhara.</li>
+<li><strong>Narration</strong>: <em>"By starting at the very summit, the spire—the shikhara—would be carved first. In one week, the queen could look up from the valley and see it gleaming in the sun."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Kokasa pointing his wooden stylus at the top of the architectural drawing, passionate intensity, courtiers leaning in to examine the diagram, warm cinematic lighting --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Dolly shot circling Kokasa as his hand points upward toward the ceiling.</code></li>
+<li><strong>SFX</strong>: Inspiring rising orchestral chord; crisp wooden click.</li>
+</ul>
+<h4><strong>Beat 18 (01:56 - 02:02)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-up — The Shilpa Shastras Text.</li>
+<li><strong>Narration</strong>: <em>"This was the secret doctrine of the Shilpa Shastras: deductive excavation. The mountain was not raw material; it was the temple itself, waiting to be freed."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>macro shot, ancient Sanskrit palm-leaf manuscript bound with red string, weathered text in ancient Brahmi and Nagari script, illuminated by warm oil lamp, golden dust motes --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Extreme macro tracking shot gliding across carved Sanskrit verses etched into dried palm leaves.</code></li>
+<li><strong>SFX</strong>: Gentle rustle of brittle leaves; soft ambient chant.</li>
+</ul>
+<h4><strong>Beat 19 (02:02 - 02:09)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — The Court Stunned into Silence.</li>
+<li><strong>Narration</strong>: <em>"No scaffolding. No hauling granite from distant quarries. The mountain's own stone would serve as its working platform."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot of the royal council, architects staring at Kokasa with open mouths, King Krishna I slowly rising from his throne, majestic historical cinematography --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow pedestal up as the King stands to full height, silhouette commanding the grand hall.</code></li>
+<li><strong>SFX</strong>: Sitar and tanpura drone swelling with tension.</li>
+</ul>
+<h4><strong>Beat 20 (02:09 - 02:15)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Close-up — The King's Command.</li>
+<li><strong>Narration</strong>: <em>"The King made his choice: 'Find the mountain. We begin immediately.'"</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium close-up, King Krishna I delivering a royal command, hand outstretched, regal authority, intense determination in his eyes, cinematic 8k --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Snap zoom on the King's face as his hand drops in command.</code></li>
+<li><strong>SFX</strong>: Resonant war drum strike (<em>Boom!</em>).</li>
+</ul>
+<hr />
+<h3>ACT III: SCOUTING &amp; GEOLOGY OF CHARANANDRI (02:15 – 03:25)</h3>
+<h4><strong>Beat 21 (02:15 - 02:22)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Aerial Landscape — Deccan Volcanic Plateau.</li>
+<li><strong>Narration</strong>: <em>"Kokasa rode out into the rugged expanse of the Western Deccan. He was not looking for beauty; he was looking for raw lithological strength."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide panoramic landscape, 8th century Deccan plateau Maharashtra, ancient riders on horseback crossing dry savannah beneath towering black basalt cliffs, cinematic morning light --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Aerial drone shot flying forward over riders toward a distant volcanic mountain range.</code></li>
+<li><strong>SFX</strong>: Galloping horse hooves on dry earth; wind blowing across plains.</li>
+</ul>
+<h4><strong>Beat 22 (02:22 - 02:29)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Geological Animation — Prehistoric Lava Floods.</li>
+<li><strong>Narration</strong>: <em>"Sixty-six million years earlier, at the end of the age of dinosaurs, the earth tore open. Millions of cubic kilometers of molten lava flooded the region."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>epic cinematic visualization, prehistoric Deccan Traps volcanic eruption, colossal fissure vents spewing rivers of orange molten lava across black smoking plains, 66 million years ago, hyperrealistic CGI --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow aerial sweep over glowing lava rivers cascading across primeval landscape, cooling into black rock.</code></li>
+<li><strong>SFX</strong>: Deep rumbling seismic roar; hissing lava bubbles.</li>
+</ul>
+<h4><strong>Beat 23 (02:29 - 02:36)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Geological Stratification — Basalt Layers.</li>
+<li><strong>Narration</strong>: <em>"Layer upon layer cooled into stacked horizontal sheets of tholeiitic basalt, creating the towering terraces of the Sahyadri mountains."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>macro cross-section of towering volcanic basalt cliff, distinct horizontal geological strata visible, dark compact stone layers alternating with weathered reddish rock bands, sunny day --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Vertical tilt shot moving down the cliff face, highlighting distinct geological strata lines.</code></li>
+<li><strong>SFX</strong>: Wind whistling down canyon; deep stone resonance.</li>
+</ul>
+<h4><strong>Beat 24 (02:36 - 02:43)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Establishing Shot — The Charanandri Hills at Elapura (Ellora).</li>
+<li><strong>Narration</strong>: <em>"Kokasa arrived at Elapura—the sacred Charanandri ridge. A gently sloping escarpment rising thirty meters above the plain."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic wide shot of the Charanandri hills at Ellora, 8th century, rugged basalt cliff face bathed in golden morning sun, ancient footpaths, untamed wild Deccan landscape --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow crane shot rising above acacia trees to reveal the unbroken cliff scarp.</code></li>
+<li><strong>SFX</strong>: Distant peacocks calling; rustling dry grass.</li>
+</ul>
+<h4><strong>Beat 25 (02:43 - 02:50)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Map Visualization — Sacred &amp; Commercial Geography.</li>
+<li><strong>Narration</strong>: <em>"The location was geographically perfect: it stood adjacent to the sacred Shiva shrine of Ghrishneshwar, and directly guarded the Dakshinapatha trade corridor."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>ancient stylized map on parchment showing ancient Maharashtra trade routes, ink drawings of horse caravans, labeled 'Dakshinapatha', mountain pass near Elapura highlighted with golden glow --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Animated camera moves along red painted trade route on map, arriving at a glowing golden temple pin.</code></li>
+<li><strong>SFX</strong>: Merchant caravan bells; soft ambient chatter.</li>
+</ul>
+<h4><strong>Beat 26 (02:50 - 02:57)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Kokasa Inspecting the Cliff Face.</li>
+<li><strong>Narration</strong>: <em>"Existing caves had already been carved here by Buddhist and Hindu ascetics. Kokasa knew the rock held together. But was it strong enough for a monolith?"</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Kokasa touching his bare palm against the rough black basalt rock of Ellora cliff, eyes closed, feeling the texture and temperature of the stone, cinematic sunlight --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow tracking shot closing in on Kokasa’s hand pressed against the weathered volcanic stone.</code></li>
+<li><strong>SFX</strong>: Hand scraping against coarse rock; low ambient drone.</li>
+</ul>
+<h4><strong>Beat 27 (02:57 - 03:04)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The Sound of Bad Rock (Amygdaloidal Basalt).</li>
+<li><strong>Narration</strong>: <em>"He took a bronze testing mallet and struck the upper rock shelf. If the stone rang with a dull, hollow thud, it was amygdaloidal—full of weak zeolite bubbles that would shatter under stress."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up shot, ancient bronze hammer tapping a porous, rough section of rock with white zeolite crystal pockets, small crumbly rock dust falling, macro --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Macro shot of bronze hammer striking rock, releasing tiny fragments of brittle stone.</code></li>
+<li><strong>SFX</strong>: Dull, hollow, muddy thud (<em>thump</em>).</li>
+</ul>
+<h4><strong>Beat 28 (03:04 - 03:11)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The Sound of Perfection (Microcrystalline Basalt).</li>
+<li><strong>Narration</strong>: <em>"He moved further down the ridge and struck again. This time, the stone rang out like a temple bell: a clear, high-pitched metallic chime."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>extreme close-up, bronze hammer striking ultra-dense dark blue-black basalt, a tiny spark leaps, flawless fine-grained crystalline rock texture, high-speed photography --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Ultra-slow motion of hammer head kissing solid black stone, tiny orange spark jumping.</code></li>
+<li><strong>SFX</strong>: Sharp, bell-like, high-frequency metallic ring (<em>PINGGGGGG</em>) with long acoustic sustain.</li>
+</ul>
+<h4><strong>Beat 29 (03:11 - 03:18)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Diagrammatic Overlay — Compressive Strength.</li>
+<li><strong>Narration</strong>: <em>"This was dense microcrystalline basalt. Its compressive strength exceeded one hundred and forty megapascals—twice as strong as modern structural concrete."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>technical graphic overlay on dark basalt rock face, ancient Sanskrit mathematical formulas and modern engineering stress vectors radiating through stone in glowing gold lines, 8k --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Glowing stress vectors propagate through the rock matrix, illuminating internal rock stability.</code></li>
+<li><strong>SFX</strong>: High-tech meets ancient musical chime; low mechanical pulse.</li>
+</ul>
+<h4><strong>Beat 30 (03:18 - 03:25)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — Kokasa Standing Victorious on the Cliff Crest.</li>
+<li><strong>Narration</strong>: <em>"Kokasa turned to his apprentices: 'Here is our mountain. It will hold the house of Shiva.'"</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>hero shot, low angle, Kokasa standing at the highest point of the Charanandri ridge, wind whipping his hair, holding his bronze mallet high against a brilliant morning sky, epic --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Dramatic 360-degree rotational orbit around Kokasa on the ridge crest.</code></li>
+<li><strong>SFX</strong>: Triumphant brass swell; wind gusting through frame.</li>
+</ul>
+<hr />
+<h3>ACT IV: THE IMPERIAL WAR CHEST &amp; CAPITAL (03:25 – 04:35)</h3>
+<h4><strong>Beat 31 (03:25 - 03:32)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — Royal Palace Treasure Room.</li>
+<li><strong>Narration</strong>: <em>"Carving four hundred thousand tons of mountain is not merely an act of faith; it is an astronomical economic undertaking."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot, vast subterranean royal Rashtrakuta treasury, massive teak chests overflowing with gold coins, silver ingots, pearls, and gemstone jewelry, guards with torches standing watch --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow forward dolly gliding over open chests piled high with ancient gold coins gleaming under torchlight.</code></li>
+<li><strong>SFX</strong>: Clinking of thousands of gold coins; rhythmic palace guard footsteps.</li>
+</ul>
+<h4><strong>Beat 32 (03:32 - 03:39)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The War Spoils of the Chalukyas.</li>
+<li><strong>Narration</strong>: <em>"In modern terms, Kailasa was a billion-dollar megaproject. Where did King Krishna the First find such capital?"</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Rashtrakuta soldiers unloading heavy iron-banded treasure chests from bullock carts, captured royal banners of the Badami Chalukyas lying discarded on stone, victorious historical drama --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Pan across soldiers hauling heavy treasure chests off wooden carts into royal storehouses.</code></li>
+<li><strong>SFX</strong>: Heavy wooden chests thudding onto stone; clatter of armor.</li>
+</ul>
+<h4><strong>Beat 33 (03:39 - 03:46)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Historical Reenactment — The Military Triumph.</li>
+<li><strong>Narration</strong>: <em>"First: Imperial conquest. Krishna had just crushed the legendary Chalukyas of Badami, looting their royal treasuries and seizing decades of accumulated gold."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic battle aftermath, Rashtrakuta imperial cavalry on armored warhorses overlooking conquered city gates, flags bearing the Garuda eagle fluttering triumphantly in smoky sunset --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow tracking shot past majestic warhorse and imperial rider holding royal Rashtrakuta spear.</code></li>
+<li><strong>SFX</strong>: Distant battle horns; victory cheers echoing.</li>
+</ul>
+<h4><strong>Beat 34 (03:46 - 03:53)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Engraving a Copper Plate Charter (<em>Tamra-shasana</em>).</li>
+<li><strong>Narration</strong>: <em>"Second: Agrarian tax decentralization. The king did not simply spend gold; he re-engineered the economy of the region."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>macro shot, ancient Indian royal engraver using sharp iron burin to carve Sanskrit inscriptions into polished copper sheets, copper shavings curling away, soft warm light --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Macro rack-focus following the iron tool as it carves ancient Sanskrit characters into gleaming copper.</code></li>
+<li><strong>SFX</strong>: Metallic scraping of tool on copper (<em>skrrrrch</em>); soft breathing of engraver.</li>
+</ul>
+<h4><strong>Beat 35 (03:53 - 04:00)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Agrarian Land Grants (<em>Brahmadeya</em>).</li>
+<li><strong>Narration</strong>: <em>"By issuing royal copper-plate grants, he transferred the tax revenues of dozens of surrounding farming villages directly to the temple works."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, lush green Deccan farmland, ancient Indian farmers harvesting ripe golden wheat and rice paddies, bullock carts laden with grain moving toward mountain in distance --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Gentle lateral tracking shot moving past farmers working in irrigated fields with bullocks.</code></li>
+<li><strong>SFX</strong>: Gentle splashing of irrigation water; songbirds in pastoral landscape.</li>
+</ul>
+<h4><strong>Beat 36 (04:00 - 04:07)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — The Supply Lines to the Mountain.</li>
+<li><strong>Narration</strong>: <em>"Every week, convoys of bullock carts arrived at Elapura carrying tons of rice, lentils, dried cow dung, and sesame oil to sustain the workforce."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot, long convoy of wooden bullock carts loaded high with woven grain sacks and clay oil jars, kicking up dust on an ancient dirt road leading to the Ellora cliff, sunny afternoon --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Aerial drone following the serpentine line of supply carts winding through the dry scrub hills.</code></li>
+<li><strong>SFX</strong>: Wooden cartwheel axles groaning; drivers clicking tongues at bullocks.</li>
+</ul>
+<h4><strong>Beat 37 (04:07 - 04:14)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The Merchant Guilds (<em>Shrenis</em>).</li>
+<li><strong>Narration</strong>: <em>"Third: The merchant guilds—the Shrenis. Wealthy caravan syndicates operating along the Silk Road branches poured private fortunes into the temple."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, wealthy ancient Indian merchants in fine embroidered muslin robes meeting with royal ministers, exchanging bags of silver coins and ledger scrolls, atmospheric marketplace verandah --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Medium pan from wealthy merchant sliding a pouch of gold coins across table to monk-scribe.</code></li>
+<li><strong>SFX</strong>: Heavy chink of gold coins; chatter of bustling trade market.</li>
+</ul>
+<h4><strong>Beat 38 (04:14 - 04:21)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Royal Privileges Given to Guilds.</li>
+<li><strong>Narration</strong>: <em>"In exchange for funding, merchants received royal tax exemptions, toll-free passage through mountain passes, and sacred merit in the eyes of the gods."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, imperial brass token and wax-sealed parchment being handed to a merchant's hand, symbol of royal safe passage, detailed historical costume --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Rack focus from the seal to the merchant’s satisfied, reverent nod.</code></li>
+<li><strong>SFX</strong>: Crisp parchment fold; soft ceremonial drum stroke.</li>
+</ul>
+<h4><strong>Beat 39 (04:21 - 04:28)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — The Monastic Banking Hub.</li>
+<li><strong>Narration</strong>: <em>"Even the Buddhist and Hindu monasteries on the ridge functioned as financial escrow hubs, managing endowments and lending credit to caravan travelers."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot inside a rock-cut monastery verandah, monks sitting on stone benches with wooden ledger boxes, counting gold coins and advising traveling caravan leaders, cool shadows and bright courtyard --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow tracking shot past ancient stone pillars framing monks at work.</code></li>
+<li><strong>SFX</strong>: Soft rhythmic chanting in background; clinking of bronze scales.</li>
+</ul>
+<h4><strong>Beat 40 (04:28 - 04:35)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Graphic — The Complete Financial Machine.</li>
+<li><strong>Narration</strong>: <em>"The war chest was full. The supply lines were locked. Now, Kokasa needed to assemble the greatest engineering guild in human history."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic concept shot, stacks of gold coins, copper charters, and grain sacks blending into the rocky silhouette of the mountain under dramatic golden sky, cinematic financial architecture --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Camera pulls back through golden atmospheric haze, revealing the entire mountain waiting.</code></li>
+<li><strong>SFX</strong>: Rising orchestral brass fanfare with heavy timpani beat.</li>
+</ul>
+<hr />
+<h3>ACT V: THE GUILD OF MASTERS &amp; WEAPONRY (04:35 – 05:40)</h3>
+<h4><strong>Beat 41 (04:35 - 04:42)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — The Artisan Encampment at Ellora.</li>
+<li><strong>Narration</strong>: <em>"Over the course of three months, hundreds of specialized artisans and their families arrived at the base of the Charanandri ridge."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide sprawling establishing shot, ancient Indian construction encampment of hundreds of thatch and canvas tents at the foot of black volcanic cliffs, cooking fires sending smoke into morning air --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>High drone shot slowly sweeping across the bustling artisan village at the cliff base.</code></li>
+<li><strong>SFX</strong>: Distant clamor of a thousand people, children laughing, cattle lowing, smoke crackling.</li>
+</ul>
+<h4><strong>Beat 42 (04:42 - 04:48)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The Hierarchy of Guilds.</li>
+<li><strong>Narration</strong>: <em>"Kokasa did not use slave labor. This was a professional hereditary guild of freemen, organized into strict technical hierarchies."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, group of master craftsmen wearing distinct guild insignia and turbans gathering around Kokasa, proud expressions, holding tools of their trades, photorealistic, 8k --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Medium tracking shot panning across the determined, weathered faces of the master craftsmen.</code></li>
+<li><strong>SFX</strong>: Murmur of respected craftsmen greeting their master.</li>
+</ul>
+<h4><strong>Beat 43 (04:48 - 04:55)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The Sutradharas (Surveyors).</li>
+<li><strong>Narration</strong>: <em>"At the top were the Sutradharas—the 'Holders of the String'. The elite geometricians who would translate three-dimensional temple geometry into raw stone."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, ancient Indian surveyor holding a bronze plumb bob suspended by a braided cord, measuring against a calibrated wooden rule, intensely focused expression --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Close-up of bronze plumb bob swaying slightly, then steadying perfectly against marked stone.</code></li>
+<li><strong>SFX</strong>: Whistle of cord in wind; crisp wooden ruler tap.</li>
+</ul>
+<h4><strong>Beat 44 (04:55 - 05:01)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Action Shot — The Takshakas (Quarrymen).</li>
+<li><strong>Narration</strong>: <em>"Beneath them were the Takshakas—the stone hewers. Men with iron wrists who understood how to shatter volcanic basalt without cracking the strata below."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium action shot, muscular ancient Indian quarrymen bare-chested with cotton waistcloths, hoisting heavy stone sledgehammers over shoulders, resolute expressions, dramatic side lighting --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow motion push-in on a quarryman wiping sweat from forehead with calloused forearm.</code></li>
+<li><strong>SFX</strong>: Heavy breath; clanking of stone sledgehammers.</li>
+</ul>
+<h4><strong>Beat 45 (05:01 - 05:08)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The Rupakaras (Master Sculptors).</li>
+<li><strong>Narration</strong>: <em>"Waiting in reserve were the Rupakaras—the sculptors. Artists whose chisels would liberate dancing deities, charging elephants, and celestial maidens from the rock."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, master sculptor holding delicate iron gouges and small wooden mallets, carving a miniature terracotta test figure of an elephant, soft artistic focus --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Rack focus from the master sculptor’s eyes to the clay elephant model in his fingers.</code></li>
+<li><strong>SFX</strong>: Gentle scraping of clay; artistic flute motif.</li>
+</ul>
+<h4><strong>Beat 46 (05:08 - 05:14)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Interior — The Day-and-Night Charcoal Forges.</li>
+<li><strong>Narration</strong>: <em>"But without weapons, the army was useless. Diamond-hard basalt destroys iron tools in hours."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot of a massive outdoor blacksmith forge, dozens of open charcoal fires roaring orange in the dark, billows pumping air, hundreds of glowing red iron bars stacked, sparks raining --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Dolly shot through the blacksmith camp, sparks flying across the camera lens in slow motion.</code></li>
+<li><strong>SFX</strong>: Roar of intense furnace fire; heavy bellows breathing (<em>whoosh-haaa</em>).</li>
+</ul>
+<h4><strong>Beat 47 (05:14 - 05:21)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Blacksmiths Hammering Red-Hot Iron.</li>
+<li><strong>Narration</strong>: <em>"Day and night, specialized blacksmiths kept charcoal furnaces blazing at twelve hundred degrees Celsius."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>extreme close-up, ancient Indian blacksmith striking a glowing white-hot pointed iron chisel on a dark anvil, bright sparks exploding into the darkness, hyperrealistic, 8k --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>High-speed camera capturing the hammer impact on glowing iron; shower of brilliant sparks.</code></li>
+<li><strong>SFX</strong>: Thunderous anvil strike (<em>CLANGGGG!</em>); hiss of glowing embers.</li>
+</ul>
+<h4><strong>Beat 48 (05:21 - 05:27)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Shot — Quenching the Carbonized Chisel.</li>
+<li><strong>Narration</strong>: <em>"They forged high-carbon wootz-type steel chisels, quenching red-hot iron in oil and water to give the tips diamond-like hardness."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>macro shot, red-hot steel chisel being plunged into a stone vat of cold water, violent steam erupting, boiling bubbles around cooling blue metal, dramatic lighting --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Violent burst of steam as hot chisel tip enters water, water turning cloudy with carbon bubbles.</code></li>
+<li><strong>SFX</strong>: Violent water sizzle and hiss (<em>Tsssssssshhhhh!</em>).</li>
+</ul>
+<h4><strong>Beat 49 (05:27 - 05:34)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The Three Types of Chisels.</li>
+<li><strong>Narration</strong>: <em>"Three tools were perfected: the pointed punch for bulk splitting, the claw chisel for leveling, and the flat gouge for fine sculpture."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>still life display of three ancient Indian forged iron chisels resting on a dark basalt slab: a heavy pointed punch, a toothed claw chisel, and a fine flat razor chisel, historical realism --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow tilt down across the three specialized iron chisels, each catching a glint of morning sun.</code></li>
+<li><strong>SFX</strong>: Crisp metallic scrape as each tool is laid down.</li>
+</ul>
+<h4><strong>Beat 50 (05:34 - 05:40)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — Masons Hoisting Their Tools.</li>
+<li><strong>Narration</strong>: <em>"Ten thousand iron chisels were stacked ready for battle. The tools were forged. The army stood waiting."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide heroic shot, hundreds of quarrymen and masons standing in military-like formation at the base of Ellora ridge, holding gleaming iron chisels and hammers aloft, sunrise --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Low-angle tracking shot moving down the line of determined quarrymen holding hammers.</code></li>
+<li><strong>SFX</strong>: Unified shout of hundreds of craftsmen; rhythmic war drum roll.</li>
+</ul>
+<hr />
+<h3>ACT VI: SURVEYING THE LIVING STONE (05:40 – 06:40)</h3>
+<h4><strong>Beat 51 (05:40 - 05:46)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Dawn Wide Shot — The Summit of the Mountain.</li>
+<li><strong>Narration</strong>: <em>"At dawn on the auspicious day of the full moon, Kokasa and his senior surveyors climbed to the flat summit of the Charanandri ridge."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot, sunrise over the flat volcanic summit of Ellora ridge, Kokasa and six senior surveyors in white dhotis walking onto the bare black rock, golden morning mist rising --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Crane shot descending from the morning sky down to the surveyors stepping onto the virgin rock summit.</code></li>
+<li><strong>SFX</strong>: Pure silence of mountain wind, followed by a low resonant flute note.</li>
+</ul>
+<h4><strong>Beat 52 (05:46 - 05:52)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Erecting the Gnomon (<em>Shanku</em>).</li>
+<li><strong>Narration</strong>: <em>"Their first act was not carving, but astronomy. In the center of the summit, they drove a tapered wooden pole into the bedrock: the sacred Shanku."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, hands driving a polished teak gnomon pole into a drilled hole in the basalt rock, sunlight casting a sharp razor-thin shadow across the flat stone surface --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Tilt down as the wooden pole is tapped into place; its shadow swings across the rock.</code></li>
+<li><strong>SFX</strong>: Solid wooden tap into stone; soft whistle of wind.</li>
+</ul>
+<h4><strong>Beat 53 (05:52 - 05:58)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Tracing the Solar Circle (<em>Mandala</em>).</li>
+<li><strong>Narration</strong>: <em>"Using a cord tied to the pole, they etched a circle in the rock. As the sun rose and set, the shadow touched the circle at dawn and dusk, revealing the true East-West line."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>high angle looking down, large circular geometric mandala etched in white chalk on black basalt rock, thin shadow line crossing the circle, hands marking the intersection with yellow ochre --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Time-lapse motion graphic of the shadow sweeping across the chalk circle, pausing at the exact cardinal points.</code></li>
+<li><strong>SFX</strong>: Accelerated ticking rhythm; chiming of a celestial singing bowl.</li>
+</ul>
+<h4><strong>Beat 54 (05:58 - 06:04)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — Snapping the Long Cinnabar Chalk Line.</li>
+<li><strong>Narration</strong>: <em>"This established the sacred axis: Kailasa would face exact West, greeting the setting sun."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide shot, surveyors holding a long twisted jute cord soaked in brilliant red vermilion powder taut across eighty meters of flat rock summit, ready to snap it, early morning light --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Low-angle tracking shot along the length of the vibrant red cord stretched taut across black basalt.</code></li>
+<li><strong>SFX</strong>: Tension creak of stretched hemp cord (<em>creeeak</em>).</li>
+</ul>
+<h4><strong>Beat 55 (06:04 - 06:10)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Action Shot — The Cord Snaps.</li>
+<li><strong>Narration</strong>: <em>"The surveyor pulled the cord three feet into the air [...] and released it."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>action macro photograph, taut red chalk rope hitting flat dark basalt rock, an explosive puff of crimson vermilion dust rising in a razor-straight line, frozen motion --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Super slow motion of the cord snapping against the stone, red dust exploding upward in a neat cloud.</code></li>
+<li><strong>SFX</strong>: Sharp, whip-like crack (<em>THWACK!</em>); soft puff of air.</li>
+</ul>
+<h4><strong>Beat 56 (06:10 - 06:16)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Aerial Graphic Overlay — The Razor-Straight Grid.</li>
+<li><strong>Narration</strong>: <em>"A razor-straight red line cut across the volcanic stone. Then another. And another."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>high aerial shot looking straight down on the mountain summit, a pristine red geometric grid carved and marked on the black rock, glowing softly under golden morning sun --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Aerial pull-back revealing a complex intersecting red grid spreading across the mountain peak.</code></li>
+<li><strong>SFX</strong>: Multiple rhythmic cord snaps in quick succession (<em>thwack, thwack, thwack</em>).</li>
+</ul>
+<h4><strong>Beat 57 (06:16 - 06:22)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Diagrammatic 3D Cut — The Three Trench Boundaries.</li>
+<li><strong>Narration</strong>: <em>"They laid out the master boundary: an enormous U-shaped trench footprint: eighty-four meters long, forty-seven meters wide."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>3D architectural cutaway diagram, mountain summit marked with glowing red trenches outlining the exact dimensions of Kailasa courtyard, technical 3D perspective --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Camera rotates in 3D around the mountain model as three glowing trenches sink 33 meters into the virtual bedrock.</code></li>
+<li><strong>SFX</strong>: Digital-acoustic whoosh; heavy sub-bass drone.</li>
+</ul>
+<h4><strong>Beat 58 (06:22 - 06:28)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Kokasa Marking the Center Island.</li>
+<li><strong>Narration</strong>: <em>"Between those trenches lay a colossal monolith of isolated mountain: fifty meters long, thirty-three meters deep. Inside that uncarved stone was the entire temple."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Kokasa standing at the edge of the marked red box on the summit, pointing his staff down at the central solid rock plateau, intense architectural vision --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow tilt up from the marked red line on stone to Kokasa’s visionary, determined face.</code></li>
+<li><strong>SFX</strong>: Wind building in volume; solemn string chords.</li>
+</ul>
+<h4><strong>Beat 59 (06:28 - 06:34)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The Water-Level Balance Trough (<em>Jala-Yantra</em>).</li>
+<li><strong>Narration</strong>: <em>"To guarantee the trenches descended perfectly vertical, they used water leveling troughs. If one cut drifted by even three inches, a column below would shatter."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, ancient Indian wooden leveling trough filled with still water, reflecting the blue sky, surveyors checking water meniscus against calibrated marks, precision engineering --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Extreme macro of water surface settling to perfect equilibrium against wooden carved tick marks.</code></li>
+<li><strong>SFX</strong>: Tiny water ripple; soft breath of surveyor.</li>
+</ul>
+<h4><strong>Beat 60 (06:34 - 06:40)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — The Summit Fully Marked.</li>
+<li><strong>Narration</strong>: <em>"By sunset, the mountain was chained in sacred geometry. The blueprint was physically etched into the living earth."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide panoramic shot of the mountain summit at sunset, complex red and white geometric grid glowing across the basalt plateau, Kokasa and his team walking off the field, epic scale --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow crane shot rising high above the marked summit as the red sunset bathes the grid in crimson.</code></li>
+<li><strong>SFX</strong>: Deep resonant temple horn blowing across the hills.</li>
+</ul>
+<hr />
+<h3>ACT VII: THE ROYAL COUNCIL &amp; THE IMPERIAL SEAL (06:40 – 07:25)</h3>
+<h4><strong>Beat 61 (06:40 - 06:46)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The Model Presented to King Krishna I.</li>
+<li><strong>Narration</strong>: <em>"Kokasa returned to the imperial court carrying a miniature terracotta model of the mountain, carved with its descending trenches."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Kokasa placing a detailed carved clay scale model of the Kailasa temple and surrounding trenches onto a low teak table before King Krishna I, palace interior at night --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Close dolly shot focusing on the exquisite miniature clay model as Kokasa gently sets it down.</code></li>
+<li><strong>SFX</strong>: Gentle tap of clay on wood; court murmurs of wonder.</li>
+</ul>
+<h4><strong>Beat 62 (06:46 - 06:51)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The King Inspecting the Model.</li>
+<li><strong>Narration</strong>: <em>"King Krishna gazed upon the miniature. For the first time, he saw how the miracle would work."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, King Krishna I leaning over the clay model, his fingers gently tracing the miniature spire, candlelight highlighting awe and amazement in his eyes --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow push-in on the king's eyes reflecting candle flame as his finger traces the clay shikhara.</code></li>
+<li><strong>SFX</strong>: Soft intake of breath; ambient tanpura harmony.</li>
+</ul>
+<h4><strong>Beat 63 (06:51 - 06:57)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — The King Turns to the Queen's Quarters.</li>
+<li><strong>Narration</strong>: <em>"He looked toward the inner chambers where his queen lay fading. Seven days. The promise had to be kept."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, King Krishna I turning his head toward a draped silk doorway leading to the queen's sickroom, intense protective love and imperial resolve on his face --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Rack focus from the clay model in foreground to the king's determined gaze toward the doorway.</code></li>
+<li><strong>SFX</strong>: Mournful violin phrase; faint jingle of silk curtains.</li>
+</ul>
+<h4><strong>Beat 64 (06:57 - 07:02)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — The Molten Red Sealing Wax.</li>
+<li><strong>Narration</strong>: <em>"He called for the royal seal."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>close-up, hot crimson sealing wax pouring from a miniature brass ladle onto an official copper-plate royal decree, smoke curling upward in candlelight --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow motion of thick red wax dripping and spreading in a hot puddle on gleaming copper.</code></li>
+<li><strong>SFX</strong>: Sizzle of hot wax dripping on metal.</li>
+</ul>
+<h4><strong>Beat 65 (07:02 - 07:08)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Close-Up — The Garuda Signet Ring Presses In.</li>
+<li><strong>Narration</strong>: <em>"King Krishna pressed his heavy gold signet ring—the winged eagle Garuda, emblem of the Rashtrakutas—into the wax."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>extreme close-up, heavy gold royal signet ring with engraved Garuda eagle crest stamping firmly into the hot red wax, spreading it into a crisp imperial seal, sparks and smoke --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Snap down of the ring into wax; molten wax squashes outward with microscopic detail.</code></li>
+<li><strong>SFX</strong>: Heavy stamp impact (<em>Thump!</em>); sizzle of seal.</li>
+</ul>
+<h4><strong>Beat 66 (07:08 - 07:14)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Shot — The Imperial Proclamation.</li>
+<li><strong>Narration</strong>: <em>"The royal decree was sealed: 'Let the mountain of Elapura be fashioned into the abode of the Lord of Kailasa.'"</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide majestic shot, royal herald holding the sealed copper charter aloft in the council hall, King Krishna I raising his scepter, courtiers and guards cheering in respect --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Wide pedestal shot rising as the herald raises the charter to the palace ceiling.</code></li>
+<li><strong>SFX</strong>: Resounding royal court cheer; blast of ancient brass trumpets.</li>
+</ul>
+<h4><strong>Beat 67 (07:14 - 07:19)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Kokasa Bowing and Receiving the Decree.</li>
+<li><strong>Narration</strong>: <em>"Kokasa accepted the copper plate. He did not smile. He knew that from this moment on, every blow of the hammer was a fight against time."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium shot, Kokasa bowing deeply with both hands outstretched, receiving the gleaming copper charter from the royal chancellor, solemn resolute expression --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow zoom into Kokasa’s hands clutching the heavy copper charter against his chest.</code></li>
+<li><strong>SFX</strong>: Metallic chime of copper; low pulsing battle drum.</li>
+</ul>
+<h4><strong>Beat 68 (07:19 - 07:25)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Night Transition — Torches Moving Up the Mountain.</li>
+<li><strong>Narration</strong>: <em>"That night, an endless serpentine river of torches climbed the road to Charanandri. The quarrymen took their stations."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>epic wide shot at night, thousands of flickering orange torches carried by workers winding up the serpentine mountain path of Ellora, stars wheeling in night sky, cinematic historical scale --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Time-lapse style forward tracking shot of torchlight procession moving up the dark mountain slopes.</code></li>
+<li><strong>SFX</strong>: Rhythmic chanting of marching workers; roar of wind carrying torch embers.</li>
+</ul>
+<hr />
+<h3>ACT VIII: THE FIRST STRIKE &amp; CLIFFHANGER (07:25 – 08:00)</h3>
+<h4><strong>Beat 69 (07:25 - 07:31)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Dawn Wide Shot — Hundreds of Quarrymen at the Perimeter Line.</li>
+<li><strong>Narration</strong>: <em>"Dawn, the seventh day before the queen's deadline. Total silence descended upon the mountain ridge."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>wide epic shot, dawn breaking over the Ellora ridge, hundreds of muscular quarrymen kneeling along the red chalk line holding steel punches and mallets, morning mist, breathless silence --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Slow panoramic crane shot sweeping across hundreds of frozen, waiting quarrymen on the summit.</code></li>
+<li><strong>SFX</strong>: Complete sudden silence; only faint mountain wind whispering across stone.</li>
+</ul>
+<h4><strong>Beat 70 (07:31 - 07:36)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Kokasa Standing at the Shikhara Point.</li>
+<li><strong>Narration</strong>: <em>"At the exact center of the grid, Kokasa placed the point of a heavy steel punch against the virgin black basalt."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>medium low-angle shot, Kokasa holding a long, tapered forged steel punch with both hands firmly against the dark volcanic bedrock, knuckles white with grip, looking up at the sky --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Low-angle tracking shot closing in on the point of the iron tool touching the bare rock.</code></li>
+<li><strong>SFX</strong>: Soft metallic scrape of tool tip finding purchase in stone.</li>
+</ul>
+<h4><strong>Beat 71 (07:36 - 07:41)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Close-up — The Master Striker Raises the Sledgehammer.</li>
+<li><strong>Narration</strong>: <em>"Beside him stood the master striker. A seasoned quarryman with arms like iron bands. He raised a thirty-pound basalt sledgehammer high into the morning air."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>cinematic medium shot, muscular ancient Indian striker hoisting a massive heavy stone mallet above his head, muscles straining, sunrise creating dramatic golden rim lighting around his silhouette --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Dramatic slow motion of the hammer reaching the apex of its upward swing, muscles flexing.</code></li>
+<li><strong>SFX</strong>: Heavy breath intake of the striker; heart thumping loudly.</li>
+</ul>
+<h4><strong>Beat 72 (07:41 - 07:46)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Extreme Slow-Motion — The Hammer Descends.</li>
+<li><strong>Narration</strong>: <em>"Four hundred thousand tons of mountain. Hundreds of thousands of man-hours. It all began with a single breath."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>extreme slow motion cinematic still, heavy hammer head descending through golden morning sunbeams and floating dust, motion blur, hyper-detailed historical drama --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>High-speed camera tracking the hammer head as it arcs downward toward the steel punch.</code></li>
+<li><strong>SFX</strong>: Sound of whooshing air building in pitch (<em>Wwwwoooooosh</em>); tension chord at climax.</li>
+</ul>
+<h4><strong>Beat 73 (07:46 - 07:51)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Extreme Macro Close-Up — The Impact and the Spark.</li>
+<li><strong>Narration</strong>: <em>"Iron met basalt."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>extreme macro high-speed photograph, the moment of impact between heavy hammer and steel chisel on black rock, brilliant violent orange sparks exploding outward, tiny rock shards flying, 8k --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Explosive impact: blinding shower of sparks fills the lens, camera shakes violently with the shockwave.</code></li>
+<li><strong>SFX</strong>: Deafening, thunderous metallic explosion (<em>CRACKKKKK-CLANGGGGG!</em>) echoing across the canyon with massive reverb.</li>
+</ul>
+<h4><strong>Beat 74 (07:51 - 07:56)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Instant Cut to Black — Pulsing Bass.</li>
+<li><strong>Narration</strong>: <em>"And the living stone cracked."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>pure black screen with subtle red ember particles slowly drifting downward, high contrast, cinematic title card aesthetic --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Total blackness with microscopic embers slowly fading into dark.</code></li>
+<li><strong>SFX</strong>: Deep subterranean rock groaning and cracking sound (<em>Crrrrrrk-crunch</em>); thunderous war drum rhythm begins.</li>
+</ul>
+<h4><strong>Beat 75 (07:56 - 08:05)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Teaser Montage &amp; Title Card.</li>
+<li><strong>Narration</strong>: <em>"In Episode Two: Kokasa unleashes the ancient world's most destructive engineering weapon—fire and cold water—to carve three colossal trenches thirty meters into the earth. Subscribe, and step into the fire."</em></li>
+<li><strong>Midjourney Prompt</strong>: <code>rapid cinematic teaser montage: roaring wood fires burning against deep stone trenches, clouds of hissing steam erupting, silhouetted workers swinging sledgehammers, glowing title text 'KAILASA: EPISODE 2 - THE INFERNO IN THE TRENCHES' --ar 16:9 --v 6.0</code></li>
+<li><strong>Motion Prompt</strong>: <code>Rapid cut teaser: flash of fire, flash of steam, smash cut to glowing golden series title card pulsing with energy.</code></li>
+<li><strong>SFX</strong>: Roar of inferno flames; hiss of water on fire; explosive final drum smash.</li>
+</ul>
+<hr />
+<h2>Complete YouTube Shorts Funnel Packages</h2>
+<h3>Short 1.1: <em>The 7-Day Royal Vow That Changed Architecture Forever</em></h3>
+<ul>
+<li><strong>Format</strong>: 9:16 Vertical (1080x1920) | <strong>Duration</strong>: 55 seconds</li>
+<li><strong>Target Audience</strong>: General history &amp; curiosity audience (Mass Virality Hook)</li>
+<li><strong>Goal</strong>: Funnel mobile viewers to Episode 1 via YouTube's native "Related Video" link.</li>
+</ul>
+<pre><code>+---------------------------------------------------------------------------------------------------------+
+| [0:00 - 0:05] HOOK (Fast text on screen: &quot;She was going to starve in 7 days...&quot;):                       |
+| VISUAL: Dark silhouette of Queen praying before glowing Shiva lingam.                                   |
+| VO: &quot;In the 8th century, an Indian Queen made a vow that should have killed her.&quot;                      |
+|                                                                                                         |
+| [0:05 - 0:18] THE CRISIS:                                                                               |
+| VISUAL: King sick in bed; architects shaking heads in council hall.                                     |
+| VO: &quot;Her husband recovered from a deadly illness. In gratitude, she vowed to fast to death until she    |
+| could see the pinnacle of a temple built for Shiva. Royal architects told the king: 'It will take 20    |
+| years to build from the ground up... the Queen will starve.'&quot;                                           |
+|                                                                                                         |
+| [0:18 - 0:34] THE CRAZY PLAN:                                                                           |
+| VISUAL: Kokasa unrolling scroll on palace floor; snapping red cord on mountain peak.                    |
+| VO: &quot;Then one architect named Kokasa stepped forward with an engineering heresy: 'I will show you the   |
+| spire in SEVEN DAYS.' How? Every builder built from the ground up. He decided to climb the mountain and |
+| carve DOWNWARD from the clouds!&quot;                                                                        |
+|                                                                                                         |
+| [0:34 - 0:48] THE RESULT:                                                                               |
+| VISUAL: Spire carved on summit; camera pulls back into massive 33-meter abyss.                          |
+| VO: &quot;In seven days, the queen saw the pinnacle and broke her fast. Beneath it lay 400,000 tons of solid |
+| rock that became the world's greatest monolithic temple.&quot;                                               |
+|                                                                                                         |
+| [0:48 - 0:55] CALL TO ACTION:                                                                           |
+| VISUAL: Animated arrow pointing to the &quot;Related Video&quot; button + Episode 1 Title Card.                   |
+| VO: &quot;Watch Episode 1 of our full documentary series linked below to see how this impossible plan was    |
+| actually funded and engineered!&quot;                                                                        |
++---------------------------------------------------------------------------------------------------------+
+| Midjourney v6 Prompt (9:16 Vertical):                                                                   |
+| cinematic portrait, ancient Indian master architect Kokasa holding a bronze hammer on a mountain summit|
+| at sunset, wind blowing, intense heroic expression, photorealistic, 8k, vertical --ar 9:16 --v 6.0     |
++---------------------------------------------------------------------------------------------------------+
+| Pinned Comment Copy:                                                                                    |
+| &quot;🔨 Watch the full Episode 1 to see how ancient engineers planned the Kailasa temple and funded it!      |
+| Watch here: [LINK TO EPISODE 1]&quot;                                                                        |
++---------------------------------------------------------------------------------------------------------+
+</code></pre>
+<hr />
+<h3>Short 1.2: <em>How Ancient Kings Funded a Billion-Dollar Mountain Cut</em></h3>
+<ul>
+<li><strong>Format</strong>: 9:16 Vertical (1080x1920) | <strong>Duration</strong>: 52 seconds</li>
+<li><strong>Target Audience</strong>: Finance, history &amp; megaproject enthusiasts</li>
+<li><strong>Goal</strong>: Drive high-intent viewers interested in ancient economy into Episode 1.</li>
+</ul>
+<pre><code>+---------------------------------------------------------------------------------------------------------+
+| [0:00 - 0:06] HOOK (Fast text overlay: &quot;How did ancient kings pay for Kailasa?&quot;):                       |
+| VISUAL: Gold coins pouring into wooden chests; camera swoops into dark stone quarry.                    |
+| VO: &quot;How much did it cost to carve a multi-story cathedral out of solid mountain? In modern money...   |
+| over ONE BILLION dollars.&quot;                                                                              |
+|                                                                                                         |
+| [0:06 - 0:20] PILLAR 1: WAR SPOILS:                                                                    |
+| VISUAL: Rashtrakuta army returning with looted gold chests from Badami Chalukyas.                       |
+| VO: &quot;Source one: War spoils. King Krishna I crushed the rival Chalukyan empire and dumped entire wagon  |
+| loads of captured royal gold and silver directly into the project's war chest.&quot;                         |
+|                                                                                                         |
+| [0:20 - 0:36] PILLAR 2 &amp; 3: TAXES &amp; SILK ROAD GUILDS:                                                   |
+| VISUAL: Scribe carving copper charter; bullock carts loaded with grain; merchants trading gold pouches. |
+| VO: &quot;Source two: The king signed copper charters donating the taxes of dozens of farming villages to    |
+| feed thousands of quarrymen every single day. And source three: Silk Road merchant guilds, who traded   |
+| fortunes in gold for tax-free mountain trade passes.&quot;                                                   |
+|                                                                                                         |
+| [0:36 - 0:52] THE PAYOFF &amp; CALL TO ACTION:                                                              |
+| VISUAL: 3D point cloud of Kailasa emerging from dark earth; pointer pointing to &quot;Related Video&quot;.        |
+| VO: &quot;Without this financial machine, the mountain would never have been touched. See how the master     |
+| engineers were recruited in Episode 1 linked below!&quot;                                                    |
++---------------------------------------------------------------------------------------------------------+
+| Midjourney v6 Prompt (9:16 Vertical):                                                                   |
+| ancient Indian royal treasury with stacks of gold coins, copper plate charter with royal seal, dramatic |
+| cinematic lighting, hyperrealistic, 8k, vertical --ar 9:16 --v 6.0                                    |
++---------------------------------------------------------------------------------------------------------+
+| Pinned Comment Copy:                                                                                    |
+| &quot;💰 Want to know who the master architect was and how he got the king's seal? Watch Episode 1 now!     |
+| Watch here: [LINK TO EPISODE 1]&quot;                                                                        |
++---------------------------------------------------------------------------------------------------------+
+</code></pre>
+    </div>
+</main>
+
+<!-- FEEDBACK & COMMENT PANEL -->
+<aside id="feedback-panel">
+    <div class="panel-header">
+        <div class="panel-title">
+            <span>💬 Feedback & Notes</span>
+            <span class="feedback-badge" id="comment-count">0</span>
+        </div>
+    </div>
+
+    <div class="feedback-input-box">
+        <div class="feedback-meta">
+            <select id="comment-type" class="feedback-select">
+                <option value="change">✏️ Change Request</option>
+                <option value="approval">✅ Approval</option>
+                <option value="issue">⚠️ Issue / Bug</option>
+                <option value="note">💡 Idea / Note</option>
+            </select>
+            <input type="text" id="comment-section" class="feedback-target" placeholder="Section (Optional)">
+        </div>
+        <textarea id="comment-input" class="feedback-textarea" placeholder="Type your comment, critique, or instruction for Antigravity..."></textarea>
+        <button id="add-comment-btn" class="btn btn-primary" onclick="addComment()">Add Feedback</button>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn btn-secondary" onclick="copyFeedbackForAgent()">📋 Copy for Agent</button>
+        <button class="btn btn-secondary" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+        <button class="btn btn-secondary" onclick="clearAllComments()">🗑️ Clear</button>
+    </div>
+
+    <ul id="feedback-list" class="feedback-list"></ul>
+</aside>
+
+<div id="toast">Feedback copied to clipboard!</div>
+
+<script>
+const STORAGE_KEY = "doc_feedback_ajanta_ellora_episodes_episode_01_the_blueprint_of_gods_md";
+let comments = [];
+
+function loadComments() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            comments = JSON.parse(saved);
+        }
+    } catch(e) {
+        console.error("Could not load comments from localStorage", e);
+    }
+    renderComments();
+}
+
+function saveComments() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+    } catch(e) {
+        console.error("Could not save comments", e);
+    }
+    renderComments();
+}
+
+function addComment() {
+    const text = document.getElementById("comment-input").value.trim();
+    if (!text) return;
+    const type = document.getElementById("comment-type").value;
+    const section = document.getElementById("comment-section").value.trim() || "General";
+    const comment = {
+        id: Date.now(),
+        type: type,
+        section: section,
+        text: text,
+        timestamp: new Date().toLocaleString()
+    };
+    comments.push(comment);
+    document.getElementById("comment-input").value = "";
+    document.getElementById("comment-section").value = "";
+    saveComments();
+    showToast("Feedback saved!");
+}
+
+function deleteComment(id) {
+    comments = comments.filter(c => c.id !== id);
+    saveComments();
+}
+
+function clearAllComments() {
+    if (confirm("Clear all comments on this document?")) {
+        comments = [];
+        saveComments();
+    }
+}
+
+function renderComments() {
+    const list = document.getElementById("feedback-list");
+    const countBadge = document.getElementById("comment-count");
+    list.innerHTML = "";
+    countBadge.textContent = comments.length;
+
+    if (comments.length === 0) {
+        list.innerHTML = `<li style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 20px 0;">No feedback added yet.<br>Add your notes above to share with the agent.</li>`;
+        return;
+    }
+
+    comments.forEach(c => {
+        const li = document.createElement("li");
+        li.className = `comment-card type-${c.type}`;
+        li.innerHTML = `
+            <div class="comment-header">
+                <span class="comment-tag">${c.type} • ${c.section}</span>
+                <span>${c.timestamp.split(",")[1] || ""}</span>
+            </div>
+            <div class="comment-body">${escapeHtml(c.text)}</div>
+            <div style="display:flex; justify-content:flex-end;">
+                <button class="comment-delete" onclick="deleteComment(${c.id})">Delete</button>
+            </div>
+        `;
+        list.appendChild(li);
+    });
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 2500);
+}
+
+function copyFeedbackForAgent() {
+    if (comments.length === 0) {
+        alert("No feedback to copy!");
+        return;
+    }
+    let text = `Feedback for: ajanta-ellora/episodes/episode-01-the-blueprint-of-gods.md\n`;
+    text += `Date: ${new Date().toLocaleString()}\n\n`;
+    comments.forEach((c, idx) => {
+        text += `[${idx+1}] [${c.type.toUpperCase()}] (${c.section}):\n${c.text}\n\n`;
+    });
+    navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied feedback for Agent! Paste directly in chat.");
+    });
+}
+
+function exportFeedbackJSON() {
+    if (comments.length === 0) {
+        alert("No feedback to export!");
+        return;
+    }
+    const blob = new Blob([JSON.stringify({ doc: "ajanta-ellora/episodes/episode-01-the-blueprint-of-gods.md", feedback: comments }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "feedback_ajanta_ellora_episodes_episode_01_the_blueprint_of_gods_md.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Auto-generate TOC from Headings
+window.addEventListener("DOMContentLoaded", () => {
+    const tocList = document.getElementById("toc");
+    const headings = document.querySelectorAll("#rendered-content h1, #rendered-content h2, #rendered-content h3");
+    headings.forEach((h, idx) => {
+        if (!h.id) {
+            h.id = "heading-" + idx;
+        }
+        const li = document.createElement("li");
+        li.style.paddingLeft = h.tagName === "H2" ? "8px" : (h.tagName === "H3" ? "16px" : "0");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+    loadComments();
+});
+</script>
+</body>
+</html>

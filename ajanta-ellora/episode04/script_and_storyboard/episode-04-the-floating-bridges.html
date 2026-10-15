@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episode 04 The Floating Bridges — Curiosity Kills The Cat</title>
+<style>
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-gold: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --border-color: #334155;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar TOC */
+#sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+#sidebar .doc-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    word-break: break-all;
+}
+
+#toc {
+    list-style: none;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+#toc li {
+    margin-bottom: 8px;
+}
+
+#toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: block;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+#toc a:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Main Container */
+#content-container {
+    flex: 1;
+    max-width: 960px;
+    padding: 40px 48px;
+    margin: 0 auto;
+}
+
+/* Header Banner */
+.doc-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.channel-tag {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; }
+h2 { font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+h3 { font-size: 1.25rem; color: var(--accent-blue); }
+h4 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--text-secondary);
+}
+
+ul, ol {
+    margin-bottom: 1.2em;
+    padding-left: 1.6em;
+    color: var(--text-secondary);
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid var(--accent-gold);
+    padding: 12px 18px;
+    background: rgba(245, 158, 11, 0.08);
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8em 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: #1e293b;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Code Blocks */
+pre {
+    background: #090d16;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.4em 0;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: #e2e8f0;
+}
+
+code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--accent-blue);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* FEEDBACK & COMMENT SYSTEM */
+#feedback-panel {
+    width: 360px;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feedback-badge {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.feedback-input-box {
+    margin-bottom: 16px;
+}
+
+.feedback-textarea {
+    width: 100%;
+    height: 90px;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.feedback-textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.feedback-select, .feedback-target {
+    flex: 1;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: #000000;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    padding: 6px 10px;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.action-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.feedback-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.comment-card {
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.85rem;
+}
+
+.comment-card.type-approval { border-left: 3px solid var(--accent-emerald); }
+.comment-card.type-change { border-left: 3px solid var(--accent-gold); }
+.comment-card.type-issue { border-left: 3px solid var(--accent-rose); }
+.comment-card.type-note { border-left: 3px solid var(--accent-blue); }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.comment-tag {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.comment-body {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.comment-delete:hover {
+    color: var(--accent-rose);
+}
+
+/* Toast notification */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent-emerald);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    body { flex-direction: column; }
+    #sidebar, #feedback-panel { width: 100%; height: auto; position: relative; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<aside id="sidebar">
+    <div class="channel-tag">Curiosity Kills The Cat</div>
+    <div class="doc-badge">ajanta-ellora/episode04/script_and_storyboard/episode-04-the-floating-bridges.md</div>
+    <h3>Sections</h3>
+    <ul id="toc"></ul>
+</aside>
+
+<!-- MAIN DOCUMENT CONTENT -->
+<main id="content-container">
+    <div class="doc-header">
+        <div class="channel-tag">Ajanta & Ellora Production Series</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Source: <code>ajanta-ellora/episode04/script_and_storyboard/episode-04-the-floating-bridges.md</code></p>
+    </div>
+    <div id="rendered-content">
+<h1>Episode 04 — The Floating Bridges of Kailasa</h1>
+<h3>How the builders carved connections through open air</h3>
+<p><strong>Series:</strong> Kailasa: The Mountain Carved From Above<br />
+<strong>Format:</strong> 16:9 documentary, target 7–9 minutes; timing below is generated from the finished narration files.<br />
+<strong>Evidence note:</strong> The surviving stone bridges and a collapsed southern span are documented architectural features. Their exact construction sequence is unknown; the staged cutting described in Act IV is explicitly an engineering reconstruction. Do not depict cranes, pulleys, scaffolds, dimensions, or modern engineering equations as established fact.<br />
+<strong>Production Invariant:</strong> Global zero-repetition rule enforced across all 72 micro-beats via the 3-Pillar Visual Diversity Formula.</p>
+<h2>Master Image Batch Sheet (3-Pillar Formula)</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align: right;">Allocation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pillar A: Master Hero Stills</strong></td>
+<td style="text-align: right;">24 Cuts</td>
+<td>1080p photorealistic Midjourney/Imagen prompts (<code>_PAN_ZOOM.jpg</code>)</td>
+</tr>
+<tr>
+<td><strong>Pillar B: Technical Infographics</strong></td>
+<td style="text-align: right;">5 Cuts</td>
+<td>High-contrast 2D architectural blueprint cards rendered via PIL</td>
+</tr>
+<tr>
+<td><strong>Pillar C: Universe Archive Stills</strong></td>
+<td style="text-align: right;">35 Cuts</td>
+<td>Canonical world-building assets from Episodes 01–03</td>
+</tr>
+<tr>
+<td><strong>Action Video Moments</strong></td>
+<td style="text-align: right;">8 Cuts</td>
+<td>High-impact Google Flow / Runway dynamic physics moments</td>
+</tr>
+<tr>
+<td><strong>Total Micro-Beats</strong></td>
+<td style="text-align: right;"><strong>72 Cuts</strong></td>
+<td><strong>100% Unique Media Assets (0 Duplicates)</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Story and pacing</h2>
+<table>
+<thead>
+<tr>
+<th>Act</th>
+<th style="text-align: right;">Timing</th>
+<th>Story turn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Act I — The Gap</td>
+<td style="text-align: right;">00:00</td>
+<td>The Gap</td>
+</tr>
+</tbody>
+</table>
+<h2>Act I — The Gap</h2>
+<h3>Beat 01 — 00:00–00:02</h3>
+<ul>
+<li><strong>Narration:</strong> Stand in the courtyard and look up.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_01_courtyard_ground_upward_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Low-angle perspective from deep stone courtyard looking sharply upward toward morning sky framing surviving bridge.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 02 — 00:02–00:09</h3>
+<ul>
+<li><strong>Narration:</strong> Between the gateway, the Nandi pavilion, and the great hall, stone seems to hang in open air.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_02_gateway_to_hall_span_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Wide horizontal elevation showing the open air gap between gateway, Nandi mandapa, and main temple hall.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 03 — 00:09–00:12</h3>
+<ul>
+<li><strong>Narration:</strong> No timber beam spans this distance.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_infographic_02_continuous_stone_vs_masonry.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Comparative schematic of wooden timber beam vs monolithic living rock cantilever.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 04 — 00:12–00:15</h3>
+<ul>
+<li><strong>Narration:</strong> No metal arch carries the weight.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_03_no_keystones_macro_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Close macro inspection of the bridge underside showing zero mortar lines, zero keystones, and solid monolithic basalt.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 05 — 00:15–00:22</h3>
+<ul>
+<li><strong>Narration:</strong> The bridges are carved from the mountain itself, joining buildings that were released from the same mass of basalt.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_04_monolith_mountain_reveal_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> High-angle panoramic view of the entire Kailasa rock trench showing the temple and bridges carved from a single ridge.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 06 — 00:22–00:25</h3>
+<ul>
+<li><strong>Narration:</strong> From below, they look impossibly light.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_01_smoke_quarry_dissipate.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Morning Deccan mist slowly clearing beneath the suspended stone bridge silhouette.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 07 — 00:25–00:31</h3>
+<ul>
+<li><strong>Narration:</strong> From above, they are narrow ridges of living rock suspended over the courtyard.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_05_upper_bridge_ridge_walkway_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Upper terrace perspective walking along the narrow rock ridge connecting the gateway to the upper Nandi shrine.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 08 — 00:31–00:36</h3>
+<ul>
+<li><strong>Narration:</strong> And one of the original connections, reaching toward the southern cliff, is gone.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_06_southern_cliff_broken_scar_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Telephoto close-up of the southern basalt cliff face displaying the jagged fracture scar of the collapsed span.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<h3>Beat 09 — 00:36–00:45</h3>
+<ul>
+<li><strong>Narration:</strong> Today, we follow the surviving bridges to ask a deceptively simple question: how do you carve a passage through empty space without making it fall?</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_07_courtyard_shadow_silhouette_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Dramatic chiaroscuro silhouette of the floating bridge casting a sharp diagonal shadow across the carved courtyard wall.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open courtyard wind, distant birds, low restrained drone; a soft stone resonance on the first bridge reveal.</li>
+</ul>
+<p>| Act II — A Temple in Sequence | 00:45 | A Temple in Sequence |</p>
+<h2>Act II — A Temple in Sequence</h2>
+<h3>Beat 10 — 00:45–00:50</h3>
+<ul>
+<li><strong>Narration:</strong> Kailasa is not a collection of stone blocks assembled one by one.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_08_blueprint_cutaway_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Blueprint: Isometric cross-section illustrating Kailasa as a monolithic block rather than assembled masonry blocks.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 11 — 00:50–01:00</h3>
+<ul>
+<li><strong>Narration:</strong> It is a freestanding temple complex cut out of a hill, with courtyards, halls, a gateway, and shrines left standing as the surrounding rock was removed.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_infographic_01_courtyard_spatial_void.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Spatial plan mapping the excavated courtyard void and the retained monolithic islands.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 12 — 01:00–01:05</h3>
+<ul>
+<li><strong>Narration:</strong> The work advanced from the exposed rock surface inward and downward.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_12_charanandri_ridge_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Charanandri basalt ridge showing top-down trench cutting progression downward into bedrock.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_down</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 13 — 01:05–01:12</h3>
+<ul>
+<li><strong>Narration:</strong> That broad sequence is visible in the monument, though the exact order of every cut is not preserved in a builder’s diary.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_04_architects_council_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Master builders conferring over site geometry on the upper cliff rim.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 14 — 01:12–01:15</h3>
+<ul>
+<li><strong>Narration:</strong> The bridges belong to this larger puzzle.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_08_bridge_puzzle_junction_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Medium shot of bridge anchor merging seamlessly into the vertical wall of the Nandi pavilion without seams.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 15 — 01:15–01:21</h3>
+<ul>
+<li><strong>Narration:</strong> They connect distinct parts of the design while remaining continuous with the stone around them.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_09_continuous_basalt_veins_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Extreme macro detail tracing identical basalt mineral grain and vesicle bands passing unbroken through the bridge anchor.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 16 — 01:21–01:28</h3>
+<ul>
+<li><strong>Narration:</strong> A passage that would normally be built from separate masonry had to be found inside a solid rock mass.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_15_copper_charter_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Rashtrakuta royal copper plate charter detailing 8th-century monolithic construction.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 17 — 01:28–01:34</h3>
+<ul>
+<li><strong>Narration:</strong> Every opening around it meant more rock to remove, and less material left to carry its own weight.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_22_first_chisel_strike_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Quarrymen clearing rock masses adjacent to preserved structural spans.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<h3>Beat 18 — 01:34–01:39</h3>
+<ul>
+<li><strong>Narration:</strong> The builders had to reveal a route and preserve its connection at the same time.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_02_kokasa_stepping_forward.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Master builder stepping forward onto the rocky precipice reviewing spatial alignment.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low strings under a slow rock-to-void transition; quiet granular stone movement only as editorial foley.</li>
+</ul>
+<p>| Act III — The Route Through the Air | 01:39 | The Route Through the Air |</p>
+<h2>Act III — The Route Through the Air</h2>
+<h3>Beat 19 — 01:39–01:44</h3>
+<ul>
+<li><strong>Narration:</strong> Begin at the two-storeyed gateway, the formal threshold into the court.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_10_gateway_two_storey_threshold_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Direct frontal view of the two-storeyed entrance gopuram gateway rising from the west courtyard floor.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 20 — 01:44–01:48</h3>
+<ul>
+<li><strong>Narration:</strong> Beyond it stands the Nandi pavilion, facing the Shiva temple.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_11_nandi_pavilion_facing_shiva_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Courtyard view of the square Nandi pavilion isolated in space, facing the grand stairs of the main hall.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 21 — 01:48–01:54</h3>
+<ul>
+<li><strong>Narration:</strong> The sculpted stone bridges tie this pavilion to the gateway and to the main hall.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_12_bridge_linking_nandi_gateway_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Side profile of the rock-cut bridge linking upper gateway terrace to upper Nandi pavilion.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 22 — 01:54–02:01</h3>
+<ul>
+<li><strong>Narration:</strong> Seen as a plan, they make a sequence: entry, Nandi, assembly hall, sanctuary.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_infographic_05_processional_axis_sequence.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Architectural ritual axis: Gateway -&gt; Bridge 1 -&gt; Nandi Mandapa -&gt; Bridge 2 -&gt; Maha Mandapa.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 23 — 02:01–02:05</h3>
+<ul>
+<li><strong>Narration:</strong> Seen from the courtyard floor, that sequence is lifted above you.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_13_elevated_procession_perspective_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Worm's-eye view looking directly up as if an ancient priest walked along the sky bridge thirty feet above.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 24 — 02:05–02:10</h3>
+<ul>
+<li><strong>Narration:</strong> The bridges turn separate masses into a connected architectural composition.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_14_connected_composition_wide_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Sweeping wide shot showing how the bridges visually integrate separate stone masses into a cohesive cathedral.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 25 — 02:10–02:17</h3>
+<ul>
+<li><strong>Narration:</strong> Their narrow spans also frame views through the court, directing the eye toward the temple and its tower.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_15_framed_court_view_vimana_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Compositional frame through the opening beneath the stone bridge, focusing directly on the towering carved vimana spire.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 26 — 02:17–02:21</h3>
+<ul>
+<li><strong>Narration:</strong> This is not simply a shortcut between rooms.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_16_carved_ridge_detail_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Raking sunlight illuminating the molded parapet and decorative base moldings along the bridge flank.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<h3>Beat 27 — 02:21–02:26</h3>
+<ul>
+<li><strong>Narration:</strong> It is a carved line through space that makes the whole complex read as one deliberate design.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_05_snapping_chalk_line.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Quarry supervisor snapping dyed chalk line establishing the straight bridge axis.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light airy courtyard bed; gentle tonal marker as the route traces gateway to Nandi to hall.</li>
+</ul>
+<p>| Act IV — How to Leave a Bridge | 02:26 | How to Leave a Bridge |</p>
+<h2>Act IV — How to Leave a Bridge</h2>
+<h3>Beat 28 — 02:27–02:35</h3>
+<ul>
+<li><strong>Narration:</strong> We cannot watch an eighth-century crew at work, so the next sequence is an engineering reconstruction, not a recorded eyewitness account.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_infographic_03_staged_subtraction_reconstruction.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: 4-Stage Reconstruction: (1) Trench isolation, (2) Flank channeling, (3) Underbelly undercut, (4) Parapet dressing.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 29 — 02:35–02:42</h3>
+<ul>
+<li><strong>Narration:</strong> Picture the bridge first as a protected strip of bedrock, continuous with the pavilion and the neighboring mass.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_17_protected_bedrock_strip_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Staged reconstruction illustration: The bridge corridor left as an uncarved horizontal basalt bar while flanking trenches sink.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 30 — 02:42–02:50</h3>
+<ul>
+<li><strong>Narration:</strong> Stonecutters open the surrounding space in controlled stages, removing rock beside and beneath the intended passage.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_03_chisel_striking_flawless.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Iron point chisel driving into basalt beneath the bridge span, casting stone chips.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 31 — 02:50–02:54</h3>
+<ul>
+<li><strong>Narration:</strong> The connection at each end must remain intact as the void grows around it.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_18_void_growing_under_span_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Mid-excavation reconstruction: Void expanding beneath the bridge span while solid rock anchors remain untouched.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 32 — 02:54–03:01</h3>
+<ul>
+<li><strong>Narration:</strong> A cut made too far into the span could weaken it; a cut made too shallow could leave the route buried.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_19_critical_depth_boundary_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Close technical focus on the underside boundary where cutting stopped to maintain adequate bridge thickness.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 33 — 03:01–03:09</h3>
+<ul>
+<li><strong>Narration:</strong> The surviving bridge records the finished geometry, but not the scaffolds, tools, work shifts, or exact cutting order.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_06_kokasa_entrance_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Historical architects inspecting structural rock thickness with sounding sticks.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 34 — 03:09–03:16</h3>
+<ul>
+<li><strong>Narration:</strong> So we should resist pretending to know measurements or a secret technique that the evidence does not provide.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_21_clay_model_seal_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Sun-dried clay study model showing monolithic proportions.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 35 — 03:16–03:23</h3>
+<ul>
+<li><strong>Narration:</strong> The secure point is remarkable enough: the passage and its supports were shaped from the same continuous rock.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_20_continuous_bedrock_supports_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Detailed perspective looking down into the root where the stone bridge enters the monolithic pavilion wall.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<h3>Beat 36 — 03:23–03:28</h3>
+<ul>
+<li><strong>Narration:</strong> The absence around the bridge was made deliberately, one removed surface at a time.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_06_first_hammer_strike_sparks.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Heavy hammer blow striking iron wedge, producing sparks as basalt breaks clean.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Muted chisel and scrape foley in short, separated gestures; let the ambience open as the void is revealed.</li>
+</ul>
+<p>| Act V — Reading the Stone | 03:28 | Reading the Stone |</p>
+<h2>Act V — Reading the Stone</h2>
+<h3>Beat 37 — 03:28–03:32</h3>
+<ul>
+<li><strong>Narration:</strong> Look closely at what the bridges do not have.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_21_negative_evidence_joints_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Extreme close-up panning along the bridge span demonstrating absolute absence of mortar joints or clamp holes.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 38 — 03:32–03:39</h3>
+<ul>
+<li><strong>Narration:</strong> There are no visible joints where separate blocks meet, because the spans are rock-cut features rather than assembled arches.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_22_rockcut_span_vs_arch_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Comparative photographic study showing smooth carved basalt curvature versus typical medieval stone voussoirs.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 39 — 03:39–03:45</h3>
+<ul>
+<li><strong>Narration:</strong> There is no independent pier rising from the courtyard floor beneath the open span.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_23_empty_courtyard_floor_beneath_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Courtyard floor directly beneath the bridge span: completely clear, flat flagstones with no central supporting column.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 40 — 03:45–03:53</h3>
+<ul>
+<li><strong>Narration:</strong> Instead, each bridge remains anchored at its architectural ends, while the surrounding rock has been cut away to expose it.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_24_cantilever_anchor_geometry_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Structural study of the flared bracket moldings where the bridge meets the upper pavilion cornices.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 41 — 03:53–04:00</h3>
+<ul>
+<li><strong>Narration:</strong> That observation describes what survives; it does not prove the builders calculated modern engineering equations.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_11_prehistoric_lava_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Deccan Traps basalt flow banding illustrating natural horizontal basalt beds.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 42 — 04:00–04:09</h3>
+<ul>
+<li><strong>Narration:</strong> Their practical knowledge is legible in the decisions preserved in stone: where to keep mass, where to open space, and where to stop cutting.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_25_chisel_fluting_underside_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> High-resolution detail of ancient flat-chisel fluting marks preserved on the bridge soffit.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 43 — 04:09–04:12</h3>
+<ul>
+<li><strong>Narration:</strong> The bridge makes subtraction visible as structure.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_26_subtractive_structure_concept_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Striking architectural photograph of the bridge glowing at golden hour, framing the sky as sculpted solid.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 44 — 04:12–04:18</h3>
+<ul>
+<li><strong>Narration:</strong> A few steps of walkway survive because the mountain around them was removed without severing the route.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_27_few_steps_walkway_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Top-down view of the worn rock-cut walkway steps spanning from the gateway portal across open air.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<h3>Beat 45 — 04:18–04:24</h3>
+<ul>
+<li><strong>Narration:</strong> The void is part of the design, as carefully composed as the stone that remains.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_08_chipping_ceiling_sparks.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Craftsman delicately dressing the curved underside cornice of the suspended span.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Reduce music; use close, dry stone texture and a restrained low note at the bridge ends.</li>
+</ul>
+<p>| Act VI — The Missing Span | 04:24 | The Missing Span |</p>
+<h2>Act VI — The Missing Span</h2>
+<h3>Beat 46 — 04:24–04:27</h3>
+<ul>
+<li><strong>Narration:</strong> Not every bridge survived.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_28_collapsed_span_wide_courtyard_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Wide view of the southern courtyard void showing the great gap where the lost bridge once connected to the cliff.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 47 — 04:27–04:35</h3>
+<ul>
+<li><strong>Narration:</strong> Architectural documentation records a span that once extended from the great hall toward the southern cliff face and has since collapsed.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_infographic_04_southern_span_lost_route.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Forensic plan showing surviving bridges vs dashed reconstruction of collapsed southern span.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 48 — 04:35–04:39</h3>
+<ul>
+<li><strong>Narration:</strong> Its absence changes the way we read the courtyard.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_29_southern_scarp_void_perspective_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Dramatic perspective from the great hall looking toward the southern scarp wall across the empty gulf.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 49 — 04:39–04:46</h3>
+<ul>
+<li><strong>Narration:</strong> The remaining connections show us the idea; the broken connection reminds us that carved stone is still vulnerable stone.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_30_fractured_rock_stub_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Telephoto macro of the fractured basalt stump projecting outward from the hall wall, showing ragged break lines.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 50 — 04:46–04:53</h3>
+<ul>
+<li><strong>Narration:</strong> Weathering, fractures, and time can alter a monument without erasing its original ambition.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_13_testing_basalt_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Natural geological joints and micro-fractures running through weathered Deccan basalt.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 51 — 04:53–04:59</h3>
+<ul>
+<li><strong>Narration:</strong> We cannot date the collapse from the gap alone, or assign it a single cause without stronger evidence.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_18_artisan_camp_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Ancient artisan settlement outside Ellora scarp under monsoon rains.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 52 — 04:59–05:06</h3>
+<ul>
+<li><strong>Narration:</strong> But the gap lets us compare a surviving span with a lost one and imagine the former continuity carefully.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_31_surviving_vs_lost_span_comparison_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Split visual juxtaposition: Intact northern bridge span compared directly to the open southern void.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 53 — 05:06–05:12</h3>
+<ul>
+<li><strong>Narration:</strong> A reconstruction can show where the bridge reached, provided it is clearly marked as an interpretation.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_32_interpretive_reconstruction_ghost_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Semi-transparent interpretive architectural rendering showing hypothetical ghost line of the fallen bridge.</li>
+<li><strong>Camera Motion:</strong> <code>slow_fade_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<h3>Beat 54 — 05:12–05:18</h3>
+<ul>
+<li><strong>Narration:</strong> The missing stone is evidence too, but it does not answer every question.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_04_shanku_solar_shadow_timelapse.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Sunlight and shadow sweeping across the southern cliff scarp throughout the day.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Thin the music and leave a clear pocket of courtyard air at the collapsed span; restrained falling-stone tail only if shown as an illustrative reconstruction.</li>
+</ul>
+<p>| Act VII — Architecture as Procession | 05:18 | Architecture as Procession |</p>
+<h2>Act VII — Architecture as Procession</h2>
+<h3>Beat 55 — 05:18–05:21</h3>
+<ul>
+<li><strong>Narration:</strong> The bridges do more than solve a carving problem.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_33_sacred_procession_gateway_entry_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> View looking east from gateway interior along the sacred alignment through the suspended bridge corridor.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 56 — 05:21–05:28</h3>
+<ul>
+<li><strong>Narration:</strong> They connect spaces devoted to a sacred journey, from the outer gateway toward Nandi and onward to Shiva’s hall.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_34_shiva_hall_nandi_relationship_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Raking sunlight illuminating the Nandi shrine seated squarely in front of the great pillared assembly hall.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 57 — 05:28–05:36</h3>
+<ul>
+<li><strong>Narration:</strong> The route is also a visual sequence: threshold, guardian, gathering space, and sanctuary.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_35_four_part_spatial_sequence_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> High-angle composite overview showing threshold, guardian pavilion, sabhamandapa hall, and towering sanctum.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 58 — 05:36–05:41</h3>
+<ul>
+<li><strong>Narration:</strong> From below, sculpted passages cut across the sky above the court.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_36_bridge_cutting_sky_low_angle_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Looking almost vertically upward: The dark silhouette of the rock bridge dividing the cobalt blue sky.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 59 — 05:41–05:47</h3>
+<ul>
+<li><strong>Narration:</strong> From the upper level, the same spans join the separate parts of a carefully ordered temple.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_37_upper_level_continuous_walkway_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Eye-level view on the upper gallery level tracing how devotees could move between pavilions without touching the ground.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 60 — 05:47–05:53</h3>
+<ul>
+<li><strong>Narration:</strong> The builders translated the vocabulary of a constructed temple into a single rock-cut ensemble.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_07_kokasa_scroll_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Classical Nagara and Dravidian architectural treatise diagrams of constructed temples.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 61 — 05:53–06:01</h3>
+<ul>
+<li><strong>Narration:</strong> The bridge is therefore both infrastructure and image: a usable connection, and a line that binds the composition together.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_38_infrastructure_and_image_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Medium shot of the bridge framing intricate relief sculptures of deities and mythical animals along the hall facade.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 62 — 06:01–06:07</h3>
+<ul>
+<li><strong>Narration:</strong> Stone carries the architecture, but the spaces cut out of stone make the architecture legible.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_39_light_and_void_legibility_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Deep courtyard shadow contrasted with glowing limestone plaster remnants on the upper bridge wall.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<h3>Beat 63 — 06:07–06:13</h3>
+<ul>
+<li><strong>Narration:</strong> At Kailasa, what was removed shapes the experience as powerfully as what remains.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>gf_07_sculptors_suspended_ropes.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Sculptors suspended on heavy hemp ropes dressing the outer courtyard scarp.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, measured strings with distant open-air ambience; slight lift as the sacred route resolves.</li>
+</ul>
+<p>| Act VIII — The Mountain Reconnected | 06:13 | The Mountain Reconnected |</p>
+<h2>Act VIII — The Mountain Reconnected</h2>
+<h3>Beat 64 — 06:13–06:17</h3>
+<ul>
+<li><strong>Narration:</strong> Return to the courtyard and trace the bridges with your eyes.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_40_courtyard_return_full_bridge_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Sweeping return to the main courtyard view, tilting upward along the full length of the surviving spans.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 65 — 06:17–06:24</h3>
+<ul>
+<li><strong>Narration:</strong> Each span appears to cross open air, yet each is still part of the bedrock from which the complex was released.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_41_bedrock_continuity_overview_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Panoramic wide shot emphasizing that temple, bridge, and courtyard floor are one continuous piece of planet Earth.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 66 — 06:24–06:31</h3>
+<ul>
+<li><strong>Narration:</strong> That is the paradox at the heart of Kailasa: a temple made to look assembled, achieved by subtraction.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_42_subtractive_paradox_hero_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Hero composition: Warm dawn light catching the intricate carved eaves of the suspended bridge.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 67 — 06:31–06:36</h3>
+<ul>
+<li><strong>Narration:</strong> The surviving passages reveal connections the original builders chose to preserve.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_43_surviving_connections_tribute_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Medium close-up of the rock-cut balustrade carved with floral rosettes and miniature pilasters.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 68 — 06:36–06:44</h3>
+<ul>
+<li><strong>Narration:</strong> The collapsed southern span leaves a question mark in the plan, not a license to invent a hidden machine or lost civilization.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_44_question_mark_archaeology_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> The quiet, solemn empty southern scarp: letting the mystery exist without sensationalism.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 69 — 06:44–06:50</h3>
+<ul>
+<li><strong>Narration:</strong> The evidence points to patient architectural planning and extraordinary command of stone.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_archive_01_palace_dusk_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Rashtrakuta royal court at dusk, celebrating the completion of the monolithic sanctuary.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 70 — 06:50–06:57</h3>
+<ul>
+<li><strong>Narration:</strong> Next, we descend from the bridges to the great plinth, where sculpted elephants appear to carry the temple above the earth.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_45_plinth_elephant_teaser_01_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Camera descends from the bridge above down to the great lower plinth, catching the shoulder of a life-sized carved elephant.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_down</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 71 — 06:57–07:02</h3>
+<ul>
+<li><strong>Narration:</strong> How can a mountain look as though it is being lifted by animals carved from that same mountain?</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_46_plinth_elephant_teaser_02_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Dramatic close-up of sculpted elephant heads supporting the temple superstructure on their backs.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h3>Beat 72 — 07:02–07:05</h3>
+<ul>
+<li><strong>Narration:</strong> That is the next mystery waiting below.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep04_47_plinth_elephant_teaser_03_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Cinematic closing shot: Massive carved elephant tusk silhouetted against courtyard floor — Teaser for Episode 05.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening wind motif; let it resolve into a low, warm plinth teaser tone.</li>
+</ul>
+<h2>Narration transcript</h2>
+<p>Stand in the courtyard and look up.<br />
+Between the gateway, the Nandi pavilion, and the great hall, stone seems to hang in open air.<br />
+No timber beam spans this distance.<br />
+No metal arch carries the weight.<br />
+The bridges are carved from the mountain itself, joining buildings that were released from the same mass of basalt.<br />
+From below, they look impossibly light.<br />
+From above, they are narrow ridges of living rock suspended over the courtyard.<br />
+And one of the original connections, reaching toward the southern cliff, is gone.<br />
+Today, we follow the surviving bridges to ask a deceptively simple question: how do you carve a passage through empty space without making it fall?<br />
+Kailasa is not a collection of stone blocks assembled one by one.<br />
+It is a freestanding temple complex cut out of a hill, with courtyards, halls, a gateway, and shrines left standing as the surrounding rock was removed.<br />
+The work advanced from the exposed rock surface inward and downward.<br />
+That broad sequence is visible in the monument, though the exact order of every cut is not preserved in a builder’s diary.<br />
+The bridges belong to this larger puzzle.<br />
+They connect distinct parts of the design while remaining continuous with the stone around them.<br />
+A passage that would normally be built from separate masonry had to be found inside a solid rock mass.<br />
+Every opening around it meant more rock to remove, and less material left to carry its own weight.<br />
+The builders had to reveal a route and preserve its connection at the same time.<br />
+Begin at the two-storeyed gateway, the formal threshold into the court.<br />
+Beyond it stands the Nandi pavilion, facing the Shiva temple.<br />
+The sculpted stone bridges tie this pavilion to the gateway and to the main hall.<br />
+Seen as a plan, they make a sequence: entry, Nandi, assembly hall, sanctuary.<br />
+Seen from the courtyard floor, that sequence is lifted above you.<br />
+The bridges turn separate masses into a connected architectural composition.<br />
+Their narrow spans also frame views through the court, directing the eye toward the temple and its tower.<br />
+This is not simply a shortcut between rooms.<br />
+It is a carved line through space that makes the whole complex read as one deliberate design.<br />
+We cannot watch an eighth-century crew at work, so the next sequence is an engineering reconstruction, not a recorded eyewitness account.<br />
+Picture the bridge first as a protected strip of bedrock, continuous with the pavilion and the neighboring mass.<br />
+Stonecutters open the surrounding space in controlled stages, removing rock beside and beneath the intended passage.<br />
+The connection at each end must remain intact as the void grows around it.<br />
+A cut made too far into the span could weaken it; a cut made too shallow could leave the route buried.<br />
+The surviving bridge records the finished geometry, but not the scaffolds, tools, work shifts, or exact cutting order.<br />
+So we should resist pretending to know measurements or a secret technique that the evidence does not provide.<br />
+The secure point is remarkable enough: the passage and its supports were shaped from the same continuous rock.<br />
+The absence around the bridge was made deliberately, one removed surface at a time.<br />
+Look closely at what the bridges do not have.<br />
+There are no visible joints where separate blocks meet, because the spans are rock-cut features rather than assembled arches.<br />
+There is no independent pier rising from the courtyard floor beneath the open span.<br />
+Instead, each bridge remains anchored at its architectural ends, while the surrounding rock has been cut away to expose it.<br />
+That observation describes what survives; it does not prove the builders calculated modern engineering equations.<br />
+Their practical knowledge is legible in the decisions preserved in stone: where to keep mass, where to open space, and where to stop cutting.<br />
+The bridge makes subtraction visible as structure.<br />
+A few steps of walkway survive because the mountain around them was removed without severing the route.<br />
+The void is part of the design, as carefully composed as the stone that remains.<br />
+Not every bridge survived.<br />
+Architectural documentation records a span that once extended from the great hall toward the southern cliff face and has since collapsed.<br />
+Its absence changes the way we read the courtyard.<br />
+The remaining connections show us the idea; the broken connection reminds us that carved stone is still vulnerable stone.<br />
+Weathering, fractures, and time can alter a monument without erasing its original ambition.<br />
+We cannot date the collapse from the gap alone, or assign it a single cause without stronger evidence.<br />
+But the gap lets us compare a surviving span with a lost one and imagine the former continuity carefully.<br />
+A reconstruction can show where the bridge reached, provided it is clearly marked as an interpretation.<br />
+The missing stone is evidence too, but it does not answer every question.<br />
+The bridges do more than solve a carving problem.<br />
+They connect spaces devoted to a sacred journey, from the outer gateway toward Nandi and onward to Shiva’s hall.<br />
+The route is also a visual sequence: threshold, guardian, gathering space, and sanctuary.<br />
+From below, sculpted passages cut across the sky above the court.<br />
+From the upper level, the same spans join the separate parts of a carefully ordered temple.<br />
+The builders translated the vocabulary of a constructed temple into a single rock-cut ensemble.<br />
+The bridge is therefore both infrastructure and image: a usable connection, and a line that binds the composition together.<br />
+Stone carries the architecture, but the spaces cut out of stone make the architecture legible.<br />
+At Kailasa, what was removed shapes the experience as powerfully as what remains.<br />
+Return to the courtyard and trace the bridges with your eyes.<br />
+Each span appears to cross open air, yet each is still part of the bedrock from which the complex was released.<br />
+That is the paradox at the heart of Kailasa: a temple made to look assembled, achieved by subtraction.<br />
+The surviving passages reveal connections the original builders chose to preserve.<br />
+The collapsed southern span leaves a question mark in the plan, not a license to invent a hidden machine or lost civilization.<br />
+The evidence points to patient architectural planning and extraordinary command of stone.<br />
+Next, we descend from the bridges to the great plinth, where sculpted elephants appear to carry the temple above the earth.<br />
+How can a mountain look as though it is being lifted by animals carved from that same mountain?<br />
+That is the next mystery waiting below.</p>
+<h2>Sources and interpretive limits</h2>
+<ul>
+<li>Sahapedia, <a href="https://www.sahapedia.org/the-architecture-of-ellora-caves">The Architecture of Ellora Caves</a>: Cave 16’s monolithic form, top-down excavation, and architectural context.</li>
+<li>Impart Encyclopedia of Art, <a href="https://imp-art.org/articles/kailasanatha-temple-ellora/">Kailasanatha Temple, Ellora</a>: describes the bridges connecting Nandi mandapa, gopuram, and sabhamandapa, and notes that the span toward the southern cliff has collapsed.</li>
+<li>Australian National University Archives, <a href="https://openresearch-repository.anu.edu.au/entities/anuarchivesitem/04e28b74-5985-4a34-a107-45c23f16a9fc">Kailasa Temple, 8th cent.</a>: archival description of the monument as a monolithic carving and its connecting bridges.</li>
+</ul>
+<p>Architecture supports the existence and placement of the spans, not a detailed record of their tools or work sequence. Reconstructed stages in this episode are explicitly labeled as architectural interpretation.</p>
+    </div>
+</main>
+
+<!-- FEEDBACK & COMMENT PANEL -->
+<aside id="feedback-panel">
+    <div class="panel-header">
+        <div class="panel-title">
+            <span>💬 Feedback & Notes</span>
+            <span class="feedback-badge" id="comment-count">0</span>
+        </div>
+    </div>
+
+    <div class="feedback-input-box">
+        <div class="feedback-meta">
+            <select id="comment-type" class="feedback-select">
+                <option value="change">✏️ Change Request</option>
+                <option value="approval">✅ Approval</option>
+                <option value="issue">⚠️ Issue / Bug</option>
+                <option value="note">💡 Idea / Note</option>
+            </select>
+            <input type="text" id="comment-section" class="feedback-target" placeholder="Section (Optional)">
+        </div>
+        <textarea id="comment-input" class="feedback-textarea" placeholder="Type your comment, critique, or instruction for Antigravity..."></textarea>
+        <button id="add-comment-btn" class="btn btn-primary" onclick="addComment()">Add Feedback</button>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn btn-secondary" onclick="copyFeedbackForAgent()">📋 Copy for Agent</button>
+        <button class="btn btn-secondary" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+        <button class="btn btn-secondary" onclick="clearAllComments()">🗑️ Clear</button>
+    </div>
+
+    <ul id="feedback-list" class="feedback-list"></ul>
+</aside>
+
+<div id="toast">Feedback copied to clipboard!</div>
+
+<script>
+const STORAGE_KEY = "doc_feedback_ajanta_ellora_episode04_script_and_storyboard_episode_04_the_floating_bridges_md";
+let comments = [];
+
+function loadComments() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            comments = JSON.parse(saved);
+        }
+    } catch(e) {
+        console.error("Could not load comments from localStorage", e);
+    }
+    renderComments();
+}
+
+function saveComments() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+    } catch(e) {
+        console.error("Could not save comments", e);
+    }
+    renderComments();
+}
+
+function addComment() {
+    const text = document.getElementById("comment-input").value.trim();
+    if (!text) return;
+    const type = document.getElementById("comment-type").value;
+    const section = document.getElementById("comment-section").value.trim() || "General";
+    const comment = {
+        id: Date.now(),
+        type: type,
+        section: section,
+        text: text,
+        timestamp: new Date().toLocaleString()
+    };
+    comments.push(comment);
+    document.getElementById("comment-input").value = "";
+    document.getElementById("comment-section").value = "";
+    saveComments();
+    showToast("Feedback saved!");
+}
+
+function deleteComment(id) {
+    comments = comments.filter(c => c.id !== id);
+    saveComments();
+}
+
+function clearAllComments() {
+    if (confirm("Clear all comments on this document?")) {
+        comments = [];
+        saveComments();
+    }
+}
+
+function renderComments() {
+    const list = document.getElementById("feedback-list");
+    const countBadge = document.getElementById("comment-count");
+    list.innerHTML = "";
+    countBadge.textContent = comments.length;
+
+    if (comments.length === 0) {
+        list.innerHTML = `<li style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 20px 0;">No feedback added yet.<br>Add your notes above to share with the agent.</li>`;
+        return;
+    }
+
+    comments.forEach(c => {
+        const li = document.createElement("li");
+        li.className = `comment-card type-${c.type}`;
+        li.innerHTML = `
+            <div class="comment-header">
+                <span class="comment-tag">${c.type} • ${c.section}</span>
+                <span>${c.timestamp.split(",")[1] || ""}</span>
+            </div>
+            <div class="comment-body">${escapeHtml(c.text)}</div>
+            <div style="display:flex; justify-content:flex-end;">
+                <button class="comment-delete" onclick="deleteComment(${c.id})">Delete</button>
+            </div>
+        `;
+        list.appendChild(li);
+    });
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 2500);
+}
+
+function copyFeedbackForAgent() {
+    if (comments.length === 0) {
+        alert("No feedback to copy!");
+        return;
+    }
+    let text = `Feedback for: ajanta-ellora/episode04/script_and_storyboard/episode-04-the-floating-bridges.md\n`;
+    text += `Date: ${new Date().toLocaleString()}\n\n`;
+    comments.forEach((c, idx) => {
+        text += `[${idx+1}] [${c.type.toUpperCase()}] (${c.section}):\n${c.text}\n\n`;
+    });
+    navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied feedback for Agent! Paste directly in chat.");
+    });
+}
+
+function exportFeedbackJSON() {
+    if (comments.length === 0) {
+        alert("No feedback to export!");
+        return;
+    }
+    const blob = new Blob([JSON.stringify({ doc: "ajanta-ellora/episode04/script_and_storyboard/episode-04-the-floating-bridges.md", feedback: comments }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "feedback_ajanta_ellora_episode04_script_and_storyboard_episode_04_the_floating_bridges_md.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Auto-generate TOC from Headings
+window.addEventListener("DOMContentLoaded", () => {
+    const tocList = document.getElementById("toc");
+    const headings = document.querySelectorAll("#rendered-content h1, #rendered-content h2, #rendered-content h3");
+    headings.forEach((h, idx) => {
+        if (!h.id) {
+            h.id = "heading-" + idx;
+        }
+        const li = document.createElement("li");
+        li.style.paddingLeft = h.tagName === "H2" ? "8px" : (h.tagName === "H3" ? "16px" : "0");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+    loadComments();
+});
+</script>
+</body>
+</html>

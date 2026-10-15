@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episode 03 The First Cut — Curiosity Kills The Cat</title>
+<style>
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-gold: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --border-color: #334155;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar TOC */
+#sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+#sidebar .doc-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    word-break: break-all;
+}
+
+#toc {
+    list-style: none;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+#toc li {
+    margin-bottom: 8px;
+}
+
+#toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: block;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+#toc a:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Main Container */
+#content-container {
+    flex: 1;
+    max-width: 960px;
+    padding: 40px 48px;
+    margin: 0 auto;
+}
+
+/* Header Banner */
+.doc-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.channel-tag {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; }
+h2 { font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+h3 { font-size: 1.25rem; color: var(--accent-blue); }
+h4 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--text-secondary);
+}
+
+ul, ol {
+    margin-bottom: 1.2em;
+    padding-left: 1.6em;
+    color: var(--text-secondary);
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid var(--accent-gold);
+    padding: 12px 18px;
+    background: rgba(245, 158, 11, 0.08);
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8em 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: #1e293b;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Code Blocks */
+pre {
+    background: #090d16;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.4em 0;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: #e2e8f0;
+}
+
+code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--accent-blue);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* FEEDBACK & COMMENT SYSTEM */
+#feedback-panel {
+    width: 360px;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feedback-badge {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.feedback-input-box {
+    margin-bottom: 16px;
+}
+
+.feedback-textarea {
+    width: 100%;
+    height: 90px;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.feedback-textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.feedback-select, .feedback-target {
+    flex: 1;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: #000000;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    padding: 6px 10px;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.action-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.feedback-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.comment-card {
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.85rem;
+}
+
+.comment-card.type-approval { border-left: 3px solid var(--accent-emerald); }
+.comment-card.type-change { border-left: 3px solid var(--accent-gold); }
+.comment-card.type-issue { border-left: 3px solid var(--accent-rose); }
+.comment-card.type-note { border-left: 3px solid var(--accent-blue); }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.comment-tag {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.comment-body {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.comment-delete:hover {
+    color: var(--accent-rose);
+}
+
+/* Toast notification */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent-emerald);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    body { flex-direction: column; }
+    #sidebar, #feedback-panel { width: 100%; height: auto; position: relative; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<aside id="sidebar">
+    <div class="channel-tag">Curiosity Kills The Cat</div>
+    <div class="doc-badge">ajanta-ellora/episode03/script_and_storyboard/episode-03-the-first-cut.md</div>
+    <h3>Sections</h3>
+    <ul id="toc"></ul>
+</aside>
+
+<!-- MAIN DOCUMENT CONTENT -->
+<main id="content-container">
+    <div class="doc-header">
+        <div class="channel-tag">Ajanta & Ellora Production Series</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Source: <code>ajanta-ellora/episode03/script_and_storyboard/episode-03-the-first-cut.md</code></p>
+    </div>
+    <div id="rendered-content">
+<h1>Episode 3: The First Cut</h1>
+<h2><em>Carving the Sacred Spire from the Top Down (The Legend of Kokasa &amp; The Monolithic Crown)</em></h2>
+<hr />
+<h3>Series Production Metadata</h3>
+<ul>
+<li><strong>Series</strong>: <em>The Curiosity Kills The Cat — Kailasa: The Mountain Carved From Above</em></li>
+<li><strong>Episode</strong>: 03 of 10</li>
+<li><strong>Target Runtime</strong>: ~7:46 (~466 Seconds)</li>
+<li><strong>Master Resolution</strong>: 1080p Full HD (1920x1080)</li>
+<li><strong>Pacing Ratio</strong>: 77 Micro-Beats (Avg. 6.05s per cut)</li>
+<li><strong>Visual Repetition Invariant</strong>: ZERO duplicate stills, ZERO duplicate video clips across 77 cuts</li>
+<li><strong>Audio Voice</strong>: Edge-TTS "en-US-ChristopherNeural" (Studio Baritone, broadcast-grade concatenation)</li>
+<li><strong>Subtitles</strong>: Strictly monotonic sentence-level synchronized <code>.srt</code> (Zero overlapping cues)</li>
+</ul>
+<hr />
+<h2>Executive Concept &amp; Dramatic Spine</h2>
+<p>By the end of Episode 2, an army of quarrymen had achieved the impossible: cutting three colossal vertical trenches reaching up to thirty-three meters deep into the basalt scarp of the Charanandri ridge, clearing an estimated hundreds of thousands of tons of rock with thermal shock and gravity chutes. </p>
+<p>Standing isolated in the center of that chasm was a single colossal island of solid mountain: roughly 50 meters long, 33 meters wide, and 100 feet tall.</p>
+<p>Now begins the most perilous phase in world architectural history: <strong>The Top-Down Subtractive Sculpting</strong>.</p>
+<p>In conventional additive architecture, a temple rises from foundation stones upward. If a wall cracks, you rebuild it. If a beam is short, you replace it. Scaffolding rests firmly on the earth. </p>
+<p>At Kailasa, <strong>the earth did not exist yet</strong>. The courtyard floor was buried beneath one hundred feet of unquarried bedrock. There was no scaffolding from below, and there was zero margin for error. If a sculptor struck too deep, sheared a load-bearing column, or fractured a ceiling slab, the entire multi-ton superstructure would collapse into rubble. You cannot glue a volcanic mountain back together.</p>
+<p>Archaeological records and 8th-century copper plate charters attribute the royal patronage of Cave 16 to the Rashtrakuta dynasty under King Krishna I (c. 756–773 CE). Yet local folklore preserved a dramatic human story: the medieval Marathi chronicle <em>Katha-Kalpataru</em> recounts that Queen Manikavati, consort of King Ela, vowed to fast until she beheld the crowning pinnacle of a temple dedicated to Shiva. To fulfill her vow before she starved, master architect Kokasa conceived an audacious solution: he climbed to the lonely summit of the stone monolith and carved the temple <strong>from the top down</strong>.</p>
+<p>While modern archaeology recognizes the seven-day completion as traditional folklore, top-down excavation was an indisputable engineering necessity: it allowed sculptors to stand upon the very mountain they were sculpting, eliminating the need for vast forests of ground scaffolding.</p>
+<hr />
+<h2>Complete 8-Act Script &amp; Voiceover Schedule</h2>
+<pre><code>================================================================================
+ACT 1: THE MONOLITH IN THE ABYSS (00:00 - 00:59)
+================================================================================
+Look down into the abyss.
+At the sheerest face of the Charanandri ridge, three colossal trenches have severed the living rock, plunging over thirty meters into the mountain.
+Standing in the center of the chasm is an isolated island of volcanic basalt: roughly fifty meters long, thirty-three meters wide, and one hundred feet tall.
+Archaeologists estimate hundreds of thousands of tons of rock were cleared into the valley.
+Now, silence falls over the ridge.
+Thousands of quarrymen rest their sledgehammers.
+For months, they have cut away the perimeter.
+Now begins the true test of architectural history.
+Master architect Kokasa stands at the sheer edge of the trench, staring across the void at the naked stone island.
+The rock is raw, jagged, and unformed.
+Inside that monolithic block sleeps the greatest rock-cut temple ever conceived.
+
+================================================================================
+ACT 2: THE QUEEN’S VOW &amp; THE LEGEND OF KOKASA (00:59 - 02:04)
+================================================================================
+Archaeological records and royal copper plates credit the eighth-century Rashtrakuta king, Krishna the First, with patronizing this monolithic wonder.
+Yet local tradition preserved an unforgettable human story.
+The medieval Marathi chronicle, Katha-Kalpataru, recounts the tale of King Ela and his queen, Manikavati.
+According to the legend, the queen made a desperate vow: she would touch neither food nor water until she beheld the crowning pinnacle of a temple dedicated to Shiva.
+The court architects bowed their heads in despair.
+To quarry foundations, raise walls, and mount the spire of a traditional temple would take twenty years.
+Before the first pillar stood, the queen would perish.
+Then, master builder Kokasa stepped forward with an audacity that stunned the court.
+He made an impossible promise:
+Within seven days, the queen shall gaze upon the crowning finial of Shiva's abode.
+The court was astonished: how could any builder conjure a temple spire in a single week?
+
+================================================================================
+ACT 3: THE PHYSICS OF ZERO MARGIN FOR ERROR (02:04 - 02:59)
+================================================================================
+Kokasa understood a structural truth that modern engineers still revere:
+You do not carve a rock-cut monument from the bottom up.
+You carve it from the top down.
+Traditional construction is additive: you assemble stone on stone, correcting errors as you rise.
+Monolithic rock-cut architecture is ruthlessly subtractive.
+Every blow of the hammer is permanent.
+There was no scaffolding resting on the courtyard floor, because the courtyard was still trapped beneath one hundred feet of solid mountain.
+If an artisan cuts two inches too deep into a lintel, the roof shears.
+If a rock fissure is miscalculated, hundreds of tons of overhead basalt can fracture and collapse.
+You cannot glue a mountain back together.
+To carve the spire, Kokasa would not dig into the earth.
+He would climb to the sky.
+
+================================================================================
+ACT 4: THE SOLAR GNOMON &amp; THE SACRED GRID (02:59 - 03:55)
+================================================================================
+At dawn, the master surveyors—the Sutradharas—climbed rope ladders to the summit of the isolated stone block.
+They carried no iron chisels. They brought the Shanku: a calibrated wooden solar gnomon.
+As the morning sun crested the Sahyadri ranges, the shadow of the gnomon tracked across the virgin basalt.
+By bisecting the shadow's morning and evening arcs, they established the true cardinal east-west axis.
+Next came the sacred cord, the Sutra.
+Dipped in wet vermilion red chalk, the cords were stretched taut and snapped against the basalt with sharp twangs.
+Grid lines bloomed across the summit: the Vastu-Purusha Mandala, a geometric matrix of sixty-four sacred squares.
+Every sanctuary wall, doorway, and column was calculated down to the millimeter before a single chip of stone was struck.
+
+================================================================================
+ACT 5: THE FIRST STRIKE: HEWING THE STUPI (03:55 - 04:46)
+================================================================================
+On the second morning, the Rupakaras—the master sculptors—ascended to the summit.
+At the exact center of the mandala, Kokasa placed the point of a tempered iron chisel.
+A hammer struck.
+The crack echoed through the empty trenches like a rifle shot.
+The sacred carving had begun.
+They did not excavate downward into the massif; they isolated the crowning finial: the Stupi.
+Working on their knees in a tight circle, artisans chipped away the surrounding basalt, sculpting a ribbed stone vase—the Kalasha—out of the living mountain.
+Unlike built masonry where finials are hoisted with timber winches, this multi-ton sacred crown was never lifted an inch.
+It was born directly from the volcanic ridge, permanently anchored to the bedrock of Earth.
+
+================================================================================
+ACT 6: THE FOUR TIERS OF THE DRAVIDIAN VIMANA (04:46 - 05:39)
+================================================================================
+With the finial freed, the sculptors stepped downward onto narrow rock ledges, cutting the spire beneath their feet.
+This was the Vimana: a Dravidian stepped pyramidal tower.
+Tier by tier, the stone was peeled away like the rings of an onion.
+On the upper level, they sculpted the octagonal neck—the Griva—flanked by monolithic resting bulls.
+Below it, they hewed stepped storeys, carving miniature pavilion shrines—the Kutas and Salas—directly into the descending slopes.
+Under the Deccan sun, carvers worked shoulder to shoulder, suspended by hemp ropes over thirty-meter drops.
+Basalt dust rose like incense into the sky.
+By the fifth day, the stepped pyramid of the spire emerged from the rock, perfectly proportioned, tapering toward the heavens.
+
+================================================================================
+ACT 7: THE TERRIFYING HOLLOW CORE (05:39 - 06:33)
+================================================================================
+Now came the most perilous phase of the summit carving:
+Hollowing the mountain from the inside out.
+Directly beneath the finished spire lay the Garbhagriha—the sacred inner sanctum.
+To create this chamber, stonemasons had to bore horizontally into the stone beneath their own finished roof.
+They worked in suffocating darkness, lit only by bronze lamps burning sesame oil.
+Standing on suspended timber scaffolding, masons chipped away the basalt ceiling directly above their heads.
+One errant fracture could compromise the structural integrity of the roof slab.
+They tested the thickness of the stone by tapping the ceiling with hardwood mallets, listening to the resonance.
+A deep, hollow ring meant halt; a solid thud meant cut further.
+Working in continuous shifts, the sanctum ceiling was brought to structural perfection.
+
+================================================================================
+ACT 8: THE CROWN EMERGES &amp; CLIFFHANGER (06:33 - 07:46)
+================================================================================
+In local folklore, the legend concludes with Queen Manikavati seeing the white spire and breaking her fast—a tale that arose to celebrate why Kailasa was carved from above.
+The artisans coated the newly hewn shikhara with a fine plaster of calcined seashell lime, burnishing it with smooth agates until it gleamed white against the dark basalt cliff.
+Yet beneath that gleaming spire, over eighty feet of solid mountain still waited in the abyss.
+In archaeological reality, top-down excavation was not a frantic seven-day miracle; it was a cold, calculated engineering necessity.
+It would take decades across generations of Rashtrakuta artisans to carve the vast courtyard, monumental elephants, and assembly halls down to the bedrock floor.
+Kokasa looked down from the summit into the shadowed abyss below.
+The crown was carved.
+Now, they had to excavate the body: slicing through thirty meters of stone to carve suspended bridges, monolithic pillars, and the great hypostyle hall.
+Next week, on Episode Four: The Floating Bridges of Kailasa.
+Subscribe, and carve the impossible.
+</code></pre>
+<hr />
+<h2>Granular Micro-Beat Storyboard (77 Micro-Beats)</h2>
+<h4><strong>Beat 01 (00:00:00,100 --&gt; 00:00:02,473)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Extreme Wide Drone View — The U-Trench Abyss</li>
+<li><strong>Narration</strong>: <em>"Look down into the abyss."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_01_monolith_abyss_wide_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Motorized 4K sub-pixel slow push-in (z=1.00 -&gt; 1.08) looking straight down into the colossal trench canyon.</li>
+<li><strong>SFX</strong>: Low subterranean wind howl reverberating off 100-foot basalt walls.</li>
+</ul>
+<h4><strong>Beat 02 (00:00:02,483 --&gt; 00:00:11,380)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Aerial 45-Degree Orbit — Trench Walls Severing Monolith</li>
+<li><strong>Narration</strong>: <em>"At the sheerest face of the Charanandri ridge, three colossal trenches have severed the living rock, plunging over thirty meters into the mountain."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_02_vertical_trench_walls_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Smooth lateral drift (pan_right) revealing sheer vertical pick marks along the 33-meter back scarp.</li>
+<li><strong>SFX</strong>: Distant echoes of wind whistling past stone cliff edges.</li>
+</ul>
+<h4><strong>Beat 03 (00:00:11,380 --&gt; 00:00:21,953)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Technical Blueprint — Core Geometry &amp; Abyss Dimensions</li>
+<li><strong>Narration</strong>: <em>"Standing in the center of the chasm is an isolated island of volcanic basalt: roughly fifty meters long, thirty-three meters wide, and one hundred feet tall."</em></li>
+<li><strong>Visual Asset</strong>: <code>gf_trench_isolation_3d_explainer.mp4</code></li>
+<li><strong>Motion</strong>: 3D Isometric architectural camera sweep &amp; trench cutaway with kinetic HUD dimension brackets (50m x 33m x 32.6m) and Foley sub-bass rumble.</li>
+<li><strong>SFX</strong>: Sharp caliper snaps; deep technical bass hum.</li>
+</ul>
+<h4><strong>Beat 04 (00:00:21,953 --&gt; 00:00:27,747)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Valley Floor — Transport Embankments</li>
+<li><strong>Narration</strong>: <em>"Archaeologists estimate hundreds of thousands of tons of rock were cleared into the valley."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_40_elephant_haulage_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Smooth forward dolly (zoom_in) over cleared valley floor with stone ballast and heavy transport lines.</li>
+<li><strong>SFX</strong>: Distant rumble of heavy stone haulage.</li>
+</ul>
+<h4><strong>Beat 05 (00:00:27,747 --&gt; 00:00:31,158)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Panoramic Plateau — Charanandri Ridge at Dawn</li>
+<li><strong>Narration</strong>: <em>"Now, silence falls over the ridge."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_11_charanandri_ridge_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Static hold with subtle lens vignette (slow_drift) across cold basalt ridge in thin morning mist.</li>
+<li><strong>SFX</strong>: Sudden cessation of quarry hammers; lone hawk cry.</li>
+</ul>
+<h4><strong>Beat 06 (00:00:31,158 --&gt; 00:00:34,687)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Close-Up — Weary Quarry Laborers</li>
+<li><strong>Narration</strong>: <em>"Thousands of quarrymen rest their sledgehammers."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_13_quarrymen_army_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Slow pan left across dusty, muscular artisan arms resting heavy iron sledges on basalt boulders.</li>
+<li><strong>SFX</strong>: Collective exhalation of tired laborers; metallic clatter of tools.</li>
+</ul>
+<h4><strong>Beat 07 (00:00:34,687 --&gt; 00:00:38,125)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Woodsmoke Dissipating from Trench</li>
+<li><strong>Narration</strong>: <em>"For months, they have cut away the perimeter."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_01_smoke_quarry_dissipate_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Cinematic 1080p action video (gf_01) of dense white thermal steam and woodsmoke clearing from the deep canyon.</li>
+<li><strong>SFX</strong>: Sizzling embers dying out; wind rushing into chasm.</li>
+</ul>
+<h4><strong>Beat 08 (00:00:38,125 --&gt; 00:00:41,927)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Council — Senior Architects at Ridge Brink</li>
+<li><strong>Narration</strong>: <em>"Now begins the true test of architectural history."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_04_architects_council_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Slow push-in on senior master builders gathering with palm-leaf scrolls at the trench edge.</li>
+<li><strong>SFX</strong>: Murmur of engineers debating; mountain breeze.</li>
+</ul>
+<h4><strong>Beat 09 (00:00:41,927 --&gt; 00:00:49,570)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Low Angle Tracking — Isolated Monolith at Dusk</li>
+<li><strong>Narration</strong>: <em>"Master architect Kokasa stands at the sheer edge of the trench, staring across the void at the naked stone island."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_14_isolated_monolith_dusk_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Low-angle motorized dolly tracking across empty trench toward the solitary dark monolith block.</li>
+<li><strong>SFX</strong>: Taut ropes groaning in wind; pebbles tumbling into depths.</li>
+</ul>
+<h4><strong>Beat 10 (00:00:49,570 --&gt; 00:00:53,411)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Bedrock — Ancient Deccan Basalt Texture</li>
+<li><strong>Narration</strong>: <em>"The rock is raw, jagged, and unformed."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_52_prehistoric_lava_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Extreme macro drift over dark, vesicular volcanic basalt showing crystalline olivine grains.</li>
+<li><strong>SFX</strong>: Subtle tectonic resonance hum.</li>
+</ul>
+<h4><strong>Beat 11 (00:00:53,411 --&gt; 00:00:58,906)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Testing Stone Integrity with Iron Chisel</li>
+<li><strong>Narration</strong>: <em>"Inside that monolithic block sleeps the greatest rock-cut temple ever conceived."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_53_testing_basalt_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Focus pull to chisel edge testing the solid volcanic matrix of the central island.</li>
+<li><strong>SFX</strong>: Clean metallic ping against unyielding rock.</li>
+</ul>
+<h4><strong>Beat 12 (00:00:59,068 --&gt; 00:01:08,668)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Historical Inscription — Rashtrakuta Copper Plate Grant</li>
+<li><strong>Narration</strong>: <em>"Archaeological records and royal copper plates credit the eighth-century Rashtrakuta king, Krishna the First, with patronizing this monolithic wonder."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_01_royal_charter_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Slow pan over ancient copper plate charter commemorating King Krishna I and the Kailasa temple.</li>
+<li><strong>SFX</strong>: Resonant bronze temple bell chime.</li>
+</ul>
+<h4><strong>Beat 13 (00:01:08,678 --&gt; 00:01:13,004)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Royal Pavilion — Deccan Imperial Court at Sunset</li>
+<li><strong>Narration</strong>: <em>"Yet local tradition preserved an unforgettable human story."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_15_palace_dusk_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Sweeping pan right over scarlet and saffron silk tents pitched across the Deccan plateau.</li>
+<li><strong>SFX</strong>: Murmur of anxious courtiers; fluttering banners.</li>
+</ul>
+<h4><strong>Beat 14 (00:01:13,004 --&gt; 00:01:20,582)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Interior — King Ela at Ailing Queen's Bedside</li>
+<li><strong>Narration</strong>: <em>"The medieval Marathi chronicle, Katha-Kalpataru, recounts the tale of King Ela and his queen, Manikavati."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_16_king_sickbed_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Gentle push-in through linen drapes to Queen Manikavati resting on carved daybed with royal physician.</li>
+<li><strong>SFX</strong>: Soft clink of medicine vials; sorrowful veena melody.</li>
+</ul>
+<h4><strong>Beat 15 (00:01:20,582 --&gt; 00:01:30,387)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Queen Manikavati Making Her Sacred Vow</li>
+<li><strong>Narration</strong>: <em>"According to the legend, the queen made a desperate vow: she would touch neither food nor water until she beheld the crowning pinnacle of a temple dedicated to Shiva."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_17_queen_vow_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Intimate macro pan over queen clutching gold Shiva Trishula amulet over her chest in feverish prayer.</li>
+<li><strong>SFX</strong>: Low Sanskrit prayer whispered; distant temple conch.</li>
+</ul>
+<h4><strong>Beat 16 (00:01:30,387 --&gt; 00:01:33,968)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Council — Royal Architects Kneeling in Despair</li>
+<li><strong>Narration</strong>: <em>"The court architects bowed their heads in despair."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_50_architects_council_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Static wide angle showing elderly architects with palm scrolls kneeling before royal ministers in despair.</li>
+<li><strong>SFX</strong>: Heavy silence in council chamber; rustling manuscripts.</li>
+</ul>
+<h4><strong>Beat 17 (00:01:33,968 --&gt; 00:01:41,025)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Blueprint Cross-Section — Conventional 20-Year Construction</li>
+<li><strong>Narration</strong>: <em>"To quarry foundations, raise walls, and mount the spire of a traditional temple would take twenty years."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_20_blueprint_cutaway_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Architectural diagram showing traditional bottom-up masonry requiring decades of quarrying.</li>
+<li><strong>SFX</strong>: Rhythmic mechanical clock pulse.</li>
+</ul>
+<h4><strong>Beat 18 (00:01:41,025 --&gt; 00:01:45,178)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Close-Up — Ancient Water Clock Measuring Hours</li>
+<li><strong>Narration</strong>: <em>"Before the first pillar stood, the queen would perish."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_51_water_clock_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Macro shot of bronze bowl sinking in water bowl, symbolizing the queen's dwindling days.</li>
+<li><strong>SFX</strong>: Rhythmic droplet splash; rising suspense tone.</li>
+</ul>
+<h4><strong>Beat 19 (00:01:45,178 --&gt; 00:01:50,777)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Kokasa Stepping Forward</li>
+<li><strong>Narration</strong>: <em>"Then, master builder Kokasa stepped forward with an audacity that stunned the court."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_02_kokasa_stepping_forward_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Cinematic 1080p tracking shot (gf_02) of master builder Kokasa walking confidently past courtiers.</li>
+<li><strong>SFX</strong>: Stir of gasping courtiers; confident footstep thud.</li>
+</ul>
+<h4><strong>Beat 20 (00:01:50,777 --&gt; 00:01:58,460)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Low-Angle — Kokasa Making the 7-Day Promise</li>
+<li><strong>Narration</strong>: <em>"He made an impossible promise: Within seven days, the queen shall gaze upon the crowning finial of Shiva's abode."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_14_kokasa_hero_promise_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Dynamic low-angle hero shot of Kokasa raising right hand with unshakeable authority before throne.</li>
+<li><strong>SFX</strong>: Sudden dramatic orchestral hit; breathless silence.</li>
+</ul>
+<h4><strong>Beat 21 (00:01:58,460 --&gt; 00:02:04,280)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Shot — Royal Courtiers in Shock &amp; Disbelief</li>
+<li><strong>Narration</strong>: <em>"The court was astonished: how could any builder conjure a temple spire in a single week?"</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_18_kokasa_entrance_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Panning shot across ministers and rival builders whispering in disbelief and mockery.</li>
+<li><strong>SFX</strong>: Anxious court whispers; flickering torchlight sound.</li>
+</ul>
+<h4><strong>Beat 22 (00:02:04,444 --&gt; 00:02:12,312)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Kokasa Unrolling Ancient Shilpa Shastra</li>
+<li><strong>Narration</strong>: <em>"Kokasa understood a structural truth that modern engineers still revere: You do not carve a rock-cut monument from the bottom up."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_19_kokasa_scroll_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Tight focus on weathered fingers tracing Sanskrit geometric diagrams on palm-leaf manuscript.</li>
+<li><strong>SFX</strong>: Crisp dry rustle of ancient palm leaf.</li>
+</ul>
+<h4><strong>Beat 23 (00:02:12,322 --&gt; 00:02:14,851)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Infographic — Additive Masonry vs Subtractive Carving</li>
+<li><strong>Narration</strong>: <em>"You carve it from the top down."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_infographic_02_bottom_up_vs_top_down.jpg</code></li>
+<li><strong>Motion</strong>: High-contrast technical comparison blueprint contrasting bottom-up assembly with top-down hewing.</li>
+<li><strong>SFX</strong>: Technical caliper clicks; low digital bass drop.</li>
+</ul>
+<h4><strong>Beat 24 (00:02:14,851 --&gt; 00:02:21,791)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Infographic Diagram — Gravity Mechanics in Quarrying</li>
+<li><strong>Narration</strong>: <em>"Traditional construction is additive: you assemble stone on stone, correcting errors as you rise."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_48_infographic_gravity_engine.jpg</code></li>
+<li><strong>Motion</strong>: Technical chart demonstrating how gravity assists downward rock clearance vs upward lifting.</li>
+<li><strong>SFX</strong>: Deep mechanical servo tone.</li>
+</ul>
+<h4><strong>Beat 25 (00:02:21,791 --&gt; 00:02:26,245)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Infographic — Geotechnical Failure Hazards &amp; Zero Error</li>
+<li><strong>Narration</strong>: <em>"Monolithic rock-cut architecture is ruthlessly subtractive."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_infographic_03_zero_error_margin.jpg</code></li>
+<li><strong>Motion</strong>: High-contrast hazard matrix detailing blind column overcut, thermal fissures, and axis skew.</li>
+<li><strong>SFX</strong>: Warning frequency pulse; resonant gong.</li>
+</ul>
+<h4><strong>Beat 26 (00:02:26,245 --&gt; 00:02:29,239)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Steel Chisel Striking Bedrock Sparks</li>
+<li><strong>Narration</strong>: <em>"Every blow of the hammer is permanent."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_03_chisel_striking_flawless_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: High-speed 120fps macro action video (gf_03) of chisel struck by hammer, brilliant golden sparks flying.</li>
+<li><strong>SFX</strong>: Sharp metallic CLANG; shower of sparks crackle.</li>
+</ul>
+<h4><strong>Beat 27 (00:02:29,239 --&gt; 00:02:37,221)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Down Vertigo Perspective — Sheer Void Below Monolith</li>
+<li><strong>Narration</strong>: <em>"There was no scaffolding resting on the courtyard floor, because the courtyard was still trapped beneath one hundred feet of solid mountain."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_08_three_trenches_depth_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Vertigo downward perspective looking from summit into empty 100-foot abyss without scaffolding.</li>
+<li><strong>SFX</strong>: Wind howling down into empty rock canyon.</li>
+</ul>
+<h4><strong>Beat 28 (00:02:37,221 --&gt; 00:02:42,403)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Detail — Structural Microfractures in Rock</li>
+<li><strong>Narration</strong>: <em>"If an artisan cuts two inches too deep into a lintel, the roof shears."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_22_microfracture_cracks_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Macro view of hairline fault crack in dark basalt, showing hazard of overstriking.</li>
+<li><strong>SFX</strong>: Tense microscopic stone groan.</li>
+</ul>
+<h4><strong>Beat 29 (00:02:42,403 --&gt; 00:02:49,005)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Infographic Diagram — Basalt Compressive Strength</li>
+<li><strong>Narration</strong>: <em>"If a rock fissure is miscalculated, hundreds of tons of overhead basalt can fracture and collapse."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_46_infographic_basalt_strength.jpg</code></li>
+<li><strong>Motion</strong>: Technical chart comparing 140 MPa Deccan basalt compressive strength with sandstone.</li>
+<li><strong>SFX</strong>: Hydraulic press hum.</li>
+</ul>
+<h4><strong>Beat 30 (00:02:49,005 --&gt; 00:02:52,000)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Pile of Dulled and Mushroomed Iron Chisels</li>
+<li><strong>Narration</strong>: <em>"You cannot glue a mountain back together."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_35_dulled_iron_pile_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Slow pan across heaps of blunt, deformed iron chisels worn down by unyielding basalt.</li>
+<li><strong>SFX</strong>: Metallic clinking of scrap iron.</li>
+</ul>
+<h4><strong>Beat 31 (00:02:52,000 --&gt; 00:02:56,349)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Wide — Superheated Trench Bedrock</li>
+<li><strong>Narration</strong>: <em>"To carve the spire, Kokasa would not dig into the earth."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_23_superheated_bedrock_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Raking light across blackened, scarred bedrock surface after perimeter excavation.</li>
+<li><strong>SFX</strong>: Hissing heat shimmer; low drone.</li>
+</ul>
+<h4><strong>Beat 32 (00:02:56,349 --&gt; 00:02:58,719)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Epic Horizon — Sunrise Cresting Over Trench Abyss</li>
+<li><strong>Narration</strong>: <em>"He would climb to the sky."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_12_trench_sunrise_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Golden dawn light breaking across the summit ridge, illuminating the lonely block of rock.</li>
+<li><strong>SFX</strong>: Warm inspirational string swell.</li>
+</ul>
+<h4><strong>Beat 33 (00:02:58,900 --&gt; 00:03:07,016)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Tracking — Surveyors Ascending Summit on Ropes</li>
+<li><strong>Narration</strong>: <em>"At dawn, the master surveyors—the Sutradharas—climbed rope ladders to the summit of the isolated stone block."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_30_survey_summit_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Surveyors in white dhotis climbing hemp rope ladders up the vertical 100-foot cliff face at dawn.</li>
+<li><strong>SFX</strong>: Groaning hemp ropes; mountain wind.</li>
+</ul>
+<h4><strong>Beat 34 (00:03:07,026 --&gt; 00:03:09,828)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Surveyor Checking Heavy Lead Plummet</li>
+<li><strong>Narration</strong>: <em>"They carried no iron chisels."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_06_surveyor_plummet_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Extreme close-up of brass plummet swaying against vertical plumb line on bedrock.</li>
+<li><strong>SFX</strong>: Rhythmic pendulum whoosh.</li>
+</ul>
+<h4><strong>Beat 35 (00:03:09,828 --&gt; 00:03:14,294)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: 3D Mechanical Explainer — Shanku Solar Gnomon &amp; Cardinal Alignment</li>
+<li><strong>Narration</strong>: <em>"They brought the Shanku: a calibrated wooden solar gnomon."</em></li>
+<li><strong>Visual Asset</strong>: <code>gf_shanku_cardinal_3d_explainer.mp4</code></li>
+<li><strong>Motion</strong>: 3D procedural basalt plateau with calibrated wooden gnomon, moving solar shadow arc, and glowing cardinal bisection with kinetic HUD.</li>
+<li><strong>SFX</strong>: Stone scribe scratch; celestial crystal chime; compass lock.</li>
+</ul>
+<h4><strong>Beat 36 (00:03:14,294 --&gt; 00:03:21,326)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Shanku Solar Shadow Arc Timelapse</li>
+<li><strong>Narration</strong>: <em>"As the morning sun crested the Sahyadri ranges, the shadow of the gnomon tracked across the virgin basalt."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_04_shanku_solar_shadow_timelapse_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Timelapse video (gf_04) of sharp gnomon shadow smoothly sweeping across sunlit basalt.</li>
+<li><strong>SFX</strong>: Fast-forward clock ticking; sunbeam flare.</li>
+</ul>
+<h4><strong>Beat 37 (00:03:21,326 --&gt; 00:03:28,201)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Marking Morning and Evening Shadow Intersections</li>
+<li><strong>Narration</strong>: <em>"By bisecting the shadow's morning and evening arcs, they established the true cardinal east-west axis."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_33_surveyor_plummet_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Artisan carving fine groove into stone at intersection of shadow arc and scribed circle.</li>
+<li><strong>SFX</strong>: Scratch of iron scribe on basalt.</li>
+</ul>
+<h4><strong>Beat 38 (00:03:28,201 --&gt; 00:03:31,599)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Detail — Sacred Measuring Cord Coiled on Silk</li>
+<li><strong>Narration</strong>: <em>"Next came the sacred cord, the Sutra."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_26_copper_charter_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Macro pan over twisted hemp survey cords and brass measuring calipers on drafting board.</li>
+<li><strong>SFX</strong>: Gentle fabric swish.</li>
+</ul>
+<h4><strong>Beat 39 (00:03:31,599 --&gt; 00:03:38,773)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Snapping Red Vermilion Chalk Line</li>
+<li><strong>Narration</strong>: <em>"Dipped in wet vermilion red chalk, the cords were stretched taut and snapped against the basalt with sharp twangs."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_05_snapping_chalk_line_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Slow-motion video (gf_05) of two surveyors snapping taut red cord, puff of red dust exploding.</li>
+<li><strong>SFX</strong>: Sharp whip-like TWANG; dust billow.</li>
+</ul>
+<h4><strong>Beat 40 (00:03:38,773 --&gt; 00:03:47,081)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: 3D Sacred Geometry Explainer — 8×8 Manduka Mandala (64 Padas)</li>
+<li><strong>Narration</strong>: <em>"Grid lines bloomed across the summit: the Vastu-Purusha Mandala, a geometric matrix of sixty-four sacred squares."</em></li>
+<li><strong>Visual Asset</strong>: <code>gf_vastu_mandala_3d_explainer.mp4</code></li>
+<li><strong>Motion</strong>: 3D aerial crane sweep over Charanandri ridge as the vermilion 8x8 matrix blooms across bedrock, illuminating the central Brahmasthana and temple footprint with kinetic telemetry HUD.</li>
+<li><strong>SFX</strong>: Cord snap twangs; deep sacred choral harmonic drone; digital coordinate lock.</li>
+</ul>
+<h4><strong>Beat 41 (00:03:47,081 --&gt; 00:03:55,193)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Model — Clay Temple Mockup with Master Seal</li>
+<li><strong>Narration</strong>: <em>"Every sanctuary wall, doorway, and column was calculated down to the millimeter before a single chip of stone was struck."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_31_clay_model_seal_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Close-up of terracotta scale model of vimana marked with architect's seal at grid center.</li>
+<li><strong>SFX</strong>: Ceremonial conch blast.</li>
+</ul>
+<h4><strong>Beat 42 (00:03:55,372 --&gt; 00:04:01,456)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Summit — Master Sculptors Gathering on Peak</li>
+<li><strong>Narration</strong>: <em>"On the second morning, the Rupakaras—the master sculptors—ascended to the summit."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_29_artisan_camp_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Artisans climbing onto summit terrace carrying tool baskets and hammers under morning sun.</li>
+<li><strong>SFX</strong>: Footsteps on grit; excited artisan chatter.</li>
+</ul>
+<h4><strong>Beat 43 (00:04:01,466 --&gt; 00:04:07,225)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Iron Chisel Placed on Sacred Center Point</li>
+<li><strong>Narration</strong>: <em>"At the exact center of the mandala, Kokasa placed the point of a tempered iron chisel."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_32_first_chisel_strike_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Extreme close-up of chisel tip aligned precisely with central mandala crosshair.</li>
+<li><strong>SFX</strong>: Tense silence; single breath intake.</li>
+</ul>
+<h4><strong>Beat 44 (00:04:07,225 --&gt; 00:04:09,230)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — First Hammer Strike Sparks</li>
+<li><strong>Narration</strong>: <em>"A hammer struck."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_06_first_hammer_strike_sparks_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Macro video (gf_06) of heavy mallet smashing chisel, bright golden sparks bursting on impact.</li>
+<li><strong>SFX</strong>: Deafening gunshot crack echoing into abyss.</li>
+</ul>
+<h4><strong>Beat 45 (00:04:09,230 --&gt; 00:04:13,436)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Panoramic Reverberation — Back Scarp Echoing First Strike</li>
+<li><strong>Narration</strong>: <em>"The crack echoed through the empty trenches like a rifle shot."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_43_the_back_scarp_wall_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Wide shot looking across the 33-meter back scarp as sound wave reverberates off basalt cliff.</li>
+<li><strong>SFX</strong>: Deep rolling thunder echo.</li>
+</ul>
+<h4><strong>Beat 46 (00:04:13,436 --&gt; 00:04:16,079)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Action — Fracture Testing Basalt Core</li>
+<li><strong>Narration</strong>: <em>"The sacred carving had begun."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_34_chisel_fracture_test_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Carver testing clean fracture plane of basalt as first stone flake splits away cleanly.</li>
+<li><strong>SFX</strong>: Crisp sharp stone snap.</li>
+</ul>
+<h4><strong>Beat 47 (00:04:16,079 --&gt; 00:04:22,550)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Medium — Sculptors Kneeling to Hew the Stupi Finial</li>
+<li><strong>Narration</strong>: <em>"They did not excavate downward into the massif; they isolated the crowning finial: the Stupi."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_34_isolating_stupi_finial_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Circle of master carvers on knees hewing circular trench to isolate monolithic Kalasha finial.</li>
+<li><strong>SFX</strong>: Rhythmic polyrhythmic hammer chipping.</li>
+</ul>
+<h4><strong>Beat 48 (00:04:22,550 --&gt; 00:04:32,641)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Atmospheric Detail — Blacksmiths Re-hardening Chisels at Edge</li>
+<li><strong>Narration</strong>: <em>"Working on their knees in a tight circle, artisans chipped away the surrounding basalt, sculpting a ribbed stone vase—the Kalasha—out of the living mountain."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_03_blacksmith_forge_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Smoke rising from portable charcoal forge on trench ridge where smiths quench red-hot chisels.</li>
+<li><strong>SFX</strong>: Hiss of water quenching; forge bellows.</li>
+</ul>
+<h4><strong>Beat 49 (00:04:32,641 --&gt; 00:04:40,519)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Logistics — Timber Convoys Supplying Iron &amp; Tools</li>
+<li><strong>Narration</strong>: <em>"Unlike built masonry where finials are hoisted with timber winches, this multi-ton sacred crown was never lifted an inch."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_36_hardwood_convoys_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Bullock trains winding along ridge trail delivering fuel and fresh tempered steel points.</li>
+<li><strong>SFX</strong>: Wooden cart creak; driver calls.</li>
+</ul>
+<h4><strong>Beat 50 (00:04:40,519 --&gt; 00:04:46,274)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Dramatic Silhouette — Carved Finial Anchored to Earth</li>
+<li><strong>Narration</strong>: <em>"It was born directly from the volcanic ridge, permanently anchored to the bedrock of Earth."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_37_stacking_pyres_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Silhouette of crowning kalasha stone vase emerging pristine from the living volcanic peak.</li>
+<li><strong>SFX</strong>: Majestic brass fanfare; dawn chorus.</li>
+</ul>
+<h4><strong>Beat 51 (00:04:46,444 --&gt; 00:04:53,609)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Medium Tracking — Sculptors Descending to Spire Ledges</li>
+<li><strong>Narration</strong>: <em>"With the finial freed, the sculptors stepped downward onto narrow rock ledges, cutting the spire beneath their feet."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_42_depth_marker_checking_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Artisans stepping down onto narrow rock terraces, chiseling descending tiers beneath feet.</li>
+<li><strong>SFX</strong>: Scrape of leather sandals on stone ledge.</li>
+</ul>
+<h4><strong>Beat 52 (00:04:53,619 --&gt; 00:04:58,049)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: 3D Architectural Explainer — Dravidian Vimana Tier Deconstruction</li>
+<li><strong>Narration</strong>: <em>"This was the Vimana: a Dravidian stepped pyramidal tower."</em></li>
+<li><strong>Visual Asset</strong>: <code>gf_vimana_tiers_3d_explainer.mp4</code></li>
+<li><strong>Motion</strong>: 3D architectural side-isometric cutaway showing descending amber cutter planes peeling basalt level-by-level to reveal the 4 tiers with 0m scaffolding required.</li>
+<li><strong>SFX</strong>: Hydraulic stone slicing rumble; rhythmic chisel clangs; low gong resonance.</li>
+</ul>
+<h4><strong>Beat 53 (00:04:58,049 --&gt; 00:05:02,867)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Infographic Diagram — Trench Excavation Depth Profiling</li>
+<li><strong>Narration</strong>: <em>"Tier by tier, the stone was peeled away like the rings of an onion."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_45_infographic_three_trenches.jpg</code></li>
+<li><strong>Motion</strong>: Cross-sectional engineering diagram showing top-down peeling sequence of rock layers.</li>
+<li><strong>SFX</strong>: Subterranean bass swell.</li>
+</ul>
+<h4><strong>Beat 54 (00:05:02,867 --&gt; 00:05:10,211)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Carving Octagonal Griva &amp; Monolithic Bulls</li>
+<li><strong>Narration</strong>: <em>"On the upper level, they sculpted the octagonal neck—the Griva—flanked by monolithic resting bulls."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_05_kokasa_scroll_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Master artisan sculpting life-sized resting Nandi bull in 3D relief on spire cornice.</li>
+<li><strong>SFX</strong>: Delicate tapping of pointed carving chisel.</li>
+</ul>
+<h4><strong>Beat 55 (00:05:10,211 --&gt; 00:05:19,560)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero 45-Degree Aerial — Dravidian Vimana Pyramid Emerging</li>
+<li><strong>Narration</strong>: <em>"Below it, they hewed stepped storeys, carving miniature pavilion shrines—the Kutas and Salas—directly into the descending slopes."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_45_stepped_pyramid_emerging_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: 45-degree panoramic view of four tiered storeys emerging with carved miniature shrine aedicules.</li>
+<li><strong>SFX</strong>: Full orchestral theme building in intensity.</li>
+</ul>
+<h4><strong>Beat 56 (00:05:19,560 --&gt; 00:05:26,695)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Sculptors Suspended in Hemp Ropes</li>
+<li><strong>Narration</strong>: <em>"Under the Deccan sun, carvers worked shoulder to shoulder, suspended by hemp ropes over thirty-meter drops."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_07_sculptors_suspended_ropes_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Dynamic video (gf_07) of carvers hanging over 100-foot drop chiseling horizontal mouldings.</li>
+<li><strong>SFX</strong>: Wind whistling; hammers clattering in sync.</li>
+</ul>
+<h4><strong>Beat 57 (00:05:26,695 --&gt; 00:05:30,393)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Macro Atmosphere — Basalt Stone Dust Billowing into Sky</li>
+<li><strong>Narration</strong>: <em>"Basalt dust rose like incense into the sky."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_41_dust_and_sweat_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Golden sunbeams illuminating swirling clouds of fine mineral dust drifting across abyss.</li>
+<li><strong>SFX</strong>: Ethereal flute melody; serene breeze.</li>
+</ul>
+<h4><strong>Beat 58 (00:05:30,393 --&gt; 00:05:38,518)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Infographic Overview — Monolithic Core Dimensions &amp; Scale</li>
+<li><strong>Narration</strong>: <em>"By the fifth day, the stepped pyramid of the spire emerged from the rock, perfectly proportioned, tapering toward the heavens."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_49_infographic_monolith_dimensions.jpg</code></li>
+<li><strong>Motion</strong>: Isometric schematic showing completed 30-meter spire standing atop remaining uncarved core.</li>
+<li><strong>SFX</strong>: Deep resonant gong strike.</li>
+</ul>
+<h4><strong>Beat 59 (00:05:38,692 --&gt; 00:05:44,815)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Dark Low Angle — Entryway Beneath Finished Vimana Roof</li>
+<li><strong>Narration</strong>: <em>"Now came the most perilous phase of the summit carving: Hollowing the mountain from the inside out."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_38_crowbar_levering_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Shadowed horizontal boring cut directly beneath finished cornice into core rock.</li>
+<li><strong>SFX</strong>: Echoing subterranean chisel strike.</li>
+</ul>
+<h4><strong>Beat 60 (00:05:44,825 --&gt; 00:05:50,440)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Interior Sanctum — Forge-Tempered Tools for Core Work</li>
+<li><strong>Narration</strong>: <em>"Directly beneath the finished spire lay the Garbhagriha—the sacred inner sanctum."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_54_blacksmith_forge_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Masons inspecting heavy punch points under bronze oil lamp glow before entering sanctum.</li>
+<li><strong>SFX</strong>: Flickering flame sizzle; low drone.</li>
+</ul>
+<h4><strong>Beat 61 (00:05:50,440 --&gt; 00:05:57,511)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Video Target — Stonemason Chipping Ceiling Sparks</li>
+<li><strong>Narration</strong>: <em>"To create this chamber, stonemasons had to bore horizontally into the stone beneath their own finished roof."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_gf_08_chipping_ceiling_sparks_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Dark cave interior video (gf_08) of mason on timber scaffold driving chisel upward into ceiling.</li>
+<li><strong>SFX</strong>: Sparks crackling; sharp metallic impact.</li>
+</ul>
+<h4><strong>Beat 62 (00:05:57,511 --&gt; 00:06:03,474)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Interior Atmosphere — Bronze Oil Lamps Burning Sesame Oil</li>
+<li><strong>Narration</strong>: <em>"They worked in suffocating darkness, lit only by bronze lamps burning sesame oil."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_02_artisan_camp_ridge_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Macro shot of sesame oil lamp smoking in rock niche, casting amber light on basalt ceiling.</li>
+<li><strong>SFX</strong>: Gentle flame flicker; artisan breathing.</li>
+</ul>
+<h4><strong>Beat 63 (00:06:03,474 --&gt; 00:06:10,506)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Action Interior — Sledgehammers Leveling Sanctum Wall</li>
+<li><strong>Narration</strong>: <em>"Standing on suspended timber scaffolding, masons chipped away the basalt ceiling directly above their heads."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_39_sledgehammer_crush_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Two masons striking stone wedge to cleave waste basalt block from inner chamber.</li>
+<li><strong>SFX</strong>: Heavy muffled THUD of stone fracturing.</li>
+</ul>
+<h4><strong>Beat 64 (00:06:10,506 --&gt; 00:06:15,623)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Infographic Diagram — Thermal Expansion &amp; Ceiling Stability</li>
+<li><strong>Narration</strong>: <em>"One errant fracture could compromise the structural integrity of the roof slab."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_47_infographic_thermal_shock.jpg</code></li>
+<li><strong>Motion</strong>: Geotechnical schematic illustrating internal shear stresses on suspended basalt ceiling slab.</li>
+<li><strong>SFX</strong>: Warning acoustic frequency.</li>
+</ul>
+<h4><strong>Beat 65 (00:06:15,623 --&gt; 00:06:22,211)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Close-Up — Master Mason Tapping Ceiling with Mallet</li>
+<li><strong>Narration</strong>: <em>"They tested the thickness of the stone by tapping the ceiling with hardwood mallets, listening to the resonance."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_53_wooden_mallet_acoustic_test_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Close-up of veteran mason with ear pressed to basalt ceiling, gently tapping wooden mallet.</li>
+<li><strong>SFX</strong>: Tense silence; wooden mallet tap THUD.</li>
+</ul>
+<h4><strong>Beat 66 (00:06:22,211 --&gt; 00:06:27,289)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Hero Infographic — Acoustic Resonance &amp; Non-Destructive Sounding</li>
+<li><strong>Narration</strong>: <em>"A deep, hollow ring meant halt; a solid thud meant cut further."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_infographic_06_acoustic_sounding_thickness.jpg</code></li>
+<li><strong>Motion</strong>: High-contrast acoustic frequency blueprint contrasting high hollow ring with low solid thud.</li>
+<li><strong>SFX</strong>: Two distinct tones: high ring vs low thud.</li>
+</ul>
+<h4><strong>Beat 67 (00:06:27,289 --&gt; 00:06:32,940)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Interior Wide — Completed Flat Basalt Sanctum Ceiling</li>
+<li><strong>Narration</strong>: <em>"Working in continuous shifts, the sanctum ceiling was brought to structural perfection."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_27_agrarian_supply_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Wide view of flawless flat suspended ceiling standing without pillars in flickering oil light.</li>
+<li><strong>SFX</strong>: Peaceful chime; collective exhale.</li>
+</ul>
+<h4><strong>Beat 68 (00:06:33,100 --&gt; 00:06:44,067)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Valley View — Queen Manikavati Looking from Veranda</li>
+<li><strong>Narration</strong>: <em>"In local folklore, the legend concludes with Queen Manikavati seeing the white spire and breaking her fast—a tale that arose to celebrate why Kailasa was carved from above."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_55_queen_vow_wide_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Queen in royal silk looking out from distant palace pavilion toward the rugged Charanandri ridge.</li>
+<li><strong>SFX</strong>: Distant royal fanfares; gentle breeze.</li>
+</ul>
+<h4><strong>Beat 69 (00:06:44,077 --&gt; 00:06:54,783)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Masterpiece Hero Wide — Gleaming White Spire in Sunrise</li>
+<li><strong>Narration</strong>: <em>"The artisans coated the newly hewn shikhara with a fine plaster of calcined seashell lime, burnishing it with smooth agates until it gleamed white against the dark basalt cliff."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_57_gleaming_white_spire_hero_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Aerial view of completed four-tiered spire coated in seashell lime plaster gleaming like snow.</li>
+<li><strong>SFX</strong>: Full majestic orchestral swell; radiant chorus.</li>
+</ul>
+<h4><strong>Beat 70 (00:06:54,783 --&gt; 00:07:01,020)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: High-Angle Abyss — 80 Feet of Uncut Massif Below Spire</li>
+<li><strong>Narration</strong>: <em>"Yet beneath that gleaming spire, over eighty feet of solid mountain still waited in the abyss."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_10_back_scarp_wall_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: High drone pull-back showing finished 20-foot spire atop eighty feet of dark raw bedrock.</li>
+<li><strong>SFX</strong>: Ominous subterranean bass drone returns.</li>
+</ul>
+<h4><strong>Beat 71 (00:07:01,020 --&gt; 00:07:10,460)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Close-Up — Discarded Tools of the Summit Campaign</li>
+<li><strong>Narration</strong>: <em>"In archaeological reality, top-down excavation was not a frantic seven-day miracle; it was a cold, calculated engineering necessity."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_07_dulled_iron_pile_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Close-up of worn hammers and broken chisels lying on finished terrace ledge.</li>
+<li><strong>SFX</strong>: Solitary windswept flute tone.</li>
+</ul>
+<h4><strong>Beat 72 (00:07:10,460 --&gt; 00:07:20,473)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Epic Panorama — Generations of Future Excavation Ahead</li>
+<li><strong>Narration</strong>: <em>"It would take decades across generations of Rashtrakuta artisans to carve the vast courtyard, monumental elephants, and assembly halls down to the bedrock floor."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_09_elephant_haulage_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Expansive view of the Charanandri ridge where future halls, elephants, and courtyards will be cut.</li>
+<li><strong>SFX</strong>: Deep choral crescendo.</li>
+</ul>
+<h4><strong>Beat 73 (00:07:20,473 --&gt; 00:07:24,888)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Low Angle Hero — Kokasa at Brink of Finished Terrace</li>
+<li><strong>Narration</strong>: <em>"Kokasa looked down from the summit into the shadowed abyss below."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_24_deccan_riders_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Low-angle silhouette of Kokasa standing at the edge of the terrace looking down into abyss.</li>
+<li><strong>SFX</strong>: Wind whistling through stone arches.</li>
+</ul>
+<h4><strong>Beat 74 (00:07:24,888 --&gt; 00:07:27,153)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Royal Command — Emperor Commending the Summit Triumph</li>
+<li><strong>Narration</strong>: <em>"The crown was carved."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_21_king_command_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: King's seal affixed to decree ordering the next phase: excavating the courtyard and bridge arches.</li>
+<li><strong>SFX</strong>: Royal court drums; bronze horn blast.</li>
+</ul>
+<h4><strong>Beat 75 (00:07:27,153 --&gt; 00:07:37,466)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Wide Council — Planning Phase Two: The Great Hypostyle Hall</li>
+<li><strong>Narration</strong>: <em>"Now, they had to excavate the body: slicing through thirty meters of stone to carve suspended bridges, monolithic pillars, and the great hypostyle hall."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_28_merchant_guild_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Master builders unrolling blueprints for monolithic elephants and suspended bridges.</li>
+<li><strong>SFX</strong>: Excited murmurs of architects.</li>
+</ul>
+<h4><strong>Beat 76 (00:07:37,466 --&gt; 00:07:42,596)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Cliffhanger Preview — Suspended Monolithic Bridges in Fog</li>
+<li><strong>Narration</strong>: <em>"Next week, on Episode Four: The Floating Bridges of Kailasa."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_44_cliffhanger_spire_summit_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Motion</strong>: Moody tilt-down into deep shadow where monolithic stone bridge connects two towers in mid-air.</li>
+<li><strong>SFX</strong>: Colossal temple gong reverberation.</li>
+</ul>
+<h4><strong>Beat 77 (00:07:42,596 --&gt; 00:07:46,007)</strong></h4>
+<ul>
+<li><strong>Shot</strong>: Closing Title Card — Subscribe &amp; Carve the Impossible</li>
+<li><strong>Narration</strong>: <em>"Subscribe, and carve the impossible."</em></li>
+<li><strong>Visual Asset</strong>: <code>ep03_archive_56_treasury_gold_PAN_ZOOM.jpg</code></li>
+<li><strong>Motion</strong>: Gold embossed series title over dark basalt rock texture fading into infinity.</li>
+<li><strong>SFX</strong>: Deep bass gong fading into silence.</li>
+</ul>
+<hr />
+<h2>Master Image Batch Sheet (77 Unique Visual Manifest)</h2>
+<p>Every beat maps to an existing, distinct visual asset on disk in <code>ajanta-ellora/episode03/images/</code> adhering strictly to the 3-Pillar Visual Diversity Formula with zero duplicate assets.</p>
+<hr />
+<h2>8 Dedicated Google Flow Video Prompts (Action Targets)</h2>
+<p>These prompts are isolated to <code>ajanta-ellora/episode03/google_flow_input_images/</code> for user generation in Google Flow:</p>
+<ol>
+<li>
+<p><strong><code>gf_01_smoke_quarry_dissipate.mp4</code></strong> (Beat 07)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_01_smoke_quarry_dissipate_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Slow motion cinematic 1080p video of dense white steam and woodsmoke clearing from a deep 33-meter rock trench canyon, revealing vertical basalt cliffs under morning sunlight, subtle camera drift downward.</code></p>
+</li>
+<li>
+<p><strong><code>gf_02_kokasa_stepping_forward.mp4</code></strong> (Beat 19)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_02_kokasa_stepping_forward_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Medium cinematic tracking shot of ancient Indian master architect Kokasa walking confidently forward through a crowd of kneeling courtiers toward a royal throne, linen shawl swaying with his stride, oil lamps flickering in background.</code></p>
+</li>
+<li>
+<p><strong><code>gf_03_chisel_striking_flawless.mp4</code></strong> (Beat 26)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_03_chisel_striking_flawless_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Ultra high speed 120fps macro video of a pointed steel chisel being struck by a bronze hammer, bright golden sparks bursting on impact, razor-sharp clean chip of black basalt snapping away cleanly.</code></p>
+</li>
+<li>
+<p><strong><code>gf_04_shanku_solar_shadow_timelapse.mp4</code></strong> (Beat 36)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_04_shanku_solar_shadow_timelapse_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Timelapse video of a sharp shadow cast by a wooden gnomon rod smoothly sweeping in an arc across golden sunlit basalt bedrock, sunlight shifting rapidly across stone texture.</code></p>
+</li>
+<li>
+<p><strong><code>gf_05_snapping_chalk_line.mp4</code></strong> (Beat 39)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_05_snapping_chalk_line_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Slow motion video of two ancient surveyors stretching a taut red vermilion cord on bedrock, one lifting the cord and snapping it down, leaving a vibrant crimson straight line as a small puff of red mineral dust billows up.</code></p>
+</li>
+<li>
+<p><strong><code>gf_06_first_hammer_strike_sparks.mp4</code></strong> (Beat 44)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_06_first_hammer_strike_sparks_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Cinematic close-up video of a heavy iron mallet smashing into a steel punch chisel held on a rock crosshair, brilliant eruption of orange sparks flying across the stone, stone dust flying outward.</code></p>
+</li>
+<li>
+<p><strong><code>gf_07_sculptors_suspended_ropes.mp4</code></strong> (Beat 56)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_07_sculptors_suspended_ropes_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Wide dynamic video of three ancient Indian sculptors suspended in hemp rope harnesses against a sheer 100-foot vertical cliff face, swinging mallets and chiseling furiously into stone as clouds of dust billow into the abyss.</code></p>
+</li>
+<li>
+<p><strong><code>gf_08_chipping_ceiling_sparks.mp4</code></strong> (Beat 61)<br />
+   * <strong>Source Frame</strong>: <code>ep03_gf_08_chipping_ceiling_sparks_GENERATE_VIDEO.jpg</code><br />
+   * <strong>Motion Prompt</strong>: <code>Intimate dark interior video inside a cave sanctum, a stonemason lying on high wooden scaffolding driving his chisel upward into the rock ceiling, showers of sparks and grit raining down in flickering yellow torchlight.</code></p>
+</li>
+</ol>
+<hr />
+<h2>Companion Viral YouTube Shorts Funnels (9:16 Vertical)</h2>
+<h3>Short 1: The Queen's Vow &amp; The Top-Down Miracle</h3>
+<ul>
+<li><strong>Asset</strong>: <code>short_01_the_queens_vow.mp4</code> (1080x1920)</li>
+<li><strong>Prompt Frame</strong>: <code>ep03_short_01_queens_vow_GENERATE_VIDEO.jpg</code></li>
+<li><strong>Target Duration</strong>: 57.48 Seconds</li>
+<li><strong>Narration</strong>:<br />
+<em>"How was the world's largest monolithic temple hewn out of solid cliffside? While eighth-century Rashtrakuta inscriptions commemorate King Krishna the First as its patron, a medieval Marathi chronicle, the Katha-Kalpataru, preserves a dramatic legend of King Ela and Queen Manikavati. When the queen vowed to fast until she saw the temple's pinnacle, master artisan Kokasa promised to carve from the ridge downward so she could see the spire first! Modern archaeology reveals that while the seven-day completion is traditional folklore, top-down excavation into the basalt scarp was an ingenious engineering necessity. By carving from above, artisans never needed ground scaffolding, standing directly upon the bedrock they were sculpting! Over decades, thousands of carvers hewed a free-standing temple out of the mountain pit. Watch our full documentary linked below to explore the engineering secrets of Kailasa!"</em></li>
+<li><strong>Pinned Funnel Comment</strong>: <em>"Watch the full 8-minute engineering documentary on how the spire of Kailasa was carved: [LINK_TO_EPISODE_03]"</em></li>
+</ul>
+<hr />
+<h3>Short 2: Why Kailasa Was Carved From Above</h3>
+<ul>
+<li><strong>Asset</strong>: <code>short_02_why_carved_backwards.mp4</code> (1080x1920)</li>
+<li><strong>Prompt Frame</strong>: <code>ep03_short_02_carved_backwards_PAN_ZOOM.jpg</code></li>
+<li><strong>Target Duration</strong>: 46.13 Seconds</li>
+<li><strong>Narration</strong>:<br />
+<em>"Why is the world's largest monolithic temple carved from the roof down instead of the ground up? At Ellora Cave 16, ancient Indian sculptors didn't assemble foundation stones upward. They started at the cliff summit, carving the temple spire first, then the ceiling, the pillars, and finally the courtyard floor! Why? Because in subtractive rock-cut architecture, the mountain was their scaffolding. As artisans chiseled downward into the basalt massif, they stood directly upon the bedrock they were sculpting. One wrong strike could shear a load-bearing lintel and collapse the overhead rock! Watch our full documentary linked below to see how ancient engineers carved Kailasa from above!"</em></li>
+<li><strong>Pinned Funnel Comment</strong>: <em>"Watch Episode 3: The First Cut (How Kailasa Was Carved From Above): [LINK_TO_EPISODE_03]"</em></li>
+</ul>
+    </div>
+</main>
+
+<!-- FEEDBACK & COMMENT PANEL -->
+<aside id="feedback-panel">
+    <div class="panel-header">
+        <div class="panel-title">
+            <span>💬 Feedback & Notes</span>
+            <span class="feedback-badge" id="comment-count">0</span>
+        </div>
+    </div>
+
+    <div class="feedback-input-box">
+        <div class="feedback-meta">
+            <select id="comment-type" class="feedback-select">
+                <option value="change">✏️ Change Request</option>
+                <option value="approval">✅ Approval</option>
+                <option value="issue">⚠️ Issue / Bug</option>
+                <option value="note">💡 Idea / Note</option>
+            </select>
+            <input type="text" id="comment-section" class="feedback-target" placeholder="Section (Optional)">
+        </div>
+        <textarea id="comment-input" class="feedback-textarea" placeholder="Type your comment, critique, or instruction for Antigravity..."></textarea>
+        <button id="add-comment-btn" class="btn btn-primary" onclick="addComment()">Add Feedback</button>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn btn-secondary" onclick="copyFeedbackForAgent()">📋 Copy for Agent</button>
+        <button class="btn btn-secondary" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+        <button class="btn btn-secondary" onclick="clearAllComments()">🗑️ Clear</button>
+    </div>
+
+    <ul id="feedback-list" class="feedback-list"></ul>
+</aside>
+
+<div id="toast">Feedback copied to clipboard!</div>
+
+<script>
+const STORAGE_KEY = "doc_feedback_ajanta_ellora_episode03_script_and_storyboard_episode_03_the_first_cut_md";
+let comments = [];
+
+function loadComments() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            comments = JSON.parse(saved);
+        }
+    } catch(e) {
+        console.error("Could not load comments from localStorage", e);
+    }
+    renderComments();
+}
+
+function saveComments() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+    } catch(e) {
+        console.error("Could not save comments", e);
+    }
+    renderComments();
+}
+
+function addComment() {
+    const text = document.getElementById("comment-input").value.trim();
+    if (!text) return;
+    const type = document.getElementById("comment-type").value;
+    const section = document.getElementById("comment-section").value.trim() || "General";
+    const comment = {
+        id: Date.now(),
+        type: type,
+        section: section,
+        text: text,
+        timestamp: new Date().toLocaleString()
+    };
+    comments.push(comment);
+    document.getElementById("comment-input").value = "";
+    document.getElementById("comment-section").value = "";
+    saveComments();
+    showToast("Feedback saved!");
+}
+
+function deleteComment(id) {
+    comments = comments.filter(c => c.id !== id);
+    saveComments();
+}
+
+function clearAllComments() {
+    if (confirm("Clear all comments on this document?")) {
+        comments = [];
+        saveComments();
+    }
+}
+
+function renderComments() {
+    const list = document.getElementById("feedback-list");
+    const countBadge = document.getElementById("comment-count");
+    list.innerHTML = "";
+    countBadge.textContent = comments.length;
+
+    if (comments.length === 0) {
+        list.innerHTML = `<li style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 20px 0;">No feedback added yet.<br>Add your notes above to share with the agent.</li>`;
+        return;
+    }
+
+    comments.forEach(c => {
+        const li = document.createElement("li");
+        li.className = `comment-card type-${c.type}`;
+        li.innerHTML = `
+            <div class="comment-header">
+                <span class="comment-tag">${c.type} • ${c.section}</span>
+                <span>${c.timestamp.split(",")[1] || ""}</span>
+            </div>
+            <div class="comment-body">${escapeHtml(c.text)}</div>
+            <div style="display:flex; justify-content:flex-end;">
+                <button class="comment-delete" onclick="deleteComment(${c.id})">Delete</button>
+            </div>
+        `;
+        list.appendChild(li);
+    });
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 2500);
+}
+
+function copyFeedbackForAgent() {
+    if (comments.length === 0) {
+        alert("No feedback to copy!");
+        return;
+    }
+    let text = `Feedback for: ajanta-ellora/episode03/script_and_storyboard/episode-03-the-first-cut.md\n`;
+    text += `Date: ${new Date().toLocaleString()}\n\n`;
+    comments.forEach((c, idx) => {
+        text += `[${idx+1}] [${c.type.toUpperCase()}] (${c.section}):\n${c.text}\n\n`;
+    });
+    navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied feedback for Agent! Paste directly in chat.");
+    });
+}
+
+function exportFeedbackJSON() {
+    if (comments.length === 0) {
+        alert("No feedback to export!");
+        return;
+    }
+    const blob = new Blob([JSON.stringify({ doc: "ajanta-ellora/episode03/script_and_storyboard/episode-03-the-first-cut.md", feedback: comments }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "feedback_ajanta_ellora_episode03_script_and_storyboard_episode_03_the_first_cut_md.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Auto-generate TOC from Headings
+window.addEventListener("DOMContentLoaded", () => {
+    const tocList = document.getElementById("toc");
+    const headings = document.querySelectorAll("#rendered-content h1, #rendered-content h2, #rendered-content h3");
+    headings.forEach((h, idx) => {
+        if (!h.id) {
+            h.id = "heading-" + idx;
+        }
+        const li = document.createElement("li");
+        li.style.paddingLeft = h.tagName === "H2" ? "8px" : (h.tagName === "H3" ? "16px" : "0");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+    loadComments();
+});
+</script>
+</body>
+</html>

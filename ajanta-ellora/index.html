@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajanta & Ellora Documentary Hub — Interactive Production Portal</title>
+<style>
+:root {
+    --bg-primary: #0a0f1d;
+    --bg-secondary: #131c31;
+    --bg-card: #1e293b;
+    --border: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --gold: #f59e0b;
+    --blue: #38bdf8;
+    --emerald: #10b981;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 40px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 36px;
+}
+
+.badge {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--gold);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h1 { font-size: 2.4rem; margin: 12px 0 6px 0; color: #fff; }
+p.lead { color: var(--text-secondary); font-size: 1.05rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-status {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+.status-live { background: rgba(16, 185, 129, 0.2); color: var(--emerald); }
+.status-prod { background: rgba(245, 158, 11, 0.2); color: var(--gold); }
+
+.doc-links {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.doc-links li {
+    margin-bottom: 8px;
+}
+
+.doc-links a {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.doc-links a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+<header>
+    <span class="badge">Official WebSeries Portal</span>
+    <h1>Curiosity Kills The Cat — Documentary Production Hub</h1>
+    <p class="lead">Interactive HTML Documents with built-in commenting, review cards, and direct agent feedback sharing.</p>
+</header>
+
+<div class="grid">
+    <!-- Episode 08 -->
+    <div class="card" style="border-color: var(--gold);">
+        <h2><span>Episode 08</span> <span class="card-status status-prod">ACTIVE PRODUCTION</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">The Silk Road Blue & Mud Chemistry (62 Beats, 16 Videos)</p>
+        <ul class="doc-links">
+            <li><a href="episode08/script_and_storyboard/episode-08-the-silk-road-blue-and-mud-chemistry.html">📜 Full Script & 62-Beat Storyboard</a></li>
+            <li><a href="episode08/publish_kit/master_publish_kit.html">🚀 Master YouTube Publish Kit</a></li>
+            <li><a href="episode08/publish_kit/short_01_the_mud_chemistry_secret_publish_kit.html">📱 Short 01 Publish Kit</a></li>
+            <li><a href="episode08/publish_kit/short_02_the_bronze_mirror_secret_publish_kit.html">📱 Short 02 Publish Kit</a></li>
+        </ul>
+    </div>
+
+    <!-- Episode 07 -->
+    <div class="card">
+        <h2><span>Episode 07</span> <span class="card-status status-live">LIVE ON YOUTUBE</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">The Secret Canyon of Waghur — The Lost Predecessors</p>
+        <ul class="doc-links">
+            <li><a href="episode07/script_and_storyboard/episode-07-the-secret-canyon-of-waghur.html">📜 Full Script & Storyboard</a></li>
+            <li><a href="episode07/publish_kit/master_publish_kit.html">🚀 Master YouTube Publish Kit</a></li>
+            <li><a href="episode07/GOOGLE_FLOW_PROMPT_SHEET.html">🎬 Google Flow Prompt Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Episode 06 -->
+    <div class="card">
+        <h2><span>Episode 06</span> <span class="card-status status-live">LIVE ON YOUTUBE</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">The Mountain That Couldn't Be Destroyed</p>
+        <ul class="doc-links">
+            <li><a href="episode06/script_and_storyboard/episode_06_script_and_storyboard.html">📜 Full Script & Storyboard</a></li>
+            <li><a href="episode06/publish_kit/master_publish_kit.html">🚀 Master YouTube Publish Kit</a></li>
+            <li><a href="episode06/GOOGLE_FLOW_PROMPT_SHEET.html">🎬 Google Flow Prompt Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Episode 05 -->
+    <div class="card">
+        <h2><span>Episode 05</span> <span class="card-status status-live">LIVE ON YOUTUBE</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">The Elephants Beneath Kailasa</p>
+        <ul class="doc-links">
+            <li><a href="episode05/script_and_storyboard/episode-05-the-elephants-beneath-kailasa.html">📜 Full Script & Storyboard</a></li>
+            <li><a href="episode05/publish_kit/master_publish_kit.html">🚀 Master YouTube Publish Kit</a></li>
+        </ul>
+    </div>
+
+    <!-- Episode 04 -->
+    <div class="card">
+        <h2><span>Episode 04</span> <span class="card-status status-live">LIVE ON YOUTUBE</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">The Floating Bridges of Ellora</p>
+        <ul class="doc-links">
+            <li><a href="episode04/script_and_storyboard/episode-04-the-floating-bridges.html">📜 Full Script & Storyboard</a></li>
+            <li><a href="episode04/publish_kit/master_publish_kit.html">🚀 Master YouTube Publish Kit</a></li>
+        </ul>
+    </div>
+
+    <!-- Episode 03 -->
+    <div class="card">
+        <h2><span>Episode 03</span> <span class="card-status status-live">LIVE ON YOUTUBE</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">The First Cut</p>
+        <ul class="doc-links">
+            <li><a href="episode03/script_and_storyboard/episode-03-the-first-cut.html">📜 Full Script & Storyboard</a></li>
+            <li><a href="episode03/publish_kit/master_publish_kit.html">🚀 Master YouTube Publish Kit</a></li>
+        </ul>
+    </div>
+
+    <!-- Research & Lore -->
+    <div class="card">
+        <h2><span>Series Research</span> <span class="card-status status-live">CORE KNOWLEDGE</span></h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Geology, Epigraphy, Chemistry & Architecture Archives</p>
+        <ul class="doc-links">
+            <li><a href="ajanta-ellora-comprehensive-research.html">📚 Comprehensive Research Archive</a></li>
+            <li><a href="UDERSTANDING.html">🔍 Series Understanding & Architecture</a></li>
+            <li><a href="supercut/publish_kit/master_publish_kit.html">🎞️ Complete Megastructure Supercut Kit</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episode 05 The Elephants Beneath Kailasa — Curiosity Kills The Cat</title>
+<style>
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-gold: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --border-color: #334155;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar TOC */
+#sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+#sidebar .doc-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    word-break: break-all;
+}
+
+#toc {
+    list-style: none;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+#toc li {
+    margin-bottom: 8px;
+}
+
+#toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: block;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+#toc a:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Main Container */
+#content-container {
+    flex: 1;
+    max-width: 960px;
+    padding: 40px 48px;
+    margin: 0 auto;
+}
+
+/* Header Banner */
+.doc-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.channel-tag {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; }
+h2 { font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+h3 { font-size: 1.25rem; color: var(--accent-blue); }
+h4 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--text-secondary);
+}
+
+ul, ol {
+    margin-bottom: 1.2em;
+    padding-left: 1.6em;
+    color: var(--text-secondary);
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid var(--accent-gold);
+    padding: 12px 18px;
+    background: rgba(245, 158, 11, 0.08);
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8em 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: #1e293b;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Code Blocks */
+pre {
+    background: #090d16;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.4em 0;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: #e2e8f0;
+}
+
+code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--accent-blue);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* FEEDBACK & COMMENT SYSTEM */
+#feedback-panel {
+    width: 360px;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feedback-badge {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.feedback-input-box {
+    margin-bottom: 16px;
+}
+
+.feedback-textarea {
+    width: 100%;
+    height: 90px;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.feedback-textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.feedback-select, .feedback-target {
+    flex: 1;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: #000000;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    padding: 6px 10px;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.action-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.feedback-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.comment-card {
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.85rem;
+}
+
+.comment-card.type-approval { border-left: 3px solid var(--accent-emerald); }
+.comment-card.type-change { border-left: 3px solid var(--accent-gold); }
+.comment-card.type-issue { border-left: 3px solid var(--accent-rose); }
+.comment-card.type-note { border-left: 3px solid var(--accent-blue); }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.comment-tag {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.comment-body {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.comment-delete:hover {
+    color: var(--accent-rose);
+}
+
+/* Toast notification */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent-emerald);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    body { flex-direction: column; }
+    #sidebar, #feedback-panel { width: 100%; height: auto; position: relative; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<aside id="sidebar">
+    <div class="channel-tag">Curiosity Kills The Cat</div>
+    <div class="doc-badge">ajanta-ellora/episode05/script_and_storyboard/episode-05-the-elephants-beneath-kailasa.md</div>
+    <h3>Sections</h3>
+    <ul id="toc"></ul>
+</aside>
+
+<!-- MAIN DOCUMENT CONTENT -->
+<main id="content-container">
+    <div class="doc-header">
+        <div class="channel-tag">Ajanta & Ellora Production Series</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Source: <code>ajanta-ellora/episode05/script_and_storyboard/episode-05-the-elephants-beneath-kailasa.md</code></p>
+    </div>
+    <div id="rendered-content">
+<h1>Episode 05 — The Elephants Beneath Kailasa</h1>
+<h3>Why the temple appears to rise on a living procession</h3>
+<p><strong>Series:</strong> Kailasa: The Mountain Carved From Above<br />
+<strong>Format:</strong> 16:9 documentary, target ~5.5 minutes; timing measured from synthesized narration.<br />
+<strong>Evidence note:</strong> The lower storey is carved with elephants and lions, and the elephant relief appears to support the basement. Do not describe the elephants as freestanding structural columns. An older cloud-and-mountain interpretation is attributed to E.B. Havell and presented as interpretation, not settled intent.<br />
+<strong>Production Invariant:</strong> Global zero-repetition rule enforced across all 72 micro-beats via the 3-Pillar Visual Diversity Formula.  </p>
+<h2>Master Image Batch Sheet (3-Pillar Formula)</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align: right;">Allocation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pillar A: Master Hero Stills</strong></td>
+<td style="text-align: right;">46 Cuts</td>
+<td>1080p photorealistic Gemini/Imagen prompts (<code>_PAN_ZOOM.jpg</code>)</td>
+</tr>
+<tr>
+<td><strong>Pillar B: Technical Infographics</strong></td>
+<td style="text-align: right;">8 Cuts</td>
+<td>High-contrast 2D architectural blueprint cards rendered via PIL</td>
+</tr>
+<tr>
+<td><strong>Pillar C: Universe Archive Stills</strong></td>
+<td style="text-align: right;">10 Cuts</td>
+<td>Canonical world-building assets from earlier episodes and archival records</td>
+</tr>
+<tr>
+<td><strong>Action Video Moments</strong></td>
+<td style="text-align: right;">8 Cuts</td>
+<td>High-impact Google Flow / Veo dynamic physics moments</td>
+</tr>
+<tr>
+<td><strong>Total Micro-Beats</strong></td>
+<td style="text-align: right;"><strong>72 Cuts</strong></td>
+<td><strong>100% Unique Media Assets (0 Duplicates)</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Story and pacing</h2>
+<table>
+<thead>
+<tr>
+<th>Act</th>
+<th style="text-align: right;">Timing</th>
+<th>Story turn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Act I — The Animals Beneath</td>
+<td style="text-align: right;">00:00</td>
+<td>The Animals Beneath</td>
+</tr>
+<tr>
+<td>Act II — A Mountain as Temple</td>
+<td style="text-align: right;">00:50</td>
+<td>A Mountain as Temple</td>
+</tr>
+<tr>
+<td>Act III — Reading the Plinth</td>
+<td style="text-align: right;">01:53</td>
+<td>Reading the Plinth</td>
+</tr>
+<tr>
+<td>Act IV — The Illusion of Support</td>
+<td style="text-align: right;">02:51</td>
+<td>The Illusion of Support</td>
+</tr>
+<tr>
+<td>Act V — Animals and the Sacred Mountain</td>
+<td style="text-align: right;">03:44</td>
+<td>Animals and the Sacred Mountain</td>
+</tr>
+<tr>
+<td>Act VI — One Stone, Many Images</td>
+<td style="text-align: right;">04:41</td>
+<td>One Stone, Many Images</td>
+</tr>
+<tr>
+<td>Act VII — The Viewer Completes the Image</td>
+<td style="text-align: right;">05:36</td>
+<td>The Viewer Completes the Image</td>
+</tr>
+<tr>
+<td>Act VIII — Beneath the Mountain</td>
+<td style="text-align: right;">06:29</td>
+<td>Beneath the Mountain</td>
+</tr>
+</tbody>
+</table>
+<h2>Act I — The Animals Beneath</h2>
+<h3>Beat 01 — 00:00–00:02</h3>
+<ul>
+<li><strong>Narration:</strong> Look beneath the temple.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_01_courtyard_ground_plinth_reveal_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Cinematic low-angle view looking across the dark basalt courtyard toward the towering Kailasa plinth at dawn.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 02 — 00:02–00:10</h3>
+<ul>
+<li><strong>Narration:</strong> Along Kailasa’s raised base, elephants emerge from the dark stone, shoulder to shoulder beneath a monumental ledge.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_02_elephant_procession_shoulder_row_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Monumental frieze of carved elephants emerging from the bedrock shoulder to shoulder beneath the plinth ledge.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 03 — 00:10–00:15</h3>
+<ul>
+<li><strong>Narration:</strong> At first glance, they seem to hold the entire temple above the ground.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_03_apparent_support_angle_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Upward camera angle capturing the massive projecting temple cornice resting directly above the elephants' backs.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 04 — 00:15–00:20</h3>
+<ul>
+<li><strong>Narration:</strong> But the image asks a question that the architecture answers in a more surprising way.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_01_plinth_elevation_profile.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Monumental Plinth Elevation Architecture &amp; Vertical Stratigraphy of the Lower Storey.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 05 — 00:20–00:25</h3>
+<ul>
+<li><strong>Narration:</strong> Are these animals carrying the building, or showing us how to see it?</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_04_sculptural_framing_perspective_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Wide architectural perspective framing the colossal temple mass rising above the sculpted animal register.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 06 — 00:25–00:31</h3>
+<ul>
+<li><strong>Narration:</strong> At Ellora, the answer begins with a distinction between what stone does and what sculpture makes us feel.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_01_chisel_striking_elephant_tusk.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Craftsman's iron chisel delicately striking the curve of an elephant tusk, sending basalt stone chips flying.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 07 — 00:31–00:39</h3>
+<ul>
+<li><strong>Narration:</strong> The elephants are carved into the temple’s lower storey; the temple itself remains part of a vast rock-cut composition.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_02_monolithic_subtractive_plinth.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Structural Reality: Subtractive Living Bedrock vs Additive Masonry Foundation.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 08 — 00:39–00:45</h3>
+<ul>
+<li><strong>Narration:</strong> Today, we follow the plinth from its carved animals to the meaning of a mountain made to appear lifted.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_05_kailasa_rock_trench_panoramic_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Sweeping wide panorama of the excavated Cave 16 pit showing the full height of the monolithic temple from court floor.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h3>Beat 09 — 00:45–00:50</h3>
+<ul>
+<li><strong>Narration:</strong> The mystery is not whether the elephants are beautiful, but why the temple seems to need them.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_06_elephant_head_chiaroscuro_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Dramatic chiaroscuro raking morning light across a sculpted elephant head, highlighting deep basalt eye sockets and ear folds.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Open-air courtyard ambience, restrained low drone; gentle tonal reveal as the elephant band appears.</li>
+</ul>
+<h2>Act II — A Mountain as Temple</h2>
+<h3>Beat 10 — 00:50–00:56</h3>
+<ul>
+<li><strong>Narration:</strong> Kailasa is Cave Sixteen at Ellora, a Hindu monument cut from the basalt hillside.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_01_charanandri_ridge_strata_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: The Charanandri basalt hillside at Ellora showing horizontal volcanic lava strata before excavation.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 11 — 00:56–01:03</h3>
+<ul>
+<li><strong>Narration:</strong> Rather than assemble a temple from blocks, its builders released a freestanding complex from the surrounding rock.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_02_monolithic_excavation_cutaway_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Isometric diagram of top-down trench excavation releasing the freestanding temple monolith.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_down</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 12 — 01:03–01:12</h3>
+<ul>
+<li><strong>Narration:</strong> The main shrine rises at the center of a court, with a gateway, Nandi pavilion, halls, and subsidiary shrines arranged around it.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_07_courtyard_freestanding_sanctuary_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Courtyard view showing the central vimana sanctuary, Nandi pavilion, and gateway arranged within the excavated chasm.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 13 — 01:12–01:19</h3>
+<ul>
+<li><strong>Narration:</strong> The plinth is the elevated base beneath the principal temple, setting the shrine above the court floor.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_08_towering_plinth_elevation_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Direct elevation perspective of the 8-meter high basement plinth setting the main shrine high above courtyard level.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 14 — 01:19–01:26</h3>
+<ul>
+<li><strong>Narration:</strong> Its surfaces are not blank foundations: they carry a dense sculptural program that continues around the building.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_09_dense_sculptural_band_panning_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Horizontal tracking shot across the dense continuous frieze of carved elephants, lions, and mythical creatures.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 15 — 01:26–01:33</h3>
+<ul>
+<li><strong>Narration:</strong> The base therefore has two jobs for the visitor’s eye: it establishes height and gives that height a living edge.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_02_water_quenching_carved_plinth.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Water splashing over newly carved dark basalt elephant plinth, washing away rock dust as steam rises in sunlight.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 16 — 01:33–01:40</h3>
+<ul>
+<li><strong>Narration:</strong> Rows of figures, animals, and patterned bands turn the transition from earth to temple into an experience.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_10_transition_earth_to_temple_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Vertical tilt from courtyard flagstones up through the carved elephant band to the temple wall.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 17 — 01:40–01:46</h3>
+<ul>
+<li><strong>Narration:</strong> The monument does not simply stand in the landscape; it stages how we encounter its mass.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_03_courtyard_sightlines_scale.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Courtyard Ambulatory &amp; Sightline Phenomenology: Human eye level vs monumental plinth scale.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h3>Beat 18 — 01:46–01:52</h3>
+<ul>
+<li><strong>Narration:</strong> To understand the elephants, we first need to see the plinth as architecture and image at once.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_11_plinth_corner_angle_perspective_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Corner perspective where two orthogonal elephant processions converge at the plinth angle.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Light strings and open ambience; no faux-temple bells or generic exoticized cues.</li>
+</ul>
+<h2>Act III — Reading the Plinth</h2>
+<h3>Beat 19 — 01:53–01:56</h3>
+<ul>
+<li><strong>Narration:</strong> Walk your attention along the lower storey.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_12_lower_storey_ambulatory_walk_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Eye-level tracking perspective walking along the southern plinth wall in the narrow courtyard canyon.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 20 — 01:56–02:03</h3>
+<ul>
+<li><strong>Narration:</strong> Sahapedia describes elephants gathering lotus flowers in their trunks, deeply carved beneath the high basement.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_13_elephant_trunk_lotus_flower_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Macro photograph of an elephant trunk delicately curled around a sculpted blooming lotus bud in high basalt relief.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 21 — 02:03–02:08</h3>
+<ul>
+<li><strong>Narration:</strong> The animals are not isolated ornaments placed on a modern-looking facade.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_14_integrated_sculptural_register_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Seamless integration where the elephant forequarters merge naturally into the solid bedrock plinth.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 22 — 02:08–02:15</h3>
+<ul>
+<li><strong>Narration:</strong> They belong to a continuous sculpted zone that wraps the base with elephants, lions, and other figures.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_08_plinth_sculptural_fauna_survey.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Plinth Sculptural Fauna &amp; Iconographic Census: Elephants, lions, vyalas, and fighting duels.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 23 — 02:15–02:22</h3>
+<ul>
+<li><strong>Narration:</strong> The scale and relief make the band legible from the court, even as its details reward a closer look.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_15_deep_relief_chiaroscuro_depth_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> High-contrast study of deep relief undercutting, showing deep dark voids carved between legs and bellies.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 24 — 02:22–02:30</h3>
+<ul>
+<li><strong>Narration:</strong> Some trunks are damaged, and weathering changes what survives; the sculpture we see is not an untouched original surface.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_16_weathered_trunk_patina_detail_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Close-up of weathered, fractured basalt trunk showing twelve centuries of natural patina and mineral staining.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_down</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 25 — 02:30–02:37</h3>
+<ul>
+<li><strong>Narration:</strong> A historic account also described a herd bearing the temple, an image captured by the composition itself.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_03_historic_traveler_engraving_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: 19th-century historical engraving of European travelers exploring the Kailasa elephant plinth.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 26 — 02:37–02:43</h3>
+<ul>
+<li><strong>Narration:</strong> That description tells us what the carving makes visible, not a hidden engineering report from the builders.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_04_architect_scroll_sketches_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Ancient Indian architect Kokasa's palm-leaf architectural scrolls and proportional canon drawings.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h3>Beat 27 — 02:43–02:50</h3>
+<ul>
+<li><strong>Narration:</strong> The first clue is visual: the animals create a living threshold between the ground and the sacred structure above.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_03_mallet_carving_elephant_underbelly.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Stonecutter swinging heavy wooden mallet against iron chisel beneath the elephant underbelly, stone dust spraying outward.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Quiet, close stone texture under the voice; keep the atmosphere spacious.</li>
+</ul>
+<h2>Act IV — The Illusion of Support</h2>
+<h3>Beat 28 — 02:51–02:54</h3>
+<ul>
+<li><strong>Narration:</strong> Now look at the line where the plinth meets the temple mass.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_17_plinth_temple_junction_line_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Sharp horizontal architectural line where the uppermost plinth cornice meets the bottom of the temple hall walls.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 29 — 02:54–03:00</h3>
+<ul>
+<li><strong>Narration:</strong> The elephants appear to push upward, their backs aligned beneath the projecting base.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_18_elephant_backs_bearing_molding_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Detailed perspective showing curved elephant backs aligned flush against the projecting basement moulding.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 30 — 03:00–03:07</h3>
+<ul>
+<li><strong>Narration:</strong> This is a powerful sculptural convention: the building seems to rest on a procession of living bodies.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_19_monumental_living_procession_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Low-angle heroic shot of the elephant herd appearing to stride forward together bearing the stone cathedral.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 31 — 03:07–03:14</h3>
+<ul>
+<li><strong>Narration:</strong> Yet at Kailasa, these elephants are carved in relief on the lower storey, within the same rock-cut monument.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_07_relief_undercutting_profile.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Sculptural Technique: High Relief Undercutting Profile (60-90cm void vs bedrock core).</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 32 — 03:14–03:19</h3>
+<ul>
+<li><strong>Narration:</strong> They are not a row of freestanding columns secretly holding a separate building aloft.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_20_relief_versus_column_demonstration_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Raking light revealing how the elephant legs remain rooted into the uncarved rock mass behind.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 33 — 03:19–03:26</h3>
+<ul>
+<li><strong>Narration:</strong> The rock-cut core and plinth carry the architectural mass; the figures shape how that mass is imagined.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_05_basalt_compression_vs_relief.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Material Science: Basalt Load Bearing Capacity (140 MPa core vs 0.0 MPa relief shell).</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 34 — 03:26–03:29</h3>
+<ul>
+<li><strong>Narration:</strong> That does not make the sculpture less important. It makes its work more precise.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_21_sculptural_precision_eyelid_carving_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Extreme macro close-up of elephant eyelid wrinkles, tusk socket contours, and ornamental harness bells in stone.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 35 — 03:29–03:32</h3>
+<ul>
+<li><strong>Narration:</strong> The animal band transforms a heavy base into a scene of effort, movement, and upward force.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_04_plinth_measuring_cord_snap.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Two master stonecutters pulling a taut red-ochre soaked cord across the plinth base and snapping it, red powder puffing.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h3>Beat 36 — 03:32–03:39</h3>
+<ul>
+<li><strong>Narration:</strong> A stone temple can feel weightless for a moment because its base shows weight being carried.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_22_weightless_temple_illusion_hero_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Master hero shot: The monolithic Kailasa temple appearing to float weightlessly above the elephant herd at sunset.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Subtle low pulse as the support illusion is explained; no cracking or invented structural stress sounds.</li>
+</ul>
+<h2>Act V — Animals and the Sacred Mountain</h2>
+<h3>Beat 37 — 03:44–03:50</h3>
+<ul>
+<li><strong>Narration:</strong> The temple’s name and design point toward Kailasa, Shiva’s sacred mountain.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_23_vimana_shikara_mountain_silhouette_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Dramatic silhouette of the Kailasa Dravidian vimana tower framed against sky, evocative of Mount Kailash.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 38 — 03:50–03:57</h3>
+<ul>
+<li><strong>Narration:</strong> The building’s rising form turns that mountain association into architecture, with the central shrine as its summit.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_24_ascending_tiers_mountain_peak_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Ascending architectural tiers and miniature pavilions echoing the tiered ridges of Himalayan summits.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 39 — 03:57–04:04</h3>
+<ul>
+<li><strong>Narration:</strong> An older interpretation by Havell compared the elephants at the base to rain clouds beneath Himalayan peaks.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_05_havell_1920_monograph_text_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Historic archival page and illustration from E.B. Havell's 1920 study 'The Himalayas in Indian Art'.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 40 — 04:04–04:10</h3>
+<ul>
+<li><strong>Narration:</strong> In that reading, elephants evoke clouds gathering below a mountain, making the temple appear borne above them.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_06_havell_cloud_hypothesis.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: E.B. Havell's Cloud Interpretation (1920) vs Physical Archaeological Evidence.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 41 — 04:10–04:17</h3>
+<ul>
+<li><strong>Narration:</strong> It is an evocative interpretation, not a certainty that the original sculptors left us in writing.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_05_rain_clouds_over_kailasa_summit.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Dramatic monsoon storm clouds rolling rapidly across the sky above Kailasa vimana tower, distant lightning flash.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 42 — 04:17–04:25</h3>
+<ul>
+<li><strong>Narration:</strong> Other readings emphasize royal power, auspicious abundance, or the familiar image of elephants supporting a cosmic mountain.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_infographic_04_cosmic_diggajas_iconography.jpg</code></li>
+<li><strong>Visual Brief:</strong> Technical Blueprint Card: Cosmic Diggajas: Guardians of the Eight Directions sustaining Mount Meru.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 43 — 04:25–04:31</h3>
+<ul>
+<li><strong>Narration:</strong> The surviving carving alone cannot choose one meaning for every viewer or every figure.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_25_multiplicity_of_carved_meanings_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Wide frieze showing diversity of animal attitudes: peaceful elephants with lotus flowers beside raging lions.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 44 — 04:31–04:37</h3>
+<ul>
+<li><strong>Narration:</strong> What we can say securely is that the animals and the mountain form a deliberate visual relationship.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_26_deliberate_visual_relationship_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Vertical composition binding the sculpted animal base to the soaring tower above in a unified sacred vision.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h3>Beat 45 — 04:37–04:41</h3>
+<ul>
+<li><strong>Narration:</strong> The plinth makes the sacred mountain seem animated at its base.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_27_animated_base_living_mountain_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Golden sunlight sweeping across the plinth, making the stone animals look alive as shadows lengthen.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Warm, contemplative strings; leave space around the distinction between evidence and interpretation.</li>
+</ul>
+<h2>Act VI — One Stone, Many Images</h2>
+<h3>Beat 46 — 04:41–04:47</h3>
+<ul>
+<li><strong>Narration:</strong> There is a paradox here: the elephants look like separate creatures, but the monument is rock-cut.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_28_monolithic_paradox_separate_vs_whole_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Composition illustrating the paradox: Lifelike distinct animals that never separate from the continuous basalt mass.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 47 — 04:47–04:54</h3>
+<ul>
+<li><strong>Narration:</strong> The sculptor has made the basalt read as bodies, folds, legs, and patterned surfaces.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_29_basalt_textural_folds_and_skin_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Macro study of how hard Deccan volcanic basalt was carved to resemble the soft wrinkled skin of elephants.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 48 — 04:54–04:59</h3>
+<ul>
+<li><strong>Narration:</strong> At a distance, the repeating animals form a band beneath the temple.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_30_distant_repeating_band_perspective_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Long perspective down the courtyard trench showing the rhythmic procession of elephant heads in receding perspective.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 49 — 04:59–05:05</h3>
+<ul>
+<li><strong>Narration:</strong> Up close, each figure can interrupt that repetition with its own pose and detail.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_31_individual_elephant_pose_variation_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Side-by-side comparison of three adjacent elephant figures showing distinct individual head tilts and trunk curves.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 50 — 05:05–05:11</h3>
+<ul>
+<li><strong>Narration:</strong> This shift between a unified procession and individual bodies is part of the carving’s visual intelligence.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_32_visual_intelligence_of_sculptor_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Medium close-up showing mastery of anatomical proportions and subtle muscle tension in the carved shoulders.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 51 — 05:11–05:18</h3>
+<ul>
+<li><strong>Narration:</strong> We should not invent a workshop sequence or claim every sculptural detail was carved in a known order.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_06_rashtrakuta_copper_charter_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Historic Rashtrakuta copper plate charter with royal seal documenting imperial patron Krishna I.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 52 — 05:18–05:24</h3>
+<ul>
+<li><strong>Narration:</strong> The finished stone lets us study form and placement, while leaving many production choices undocumented.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_07_artisan_quarry_camp_dawn_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Historical quarry settlement of Rashtrakuta guild stonecutters with iron tools at sunrise.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 53 — 05:24–05:31</h3>
+<ul>
+<li><strong>Narration:</strong> A single rock mass can become architecture, ornament, and an imagined procession at the same time.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_06_sledgehammer_quarry_impact_sparks.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Heavy 20-pound iron sledgehammer striking an iron wedge into basalt rock at the courtyard edge, brilliant sparks bursting.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h3>Beat 54 — 05:31–05:36</h3>
+<ul>
+<li><strong>Narration:</strong> The temple’s unity does not flatten its images; it gives them a shared ground.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_33_shared_ground_monolithic_unity_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Sweeping wide shot showing courtyard floor, elephant plinth, and great hall united in a single unbroken stone.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Sparse, dry ambience with a soft transition between wide pattern and close detail.</li>
+</ul>
+<h2>Act VII — The Viewer Completes the Image</h2>
+<h3>Beat 55 — 05:36–05:40</h3>
+<ul>
+<li><strong>Narration:</strong> The plinth is also something you move past.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_34_pradakshina_pathway_movement_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Looking down the narrow flagstone walkway between the temple plinth and the outer trench wall.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 56 — 05:40–05:47</h3>
+<ul>
+<li><strong>Narration:</strong> From the courtyard, the raised base lifts the temple above eye level and gives the main shrine a commanding presence.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_35_commanding_presence_above_eye_level_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Low-angle viewpoint from courtyard pit: The temple towering commandingly thirty meters overhead.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 57 — 05:47–05:56</h3>
+<ul>
+<li><strong>Narration:</strong> As you walk, the relief appears in changing fragments: an elephant, a lion, a repeated band, then the larger mass above.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_36_changing_fragments_montage_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Dynamic angle catching a carved lion grappling an elephant's shoulder in dramatic narrative relief.</li>
+<li><strong>Camera Motion:</strong> <code>pan_left</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 58 — 05:56–06:02</h3>
+<ul>
+<li><strong>Narration:</strong> The viewer connects those partial views into an imagined ring of animals around the building.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_37_imagined_ring_around_temple_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Panoramic view around the rear vimana corner showing the elephant procession wrapping the entire monument.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 59 — 06:02–06:06</h3>
+<ul>
+<li><strong>Narration:</strong> This is why the sculpture works at more than one scale.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_38_two_scales_detail_and_monument_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Depth-of-field composition: Sharp focus on carved elephant ear in foreground, towering spire in background.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 60 — 06:06–06:11</h3>
+<ul>
+<li><strong>Narration:</strong> Its repetition binds the base together, while its details invite a slower encounter.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_39_lotus_trunk_macro_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Close macro of an elephant trunk holding a delicate lotus stalk, showing the sculptor's subtle touch.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_down</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 61 — 06:11–06:18</h3>
+<ul>
+<li><strong>Narration:</strong> The temple’s height feels physical, but the carved creatures make that height feel supported and alive.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_07_oil_lamp_flicker_elephant_relief.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Ancient bronze oil lamp flame flickering in the twilight breeze, casting warm dancing shadows across an elephant carving.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 62 — 06:18–06:25</h3>
+<ul>
+<li><strong>Narration:</strong> The image is completed not by a mechanical trick, but by the meeting of stone, viewpoint, and movement.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_40_viewpoint_and_movement_convergence_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Courtyard view at dusk: Shadows lengthening across the plinth as evening light catches the upper sanctum.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h3>Beat 63 — 06:25–06:29</h3>
+<ul>
+<li><strong>Narration:</strong> Kailasa turns looking into a small act of discovery.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_41_small_act_of_discovery_angle_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Framed glimpse through a courtyard pillared gallery revealing the elephant band through stone columns.</li>
+<li><strong>Camera Motion:</strong> <code>slow_dolly_forward</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Measured, gently moving motif suggesting a walk through the courtyard, without literalized footsteps.</li>
+</ul>
+<h2>Act VIII — Beneath the Mountain</h2>
+<h3>Beat 64 — 06:29–06:32</h3>
+<ul>
+<li><strong>Narration:</strong> Return to the elephants beneath the plinth.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_42_return_to_plinth_elephants_hero_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Hero return to the full elephant frieze bathed in clear morning sunlight.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_in</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 65 — 06:32–06:37</h3>
+<ul>
+<li><strong>Narration:</strong> They do not reveal a concealed system of animal-shaped pillars.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_43_solid_bedrock_foundation_truth_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Telephoto view demonstrating the solid, unmoving basalt rock core that truly bears the entire mountain.</li>
+<li><strong>Camera Motion:</strong> <code>pan_right</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 66 — 06:37–06:43</h3>
+<ul>
+<li><strong>Narration:</strong> They reveal a sculptural decision: make the base of a sacred mountain appear to move and bear weight.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_44_sculptural_decision_upward_thrust_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Low-angle composition highlighting the dynamic upward sculptural thrust of the elephant herd.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 67 — 06:43–06:49</h3>
+<ul>
+<li><strong>Narration:</strong> The architecture gives the temple its mass; the figures give that mass a story the eye can follow.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_45_architecture_mass_sculpture_story_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Architectural balance: Geometric discipline of the upper temple perfectly balanced by organic living animals below.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 68 — 06:49–06:55</h3>
+<ul>
+<li><strong>Narration:</strong> Some meanings remain open, and that uncertainty is part of reading a monument honestly.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_08_archaeological_survey_plans_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Historic 19th-century Archaeological Survey of India measured architectural drawing of Kailasa plinth.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 69 — 06:55–07:02</h3>
+<ul>
+<li><strong>Narration:</strong> At Kailasa, a mountain was not only cut into a temple; it was made to seem alive around its edges.</li>
+<li><strong>Asset:</strong> <code>[VIDEO]</code> <code>ep05_gf_08_dust_swirling_past_elephant_row.mp4</code></li>
+<li><strong>Visual Brief:</strong> Action Video: Golden courtyard dust motes swirling in a sunbeam past the monumental carved elephant heads.</li>
+<li><strong>Camera Motion:</strong> <code>action_clip</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 70 — 07:02–07:07</h3>
+<ul>
+<li><strong>Narration:</strong> Next, we leave the plinth and turn toward the stories carved across the temple walls.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_46_wall_panels_mahabharata_teaser_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Camera tilts up from the elephant plinth toward the narrative epic reliefs of the Mahabharata on the hall walls above.</li>
+<li><strong>Camera Motion:</strong> <code>slow_tilt_up</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 71 — 07:07–07:13</h3>
+<ul>
+<li><strong>Narration:</strong> What happens when a whole epic is translated into stone panels around a sacred court?</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_09_ramayana_panel_narrative_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Archive Still: Close-up of the continuous narrative relief panel depicting the Ramayana battle scenes on Kailasa wall.</li>
+<li><strong>Camera Motion:</strong> <code>slow_drift</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h3>Beat 72 — 07:13–07:16</h3>
+<ul>
+<li><strong>Narration:</strong> That is the next mystery waiting at Kailasa.</li>
+<li><strong>Asset:</strong> <code>[IMAGE]</code> <code>ep05_archive_10_sunset_over_kailasa_chasm_PAN_ZOOM.jpg</code></li>
+<li><strong>Visual Brief:</strong> Closing hero shot: Sunset glow fading over the monumental Kailasa chasm as twilight descends over Ellora.</li>
+<li><strong>Camera Motion:</strong> <code>slow_zoom_out</code> (Sub-pixel 4K motorized dolly)</li>
+<li><strong>Sound Cue:</strong> Return to the opening motif; resolve into a restrained teaser for the next episode.</li>
+</ul>
+<h2>Narration transcript</h2>
+<p>Look beneath the temple.<br />
+Along Kailasa’s raised base, elephants emerge from the dark stone, shoulder to shoulder beneath a monumental ledge.<br />
+At first glance, they seem to hold the entire temple above the ground.<br />
+But the image asks a question that the architecture answers in a more surprising way.<br />
+Are these animals carrying the building, or showing us how to see it?<br />
+At Ellora, the answer begins with a distinction between what stone does and what sculpture makes us feel.<br />
+The elephants are carved into the temple’s lower storey; the temple itself remains part of a vast rock-cut composition.<br />
+Today, we follow the plinth from its carved animals to the meaning of a mountain made to appear lifted.<br />
+The mystery is not whether the elephants are beautiful, but why the temple seems to need them.<br />
+Kailasa is Cave Sixteen at Ellora, a Hindu monument cut from the basalt hillside.<br />
+Rather than assemble a temple from blocks, its builders released a freestanding complex from the surrounding rock.<br />
+The main shrine rises at the center of a court, with a gateway, Nandi pavilion, halls, and subsidiary shrines arranged around it.<br />
+The plinth is the elevated base beneath the principal temple, setting the shrine above the court floor.<br />
+Its surfaces are not blank foundations: they carry a dense sculptural program that continues around the building.<br />
+The base therefore has two jobs for the visitor’s eye: it establishes height and gives that height a living edge.<br />
+Rows of figures, animals, and patterned bands turn the transition from earth to temple into an experience.<br />
+The monument does not simply stand in the landscape; it stages how we encounter its mass.<br />
+To understand the elephants, we first need to see the plinth as architecture and image at once.<br />
+Walk your attention along the lower storey.<br />
+Sahapedia describes elephants gathering lotus flowers in their trunks, deeply carved beneath the high basement.<br />
+The animals are not isolated ornaments placed on a modern-looking facade.<br />
+They belong to a continuous sculpted zone that wraps the base with elephants, lions, and other figures.<br />
+The scale and relief make the band legible from the court, even as its details reward a closer look.<br />
+Some trunks are damaged, and weathering changes what survives; the sculpture we see is not an untouched original surface.<br />
+A historic account also described a herd bearing the temple, an image captured by the composition itself.<br />
+That description tells us what the carving makes visible, not a hidden engineering report from the builders.<br />
+The first clue is visual: the animals create a living threshold between the ground and the sacred structure above.<br />
+Now look at the line where the plinth meets the temple mass.<br />
+The elephants appear to push upward, their backs aligned beneath the projecting base.<br />
+This is a powerful sculptural convention: the building seems to rest on a procession of living bodies.<br />
+Yet at Kailasa, these elephants are carved in relief on the lower storey, within the same rock-cut monument.<br />
+They are not a row of freestanding columns secretly holding a separate building aloft.<br />
+The rock-cut core and plinth carry the architectural mass; the figures shape how that mass is imagined.<br />
+That does not make the sculpture less important. It makes its work more precise.<br />
+The animal band transforms a heavy base into a scene of effort, movement, and upward force.<br />
+A stone temple can feel weightless for a moment because its base shows weight being carried.<br />
+The temple’s name and design point toward Kailasa, Shiva’s sacred mountain.<br />
+The building’s rising form turns that mountain association into architecture, with the central shrine as its summit.<br />
+An older interpretation by Havell compared the elephants at the base to rain clouds beneath Himalayan peaks.<br />
+In that reading, elephants evoke clouds gathering below a mountain, making the temple appear borne above them.<br />
+It is an evocative interpretation, not a certainty that the original sculptors left us in writing.<br />
+Other readings emphasize royal power, auspicious abundance, or the familiar image of elephants supporting a cosmic mountain.<br />
+The surviving carving alone cannot choose one meaning for every viewer or every figure.<br />
+What we can say securely is that the animals and the mountain form a deliberate visual relationship.<br />
+The plinth makes the sacred mountain seem animated at its base.<br />
+There is a paradox here: the elephants look like separate creatures, but the monument is rock-cut.<br />
+The sculptor has made the basalt read as bodies, folds, legs, and patterned surfaces.<br />
+At a distance, the repeating animals form a band beneath the temple.<br />
+Up close, each figure can interrupt that repetition with its own pose and detail.<br />
+This shift between a unified procession and individual bodies is part of the carving’s visual intelligence.<br />
+We should not invent a workshop sequence or claim every sculptural detail was carved in a known order.<br />
+The finished stone lets us study form and placement, while leaving many production choices undocumented.<br />
+A single rock mass can become architecture, ornament, and an imagined procession at the same time.<br />
+The temple’s unity does not flatten its images; it gives them a shared ground.<br />
+The plinth is also something you move past.<br />
+From the courtyard, the raised base lifts the temple above eye level and gives the main shrine a commanding presence.<br />
+As you walk, the relief appears in changing fragments: an elephant, a lion, a repeated band, then the larger mass above.<br />
+The viewer connects those partial views into an imagined ring of animals around the building.<br />
+This is why the sculpture works at more than one scale.<br />
+Its repetition binds the base together, while its details invite a slower encounter.<br />
+The temple’s height feels physical, but the carved creatures make that height feel supported and alive.<br />
+The image is completed not by a mechanical trick, but by the meeting of stone, viewpoint, and movement.<br />
+Kailasa turns looking into a small act of discovery.<br />
+Return to the elephants beneath the plinth.<br />
+They do not reveal a concealed system of animal-shaped pillars.<br />
+They reveal a sculptural decision: make the base of a sacred mountain appear to move and bear weight.<br />
+The architecture gives the temple its mass; the figures give that mass a story the eye can follow.<br />
+Some meanings remain open, and that uncertainty is part of reading a monument honestly.<br />
+At Kailasa, a mountain was not only cut into a temple; it was made to seem alive around its edges.<br />
+Next, we leave the plinth and turn toward the stories carved across the temple walls.<br />
+What happens when a whole epic is translated into stone panels around a sacred court?<br />
+That is the next mystery waiting at Kailasa.</p>
+<h2>Sources and interpretive limits</h2>
+<ul>
+<li>Sahapedia, <a href="https://www.sahapedia.org/the-architecture-of-ellora-caves">The Architecture of Ellora Caves</a>: Cave 16 plan and the elephants gathering lotus flowers on the lower storey.</li>
+<li>Impart Encyclopedia of Art, <a href="https://imp-art.org/articles/kailasanatha-temple-ellora/">Kailasanatha Temple, Ellora</a>: monolithic form, sculptural plinth, and architectural context.</li>
+<li>E. B. Havell, <a href="https://ignca.gov.in/Asi_data/39131.pdf">The Himalayas in Indian Art</a>, p. 27: an older interpretation comparing the plinth elephants to rain clouds beneath a sacred mountain. This is presented as interpretation, not proven original intent.</li>
+</ul>
+<p>The stonework supports a description of the carved figures and their placement. It does not provide a definitive written key to every symbolic meaning or a claim that the relief figures are freestanding structural supports.</p>
+    </div>
+</main>
+
+<!-- FEEDBACK & COMMENT PANEL -->
+<aside id="feedback-panel">
+    <div class="panel-header">
+        <div class="panel-title">
+            <span>💬 Feedback & Notes</span>
+            <span class="feedback-badge" id="comment-count">0</span>
+        </div>
+    </div>
+
+    <div class="feedback-input-box">
+        <div class="feedback-meta">
+            <select id="comment-type" class="feedback-select">
+                <option value="change">✏️ Change Request</option>
+                <option value="approval">✅ Approval</option>
+                <option value="issue">⚠️ Issue / Bug</option>
+                <option value="note">💡 Idea / Note</option>
+            </select>
+            <input type="text" id="comment-section" class="feedback-target" placeholder="Section (Optional)">
+        </div>
+        <textarea id="comment-input" class="feedback-textarea" placeholder="Type your comment, critique, or instruction for Antigravity..."></textarea>
+        <button id="add-comment-btn" class="btn btn-primary" onclick="addComment()">Add Feedback</button>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn btn-secondary" onclick="copyFeedbackForAgent()">📋 Copy for Agent</button>
+        <button class="btn btn-secondary" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+        <button class="btn btn-secondary" onclick="clearAllComments()">🗑️ Clear</button>
+    </div>
+
+    <ul id="feedback-list" class="feedback-list"></ul>
+</aside>
+
+<div id="toast">Feedback copied to clipboard!</div>
+
+<script>
+const STORAGE_KEY = "doc_feedback_ajanta_ellora_episode05_script_and_storyboard_episode_05_the_elephants_beneath_kailasa_md";
+let comments = [];
+
+function loadComments() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            comments = JSON.parse(saved);
+        }
+    } catch(e) {
+        console.error("Could not load comments from localStorage", e);
+    }
+    renderComments();
+}
+
+function saveComments() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+    } catch(e) {
+        console.error("Could not save comments", e);
+    }
+    renderComments();
+}
+
+function addComment() {
+    const text = document.getElementById("comment-input").value.trim();
+    if (!text) return;
+    const type = document.getElementById("comment-type").value;
+    const section = document.getElementById("comment-section").value.trim() || "General";
+    const comment = {
+        id: Date.now(),
+        type: type,
+        section: section,
+        text: text,
+        timestamp: new Date().toLocaleString()
+    };
+    comments.push(comment);
+    document.getElementById("comment-input").value = "";
+    document.getElementById("comment-section").value = "";
+    saveComments();
+    showToast("Feedback saved!");
+}
+
+function deleteComment(id) {
+    comments = comments.filter(c => c.id !== id);
+    saveComments();
+}
+
+function clearAllComments() {
+    if (confirm("Clear all comments on this document?")) {
+        comments = [];
+        saveComments();
+    }
+}
+
+function renderComments() {
+    const list = document.getElementById("feedback-list");
+    const countBadge = document.getElementById("comment-count");
+    list.innerHTML = "";
+    countBadge.textContent = comments.length;
+
+    if (comments.length === 0) {
+        list.innerHTML = `<li style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 20px 0;">No feedback added yet.<br>Add your notes above to share with the agent.</li>`;
+        return;
+    }
+
+    comments.forEach(c => {
+        const li = document.createElement("li");
+        li.className = `comment-card type-${c.type}`;
+        li.innerHTML = `
+            <div class="comment-header">
+                <span class="comment-tag">${c.type} • ${c.section}</span>
+                <span>${c.timestamp.split(",")[1] || ""}</span>
+            </div>
+            <div class="comment-body">${escapeHtml(c.text)}</div>
+            <div style="display:flex; justify-content:flex-end;">
+                <button class="comment-delete" onclick="deleteComment(${c.id})">Delete</button>
+            </div>
+        `;
+        list.appendChild(li);
+    });
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 2500);
+}
+
+function copyFeedbackForAgent() {
+    if (comments.length === 0) {
+        alert("No feedback to copy!");
+        return;
+    }
+    let text = `Feedback for: ajanta-ellora/episode05/script_and_storyboard/episode-05-the-elephants-beneath-kailasa.md\n`;
+    text += `Date: ${new Date().toLocaleString()}\n\n`;
+    comments.forEach((c, idx) => {
+        text += `[${idx+1}] [${c.type.toUpperCase()}] (${c.section}):\n${c.text}\n\n`;
+    });
+    navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied feedback for Agent! Paste directly in chat.");
+    });
+}
+
+function exportFeedbackJSON() {
+    if (comments.length === 0) {
+        alert("No feedback to export!");
+        return;
+    }
+    const blob = new Blob([JSON.stringify({ doc: "ajanta-ellora/episode05/script_and_storyboard/episode-05-the-elephants-beneath-kailasa.md", feedback: comments }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "feedback_ajanta_ellora_episode05_script_and_storyboard_episode_05_the_elephants_beneath_kailasa_md.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Auto-generate TOC from Headings
+window.addEventListener("DOMContentLoaded", () => {
+    const tocList = document.getElementById("toc");
+    const headings = document.querySelectorAll("#rendered-content h1, #rendered-content h2, #rendered-content h3");
+    headings.forEach((h, idx) => {
+        if (!h.id) {
+            h.id = "heading-" + idx;
+        }
+        const li = document.createElement("li");
+        li.style.paddingLeft = h.tagName === "H2" ? "8px" : (h.tagName === "H3" ? "16px" : "0");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+    loadComments();
+});
+</script>
+</body>
+</html>

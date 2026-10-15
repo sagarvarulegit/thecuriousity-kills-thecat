@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episode 02 Youtube Publish Kit — Curiosity Kills The Cat</title>
+<style>
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-gold: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --border-color: #334155;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar TOC */
+#sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+#sidebar .doc-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    word-break: break-all;
+}
+
+#toc {
+    list-style: none;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+#toc li {
+    margin-bottom: 8px;
+}
+
+#toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: block;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+
+#toc a:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Main Container */
+#content-container {
+    flex: 1;
+    max-width: 960px;
+    padding: 40px 48px;
+    margin: 0 auto;
+}
+
+/* Header Banner */
+.doc-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.channel-tag {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; }
+h2 { font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; }
+h3 { font-size: 1.25rem; color: var(--accent-blue); }
+h4 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--text-secondary);
+}
+
+ul, ol {
+    margin-bottom: 1.2em;
+    padding-left: 1.6em;
+    color: var(--text-secondary);
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid var(--accent-gold);
+    padding: 12px 18px;
+    background: rgba(245, 158, 11, 0.08);
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8em 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: #1e293b;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Code Blocks */
+pre {
+    background: #090d16;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.4em 0;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: #e2e8f0;
+}
+
+code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--accent-blue);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* FEEDBACK & COMMENT SYSTEM */
+#feedback-panel {
+    width: 360px;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 24px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feedback-badge {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.feedback-input-box {
+    margin-bottom: 16px;
+}
+
+.feedback-textarea {
+    width: 100%;
+    height: 90px;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.feedback-textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.feedback-select, .feedback-target {
+    flex: 1;
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    color: #000000;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    padding: 6px 10px;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.action-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.feedback-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.comment-card {
+    background: #0b1120;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.85rem;
+}
+
+.comment-card.type-approval { border-left: 3px solid var(--accent-emerald); }
+.comment-card.type-change { border-left: 3px solid var(--accent-gold); }
+.comment-card.type-issue { border-left: 3px solid var(--accent-rose); }
+.comment-card.type-note { border-left: 3px solid var(--accent-blue); }
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.comment-tag {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.comment-body {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.comment-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.comment-delete:hover {
+    color: var(--accent-rose);
+}
+
+/* Toast notification */
+#toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent-emerald);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    body { flex-direction: column; }
+    #sidebar, #feedback-panel { width: 100%; height: auto; position: relative; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAVIGATION -->
+<aside id="sidebar">
+    <div class="channel-tag">Curiosity Kills The Cat</div>
+    <div class="doc-badge">ajanta-ellora/episode02/publish_kit/episode-02-youtube-publish-kit.md</div>
+    <h3>Sections</h3>
+    <ul id="toc"></ul>
+</aside>
+
+<!-- MAIN DOCUMENT CONTENT -->
+<main id="content-container">
+    <div class="doc-header">
+        <div class="channel-tag">Ajanta & Ellora Production Series</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Source: <code>ajanta-ellora/episode02/publish_kit/episode-02-youtube-publish-kit.md</code></p>
+    </div>
+    <div id="rendered-content">
+<h1>YouTube Publish Kit: Episode 2</h1>
+<h2><em>The Inferno in the Trenches (Excavating 400,000 Tons: Fire, Water &amp; The Three Trenches)</em></h2>
+<p>This publish kit contains everything needed to publish and optimize <strong>Episode 2</strong> for maximum YouTube Click-Through Rate (CTR), Average View Duration (AVD), and subscriber conversion.</p>
+<hr />
+<h2>1. High-CTR Video Titles (A/B Test Options)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Angle / Formula</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Why It Works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: left;"><strong>Curiosity / Engineering Mystery (Recommended)</strong></td>
+<td style="text-align: left;"><strong>How Ancient Indians Broke a Mountain with Fire and Water</strong></td>
+<td style="text-align: left;">Irresistible primitive technology hook; exploits the physical contrast of fire &amp; water vs diamond-hard stone.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: left;"><strong>Epic Megalithic Scale</strong></td>
+<td style="text-align: left;"><strong>Where Did 400,000 Tons of Rock Go? The Kailasa Trench Excavation</strong></td>
+<td style="text-align: left;">Massive quantifiable curiosity hook for engineering, archaeology, and ancient civilization fans.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: left;"><strong>Cinematic Documentary</strong></td>
+<td style="text-align: left;"><strong>The Inferno in the Trenches: The 100,000-Ton Excavation of Kailasa (Ep. 2)</strong></td>
+<td style="text-align: left;">High-authority episodic title for serious historical documentary audiences.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: left;"><strong>Ancient Tech / Science</strong></td>
+<td style="text-align: left;"><strong>The Ancient Secret of Thermal Shock: How Kailasa Temple Was Cut</strong></td>
+<td style="text-align: left;">Appeals to science, physics, geology, and technology enthusiasts searching for ancient engineering secrets.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: left;"><strong>Short &amp; Punchy (Mobile Optimized)</strong></td>
+<td style="text-align: left;"><strong>Cutting 100-Foot Trenches with FIRE: Kailasa Temple Mystery</strong></td>
+<td style="text-align: left;">High visual punch on mobile recommendation feeds and push notifications.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Complete YouTube Video Description (Copy &amp; Paste)</h2>
+<pre><code class="language-markdown">Before ancient builders could carve a single statue of Shiva, they had to remove 400,000 tons of the hardest rock on Earth. 
+
+When iron chisels shattered against 140 MPa tholeiitic basalt, master architect Kokasa deployed an ancient weapon recorded in the Shilpa Shastras: Agni-Karma—the science of thermal shock. By roaring 600°C bonfires against the cliff face and violently quenching the cherry-red rock with ice-cold spring water, ancient Indian engineers forced the mountain to tear itself apart at the molecular level.
+
+This is Episode 2 of our 10-part documentary series on the construction of the Kailasa Temple (Ellora Cave 16). Discover how 10,000 quarrymen cut three colossal perimeter trenches 33 meters deep into the bedrock, engineered 50-mph greased timber gravity chutes down the cliffside, and left a colossal 100-foot monolithic island of mountain standing isolated in the abyss.
+
+🔔 Subscribe to follow the journey through all 10 episodes: https://youtube.com/@TheCuriosityChannel?sub_confirmation=1
+
+--------------------------------------------------
+TIMESTAMPS / CHAPTERS:
+--------------------------------------------------
+0:00 The Sound of War in Stone: Mobilizing 10,000 Quarrymen
+1:05 The Geometry of the Three Trenches (33-Meter Vertical Abyss)
+2:15 The Physical Limit of Iron: Why Steel Chisels Bounced
+3:15 Agni-Karma: The Ancient Science of Thermal Shock
+4:25 The Steam Flash: Quenching 600°C Basalt with Mountain Water
+5:35 The Chisel Storm: Levering 2-Ton Basalt Slabs in Minutes
+6:35 Gravity as an Engine: Timber Chutes &amp; 100,000 Tons Cleared
+7:35 The Monolithic Island Emerges (The Spire Cliffhanger)
+
+--------------------------------------------------
+WATCH THE COMPANION SHORTS:
+--------------------------------------------------
+📱 Short #1: The Ancient Fire &amp; Water Weapon (Thermal Shock) ➡️ [LINK_TO_SHORT_1]
+📱 Short #2: Where Did 400,000 Tons of Mountain Go? ➡️ [LINK_TO_SHORT_2]
+
+--------------------------------------------------
+HISTORICAL &amp; ARCHAEOLOGICAL SOURCES:
+--------------------------------------------------
+• Kautilya's Artha-Shastra (Book 2, Chapter 12): Ancient mining techniques, fire-setting (Agni-Karma), and quenching.
+• Shilpa Shastras &amp; Manasara: Classical Indian treatises on deductive monolith excavation and lithological grading.
+• Archaeological Survey of India (ASI): Architectural survey &amp; volumetric measurements of Cave 16 (Kailasanatha), Ellora.
+• Geological Survey of India: Mechanical testing of Deccan Traps basalt (120–140 MPa compressive strength).
+
+--------------------------------------------------
+SERIES PRODUCTION CREDITS:
+--------------------------------------------------
+• Series Concept &amp; Direction: The Curiosity Production Lab
+• Narration: Christopher (Studio Baritone)
+• Visual Assets: Master Cinematic Suite (Gemini 2.5 Flash Image / Google Flow)
+• Assembly Engine: Broadcast-Grade FFmpeg Normalization Engine
+
+#KailasaTemple #ElloraCaves #AncientEngineering #AncientIndia #Documentary #Archaeology #Megalithic #HistoryMystery
+</code></pre>
+<hr />
+<h2>3. YouTube SEO Tags (Studio Paste Ready)</h2>
+<h3>500-Character Comma-Separated Block (Strictly Capped Under 500 Chars):</h3>
+<pre><code class="language-text">Kailasa Temple,Ellora Caves,Kailasanatha Temple,How Kailasa temple was built,Ancient Indian Architecture,Ellora Cave 16,ancient engineering mysteries,thermal shock ancient quarrying,Agni Karma fire setting,ancient India documentary,King Krishna I,Rashtrakuta dynasty,top down rock cut temple,Kokasa architect,Deccan basalt,400000 tons rock,how ancient temples were carved,monolithic architecture,ancient technology,Kailasa excavation,gravity chutes ancient,Ellora caves history,megaliths
+</code></pre>
+<p><em>(Tag character count: 489 characters — strictly within YouTube's 500-character limit).</em></p>
+<hr />
+<h2>4. Strategic Pinned Comment (Algorithm Driver)</h2>
+<p>Pin this comment immediately upon publishing and heart it from the creator channel:</p>
+<pre><code class="language-markdown">Ancient engineers moved over 400,000 tons of solid basalt using fire-setting, water quenching, and greased gravity chutes—without a single crane or dump truck.
+
+Do you believe ancient builders possessed lost engineering knowledge that modern science is only now rediscovering, or was this purely the triumph of 10,000 skilled workers under imperial discipline?
+
+Drop your thoughts below! 👇
+
+Watch Episode 3 (The First Cut: Carving the Sacred Spire from the Top Down) next Thursday!
+Also check out our companion Short on the terrifying fire-setting trick: [LINK_TO_SHORT_1]
+</code></pre>
+<ul>
+<li><strong>Why this works</strong>: Directly challenges viewers with an engineering debate ("lost knowledge vs sheer discipline"), driving high comment velocity and signaling YouTube's recommendation algorithm to push the video onto browse features.</li>
+</ul>
+<hr />
+<h2>5. Master YouTube Thumbnail Concepts</h2>
+<h3>Concept A: The Fire &amp; Steam Explosion (Recommended Master)</h3>
+<ul>
+<li><strong>Visual Composition</strong>: Extreme high-contrast split focus. Left side: roaring 600°C orange-yellow bonfire blazing against sheer black basalt rock face. Right side: massive explosive eruption of brilliant white steam plumes as cold water crashes against glowing cherry-red stone. In foreground silhouette, a muscular Indian master stonecutter holding an iron sledgehammer.</li>
+<li><strong>Text Overlay</strong>: <strong>"FIRE &amp; WATER?!"</strong> (Top-left, bold sans-serif, electric orange drop shadow).</li>
+<li><strong>Color Grading</strong>: High dynamic range; fiery glowing amber (#FF7A00) contrasted against icy steam white (#FFFFFF) and obsidian volcanic basalt (#1A1A1A).</li>
+</ul>
+<h3>Concept B: The 100-Foot Abyss</h3>
+<ul>
+<li><strong>Visual Composition</strong>: Vertigo-inducing high-angle drone perspective looking straight down into the rectangular 33-meter deep perimeter trench. Tiny human workers hauling timber slides at the bottom, emphasizing the sheer megalithic scale of the uncarved mountain island in the center.</li>
+<li><strong>Text Overlay</strong>: <strong>"400,000 TONS?!"</strong> (Top-right, bold yellow with black outline).</li>
+<li><strong>Color Grading</strong>: Golden hour sunset hitting the summit rim, fading into deep shadowed teal/obsidian in the chasm.</li>
+</ul>
+<h3>Concept C: The Thermal Shock Crack</h3>
+<ul>
+<li><strong>Visual Composition</strong>: Extreme macro action close-up of dark basalt rock splitting open with glowing red interior stress fractures as ice-cold water splashes across it. A high-carbon steel chisel wedged into the crack as stone shatters like brittle glass.</li>
+<li><strong>Text Overlay</strong>: <strong>"ANCIENT WEAPON"</strong> (Bottom-center, intense red glowing typography).</li>
+<li><strong>Color Grading</strong>: Chiaroscuro lighting, cinematic particle sparks, and steam droplets.</li>
+</ul>
+    </div>
+</main>
+
+<!-- FEEDBACK & COMMENT PANEL -->
+<aside id="feedback-panel">
+    <div class="panel-header">
+        <div class="panel-title">
+            <span>💬 Feedback & Notes</span>
+            <span class="feedback-badge" id="comment-count">0</span>
+        </div>
+    </div>
+
+    <div class="feedback-input-box">
+        <div class="feedback-meta">
+            <select id="comment-type" class="feedback-select">
+                <option value="change">✏️ Change Request</option>
+                <option value="approval">✅ Approval</option>
+                <option value="issue">⚠️ Issue / Bug</option>
+                <option value="note">💡 Idea / Note</option>
+            </select>
+            <input type="text" id="comment-section" class="feedback-target" placeholder="Section (Optional)">
+        </div>
+        <textarea id="comment-input" class="feedback-textarea" placeholder="Type your comment, critique, or instruction for Antigravity..."></textarea>
+        <button id="add-comment-btn" class="btn btn-primary" onclick="addComment()">Add Feedback</button>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn btn-secondary" onclick="copyFeedbackForAgent()">📋 Copy for Agent</button>
+        <button class="btn btn-secondary" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+        <button class="btn btn-secondary" onclick="clearAllComments()">🗑️ Clear</button>
+    </div>
+
+    <ul id="feedback-list" class="feedback-list"></ul>
+</aside>
+
+<div id="toast">Feedback copied to clipboard!</div>
+
+<script>
+const STORAGE_KEY = "doc_feedback_ajanta_ellora_episode02_publish_kit_episode_02_youtube_publish_kit_md";
+let comments = [];
+
+function loadComments() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            comments = JSON.parse(saved);
+        }
+    } catch(e) {
+        console.error("Could not load comments from localStorage", e);
+    }
+    renderComments();
+}
+
+function saveComments() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+    } catch(e) {
+        console.error("Could not save comments", e);
+    }
+    renderComments();
+}
+
+function addComment() {
+    const text = document.getElementById("comment-input").value.trim();
+    if (!text) return;
+    const type = document.getElementById("comment-type").value;
+    const section = document.getElementById("comment-section").value.trim() || "General";
+    const comment = {
+        id: Date.now(),
+        type: type,
+        section: section,
+        text: text,
+        timestamp: new Date().toLocaleString()
+    };
+    comments.push(comment);
+    document.getElementById("comment-input").value = "";
+    document.getElementById("comment-section").value = "";
+    saveComments();
+    showToast("Feedback saved!");
+}
+
+function deleteComment(id) {
+    comments = comments.filter(c => c.id !== id);
+    saveComments();
+}
+
+function clearAllComments() {
+    if (confirm("Clear all comments on this document?")) {
+        comments = [];
+        saveComments();
+    }
+}
+
+function renderComments() {
+    const list = document.getElementById("feedback-list");
+    const countBadge = document.getElementById("comment-count");
+    list.innerHTML = "";
+    countBadge.textContent = comments.length;
+
+    if (comments.length === 0) {
+        list.innerHTML = `<li style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 20px 0;">No feedback added yet.<br>Add your notes above to share with the agent.</li>`;
+        return;
+    }
+
+    comments.forEach(c => {
+        const li = document.createElement("li");
+        li.className = `comment-card type-${c.type}`;
+        li.innerHTML = `
+            <div class="comment-header">
+                <span class="comment-tag">${c.type} • ${c.section}</span>
+                <span>${c.timestamp.split(",")[1] || ""}</span>
+            </div>
+            <div class="comment-body">${escapeHtml(c.text)}</div>
+            <div style="display:flex; justify-content:flex-end;">
+                <button class="comment-delete" onclick="deleteComment(${c.id})">Delete</button>
+            </div>
+        `;
+        list.appendChild(li);
+    });
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.style.display = "block";
+    setTimeout(() => { toast.style.display = "none"; }, 2500);
+}
+
+function copyFeedbackForAgent() {
+    if (comments.length === 0) {
+        alert("No feedback to copy!");
+        return;
+    }
+    let text = `Feedback for: ajanta-ellora/episode02/publish_kit/episode-02-youtube-publish-kit.md\n`;
+    text += `Date: ${new Date().toLocaleString()}\n\n`;
+    comments.forEach((c, idx) => {
+        text += `[${idx+1}] [${c.type.toUpperCase()}] (${c.section}):\n${c.text}\n\n`;
+    });
+    navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied feedback for Agent! Paste directly in chat.");
+    });
+}
+
+function exportFeedbackJSON() {
+    if (comments.length === 0) {
+        alert("No feedback to export!");
+        return;
+    }
+    const blob = new Blob([JSON.stringify({ doc: "ajanta-ellora/episode02/publish_kit/episode-02-youtube-publish-kit.md", feedback: comments }, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "feedback_ajanta_ellora_episode02_publish_kit_episode_02_youtube_publish_kit_md.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Auto-generate TOC from Headings
+window.addEventListener("DOMContentLoaded", () => {
+    const tocList = document.getElementById("toc");
+    const headings = document.querySelectorAll("#rendered-content h1, #rendered-content h2, #rendered-content h3");
+    headings.forEach((h, idx) => {
+        if (!h.id) {
+            h.id = "heading-" + idx;
+        }
+        const li = document.createElement("li");
+        li.style.paddingLeft = h.tagName === "H2" ? "8px" : (h.tagName === "H3" ? "16px" : "0");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+    loadComments();
+});
+</script>
+</body>
+</html>

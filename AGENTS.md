@@ -119,3 +119,13 @@ When an episode reaches Step 3 (Asset Generation):
 - **Funnel Conversion Automation**: Post high-converting top-level comments on breakout Shorts programmatically via `youtube.commentThreads().insert()`.
 - **Studio UI Action Protocol**: Because YouTube Data API restricts comment pinning and mobile "Related video" pill selection, agents must provide direct YouTube Studio URLs (`https://studio.youtube.com/video/<VIDEO_ID>/edit`) and precise 30-second checklists for the user.
 
+## 17. INTERACTIVE HTML DOCUMENTATION & FEEDBACK STANDARD
+- **MANDATORY DUAL-OUTPUT / HTML-FIRST STANDARD**: All production scripts, storyboards, publish kits, prompt sheets, and research dossiers must be authored or converted into interactive HTML format alongside or in place of `.md`.
+- **EMBEDDED CLIENT FEEDBACK ENGINE**: Every generated HTML document must incorporate the channel's standard feedback sidebar panel:
+  - Supports structured feedback tags (`✏️ Change Request`, `✅ Approval`, `⚠️ Issue / Bug`, `💡 Idea / Note`).
+  - Automatically saves comments locally via `localStorage` so notes survive browser refreshes.
+  - Features 1-click **"📋 Copy for Agent"** formatted for immediate chat sharing.
+  - Supports **"💾 Export JSON"** for programmatic ingestion by automation scripts.
+- **AUTOMATED SYNCHRONIZATION**: Whenever `.md` files are created or edited in the pipeline, run `python ajanta-ellora/scripts/convert_md_to_interactive_html.py` to keep the HTML portal strictly synchronized.
+
+
