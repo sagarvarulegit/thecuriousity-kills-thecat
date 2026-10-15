@@ -44,7 +44,7 @@
   .spoken-beat { font-style: italic; color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1rem; background: rgba(0,0,0,0.25); padding: 0.6rem 0.85rem; border-radius: 6px; border-left: 3px solid var(--accent); }
   
   .prompt-box { background: #0b0d13; border: 1px solid #28324a; border-radius: 6px; padding: 1rem; position: relative; margin-bottom: 1rem; }
-  .prompt-text { font-size: 0.95rem; color: #f1f5f9; line-height: 1.55; }
+  .prompt-text { font-size: 0.95rem; color: #f1f5f9; line-height: 1.55; padding-right: 100px; }
   .copy-btn { position: absolute; top: 0.6rem; right: 0.6rem; background: #1e293b; color: #38bdf8; border: 1px solid #334155; padding: 0.35rem 0.75rem; font-size: 0.75rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
   .copy-btn:hover { background: #38bdf8; color: #0f1117; }
   
@@ -58,25 +58,28 @@
   .fb-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 15px; }
   .fb-header h3 { color: #fff; font-size: 1.1rem; }
   .fb-close { background: none; border: none; color: #94a3b8; font-size: 1.5rem; cursor: pointer; }
-  .fb-list { flex: 1; overflow-y: auto; margin-bottom: 15px; }
-  .fb-item { background: #1a202c; border: 1px solid var(--border); border-radius: 6px; padding: 10px; margin-bottom: 10px; font-size: 0.85rem; }
-  .fb-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-bottom: 4px; }
-  .fb-tag.change { background: #f59e0b; color: #000; }
-  .fb-tag.approve { background: #10b981; color: #fff; }
-  .fb-tag.issue { background: #ef4444; color: #fff; }
-  .fb-tag.idea { background: #3b82f6; color: #fff; }
-  .fb-input-area textarea { width: 100%; height: 80px; background: #0f1117; border: 1px solid var(--border); border-radius: 6px; color: #fff; padding: 8px; font-size: 0.85rem; resize: none; margin-bottom: 10px; }
-  .fb-controls { display: flex; gap: 8px; margin-bottom: 10px; }
-  .fb-controls select { background: #0f1117; border: 1px solid var(--border); color: #fff; padding: 6px; border-radius: 4px; font-size: 0.8rem; }
-  .fb-btn { flex: 1; background: var(--accent); color: #000; border: none; padding: 8px; border-radius: 4px; font-weight: bold; cursor: pointer; }
-  .fb-export { background: #2d3748; color: #fff; border: 1px solid #4a5568; padding: 6px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; margin-top: 5px; width: 100%; }
+  .fb-list { flex: 1; overflow-y: auto; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px; }
+  .fb-item { background: #1c2233; padding: 10px; border-radius: 6px; border-left: 3px solid var(--accent); font-size: 0.85rem; position: relative; }
+  .fb-item .fb-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin-bottom: 4px; text-transform: uppercase; }
+  .fb-item.tag-change .fb-tag { background: #f59e0b; color: #000; }
+  .fb-item.tag-approval .fb-tag { background: #10b981; color: #000; }
+  .fb-item.tag-issue .fb-tag { background: #ef4444; color: #fff; }
+  .fb-item.tag-idea .fb-tag { background: #38bdf8; color: #000; }
+  .fb-item .fb-del { position: absolute; top: 8px; right: 8px; background: none; border: none; color: #64748b; cursor: pointer; }
+  .fb-item .fb-del:hover { color: #ef4444; }
+  .fb-form { display: flex; flex-direction: column; gap: 8px; }
+  .fb-form select, .fb-form textarea, .fb-form input { background: #1c2233; border: 1px solid var(--border); color: #fff; padding: 8px; border-radius: 4px; font-size: 0.85rem; }
+  .fb-form button { background: var(--accent); color: #000; font-weight: 700; border: none; padding: 10px; border-radius: 4px; cursor: pointer; }
+  .fb-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .fb-btn-sec { flex: 1; background: #2a324b; color: #cbd5e1; border: none; padding: 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; cursor: pointer; text-align: center; }
+  .fb-btn-sec:hover { background: #38bdf8; color: #000; }
 </style>
 </head>
 <body>
 
 <div class="container">
   <header>
-    <h1>🏛️ Episode 08: Reliving History in the Making</h1>
+    <h1>🎬 Episode 08: Google Flow Action Prompts</h1>
     <div class="subtitle">16 Action-Shot Google Flow / Veo Motion Prompts — 5th-Century Historical Realism (No Fantasy Movie CGI)</div>
   </header>
 
@@ -87,80 +90,220 @@
 
   <div class="grid">
 
-    <!-- CLIP 01 -->
-    <div class="card">
+    <!-- SHOT 01 -->
+    <div class="card" id="cut_16">
       <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg" alt="ep08_gf_01">
-        <div class="img-badge">ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg</div>
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg" alt="ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg</div>
       </div>
       <div class="details-col">
         <div>
           <div class="card-header">
-            <div class="card-title">Shot 01: Harishena's Royal Cavalry</div>
-            <span class="badge-tag">Cut #4 (Act I)</span>
+            <div class="card-title">Shot 01: Pecking the Basalt Mechanical Key</div>
+            <span class="badge-tag">Cut #16 (Act II)</span>
           </div>
           <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_01_harishena_imperial_cavalry.mp4</div>
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_05_chipping_basalt_key_sparks.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"First, stonecutters used pointed iron picks to peck thousands of small pits into the rock, creating a rough surface for the mud to grip."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Authentic historical action. A skilled ancient stonecutter striking a pointed iron pick chisel against dark volcanic basalt wall. Rapid, precise hammer strikes pecking small pit dimples across the stone face. Tiny sharp rock chips fly off, momentary bright orange sparks flick off the dark igneous rock, fine basalt dust puffs in raking sunlight. Intense focus, sweat on the craftsman's brow, raw tactile stonecraft.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Macro side-profile push-in focusing on the chisel impact point and spark bursts.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 02 -->
+    <div class="card" id="cut_18">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_04_plaster_kneading_cowdung_matrix_GENERATE_VIDEO.jpg" alt="ep08_gf_04_plaster_kneading_cowdung_matrix_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_04_plaster_kneading_cowdung_matrix_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 02: Kneading the Organic Mud Matrix</div>
+            <span class="badge-tag">Cut #18 (Act II)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_04_plaster_kneading_cowdung_matrix.mp4</code></div>
             <div class="meta-item"><strong>Duration:</strong> 5.5s</div>
           </div>
           <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"From the north, Emperor Harishena united the Deccan, forging an empire that stretched across ancient India."</div>
+          <div class="spoken-beat">"Using fermented cow dung was not dirty—it was pure organic chemistry."</div>
           <div class="field-label">Google Flow / Veo Motion Prompt</div>
           <div class="prompt-box">
-            <div class="prompt-text">Historical documentary footage. 5th-century ancient Indian royal cavalry and armored war elephants walking along a dusty Deccan canyon cliff trail at late afternoon. Real cotton banners fluttering in natural dry wind, dust clouds rising realistically from heavy horse hooves and elephant feet, warm authentic golden sunlight raking over worn metal armor and hand-stitched fabrics. Ultra-realistic documentary style, 35mm film grain, 0% CGI fantasy glow, physically accurate dust and cloth dynamics.</div>
+            <div class="prompt-text">Historical reenactment documentary. Barefoot ancient Indian craftsmen in coarse dhoti waistcloths rhythmically treading and kneading thick organic reddish-brown mud plaster inside a rough wooden mixing pit. Golden rice husks, dry plant fibers, and dense wet clay squishing between toes with real physical weight and viscous mud resistance. Splashes of muddy water, realistic organic texture, warm natural daylight outside the rock shelter.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
           </div>
         </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Low-angle smooth forward tracking shot following horse hooves and elephant strides.</div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Low-angle panning shot across the mud trough showing rhythmic footwork and wet mud texture.</div>
       </div>
     </div>
 
-    <!-- CLIP 02 -->
-    <div class="card">
+    <!-- SHOT 03 -->
+    <div class="card" id="cut_21">
       <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_02_caravan_silkroad_lapis_GENERATE_VIDEO.jpg" alt="ep08_gf_02">
-        <div class="img-badge">ep08_gf_02_caravan_silkroad_lapis_GENERATE_VIDEO.jpg</div>
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_17_artisan_spreading_lime_plaster_finish_GENERATE_VIDEO.jpg" alt="ep08_gf_17_artisan_spreading_lime_plaster_finish_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_17_artisan_spreading_lime_plaster_finish_GENERATE_VIDEO.jpg</div>
       </div>
       <div class="details-col">
         <div>
           <div class="card-header">
-            <div class="card-title">Shot 02: Silk Road Lapis Caravan</div>
-            <span class="badge-tag">Cut #32 (Act III)</span>
+            <div class="card-title">Shot 03: Spreading the Lime Plaster Finish Coat</div>
+            <span class="badge-tag">Cut #21 (Act II)</span>
           </div>
           <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_02_caravan_silkroad_lapis.mp4</div>
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_17_artisan_spreading_lime_plaster_finish.mp4</code></div>
             <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
           </div>
           <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Carried on pack camels through mountain passes, raw blue stones journeyed thousands of kilometers."</div>
+          <div class="spoken-beat">"Finally, craftsmen spread a paper-thin finish coat made of slaked lime, powdered gypsum, and crushed sea shells."</div>
           <div class="field-label">Google Flow / Veo Motion Prompt</div>
           <div class="prompt-box">
-            <div class="prompt-text">Historical realism. A Silk Road pack camel caravan slowly navigating a rugged rocky mountain pass in ancient India. Coarse woven hemp saddlebags packed tightly on camel humps, leather ropes creaking. Rough, unpolished electric-blue lapis lazuli rocks peeking out from coarse burlap bags. Natural daylight, gritty gravel slipping under camel footpads, realistic wind blowing mountain dust. Authentic National Geographic documentary feel, raw historical truth.</div>
+            <div class="prompt-text">Ancient master craftsmanship documentary. Close-up of an ancient Indian artisan in coarse linen using a curved teak wooden float trowel to spread a paper-thin, brilliant white slaked lime and crushed oyster shell plaster finish across a dry red clay bio-mud wall. The creamy white plaster flows smoothly under the wooden float, forming a pristine, porcelain-like coating over the dark red mud. Raking warm lantern light, realistic wet plaster spread.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
           </div>
         </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Smooth tracking shot walking parallel alongside pack animals.</div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Macro tracking shot following the curved wooden float as it glides upward, laying down the smooth white plaster.</div>
       </div>
     </div>
 
-    <!-- CLIP 03 -->
-    <div class="card">
+    <!-- SHOT 04 -->
+    <div class="card" id="cut_23">
       <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg" alt="ep08_gf_03">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg" alt="ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 04: Agate Stone Burnishing</div>
+            <span class="badge-tag">Cut #23 (Act II)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_06_agate_burnishing_intonaco.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"Under the friction of the smooth agate stone, the chalky lime compacted into a gleaming, ivory-smooth surface ready for paint."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Tactile macro craftsmanship. An artisan's strong, steady hand pressing a banded river agate stone against a fresh white slaked lime wall. Steady, circular rubbing strokes burnishing the wet plaster, visibly compressing the chalky surface into a smooth, glossy porcelain-like ivory sheen. Natural light glinting across the newly polished plaster surface. Intimate, authentic, zero digital effects.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Close-up steady tracking following the smooth circular rubbing stroke of the agate stone.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 05 -->
+    <div class="card" id="cut_24">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_18_dipping_bamboo_brush_pigment_bowl_GENERATE_VIDEO.jpg" alt="ep08_gf_18_dipping_bamboo_brush_pigment_bowl_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_18_dipping_bamboo_brush_pigment_bowl_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 05: Uncapping Pigment Bowls & Dipping Brush</div>
+            <span class="badge-tag">Cut #24 (Act III)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_18_dipping_bamboo_brush_pigment_bowl.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"Once the plaster dried, the painters uncapped their earthenware pigment bowls."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Intimate artist studio documentary. Weathered, paint-flecked hand of an ancient Indian master painter lifting an earthenware lid off a rustic terracotta pigment bowl, then dipping the fine natural bristles of a bamboo brush into thick, wet, vibrant lapis lazuli ultramarine paint. Swirls of deep azure liquid pigment pool around the dipping brush, soft natural morning daylight raking across clay jars and pigment bowls.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Macro push-in onto the terracotta bowl as the brush dips and swirls the deep blue paint.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 06 -->
+    <div class="card" id="cut_25">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_20_crushing_volcanic_ochre_pestle_GENERATE_VIDEO.jpg" alt="ep08_gf_20_crushing_volcanic_ochre_pestle_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_20_crushing_volcanic_ochre_pestle_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 06: Crushing Volcanic Ochre Minerals</div>
+            <span class="badge-tag">Cut #25 (Act III)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_20_crushing_volcanic_ochre_pestle.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"For red and yellow colors, they crushed local volcanic ochre rocks dug right from the Deccan soil."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Ancient pigment chemistry craft. Close-up of strong hands using a heavy stone pestle to pound and pulverize raw chunks of volcanic red hematite and yellow ochre rocks inside a deep basalt mortar. The brittle ochre rocks fracture under the rhythmic blows, bursting into vivid terracotta-red and saffron-yellow mineral dust that settles into smooth paint powder. Raking golden sunlight, realistic rock splintering and mineral dust.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Low-angle macro shot capturing the rhythmic impact of the pestle and bursts of ochre powder.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 07 -->
+    <div class="card" id="cut_26">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg" alt="ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 07: Mustard Oil Lamp & Soot Collection</div>
+            <span class="badge-tag">Cut #26 (Act III)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"For green, they ground green earth minerals; for pure black, they collected soot from burning mustard oil lamps."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Traditional ancient chemistry craft. A small terracotta oil diya lamp burning with a steady golden flame fed by mustard oil. An inverted earthenware bowl held just above the flame collecting dense, velvety black carbon soot. A thin curl of realistic dark smoke rises gently against dark clay walls. Authentic craftsmanship, warm firelight reflections on clay vessels.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Macro focus pulling from burning yellow flame to dense black carbon soot collecting on pottery.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 08 -->
+    <div class="card" id="cut_34">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg" alt="ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg">
         <div class="img-badge">ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg</div>
       </div>
       <div class="details-col">
         <div>
           <div class="card-header">
-            <div class="card-title">Shot 03: Grinding Lapis Lazuli Crystals</div>
-            <span class="badge-tag">Cut #35 (Act III)</span>
+            <div class="card-title">Shot 08: Grinding Lapis Lazuli Crystals</div>
+            <span class="badge-tag">Cut #34 (Act III)</span>
           </div>
           <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_03_mortar_grinding_lapis_powder.mp4</div>
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_03_mortar_grinding_lapis_powder.mp4</code></div>
             <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
           </div>
           <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Artisans carefully crushed these rare blue rocks in stone mortars to produce priceless ultramarine paint."</div>
+          <div class="spoken-beat">"Only the wealthiest royal emperors and ministers could afford to paint entire cave ceilings in imported blue."</div>
           <div class="field-label">Google Flow / Veo Motion Prompt</div>
           <div class="prompt-box">
             <div class="prompt-text">Macro documentary realism. Weathered, clay-stained hands of an ancient Indian artisan holding a heavy granite pestle, grinding raw deep-blue crystalline lapis lazuli minerals inside a stone mortar. Solid stone-on-stone crushing friction, blue mineral shards fracturing into intense azure powder, clear water poured from an earthenware jug creating swirling deep-blue paint paste. Natural raking daylight through cave archway, 100% tangible physical textures.</div>
@@ -171,346 +314,206 @@
       </div>
     </div>
 
-    <!-- CLIP 04 -->
-    <div class="card">
+    <!-- SHOT 09 -->
+    <div class="card" id="cut_45">
       <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_04_plaster_kneading_cowdung_matrix_GENERATE_VIDEO.jpg" alt="ep08_gf_04">
-        <div class="img-badge">ep08_gf_04_plaster_kneading_cowdung_matrix_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 04: Kneading the Organic Mud Matrix</div>
-            <span class="badge-tag">Cut #18 (Act II)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_04_plaster_kneading_cowdung_matrix.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 5.5s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"They mixed local red mud with fermented cow dung fibers and rice husks to create a living plaster."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Historical reenactment documentary. Barefoot ancient Indian craftsmen in coarse dhoti waistcloths rhythmically treading and kneading thick organic reddish-brown mud plaster inside a rough wooden mixing pit. Golden rice husks, dry plant fibers, and dense wet clay squishing between toes with real physical weight and viscous mud resistance. Splashes of muddy water, realistic organic texture, warm natural daylight outside the rock shelter.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Low-angle panning shot across the mud trough showing rhythmic footwork.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 05 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg" alt="ep08_gf_05">
-        <div class="img-badge">ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 05: Pecking the Basalt Mechanical Key</div>
-            <span class="badge-tag">Cut #15 (Act II)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_05_chipping_basalt_key_sparks.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"First, stonecutters used pointed iron tools to peck thousands of small pits into the hard rock wall."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Authentic historical action. A skilled ancient stonecutter striking a pointed iron pick chisel against dark volcanic basalt wall. Rapid, precise hammer strikes pecking small pit dimples across the stone face. Tiny sharp rock chips fly off, momentary bright orange sparks flick off the dark igneous rock, fine basalt dust puffs in raking sunlight. Intense focus, sweat on the craftsman's brow, raw tactile stonecraft.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Macro side-profile push-in framing the chisel point and flying stone dust.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 06 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg" alt="ep08_gf_06">
-        <div class="img-badge">ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 06: Agate Stone Burnishing</div>
-            <span class="badge-tag">Cut #23 (Act II)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_06_agate_burnishing_intonaco.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"They polished the damp lime wall using smooth agate stones until it turned into an ivory-smooth mirror."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Tactile macro craftsmanship. An artisan's strong, steady hand pressing a banded river agate stone against a fresh white slaked lime wall. Steady, circular rubbing strokes burnishing the wet plaster, visibly compressing the chalky surface into a smooth, glossy porcelain-like ivory sheen. Natural light glinting across the newly polished plaster surface. Intimate, authentic, zero digital effects.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Close-up steady tracking following the circular agate stone motion.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 07 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_07_bronze_mirror_sunlight_beam_GENERATE_VIDEO.jpg" alt="ep08_gf_07">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_07_bronze_mirror_sunlight_beam_GENERATE_VIDEO.jpg" alt="ep08_gf_07_bronze_mirror_sunlight_beam_GENERATE_VIDEO.jpg">
         <div class="img-badge">ep08_gf_07_bronze_mirror_sunlight_beam_GENERATE_VIDEO.jpg</div>
       </div>
       <div class="details-col">
         <div>
           <div class="card-header">
-            <div class="card-title">Shot 07: Bronze Mirror Sunlight Diversion</div>
-            <span class="badge-tag">Cut #46 (Act IV)</span>
+            <div class="card-title">Shot 09: Bronze Mirror Sunlight Diversion</div>
+            <span class="badge-tag">Cut #45 (Act IV)</span>
           </div>
           <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_07_bronze_mirror_sunlight_beam.mp4</div>
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_07_bronze_mirror_sunlight_beam.mp4</code></div>
             <div class="meta-item"><strong>Duration:</strong> 5.5s</div>
           </div>
           <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Outside on the cliff, assistants angled large polished bronze mirrors to catch the burning sun."</div>
+          <div class="spoken-beat">"Outside in the blazing sunshine, assistants positioned large, circular mirrors made of highly polished cast bronze."</div>
           <div class="field-label">Google Flow / Veo Motion Prompt</div>
           <div class="prompt-box">
             <div class="prompt-text">Historical optical engineering. An ancient Indian apprentice adjusting a large, circular cast-bronze mirror mounted on a heavy timber tripod on the sunlit cave veranda. The mirror's hand-polished golden metal catches the blazing midday tropical sun, casting a powerful, solid beam of reflected natural sunlight cutting straight through the dusty air into the dark cavern doorway. Physically accurate optics, dust motes drifting through the solar ray.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
           </div>
         </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Dynamic pan from the mirror face following the beam into the cave entrance.</div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Dynamic slow pan from bronze mirror surface down the bright reflected beam of light into cave portal.</div>
       </div>
     </div>
 
-    <!-- CLIP 08 -->
-    <div class="card">
+    <!-- SHOT 10 -->
+    <div class="card" id="cut_48">
       <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg" alt="ep08_gf_08">
-        <div class="img-badge">ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 08: Painting the Eyelashes of Padmapani</div>
-            <span class="badge-tag">Cut #53 (Act V)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_08_brush_applying_lapis_eyelash.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Holding fine squirrel-hair brushes, master painters drew delicate lines thinner than a single hair."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Extreme macro art restoration footage. A thin bamboo brush tipped with ultra-fine squirrel hair gently painting a razor-sharp, flowing black eyeliner contour on the smooth ivory plaster face of Bodhisattva Padmapani. Hand trembles slightly with human breath, liquid pigment soaking smoothly into plaster pores, soft diffused natural daylight softly illuminating the artwork. Intimate historical masterwork in progress.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Extreme macro slow push-in tracking the brush tip stroke.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 09 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg" alt="ep08_gf_09">
-        <div class="img-badge">ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 09: Reflected Sun Illuminating the Great Hall</div>
-            <span class="badge-tag">Cut #49 (Act IV)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_09_cave_interior_sunlit_murals.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 6.0s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"They were literally painting forty meters underground using captured sunlight."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Subterranean architectural reveal. Moving smoothly forward between colossal carved stone columns inside Cave One. Gentle, soft, diffused golden sunlight sweeps across the painted ceiling mandalas and wall murals, revealing vibrant turquoise lapis blues, terracotta reds, and golden figures glowing in natural daylight deep inside the rock cave. Ancient monks and painters quietly working along scaffolding in background. Majestic, quiet, authentic.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Slow cinematic gimbal move forward between monumental stone pillars.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 10 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_10_harishena_shadow_cliffhanger_GENERATE_VIDEO.jpg" alt="ep08_gf_10">
-        <div class="img-badge">ep08_gf_10_harishena_shadow_cliffhanger_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 10: Harishena & The Looming Shadow</div>
-            <span class="badge-tag">Cut #58 (Act V)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_10_harishena_shadow_cliffhanger.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 5.5s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Then, in 477 CE, Emperor Harishena died suddenly, and a dark shadow fell over the canyon."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Dramatic historical cinema. Solitary back silhouette of Emperor Harishena in royal silks standing at the entrance of a rock-cut cave, looking out over the winding Ajanta horseshoe gorge under dramatic, dark monsoon storm clouds. Cold canyon wind whipping through heavy silk garments, lightning flashes softly illuminating wet volcanic rocks in the far distance. Foreboding, historical drama, realistic atmosphere.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Slow dramatic pull-back from behind the emperor retreating into cave darkness.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 11 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg" alt="ep08_gf_11">
-        <div class="img-badge">ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 11: The Silent Canyon Overgrown</div>
-            <span class="badge-tag">Cut #2 (Act I)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 5.5s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"For four hundred years, thick jungle vines and monsoon waters swallowed the ancient cave temples."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Ancient ruins nature documentary. Heavy monsoon rainwater cascading down dark volcanic basalt cliffs into the Ajanta horseshoe gorge. Thick wild jungle creepers, banyan roots, and green moss wrapping around the carved horseshoe arch of an ancient rock chaitya facade. Water trickling over silted stone floors, misty jungle humidity, overcast rainy daylight. Raw authentic tropical wilderness.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Slow downward tilt tracking rainwater cascading over mossy cliff facade.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 12 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_12_cliffside_bamboo_scaffolding_army_GENERATE_VIDEO.jpg" alt="ep08_gf_12">
-        <div class="img-badge">ep08_gf_12_cliffside_bamboo_scaffolding_army_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 12: Bamboo Scaffolding Army</div>
-            <span class="badge-tag">Cut #7 (Act I)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Thousands of stonecutters climbed massive bamboo towers to carve twenty new temples into the cliff."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Ancient construction historical documentary. Enormous, multi-level bamboo scaffolding structures lashed with thick hemp ropes clinging to a vertical black basalt canyon cliff face. Dozens of ancient Indian stonecutters climbing ladders, hauling timber beams and wicker baskets of rock debris. Chipping sounds of iron against stone, dust rising in morning sunbeams. A bustling 5th-century engineering site, totally realistic.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Slow vertical crane up along the towering bamboo scaffolding.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 13 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg" alt="ep08_gf_13">
-        <div class="img-badge">ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 13: Weeping Basalt Moisture Macro</div>
-            <span class="badge-tag">Cut #11 (Act II)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_13_basalt_weeping_water_droplets_macro.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"The cave walls were made of cold volcanic basalt that constantly weeps moisture from inside the mountain."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Macro geological science documentary. Close-up of cold, dark, porous volcanic basalt rock face inside a deep cave. Tiny clear droplets of subterranean water slowly seeping through micro-fissures in the stone, swelling and trickling down the glassy black rock surface. Raking cool side light revealing the slick wet surface texture. Realistic macro fluid physics, high detail.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Macro slow pan downward following a single water droplet trickling down the rock.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 14 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg" alt="ep08_gf_14">
-        <div class="img-badge">ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg</div>
-      </div>
-      <div class="details-col">
-        <div>
-          <div class="card-header">
-            <div class="card-title">Shot 14: Mustard Oil Lamp & Soot Collection</div>
-            <span class="badge-tag">Cut #26 (Act III)</span>
-          </div>
-          <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4</div>
-            <div class="meta-item"><strong>Duration:</strong> 4.5s</div>
-          </div>
-          <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"For intense black pigment, they captured pure lampblack soot from burning mustard oil."</div>
-          <div class="field-label">Google Flow / Veo Motion Prompt</div>
-          <div class="prompt-box">
-            <div class="prompt-text">Traditional ancient chemistry craft. A small terracotta oil diya lamp burning with a steady golden flame fed by mustard oil. An inverted earthenware bowl held just above the flame collecting dense, velvety black carbon soot. A thin curl of realistic dark smoke rises gently against dark clay walls. Authentic craftsmanship, warm firelight reflections on clay vessels.</div>
-            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-          </div>
-        </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Macro focus shifting from the flickering wick to the black soot gathering on the pottery.</div>
-      </div>
-    </div>
-
-    <!-- CLIP 15 -->
-    <div class="card">
-      <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg" alt="ep08_gf_15">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg" alt="ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg">
         <div class="img-badge">ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg</div>
       </div>
       <div class="details-col">
         <div>
           <div class="card-header">
-            <div class="card-title">Shot 15: Wet Linen Sheet Sunlight Diffuser</div>
+            <div class="card-title">Shot 10: Wet Linen Sheet Sunlight Diffuser</div>
             <span class="badge-tag">Cut #48 (Act IV)</span>
           </div>
           <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_15_wet_linen_diffuser_light_beam.mp4</div>
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_15_wet_linen_diffuser_light_beam.mp4</code></div>
             <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
           </div>
           <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"They bounced the harsh sunbeam onto wet white linen sheets, filling dark halls with soft, shadowless daylight."</div>
+          <div class="spoken-beat">"When the intense sunbeam hit the wet white cloth, the light bounced and scattered, filling the dark underground hall with a soft, bright, shadowless glow."</div>
           <div class="field-label">Google Flow / Veo Motion Prompt</div>
           <div class="prompt-box">
             <div class="prompt-text">Ancient optical demonstration. Two young Indian apprentice boys holding a stretched sheet of bleached, wet white cotton fabric inside a dark rock cave. A concentrated beam of reflected sunlight strikes the wet cloth, instantly diffusing into a bright, glowing lantern effect that bathes the surrounding dark stone pillars and carved wall reliefs in soft, even, shadowless white light. Pure practical physics, tangible wet cloth weave.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
           </div>
         </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Smooth tracking move from the bright sunbeam impact on the cloth to the glowing stone wall.</div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Smooth tracking shot from the bright point of impact on the cloth to the glowing cave wall behind it.</div>
       </div>
     </div>
 
-    <!-- CLIP 16 -->
-    <div class="card">
+    <!-- SHOT 11 -->
+    <div class="card" id="cut_49">
       <div class="preview-col">
-        <img class="preview-img" src="../google_flow_input_images/ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg" alt="ep08_gf_16">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg" alt="ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 11: Reflected Sun Illuminating the Great Hall</div>
+            <span class="badge-tag">Cut #49 (Act IV)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_09_cave_interior_sunlit_murals.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 6.0s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"The ancient painters were literally painting forty meters underground using captured natural sunlight."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Subterranean architectural reveal. Moving smoothly forward between colossal carved stone columns inside Cave One. Gentle, soft, diffused golden sunlight sweeps across the painted ceiling mandalas and wall murals, revealing vibrant turquoise lapis blues, terracotta reds, and golden figures glowing in natural daylight deep inside the rock cave. Ancient monks and painters quietly working along scaffolding in background. Majestic, quiet, authentic.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Slow forward dolly gliding between carved columns, gazing up as murals emerge into soft light.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 12 -->
+    <div class="card" id="cut_50">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg" alt="ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 12: Painting the Eyelashes of Padmapani</div>
+            <span class="badge-tag">Cut #50 (Act V)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_08_brush_applying_lapis_eyelash.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"Illuminated by this soft, redirected sunlight, ancient artists created the greatest masterpieces of ancient world art."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Extreme macro art restoration footage. A thin bamboo brush tipped with ultra-fine squirrel hair gently painting a razor-sharp, flowing black eyeliner contour on the smooth ivory plaster face of Bodhisattva Padmapani. Hand trembles slightly with human breath, liquid pigment soaking smoothly into plaster pores, soft diffused natural daylight softly illuminating the artwork. Intimate historical masterwork in progress.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Extreme macro slow push-in tracking the brush tip gliding across ivory plaster.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 13 -->
+    <div class="card" id="cut_52">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_19_painting_blue_lotus_padmapani_GENERATE_VIDEO.jpg" alt="ep08_gf_19_painting_blue_lotus_padmapani_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_19_painting_blue_lotus_padmapani_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 13: Painting the Blue Lotus Blossom</div>
+            <span class="badge-tag">Cut #52 (Act V)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_19_painting_blue_lotus_padmapani.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"Look closely at his gentle expression, his regal crown, and the downward curve of his eyes full of compassion."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Masterpiece craftsmanship in progress. Extreme macro view of an ancient master artist's hand holding a fine bamboo brush, delicately applying vivid electric-blue lapis lazuli paint onto the petals of the sacred lotus blossom held in the fingers of Bodhisattva Padmapani on the ivory cave wall. The wet ultramarine paint flows smoothly across the white plaster, glowing under soft diffused natural sunlight. Intimate, sacred artistry.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Slow macro push-in focusing on the brush tip painting the rich blue lotus petals.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 14 -->
+    <div class="card" id="cut_53">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_21_vartana_3d_gradient_shading_brushwork_GENERATE_VIDEO.jpg" alt="ep08_gf_21_vartana_3d_gradient_shading_brushwork_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_21_vartana_3d_gradient_shading_brushwork_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 14: Executing 3D Vartana Gradient Shading</div>
+            <span class="badge-tag">Cut #53 (Act V)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_21_vartana_3d_gradient_shading_brushwork.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"Notice the realistic three-dimensional shading along his nose and jawline, making his body look soft and alive against the flat stone."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Microscopic ancient painting technique. An Indian master artist executing the revolutionary 'vartana' 3D gradient shading technique on Padmapani's face. A soft hair brush gently feathers delicate parallel micro-strokes of warm translucent ochre along the bridge of the nose and the contour of the jawline, creating lifelike cylindrical volume, soft human skin texture, and realistic anatomical depth on the flat stone wall.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Macro tracking shot following the delicate feathering brush strokes along the nose and jawline.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 15 -->
+    <div class="card" id="cut_54">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_22_painting_pearl_tiara_highlights_GENERATE_VIDEO.jpg" alt="ep08_gf_22_painting_pearl_tiara_highlights_GENERATE_VIDEO.jpg">
+        <div class="img-badge">ep08_gf_22_painting_pearl_tiara_highlights_GENERATE_VIDEO.jpg</div>
+      </div>
+      <div class="details-col">
+        <div>
+          <div class="card-header">
+            <div class="card-title">Shot 15: Sculpting Raised Pearl Tiara Highlights</div>
+            <span class="badge-tag">Cut #54 (Act V)</span>
+          </div>
+          <div class="meta-row">
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_22_painting_pearl_tiara_highlights.mp4</code></div>
+            <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
+          </div>
+          <div class="field-label">Spoken Beat</div>
+          <div class="spoken-beat">"A thousand years before Leonardo da Vinci painted in Europe, Indian painters had already mastered human anatomy, emotion, and realistic 3D depth."</div>
+          <div class="field-label">Google Flow / Veo Motion Prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Extreme macro jewelry painting craftsmanship. The ultra-fine tip of a miniature bamboo brush dabbing tiny, raised droplets of pure white slaked-lime and crushed-shell paste onto the painted royal tiara of Bodhisattva Padmapani. Each opaque white dot instantly forms a glistening, three-dimensional pearl bead catching raking side light, surrounded by intricate gold filigree and glowing blue gemstones. Tactile impasto masterwork.</div>
+            <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+          </div>
+        </div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Microscopic macro push-in as the brush tip deposits glistening 3D pearl dots onto the royal crown.</div>
+      </div>
+    </div>
+
+    <!-- SHOT 16 -->
+    <div class="card" id="cut_60">
+      <div class="preview-col">
+        <img class="preview-img" src="../google_flow_input_images/ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg" alt="ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg">
         <div class="img-badge">ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg</div>
       </div>
       <div class="details-col">
@@ -520,49 +523,48 @@
             <span class="badge-tag">Cut #60 (Act V)</span>
           </div>
           <div class="meta-row">
-            <div class="meta-item"><strong>Target Output:</strong> ep08_gf_16_abandoned_chisel_dropped_brush.mp4</div>
+            <div class="meta-item"><strong>Target Output:</strong> <code>ep08_gf_16_abandoned_chisel_dropped_brush.mp4</code></div>
             <div class="meta-item"><strong>Duration:</strong> 5.0s</div>
           </div>
           <div class="field-label">Spoken Beat</div>
-          <div class="spoken-beat">"Brushes were dropped wet on the floor, chisels were left in the stone, and the caves fell silent for thirteen centuries."</div>
+          <div class="spoken-beat">"Down the cliff, stonecutters abandoned half-carved pillars, painters dropped their wet brushes on the stone floor, and monks fled into the hills."</div>
           <div class="field-label">Google Flow / Veo Motion Prompt</div>
           <div class="prompt-box">
             <div class="prompt-text">Poignant historical stillness. Close-up on the stone floor of an unfinished cave. A fine bamboo paintbrush with wet ultramarine blue paint lying dropped across a terracotta pigment bowl, blue paint slowly seeping into the stone dust. Nearby, an iron chisel rests against a half-carved column base. Wind blows dry dust across the floor as footsteps hurry away in the distant corridor. Chilling, realistic historical abandonment.</div>
             <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
           </div>
         </div>
-        <div class="camera-motion"><strong>Camera Motion:</strong> Slow low-angle tilt up from the dropped paintbrush to the silent empty cave hall.</div>
+        <div class="camera-motion"><strong>Camera Motion:</strong> Slow low-angle tilt up from the dropped paintbrush on dusty stone floor to silent shadowy corridor.</div>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- Floating Feedback Toggle -->
-<button id="feedback-toggle" onclick="toggleFeedback()">💬 Add Feedback</button>
+<!-- Interactive Feedback System -->
+<button id="feedback-toggle" onclick="toggleFeedback()">💬 Feedback (<span id="fb-count">0</span>)</button>
 
-<!-- Feedback Sidebar Panel -->
 <div id="feedback-panel">
   <div class="fb-header">
-    <h3>Production Feedback & Notes</h3>
-    <button class="fb-close" onclick="toggleFeedback()">×</button>
+    <h3>Feedback & Changes</h3>
+    <button class="fb-close" onclick="toggleFeedback()">&times;</button>
   </div>
-  <div class="fb-list" id="feedback-list">
-    <!-- Feedback entries rendered here -->
+  <div class="fb-list" id="fb-items"></div>
+  <div class="fb-form">
+    <select id="fb-tag">
+      <option value="tag-change">✏️ Change Request</option>
+      <option value="tag-approval">✅ Approval</option>
+      <option value="tag-issue">⚠️ Issue / Bug</option>
+      <option value="tag-idea">💡 Idea / Note</option>
+    </select>
+    <input type="text" id="fb-cut" placeholder="Cut # or Clip Name (optional)">
+    <textarea id="fb-text" rows="3" placeholder="Type your feedback here..."></textarea>
+    <button onclick="addFeedback()">Add Feedback</button>
   </div>
-  <div class="fb-input-area">
-    <div class="fb-controls">
-      <select id="fb-tag-select">
-        <option value="change">✏️ Change Request</option>
-        <option value="approve">✅ Approval</option>
-        <option value="issue">⚠️ Issue / Bug</option>
-        <option value="idea">💡 Idea / Note</option>
-      </select>
-    </div>
-    <textarea id="fb-text" placeholder="Write feedback on this clip or prompt..."></textarea>
-    <button class="fb-btn" onclick="saveFeedback()">Save Feedback</button>
-    <button class="fb-export" onclick="copyForAgent()">📋 Copy for Agent</button>
-    <button class="fb-export" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+  <div class="fb-actions">
+    <button class="fb-btn-sec" onclick="copyFeedbackForAgent()">📋 Copy for Agent</button>
+    <button class="fb-btn-sec" onclick="exportFeedbackJSON()">💾 Export JSON</button>
+    <button class="fb-btn-sec" onclick="clearFeedback()">🗑️ Clear</button>
   </div>
 </div>
 
@@ -570,106 +572,91 @@
 function copyPrompt(btn) {
   const text = btn.previousElementSibling.innerText;
   navigator.clipboard.writeText(text).then(() => {
-    const original = btn.innerText;
-    btn.innerText = "Copied!";
+    const orig = btn.innerText;
+    btn.innerText = "✓ Copied!";
     btn.style.background = "#10b981";
-    btn.style.color = "#fff";
+    btn.style.color = "#000";
     setTimeout(() => {
-      btn.innerText = original;
+      btn.innerText = orig;
       btn.style.background = "#1e293b";
       btn.style.color = "#38bdf8";
     }, 2000);
   });
 }
 
+const STORAGE_KEY = "ep08_google_flow_prompts_feedback";
+let feedbackList = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
 function toggleFeedback() {
-  document.getElementById('feedback-panel').classList.toggle('open');
-}
-
-const STORAGE_KEY = 'ep08_google_flow_feedback';
-
-function loadFeedback() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  return raw ? JSON.parse(raw) : [];
+  document.getElementById("feedback-panel").classList.toggle("open");
 }
 
 function renderFeedback() {
-  const list = document.getElementById('feedback-list');
-  const items = loadFeedback();
-  if (items.length === 0) {
-    list.innerHTML = '<div style="color:#64748b; font-size:0.85rem; text-align:center; padding:20px;">No notes yet. Add your thoughts above!</div>';
-    return;
-  }
-  list.innerHTML = items.map((item, idx) => `
-    <div class="fb-item">
-      <span class="fb-tag ${item.tag}">${getTagLabel(item.tag)}</span>
-      <div style="color:#e2e8f0; margin-top:4px;">${item.text}</div>
-      <div style="color:#64748b; font-size:0.7rem; margin-top:6px; display:flex; justify-content:space-between;">
-        <span>${item.time}</span>
-        <a href="javascript:void(0)" onclick="deleteFeedback(${idx})" style="color:#ef4444; text-decoration:none;">Delete</a>
-      </div>
-    </div>
-  `).join('');
-}
-
-function getTagLabel(tag) {
-  switch(tag) {
-    case 'change': return '✏️ Change Request';
-    case 'approve': return '✅ Approval';
-    case 'issue': return '⚠️ Issue';
-    case 'idea': return '💡 Idea';
-    default: return tag;
-  }
-}
-
-function saveFeedback() {
-  const text = document.getElementById('fb-text').value.trim();
-  const tag = document.getElementById('fb-tag-select').value;
-  if (!text) return;
-  const items = loadFeedback();
-  items.push({
-    tag: tag,
-    text: text,
-    time: new Date().toLocaleString()
+  const container = document.getElementById("fb-items");
+  document.getElementById("fb-count").innerText = feedbackList.length;
+  container.innerHTML = "";
+  feedbackList.forEach((item, idx) => {
+    const div = document.createElement("div");
+    div.className = `fb-item ${item.tag}`;
+    div.innerHTML = `
+      <span class="fb-tag">${item.tag.replace("tag-", "")}</span>
+      ${item.cut ? `<strong>[${item.cut}]</strong> ` : ""}
+      <div>${item.text}</div>
+      <button class="fb-del" onclick="deleteFeedback(${idx})">&times;</button>
+    `;
+    container.appendChild(div);
   });
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-  document.getElementById('fb-text').value = '';
+}
+
+function addFeedback() {
+  const tag = document.getElementById("fb-tag").value;
+  const cut = document.getElementById("fb-cut").value.trim();
+  const text = document.getElementById("fb-text").value.trim();
+  if (!text) return;
+  feedbackList.push({ tag, cut, text, time: new Date().toISOString() });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbackList));
+  document.getElementById("fb-text").value = "";
   renderFeedback();
 }
 
 function deleteFeedback(idx) {
-  const items = loadFeedback();
-  items.splice(idx, 1);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  feedbackList.splice(idx, 1);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbackList));
   renderFeedback();
 }
 
-function copyForAgent() {
-  const items = loadFeedback();
-  if (items.length === 0) {
-    alert('No feedback to copy!');
+function clearFeedback() {
+  if (confirm("Clear all feedback notes?")) {
+    feedbackList = [];
+    localStorage.removeItem(STORAGE_KEY);
+    renderFeedback();
+  }
+}
+
+function copyFeedbackForAgent() {
+  if (feedbackList.length === 0) {
+    alert("No feedback items to copy!");
     return;
   }
-  let out = "### Client Feedback on Episode 08 Google Flow Prompts:\n";
-  items.forEach(i => {
-    out += `- **[${getTagLabel(i.tag)}]** (${i.time}): ${i.text}\n`;
+  let md = "### Episode 08 Google Flow Prompt Sheet Feedback:\n";
+  feedbackList.forEach(item => {
+    md += `- **[${item.tag.replace("tag-", "").toUpperCase()}]** ${item.cut ? `(${item.cut}) ` : ""}${item.text}\n`;
   });
-  navigator.clipboard.writeText(out).then(() => {
-    alert('Feedback copied to clipboard! Paste it directly into your chat with Antigravity.');
+  navigator.clipboard.writeText(md).then(() => {
+    alert("Copied feedback to clipboard! You can paste it directly to the agent.");
   });
 }
 
 function exportFeedbackJSON() {
-  const items = loadFeedback();
-  const blob = new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' });
+  const blob = new Blob([JSON.stringify(feedbackList, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = url;
-  a.download = 'episode_08_google_flow_feedback.json';
+  a.download = "ep08_google_flow_feedback.json";
   a.click();
 }
 
-window.onload = renderFeedback;
+renderFeedback();
 </script>
 
 </body>

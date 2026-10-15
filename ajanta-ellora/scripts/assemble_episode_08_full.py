@@ -53,11 +53,11 @@ def get_manifest():
         # 4. "But hidden deep inside these dark volcanic caves is something most people have never heard about: world-famous ancient paintings..."
         ("image", "ep08_real_painting_01_cave_mural_panorama_PAN_ZOOM.jpg", "slow_drift"),
         # 5. "For nearly four centuries, this horseshoe mountain canyon lay completely silent, overgrown by thick jungle vines."
-        ("video", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4").exists() else ("image", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg", "pan_right"),
+        ("image", "ep08_hero_05_jungle_vines_monsoon_chaitya_PAN_ZOOM.jpg", "pan_right"),
         # 6. "Then, in the year 460, a powerful Indian king named Emperor Harishena united the empire..."
-        ("video", "ep08_gf_01_harishena_imperial_cavalry.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_01_harishena_imperial_cavalry.mp4").exists() else ("image", "ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
+        ("image", "ep08_hero_06_harishena_imperial_cavalry_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 7. "Within just seventeen years, master stonecutters carved twenty colossal new cave halls directly into the solid rock face."
-        ("video", "ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4").exists() else ("image", "ep08_gf_12_cliffside_bamboo_scaffolding_army_GENERATE_VIDEO.jpg", "slow_tilt_up"),
+        ("image", "ep08_hero_07_cliffside_bamboo_scaffolding_army_PAN_ZOOM.jpg", "slow_tilt_up"),
         # 8. "But they did not just carve stone; ancient artists transformed these dark subterranean walls into breathtaking, colorful royal palaces."
         ("image", "ep08_real_painting_04_royal_court_figures_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 9. "In this episode, you will see how these ancient painters actually did their work, and how they solved three impossible engineering mysteries."
@@ -69,7 +69,7 @@ def get_manifest():
         # 11. "The walls were not made of smooth, dry stone; they were carved out of dense, volcanic flood basalt rock."
         ("image", "ep08_10_raw_volcanic_basalt_seepage_PAN_ZOOM.jpg", "pan_right"),
         # 12. "Basalt is cold, hard lava rock that constantly sweats underground water droplets through tiny cracks."
-        ("video", "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4").exists() else ("image", "ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg", "slow_zoom_in"),
+        ("image", "ep08_hero_12_basalt_weeping_water_droplets_macro_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 13. "If you paint directly on wet basalt rock, the water pushes the paint off within months, causing it to peel and turn to dust."
         ("image", "ep08_11_flaking_paint_moisture_failure_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 14. "European fresco painters put wet lime plaster on walls, but inside a cold, damp volcanic cave, that technique fails completely."
@@ -87,7 +87,7 @@ def get_manifest():
         # 20. "Mixed with dry rice husks and sticky boiled sap from neem trees, this mud layer created a breathable skin that lived with the damp mountain."
         ("image", "ep08_16_rice_husk_tensile_reinforcement_PAN_ZOOM.jpg", "pan_right"),
         # 21. "Finally, craftsmen spread a paper-thin finish coat made of slaked lime, powdered gypsum, and crushed sea shells."
-        ("image", "ep08_20_crushed_oyster_shells_gypsum_powder_PAN_ZOOM.jpg", "slow_drift"),
+        ("video", "ep08_gf_17_artisan_spreading_lime_plaster_finish.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_17_artisan_spreading_lime_plaster_finish.mp4").exists() else ("image", "ep08_gf_17_artisan_spreading_lime_plaster_finish_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
         # 22. "While still damp, an artisan held a smooth river agate pebble, firmly rubbing the wall in steady circular motions."
         ("image", "ep08_21_agate_burnishing_stone_collection_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 23. "Under the friction of the smooth agate stone, the chalky lime compacted into a gleaming, ivory-smooth surface ready for paint."
@@ -95,9 +95,9 @@ def get_manifest():
 
         # Act III: The Silk Road Blue (Cuts 24-35)
         # 24. "Once the plaster dried, the painters uncapped their earthenware pigment bowls."
-        ("image", "ep08_23_terracotta_pigment_bowls_palette_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        ("video", "ep08_gf_18_dipping_bamboo_brush_pigment_bowl.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_18_dipping_bamboo_brush_pigment_bowl.mp4").exists() else ("image", "ep08_gf_18_dipping_bamboo_brush_pigment_bowl_GENERATE_VIDEO.jpg", "slow_zoom_in"),
         # 25. "For red and yellow colors, they crushed local volcanic ochre rocks dug right from the Deccan soil."
-        ("image", "ep08_19_volcanic_red_yellow_ochre_crushing_PAN_ZOOM.jpg", "pan_left"),
+        ("video", "ep08_gf_20_crushing_volcanic_ochre_pestle.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_20_crushing_volcanic_ochre_pestle.mp4").exists() else ("image", "ep08_gf_20_crushing_volcanic_ochre_pestle_GENERATE_VIDEO.jpg", "pan_left"),
         # 26. "For green, they ground green earth minerals; for pure black, they collected soot from burning mustard oil lamps."
         ("video", "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4").exists() else ("image", "ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg", "slow_zoom_in"),
         # 27. "But across the ceilings of Cave One and Cave Seventeen shines a brilliant color that came from thousands of kilometers away."
@@ -111,7 +111,7 @@ def get_manifest():
         # 31. "To reach this remote volcanic cave, raw blue rocks traveled over two thousand five hundred kilometers across ancient trade roads."
         ("image", "ep08_04_vakataka_empire_deccan_map_still_PAN_ZOOM.jpg", "pan_right"),
         # 32. "Pack camels carried heavy leather bags of raw blue crystals through freezing mountain passes and across the Indian plains."
-        ("video", "ep08_gf_02_caravan_silkroad_lapis.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_02_caravan_silkroad_lapis.mp4").exists() else ("image", "ep08_gf_02_caravan_silkroad_lapis_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
+        ("image", "ep08_hero_32_caravan_silkroad_lapis_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 33. "Ounce for ounce, this pure Afghan blue stone was worth more than solid gold."
         ("image", "ep08_28_gold_scale_weighing_lapis_lazuli_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 34. "Only the wealthiest royal emperors and ministers could afford to paint entire cave ceilings in imported blue."
@@ -155,11 +155,11 @@ def get_manifest():
         # 51. "On the rear wall of Cave One stands the famous painting of Bodhisattva Padmapani, holding a blue lotus flower."
         ("image", "ep08_real_painting_02_bodhisattva_lotus_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 52. "Look closely at his gentle expression, his regal crown, and the downward curve of his eyes full of compassion."
-        ("image", "ep08_34_padmapani_tribhanga_posture_mural_PAN_ZOOM.jpg", "slow_zoom_in"),
+        ("video", "ep08_gf_19_painting_blue_lotus_padmapani.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_19_painting_blue_lotus_padmapani.mp4").exists() else ("image", "ep08_gf_19_painting_blue_lotus_padmapani_GENERATE_VIDEO.jpg", "slow_zoom_in"),
         # 53. "Notice the realistic three-dimensional shading along his nose and jawline, making his body look soft and alive against the flat stone."
-        ("image", "ep08_archive_06_padmapani_3d_shading_face_macro_PAN_ZOOM.jpg", "slow_drift"),
+        ("video", "ep08_gf_21_vartana_3d_gradient_shading_brushwork.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_21_vartana_3d_gradient_shading_brushwork.mp4").exists() else ("image", "ep08_gf_21_vartana_3d_gradient_shading_brushwork_GENERATE_VIDEO.jpg", "slow_drift"),
         # 54. "A thousand years before Leonardo da Vinci painted in Europe, Indian painters had already mastered human anatomy, emotion, and realistic 3D depth."
-        ("image", "ep08_archive_09_vajrapani_cave_1_regal_bodhisattva_PAN_ZOOM.jpg", "pan_right"),
+        ("video", "ep08_gf_22_painting_pearl_tiara_highlights.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_22_painting_pearl_tiara_highlights.mp4").exists() else ("image", "ep08_gf_22_painting_pearl_tiara_highlights_GENERATE_VIDEO.jpg", "pan_right"),
         # 55. "All across these walls, you can see real life from fifteen hundred years ago: royal courts with foreign Persian visitors, forest animals, and joyful celebrations."
         ("image", "ep08_35_persian_embassy_foreigners_fresco_PAN_ZOOM.jpg", "slow_tilt_up"),
         # 56. "But just as the painters were finishing these royal halls in the year 477, tragedy struck the empire."
@@ -175,7 +175,7 @@ def get_manifest():
         # 61. "Within months, this bustling city of art in the cliff went completely silent."
         ("image", "ep08_02_satavahana_chaitya_silt_floor_PAN_ZOOM.jpg", "slow_drift"),
         # 62. "In our next episode, we will investigate this sudden collapse: the mysterious downfall that froze Ajanta in time, sealing these thirty temples inside the jungle for over a thousand years."
-        ("video", "ep08_gf_10_harishena_shadow_cliffhanger.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_10_harishena_shadow_cliffhanger.mp4").exists() else ("image", "ep08_gf_10_harishena_shadow_cliffhanger_GENERATE_VIDEO.jpg", "slow_dolly_forward")
+        ("image", "ep08_hero_62_harishena_shadow_cliffhanger_PAN_ZOOM.jpg", "slow_dolly_forward")
     ]
 
 def get_media_duration(path: Path) -> float:
