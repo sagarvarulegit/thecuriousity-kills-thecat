@@ -43,24 +43,24 @@ BUNDLE_DIR.mkdir(parents=True, exist_ok=True)
 # ---------------------------------------------------------------------------
 def get_manifest():
     return [
-        # Act I: The Golden Reawakening (Cuts 1-9)
-        # 1. "For nearly four centuries, the horseshoe canyon of Ajanta lay in absolute silence."
+        # Act I: The Hidden Paintings of Ajanta (The Golden Reawakening, c. 460 CE) (Cuts 1-9)
+        # 1. "Welcome back to Ajanta and Ellora: The Subterranean Titans."
         ("image", "ep08_01_silent_canyon_dormancy_PAN_ZOOM.jpg", "slow_drift"),
-        # 2. "The austere stone stupas carved by early Satavahana monks had been swallowed by jungle vines..."
+        # 2. "This is Episode 8: The Mystery of the Cave Paintings."
         ("video", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4").exists() else ("image", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg", "pan_right"),
-        # 3. "Then—around the year 460 of the common era—a volcanic explosion of royal power transformed the ravine forever."
-        ("image", "ep08_03_harishena_coronation_royal_court_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 4. "From the north, Emperor Harishena of the Vakataka dynasty united the Deccan..."
-        ("video", "ep08_gf_01_harishena_imperial_cavalry.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_01_harishena_imperial_cavalry.mp4").exists() else ("image", "ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 5. "Wealth from the Silk Road and the ancient Dakshinapatha trade artery poured directly into this secluded mountain."
+        # 3. "When people think of Ajanta and Ellora, they usually picture giant stone temples carved out of black mountain rock."
+        ("image", "ep08_real_ajanta_rock_cut_monolithic_temple_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 4. "But hidden deep inside these dark volcanic caves is something most people have never heard about: world-famous ancient paintings..."
+        ("image", "ep08_real_painting_01_cave_mural_panorama_PAN_ZOOM.jpg", "slow_drift"),
+        # 5. "For nearly four centuries, this horseshoe mountain canyon lay completely silent, overgrown by thick jungle vines."
         ("image", "ep08_04_vakataka_empire_deccan_map_still_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 6. "Harishena’s royal ministers, feudatory kings, and merchant guilds began an unprecedented architectural assault..."
-        ("image", "ep08_05_dakshinapatha_trade_merchants_PAN_ZOOM.jpg", "pan_left"),
-        # 7. "Within just seventeen feverish years, master stonecutters carved twenty colossal new sanctuaries into the sheer basalt."
+        # 6. "Then, in the year 460, a powerful Indian king named Emperor Harishena united the empire..."
+        ("video", "ep08_gf_01_harishena_imperial_cavalry.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_01_harishena_imperial_cavalry.mp4").exists() else ("image", "ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
+        # 7. "Within just seventeen years, master stonecutters carved twenty colossal new cave halls directly into the solid rock face."
         ("video", "ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_12_cliffside_bamboo_scaffolding_army.mp4").exists() else ("image", "ep08_gf_12_cliffside_bamboo_scaffolding_army_GENERATE_VIDEO.jpg", "slow_tilt_up"),
-        # 8. "But these were no longer simple ascetic retreats; they were multi-story rock-cut university palaces..."
-        ("image", "ep08_07_canyon_cliff_construction_activity_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 9. "And upon their smooth interior walls, ancient painters were about to achieve a visual miracle..."
+        # 8. "But they did not just carve stone; ancient artists transformed these dark subterranean walls into breathtaking, colorful royal palaces."
+        ("image", "ep08_real_painting_04_royal_court_figures_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        # 9. "In this episode, you will see how these ancient painters actually did their work, and how they solved three impossible engineering mysteries."
         ("image", "ep08_08_monumental_vihara_colonnade_facade_PAN_ZOOM.jpg", "slow_zoom_out"),
 
         # Act II: The Basalt Problem & The Mud Chemistry Secret (Cuts 10-23)
