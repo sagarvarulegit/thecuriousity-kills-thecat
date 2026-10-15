@@ -47,13 +47,13 @@ def get_manifest():
         # 1. "Welcome back to Ajanta and Ellora: The Subterranean Titans."
         ("image", "ep08_01_silent_canyon_dormancy_PAN_ZOOM.jpg", "slow_drift"),
         # 2. "This is Episode 8: The Mystery of the Cave Paintings."
-        ("video", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4").exists() else ("image", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg", "pan_right"),
+        ("image", "ep08_real_painting_03_celestial_apsara_PAN_ZOOM.jpg", "slow_dolly_forward"),
         # 3. "When people think of Ajanta and Ellora, they usually picture giant stone temples carved out of black mountain rock."
         ("image", "ep08_real_ajanta_rock_cut_monolithic_temple_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 4. "But hidden deep inside these dark volcanic caves is something most people have never heard about: world-famous ancient paintings..."
         ("image", "ep08_real_painting_01_cave_mural_panorama_PAN_ZOOM.jpg", "slow_drift"),
         # 5. "For nearly four centuries, this horseshoe mountain canyon lay completely silent, overgrown by thick jungle vines."
-        ("image", "ep08_04_vakataka_empire_deccan_map_still_PAN_ZOOM.jpg", "slow_zoom_in"),
+        ("video", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_11_jungle_vines_monsoon_chaitya_flood.mp4").exists() else ("image", "ep08_gf_11_jungle_vines_monsoon_chaitya_flood_GENERATE_VIDEO.jpg", "pan_right"),
         # 6. "Then, in the year 460, a powerful Indian king named Emperor Harishena united the empire..."
         ("video", "ep08_gf_01_harishena_imperial_cavalry.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_01_harishena_imperial_cavalry.mp4").exists() else ("image", "ep08_gf_01_harishena_imperial_cavalry_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
         # 7. "Within just seventeen years, master stonecutters carved twenty colossal new cave halls directly into the solid rock face."
@@ -64,117 +64,117 @@ def get_manifest():
         ("image", "ep08_08_monumental_vihara_colonnade_facade_PAN_ZOOM.jpg", "slow_zoom_out"),
 
         # Act II: The Basalt Problem & The Mud Chemistry Secret (Cuts 10-23)
-        # 10. "To paint inside Ajanta, ancient craftsmen faced an impossible geological reality."
+        # 10. "To paint inside Ajanta, ancient craftsmen faced an impossible geological problem."
         ("image", "ep08_09_royal_university_hall_perspective_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 11. "The walls were not made of smooth limestone or dry sandstone; they were carved out of dense, volcanic flood basalt."
-        ("video", "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4").exists() else ("image", "ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg", "pan_right"),
-        # 12. "Basalt is an igneous rock formed by cooling lava—glassy, non-porous, and constantly weeping subterranean moisture."
+        # 11. "The walls were not made of smooth, dry stone; they were carved out of dense, volcanic flood basalt rock."
+        ("image", "ep08_10_raw_volcanic_basalt_seepage_PAN_ZOOM.jpg", "pan_right"),
+        # 12. "Basalt is cold, hard lava rock that constantly sweats underground water droplets through tiny cracks."
+        ("video", "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4").exists() else ("image", "ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg", "slow_zoom_in"),
+        # 13. "If you paint directly on wet basalt rock, the water pushes the paint off within months, causing it to peel and turn to dust."
         ("image", "ep08_11_flaking_paint_moisture_failure_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 13. "If you apply paint directly to raw basalt, the moisture pushes the pigment off within months..."
-        ("image", "ep08_infographic_01_plaster_stratigraphy.jpg", "slow_zoom_in"),
-        # 14. "European fresco painters solved dampness with slaked lime on wet walls..."
+        # 14. "European fresco painters put wet lime plaster on walls, but inside a cold, damp volcanic cave, that technique fails completely."
         ("image", "ep08_12_chitrasutra_palm_leaf_manuscript_PAN_ZOOM.jpg", "slow_drift"),
-        # 15. "The master guilds of Ajanta developed a revolutionary, multi-layered bio-composite formula..."
+        # 15. "The master guilds of Ajanta invented a revolutionary, multi-layered bio-mud formula that modern scientists still study today."
+        ("image", "ep08_infographic_01_plaster_stratigraphy.jpg", "slow_zoom_in"),
+        # 16. "First, stonecutters used pointed iron picks to peck thousands of small pits into the rock, creating a rough surface for the mud to grip."
         ("video", "ep08_gf_05_chipping_basalt_key_sparks.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_05_chipping_basalt_key_sparks.mp4").exists() else ("image", "ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 16. "First, laborers took pointed iron picks and rapidly pecked thousands of mechanical dimples..."
-        ("image", "ep08_13_laborers_pecking_basalt_dimples_PAN_ZOOM.jpg", "pan_left"),
-        # 17. "Then came the secret bio-chemical matrix: a thick, fermented plaster made of local ferruginous red clay..."
+        # 17. "Then came the secret organic recipe: a thick, fermented mud plaster made of local red clay, rock grit, and cow dung."
         ("image", "ep08_14_ferruginous_red_clay_quarry_PAN_ZOOM.jpg", "slow_tilt_down"),
-        # 18. "Fermented cow dung was not crude; it was chemical genius."
+        # 18. "Using fermented cow dung was not dirty—it was pure organic chemistry."
         ("video", "ep08_gf_04_plaster_kneading_cowdung_matrix.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_04_plaster_kneading_cowdung_matrix.mp4").exists() else ("image", "ep08_gf_04_plaster_kneading_cowdung_matrix_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 19. "Its digested vegetal fibers provided microscopic cellulose netting that prevented shrinkage cracks..."
+        # 19. "Digested plant fibers in the dung acted like microscopic nylon nets that stopped the mud from cracking, while natural bacteria kept mold away."
         ("image", "ep08_15_cow_dung_cellulose_fibers_macro_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 20. "Mixed with fibrous rice husks and boiled sap from neem trees and bel fruit..."
+        # 20. "Mixed with dry rice husks and sticky boiled sap from neem trees, this mud layer created a breathable skin that lived with the damp mountain."
         ("image", "ep08_16_rice_husk_tensile_reinforcement_PAN_ZOOM.jpg", "pan_right"),
-        # 21. "Finally, artisans applied an ultra-thin finish coat called intonaco..."
-        ("image", "ep08_17_neem_tree_sap_extraction_vessel_PAN_ZOOM.jpg", "slow_drift"),
-        # 22. "While still damp, a craftsman knelt before the wall holding a smooth, banded agate river pebble..."
-        ("image", "ep08_18_wooden_trowel_applying_mud_layer_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 23. "Under the friction of the agate stone, the lime compacted into an ivory-smooth, reflective porcelain surface..."
+        # 21. "Finally, craftsmen spread a paper-thin finish coat made of slaked lime, powdered gypsum, and crushed sea shells."
+        ("image", "ep08_20_crushed_oyster_shells_gypsum_powder_PAN_ZOOM.jpg", "slow_drift"),
+        # 22. "While still damp, an artisan held a smooth river agate pebble, firmly rubbing the wall in steady circular motions."
+        ("image", "ep08_21_agate_burnishing_stone_collection_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 23. "Under the friction of the smooth agate stone, the chalky lime compacted into a gleaming, ivory-smooth surface ready for paint."
         ("video", "ep08_gf_06_agate_burnishing_intonaco.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_06_agate_burnishing_intonaco.mp4").exists() else ("image", "ep08_gf_06_agate_burnishing_intonaco_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
 
         # Act III: The Silk Road Blue (Cuts 24-35)
-        # 24. "When the plaster cured, the master painters uncapped their pigment bowls."
-        ("image", "ep08_19_slaked_lime_chuna_kiln_calcining_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 25. "For reds and yellows, they crushed local volcanic ochres scooped from Deccan soil."
-        ("image", "ep08_20_crushed_oyster_shells_gypsum_powder_PAN_ZOOM.jpg", "pan_left"),
-        # 26. "For forest greens, they ground mineral glauconite; for black, they gathered pure soot from burning mustard oil lamps."
+        # 24. "Once the plaster dried, the painters uncapped their earthenware pigment bowls."
+        ("image", "ep08_23_terracotta_pigment_bowls_palette_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        # 25. "For red and yellow colors, they crushed local volcanic ochre rocks dug right from the Deccan soil."
+        ("image", "ep08_19_slaked_lime_chuna_kiln_calcining_PAN_ZOOM.jpg", "pan_left"),
+        # 26. "For green, they ground green earth minerals; for pure black, they collected soot from burning mustard oil lamps."
         ("video", "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_14_mustard_oil_lamp_soot_smoke.mp4").exists() else ("image", "ep08_gf_14_mustard_oil_lamp_soot_smoke_GENERATE_VIDEO.jpg", "slow_zoom_in"),
-        # 27. "But across the royal ceilings of Cave One and Cave Seventeen glows a color that did not come from the Indian subcontinent."
-        ("image", "ep08_22_polished_ivory_smooth_intonaco_sheen_PAN_ZOOM.jpg", "slow_drift"),
-        # 28. "It is a blinding, celestial ultramarine blue that still burns on the stone walls after fifteen hundred years."
-        ("image", "ep08_23_terracotta_pigment_bowls_palette_PAN_ZOOM.jpg", "slow_tilt_up"),
-        # 29. "This was lapis lazuli."
-        ("image", "ep08_24_mustard_oil_lamp_soot_collection_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 30. "In the fifth century, there was only one known source of lapis lazuli in the entire ancient world..."
-        ("image", "ep08_25_raw_lapis_lazuli_mountain_rock_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 31. "To reach this remote volcanic canyon, raw blue crystals traveled over two thousand five hundred kilometers."
-        ("image", "ep08_26_badakhshan_afghanistan_mountains_PAN_ZOOM.jpg", "pan_right"),
-        # 32. "Carried in leather saddlebags on pack camels through the snow-bound passes of the Hindu Kush..."
+        # 27. "But across the ceilings of Cave One and Cave Seventeen shines a brilliant color that came from thousands of kilometers away."
+        ("image", "ep08_real_painting_05_cave_ceiling_medallion_PAN_ZOOM.jpg", "slow_drift"),
+        # 28. "It is an intense, glowing ultramarine blue that still looks fresh and wet on the rock walls today."
+        ("image", "ep08_36_cave_1_ceiling_painting_museum_scan_PAN_ZOOM.jpg", "slow_tilt_up"),
+        # 29. "This color was made from a rare gemstone called lapis lazuli."
+        ("image", "ep08_25_raw_lapis_lazuli_mountain_rock_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 30. "In the fifth century, there was only one place in the entire ancient world that had this blue stone: the remote mountain mines of Badakhshan in northern Afghanistan."
+        ("image", "ep08_26_badakhshan_afghanistan_mountains_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        # 31. "To reach this remote volcanic cave, raw blue rocks traveled over two thousand five hundred kilometers across ancient trade roads."
+        ("image", "ep08_04_vakataka_empire_deccan_map_still_PAN_ZOOM.jpg", "pan_right"),
+        # 32. "Pack camels carried heavy leather bags of raw blue crystals through freezing mountain passes and across the Indian plains."
         ("video", "ep08_gf_02_caravan_silkroad_lapis.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_02_caravan_silkroad_lapis.mp4").exists() else ("image", "ep08_gf_02_caravan_silkroad_lapis_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 33. "Ounce for ounce, pure Badakhshan lapis was worth more than solid gold."
-        ("image", "ep08_27_camels_crossing_hindu_kush_pass_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 34. "Only the wealthiest royal patrons—like Emperor Harishena’s prime minister Varahadeva—could afford..."
+        # 33. "Ounce for ounce, this pure Afghan blue stone was worth more than solid gold."
+        ("image", "ep08_28_gold_scale_weighing_lapis_lazuli_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 34. "Only the wealthiest royal emperors and ministers could afford to paint entire cave ceilings in imported blue."
         ("video", "ep08_gf_03_mortar_grinding_lapis_powder.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_03_mortar_grinding_lapis_powder.mp4").exists() else ("image", "ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 35. "It was a physical testament to a globalized world, where Central Asian mineral wealth met the spiritual genius..."
-        ("image", "ep08_28_gold_scale_weighing_lapis_lazuli_PAN_ZOOM.jpg", "pan_left"),
+        # 35. "It was living proof that ancient India was connected to the entire world through the ancient Silk Road."
+        ("image", "ep08_05_dakshinapatha_trade_merchants_PAN_ZOOM.jpg", "pan_left"),
 
         # Act IV: The Sootless Cave (Cuts 36-49)
-        # 36. "Yet this artistic triumph presents a profound archaeological paradox."
+        # 36. "But this artistic miracle creates a huge archaeological puzzle that baffled scientists for centuries."
         ("image", "ep08_29_varahadeva_inscription_cave_16_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 37. "Caves One, Two, Sixteen, and Seventeen penetrate thirty to forty meters deep into solid subterranean mountain rock."
+        # 37. "Caves One, Two, Sixteen, and Seventeen go thirty to forty meters deep inside solid mountain rock."
         ("image", "ep08_30_pitch_black_cave_interior_void_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 38. "Step beyond the entrance portico, and you enter pitch-black darkness where your eyes cannot see your own outstretched hand."
-        ("image", "ep08_archive_01_harishena_royal_copper_plate_charter_PAN_ZOOM.jpg", "slow_drift"),
-        # 39. "Yet here, in the deepest recess of the cave, artists painted microscopic details..."
-        ("image", "ep08_archive_02_badakhshan_lapis_geological_survey_map_PAN_ZOOM.jpg", "pan_right"),
-        # 40. "How did they paint these masterworks without light?"
-        ("image", "ep08_archive_03_james_fergusson_1845_ajanta_cave_1_plate_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 41. "When Victorian surveyors and modern conservators analyzed the cave ceilings..."
-        ("image", "ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg", "slow_tilt_up"),
-        # 42. "They found absolutely none."
-        ("image", "ep08_archive_04_robert_gill_1850_canvas_replica_plate_PAN_ZOOM.jpg", "pan_left"),
-        # 43. "Burning torches in these enclosed halls would have suffocated the artisans..."
+        # 38. "When you step inside these cave halls, you enter total pitch-black darkness where you cannot see your own hand in front of your face."
+        ("image", "ep08_archive_03_james_fergusson_1845_ajanta_cave_1_plate_PAN_ZOOM.jpg", "slow_drift"),
+        # 39. "Yet in the deepest, darkest corners of these caves, ancient artists painted microscopic details: eyelashes thinner than a hair, tiny pearls, and detailed gold jewelry."
+        ("image", "ep08_archive_04_robert_gill_1850_canvas_replica_plate_PAN_ZOOM.jpg", "pan_right"),
+        # 40. "How could they paint these masterworks forty meters underground without any electric light?"
         ("image", "ep08_archive_05_asi_chemical_conservation_cross_section_1955_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 44. "The solution was an ingenious optical engineering array."
+        # 41. "When modern scientists tested the cave ceilings, they searched for smoke stains and soot from burning oil lamps or torches."
+        ("image", "ep08_31_clean_white_ceiling_no_soot_forensic_PAN_ZOOM.jpg", "slow_tilt_up"),
+        # 42. "They found zero soot. The ceilings were completely clean."
+        ("image", "ep08_archive_01_harishena_royal_copper_plate_charter_PAN_ZOOM.jpg", "pan_left"),
+        # 43. "Burning fire torches inside these closed underground rooms would have choked the artists with smoke and blackened the white plaster walls."
+        ("image", "ep08_24_mustard_oil_lamp_soot_collection_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 44. "So how did they see? Ancient engineers invented an ingenious natural light diversion system."
         ("image", "ep08_infographic_02_bronze_mirror_optics.jpg", "slow_zoom_in"),
-        # 45. "In the searing sunlight outside the veranda, assistants positioned large, circular cast-bronze mirrors."
+        # 45. "Outside in the blazing sunshine, assistants positioned large, circular mirrors made of highly polished cast bronze."
         ("video", "ep08_gf_07_bronze_mirror_sunlight_beam.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_07_bronze_mirror_sunlight_beam.mp4").exists() else ("image", "ep08_gf_07_bronze_mirror_sunlight_beam_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 46. "The highly polished bronze caught the blazing Deccan sun, collimating natural rays into intense, focused beams of light."
+        # 46. "The polished bronze mirrors caught the blinding tropical sun, reflecting powerful beams of natural sunlight straight into the dark cave entrance."
         ("image", "ep08_32_polished_cast_bronze_concave_mirror_PAN_ZOOM.jpg", "slow_drift"),
-        # 47. "These beams were bounced through the cave doorways and intercepted by wet, bleached white cotton and silk sheets..."
-        ("image", "ep08_archive_07_bronze_mirror_harappan_vakataka_museum_scan_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 48. "The wet fabric diffused the harsh solar glare into a soft, ambient glow..."
+        # 47. "Inside the dark hall, apprentice boys held up large sheets of wet, bleached white cotton and silk cloth."
+        ("image", "ep08_33_wet_linen_sheet_light_diffuser_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 48. "When the intense sunbeam hit the wet white cloth, the light bounced and scattered, filling the dark underground hall with a soft, bright, shadowless glow."
         ("video", "ep08_gf_15_wet_linen_diffuser_light_beam.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_15_wet_linen_diffuser_light_beam.mp4").exists() else ("image", "ep08_gf_15_wet_linen_diffuser_light_beam_GENERATE_VIDEO.jpg", "pan_right"),
-        # 49. "The painters were literally painting with captured sunlight."
+        # 49. "The ancient painters were literally painting forty meters underground using captured natural sunlight."
         ("video", "ep08_gf_09_cave_interior_sunlit_murals.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_09_cave_interior_sunlit_murals.mp4").exists() else ("image", "ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
 
         # Act V: The Masterpieces of Humanity & The Looming Shadow (Cuts 50-62)
-        # 50. "Illuminated by bounced sunlight, the master guilds painted the greatest masterpieces of ancient world art."
+        # 50. "Illuminated by this soft, redirected sunlight, ancient artists created the greatest masterpieces of ancient world art."
         ("video", "ep08_gf_08_brush_applying_lapis_eyelash.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_08_brush_applying_lapis_eyelash.mp4").exists() else ("image", "ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg", "slow_dolly_forward"),
-        # 51. "Chief among them stands the Bodhisattva Padmapani on the rear wall of Cave One."
-        ("image", "ep08_34_padmapani_tribhanga_posture_mural_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 52. "Holding a blue lotus in his right hand, his body curves in the gentle tribhanga posture..."
-        ("image", "ep08_archive_06_chitrasutra_ancient_canons_proportions_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 53. "Notice the subtle three-dimensional shading—known in Sanskrit as vartana..."
-        ("image", "ep08_archive_09_vajrapani_cave_1_regal_bodhisattva_PAN_ZOOM.jpg", "slow_drift"),
-        # 54. "A thousand years before Leonardo da Vinci developed chiaroscuro in the Italian Renaissance..."
-        ("image", "ep08_36_cave_1_ceiling_painting_museum_scan_PAN_ZOOM.jpg", "pan_right"),
-        # 55. "Across the walls, narrative Jataka tales come to life: royal courts overflowing with Persian ambassadors..."
+        # 51. "On the rear wall of Cave One stands the famous painting of Bodhisattva Padmapani, holding a blue lotus flower."
+        ("image", "ep08_real_painting_02_bodhisattva_lotus_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        # 52. "Look closely at his gentle expression, his regal crown, and the downward curve of his eyes full of compassion."
+        ("image", "ep08_34_padmapani_tribhanga_posture_mural_PAN_ZOOM.jpg", "slow_zoom_in"),
+        # 53. "Notice the realistic three-dimensional shading along his nose and jawline, making his body look soft and alive against the flat stone."
+        ("image", "ep08_archive_06_chitrasutra_ancient_canons_proportions_PAN_ZOOM.jpg", "slow_drift"),
+        # 54. "A thousand years before Leonardo da Vinci painted in Europe, Indian painters had already mastered human anatomy, emotion, and realistic 3D depth."
+        ("image", "ep08_archive_09_vajrapani_cave_1_regal_bodhisattva_PAN_ZOOM.jpg", "pan_right"),
+        # 55. "All across these walls, you can see real life from fifteen hundred years ago: royal courts with foreign Persian visitors, forest animals, and joyful celebrations."
         ("image", "ep08_35_persian_embassy_foreigners_fresco_PAN_ZOOM.jpg", "slow_tilt_up"),
-        # 56. "But as artists applied the final touches of Afghan lapis lazuli around the year 477..."
+        # 56. "But just as the painters were finishing these royal halls in the year 477, tragedy struck the empire."
         ("image", "ep08_37_black_apsara_cave_17_museum_scan_PAN_ZOOM.jpg", "slow_zoom_in"),
         # 57. "Emperor Harishena died suddenly under mysterious circumstances."
-        ("image", "ep08_38_indra_apsaras_cave_17_museum_scan_PAN_ZOOM.jpg", "pan_left"),
-        # 58. "Almost overnight, the Vakataka dynasty fractured into bitter succession wars..."
-        ("image", "ep08_39_mahajanaka_jataka_museum_scan_PAN_ZOOM.jpg", "slow_dolly_forward"),
-        # 59. "Royal funding vanished in an instant."
+        ("image", "ep08_03_harishena_coronation_royal_court_PAN_ZOOM.jpg", "pan_left"),
+        # 58. "Almost overnight, his kingdom collapsed into civil war, and hostile armies invaded the Deccan."
+        ("image", "ep08_archive_10_harishena_sudden_abandonment_cliff_shadow_PAN_ZOOM.jpg", "slow_dolly_forward"),
+        # 59. "Royal money stopped instantly."
         ("image", "ep08_archive_08_majanaka_jataka_royal_renunciation_fresco_PAN_ZOOM.jpg", "slow_zoom_in"),
-        # 60. "In caves down the cliff face, half-finished pillars were abandoned mid-strike..."
-        ("image", "ep08_40_cave_1_ceiling_medallion_museum_scan_PAN_ZOOM.jpg", "slow_drift"),
-        # 61. "Within months, the golden city in the volcanic cliff went completely silent."
+        # 60. "Down the cliff, stonecutters abandoned half-carved pillars, painters dropped their wet brushes on the stone floor, and monks fled into the hills."
         ("video", "ep08_gf_16_abandoned_chisel_dropped_brush.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_16_abandoned_chisel_dropped_brush.mp4").exists() else ("image", "ep08_gf_16_abandoned_chisel_dropped_brush_GENERATE_VIDEO.jpg", "slow_zoom_out"),
-        # 62. "In our next episode, we will investigate the overnight silence..."
+        # 61. "Within months, this bustling city of art in the cliff went completely silent."
+        ("image", "ep08_02_satavahana_chaitya_silt_floor_PAN_ZOOM.jpg", "slow_drift"),
+        # 62. "In our next episode, we will investigate this sudden collapse: the mysterious downfall that froze Ajanta in time, sealing these thirty temples inside the jungle for over a thousand years."
         ("video", "ep08_gf_10_harishena_shadow_cliffhanger.mp4", "action_clip") if (VIDEOS_DIR / "ep08_gf_10_harishena_shadow_cliffhanger.mp4").exists() else ("image", "ep08_gf_10_harishena_shadow_cliffhanger_GENERATE_VIDEO.jpg", "slow_dolly_forward")
     ]
 
