@@ -128,4 +128,29 @@ When an episode reaches Step 3 (Asset Generation):
   - Supports **"💾 Export JSON"** for programmatic ingestion by automation scripts.
 - **AUTOMATED SYNCHRONIZATION**: Whenever `.md` files are created or edited in the pipeline, run `python ajanta-ellora/scripts/convert_md_to_interactive_html.py` to keep the HTML portal strictly synchronized.
 
+## 18. IN-SITU VISUAL STORYBOARDING & IMAGE EMBEDDING LAW
+- In all production script & storyboard HTML documents (`script_and_storyboard/*.html`), every single cut must embed its exact corresponding 16:9 image asset directly in-line using `<img src="../images/<filename>" />`.
+- Each asset must be wrapped in a clean storyboard card displaying:
+  1. Spoken narration sentence timed to the cut.
+  2. Asset classification badge (Hero Still, Google Flow Video Candidate, Museum Scan, Structural Infographic).
+  3. Asset filename and motorized camera motion directive.
+- This guarantees the director can read the script while visually evaluating the exact scene-by-scene cut sequence before video assembly.
+
+## 19. PLAIN-ENGLISH AUDIENCE CALIBRATION & EXPLICIT THEME DECLARATION LAW
+- **Audience Baseline**: Narration scripts must use clear, direct, high-school level English without academic jargon or abstract metaphors.
+- **Explicit Opening Invariant**: The first 30 seconds of every episode MUST explicitly state:
+  1. The series name and episode number/title.
+  2. The core surprising premise (e.g. contrasting what people usually know vs. the hidden mystery of this episode).
+  3. The core engineering or historical puzzles being investigated.
+- Never assume implicit understanding; explain physical concepts plainly and directly.
+
+## 20. HISTORICAL REALISM & ANTI-FANTASY VIDEO PROMPTING LAW ("RELIVING THE ERA")
+- **0% Fantasy / CGI Movie Tropes**: All image and video prompts for Google Flow, Veo, Runway, and Midjourney must strictly prohibit fantasy glows, magical lighting, sci-fi rays, or oversaturated Hollywood tropes.
+- **Physical Realism Invariant**: Prompts must focus on authentic ancient human craftsmanship:
+  - Real tactile materials: coarse hemp ropes, earthenware pots, red clay mud kneaded barefoot with rice husks, hand-forged iron chisels, and raw stone pestles.
+  - Physically accurate optics: polished bronze mirrors catching natural sunlight, wet white cotton sheets diffusing light into shadowless daylight.
+  - Authentic human scale: sweat on stonecutters' brows, dust motes drifting through sunlight, and squirrel-hair bamboo brushes applying natural mineral pigments.
+- The overarching aesthetic must immerse the audience in **reliving history in the making through their own eyes**.
+
+
 

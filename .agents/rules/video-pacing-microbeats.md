@@ -100,4 +100,10 @@ When assembling multi-episode documentary feature films (e.g. 50–90+ minute se
 1. **Recap & Outro Stripping**: Programmatically trim intermediate Act 01 recap hooks and Act 08 cliffhanger outros between episodes. Insert 4-second Chapter Title Bumpers with deep sub-bass acoustic booms.
 2. **Transformative Framing**: Prepend a 60–90s Master Cold Open and append an Epilogue Synthesis to ensure the feature is classified as a transformative Director's Cut documentary under YouTube's Partner Program policies.
 3. **Cumulative Millisecond Timing**: Dynamically read exact trimmed durations via `ffprobe` to shift subtitle timestamps and chapter markers with 0.00ms drift.
-4. **Theatrical Leveling**: Normalize full feature audio with FFmpeg `loudnorm=I=-14:TP=-1.5:LRA=11`.
+4. **Theatrical Leveling**: Normalize full feature audio with FFmpeg `loudnorm=I=-14:TP=-1.5:LRA=11`.
+
+## 7. In-Situ Visual Storyboarding & Historical Realism Standard
+- **In-Situ Visual Embedding**: Every script and storyboard HTML file must embed the actual 16:9 still image or video candidate frame for all cuts (1 to N) directly alongside the spoken narration line using `<img src="../images/<filename>" />`.
+- **Language Level**: Ensure narration uses direct, plain English accessible to non-native speakers, explicitly declaring the episode name and central premise at the start.
+- **Historical Realism**: Strip all video prompts of fantasy movie or CGI tropes; anchor prompts in tangible ancient tools, natural sunlight, organic binders, and authentic workshop craftsmanship.
+

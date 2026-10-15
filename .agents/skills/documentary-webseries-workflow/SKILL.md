@@ -168,3 +168,16 @@ Automate video, thumbnail, and caption publishing while converting cold Shorts v
    - Use `youtube.commentThreads().insert()` to post high-converting top-level comments on breakout Shorts linking directly to long-form documentaries.
 3. **Studio UI Action Protocol**:
    - Because comment pinning and mobile "Related video" link selection are restricted from the YouTube Data API, output direct deep-links to YouTube Studio (`https://studio.youtube.com/video/<VIDEO_ID>/edit`) with a 30-second manual checklist.
+
+## 11. In-Situ Visual Storyboards & 5th-Century Historical Realism Prompting
+1. **In-Situ Visual Storyboard Generation**:
+   - Run `python ajanta-ellora/scripts/embed_visuals_in_storyboard.py` to embed the exact 16:9 still images and video candidate frames directly into the script & storyboard files.
+   - When converted to interactive HTML via `convert_md_to_interactive_html.py`, every cut displays an embedded `<img src="../images/<filename>" />` card alongside the spoken subtitle line.
+   - Displays asset filename, media classification, and motorized camera motion for visual review before assembly.
+2. **Explicit Opening & Plain-English Script Writing**:
+   - Open every episode with direct, high-school level English explicitly stating the series name, episode title, and the core mystery.
+   - Contrast what the general public believes with the hidden truth being explored.
+3. **Historical Realism in Google Flow / Veo Video Prompting**:
+   - Zero tolerance for fantasy movie tropes, magic glows, or CGI lasers.
+   - Formulate prompts around tangible ancient craftsmanship: bare feet treading red mud and rice husks, hand-forged iron picks striking black volcanic basalt, and cast-bronze mirrors reflecting natural tropical sunlight onto wet white linen sheets.
+
