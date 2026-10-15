@@ -152,5 +152,18 @@ When an episode reaches Step 3 (Asset Generation):
   - Authentic human scale: sweat on stonecutters' brows, dust motes drifting through sunlight, and squirrel-hair bamboo brushes applying natural mineral pigments.
 - The overarching aesthetic must immerse the audience in **reliving history in the making through their own eyes**.
 
-
-
+## 21. THE LITERAL SEMANTIC SVO VISUAL GROUNDING LAW (ANTI-LEGACY MISMATCH INVARIANT)
+- **STRICT PROHIBITION OF LEGACY PLACEHOLDERS & ABSTRACT SUBSTITUTES**:
+  - Whenever narration lines are added, edited, or simplified, agents MUST perform a fresh **Subject-Verb-Object (SVO) semantic audit** for every single cut.
+  - NEVER leave legacy images from prior script drafts in place (e.g., retaining a Sanskrit manuscript when the text changes to European fresco, or retaining an external tent camp when describing microscopic mural eyelashes).
+- **THE 100% LITERAL VISUAL GROUNDING RULE**:
+  - The visual asset assigned to a cut MUST directly and literally depict the concrete physical nouns, actions, and environmental conditions spoken in that exact sentence:
+    - If the narration mentions **"European wet lime plaster failing"**, the visual MUST show wet lime plaster failing/blistering under moisture.
+    - If the narration mentions **"crushing red and yellow volcanic ochre"**, the visual MUST show red/yellow ochre rocks and crushing/grinding tools.
+    - If the narration mentions **"pitch-black cave darkness where you cannot see your own hand"**, the visual MUST depict total ink-black darkness / a hand lost in cavern shadows, NEVER a brightly lit lithograph.
+    - If the narration mentions **"eyelashes thinner than a hair, tiny pearls, and gold jewelry"**, the visual MUST be an extreme macro close-up of those exact elements.
+    - If the narration mentions **"zero soot, completely clean ceilings"**, the visual MUST show the pristine sootless ceiling, NEVER an unrelated copper charter or coin.
+    - If the narration mentions **"choking smoke from fire torches"**, the visual MUST depict billowing smoke and fire hazards, NEVER a gentle oil lamp.
+    - If the narration directs the viewer to **"notice the 3D shading along his nose and jawline"**, the visual MUST be an extreme high-definition close-up of that face's shading, NEVER a textbook diagram.
+- **ZERO TOLERANCE FOR CONCEPTUAL LEAPS**:
+  - Assume the viewer evaluates every cut literally. Any disconnect between what is heard and what is seen breaks viewer immersion, reduces watch time, and triggers immediate confusion.

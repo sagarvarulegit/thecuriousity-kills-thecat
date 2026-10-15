@@ -51,6 +51,9 @@ When creating video scripts, storyboards, visual prompt bibles, or rendering pip
   - Every cut's duration and timestamp range MUST be mathematically derived from the sentence-level subtitle cues (`.srt`).
   - Action visuals (e.g. fire-setting, water quenching, chisel striking, sledgehammer swinging) MUST coincide with the exact second that specific action or concept is spoken in the narration.
   - Generic ambient shots must be relegated to purely contextual or transitional spoken lines.
+- **Mandatory Literal SVO Grounding Audit (Anti-Legacy Invariant)**:
+  - Before rendering or handoff, execute a cut-by-cut semantic audit verifying that every visual asset depicts the exact **Subject, Action/Verb, and Object/Condition** stated in that cue.
+  - Explicitly verify that no script revision has left orphaned or legacy placeholder images from earlier drafts (e.g. never retain text manuscripts, lit drawings, or external tent camps when describing physical failures, total darkness, or micro jewelry).
 - **Verification Rule**: Before rendering, verify that every visual asset's subject matches the narration sentence occurring in that time slice.
 
 ## 4. Episode-Wise Self-Contained Folder Architecture
