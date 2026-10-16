@@ -38,7 +38,14 @@ When creating video scripts, storyboards, visual prompt bibles, or rendering pip
    - Name and tag these images explicitly with `_PAN_ZOOM.jpg` in their filename.
 
 2. **Selective AI Video Generation (Google Flow / Runway Gen-3 / Kling)**:
-   - Animate only **7 to 10 high-impact action/physics moments** per episode (e.g., hammer impact sparks, water quenching steam, molten wax dripping, fire explosions, windblown smoke).
+   - Animate **10 to 16 high-impact action/physics moments** per episode (e.g., hammer impact sparks, water quenching steam, molten wax dripping, fire explosions, windblown smoke, live painting brushwork, pigment grinding).
+   - **Generation Economics & Credit Budget Benchmark (Google Flow / Omni 1.1 Flash)**:
+     - **Engine / Model**: Omni 1.1 Flash
+     - **Resolution & Aspect**: 720p 16:9 (upscaled & padded cleanly to 1080p in assembly, and framed via frosted backdrop for 9:16 Shorts).
+     - **Clip Duration**: 10 seconds per clip.
+     - **Unit Credit Cost**: **15 credits** per video clip (Pro/Plus tier).
+     - **Standard 16-Clip Episode Budget**: **240 credits** (15 credits × 16 videos).
+     - **Multi-Asset ROI Law (Zero Extra Cost for Shorts)**: All 16 action clips must be repurposed 1:1 into the Companion Shorts (5 cuts per short), yielding 26 total video placements across 3 monetizable assets (1 Master Documentary + 2 Shorts) from a single 240-credit investment.
    - Do NOT animate talking characters or static rooms.
    - Name and tag these images explicitly with `_GENERATE_VIDEO.jpg` in their filename, and isolate them into a dedicated `google_flow_input_images/` folder for rapid parallel batch upload.
 

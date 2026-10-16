@@ -9,7 +9,12 @@
 
 ## 1. CRITICAL ASSET PREREQUISITE: THE GOOGLE FLOW VIDEO GATE
 - **NEVER ASSEMBLE FINAL VIDEOS OR CLAIM "READY FOR PUBLICATION" WITHOUT USER ACTION VIDEOS**:
-  - In our production workflow, every episode contains 7–10 high-impact kinetic action shots intended for Image-to-Video generation (via Google Flow / Veo / Runway / Kling).
+  - In our production workflow, every episode contains 10–16 high-impact kinetic action shots intended for Image-to-Video generation (via Google Flow / Veo / Runway / Kling).
+  - **Generation Economics Benchmark (Google Flow Omni 1.1 Flash)**:
+    - **Model / Quality**: Omni 1.1 Flash (720p 16:9, 10s duration).
+    - **Unit Cost**: **15 credits** per video clip (Pro/Plus tier).
+    - **Standard 16-Clip Episode Budget**: **240 credits** total (15 × 16 = 240 credits).
+    - **Shorts Repurposing ROI**: These 16 clips are reused 1:1 across companion YouTube Shorts, delivering 26 total video placements across 3 assets at 0 extra credit cost.
   - **The user generates these video clips manually.** The agent CANNOT generate them autonomously.
   - **MANDATORY HARD STOP**: The agent MUST generate the 16:9 base images for these action beats, isolate them cleanly into `ajanta-ellora/episodeXX/google_flow_input_images/`, provide the exact camera motion prompts in a clean batch sheet, and **STOP AND WAIT FOR THE USER**.
   - **STRICT PROHIBITION**: NEVER borrow, copy, or rename `.mp4` video files from prior episodes (e.g. copying `episode03/videos/*.mp4` to `episode04/videos/`).
