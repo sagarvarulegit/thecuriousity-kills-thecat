@@ -49,17 +49,17 @@ SHORT_01_BEATS = [
     },
     {
         "cut_id": "s1_c2",
-        "video_asset": "ep08_gf_13_basalt_weeping_water_droplets_macro.mp4",
-        "still_asset": "ep08_gf_13_basalt_weeping_water_droplets_macro_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_05_chipping_basalt_key_sparks.mp4",
+        "still_asset": "ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg",
         "dur": 9.10,
-        "desc": "Basalt moisture problem: cold groundwater seeping through volcanic rock"
+        "desc": "Chipping mechanical key into cold volcanic basalt wall"
     },
     {
         "cut_id": "s1_c3",
-        "video_asset": "ep08_gf_05_chipping_basalt_key_sparks.mp4",
-        "still_asset": "ep08_gf_05_chipping_basalt_key_sparks_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_17_artisan_spreading_lime_plaster_finish.mp4",
+        "still_asset": "ep08_gf_17_artisan_spreading_lime_plaster_finish_GENERATE_VIDEO.jpg",
         "dur": 12.18,
-        "desc": "Chipping mechanical key into basalt wall"
+        "desc": "Spreading living bio-plaster and white lime finish coat"
     },
     {
         "cut_id": "s1_c4",
@@ -70,8 +70,8 @@ SHORT_01_BEATS = [
     },
     {
         "cut_id": "s1_c5",
-        "video_asset": "ep08_gf_02_caravan_silkroad_lapis.mp4",
-        "still_asset": "ep08_gf_02_caravan_silkroad_lapis_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_03_mortar_grinding_lapis_powder.mp4",
+        "still_asset": "ep08_gf_03_mortar_grinding_lapis_powder_GENERATE_VIDEO.jpg",
         "dur": 10.28,
         "desc": "The impossible Afghan blue pigment: Related Video CTA"
     }
@@ -83,8 +83,8 @@ SHORT_01_BEATS = [
 SHORT_02_BEATS = [
     {
         "cut_id": "s2_c1",
-        "video_asset": "ep08_gf_09_cave_interior_sunlit_murals.mp4",
-        "still_asset": "ep08_gf_09_cave_interior_sunlit_murals_GENERATE_VIDEO.jpg",
+        "video_asset": "ep08_gf_08_brush_applying_lapis_eyelash.mp4",
+        "still_asset": "ep08_gf_08_brush_applying_lapis_eyelash_GENERATE_VIDEO.jpg",
         "dur": 9.11,
         "desc": "Hook: Painting microscopic details in pitch blackness without fire"
     },

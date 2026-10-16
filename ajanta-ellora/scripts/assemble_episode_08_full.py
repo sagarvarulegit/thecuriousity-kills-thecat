@@ -288,8 +288,8 @@ def assemble_master_video():
 
     # 2. Check how many actual video clips are present
     v_clips = [m[1] for m in manifest if m[0] == "video"]
-    print(f"[*] Google Flow Video Clips detected: {len(v_clips)} / 10 clips present in manifest.")
-    if len(v_clips) < 10:
+    print(f"[*] Google Flow Video Clips detected: {len(v_clips)} / 16 clips present in manifest.")
+    if len(v_clips) < 16:
         print("[NOTE] Rendering Internal Development Draft (Action candidate stills used for pending video clips).")
 
     # 3. Audio & Subtitles
