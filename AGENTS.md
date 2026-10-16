@@ -46,9 +46,10 @@ When an episode reaches Step 3 (Asset Generation):
 - All cut durations and start times must be mathematically derived from sentence-level `.srt` cues. No uniform time-slicing.
 - Audio loudness must strictly conform to EBU R128 (-16 LUFS $\pm 1$ LUFS, True Peak $< -1.5\text{ dBFS}$).
 
-## 5. YOUTUBE METADATA CEILINGS
+## 5. YOUTUBE METADATA CEILINGS & THUMBNAIL STANDARDS
 - All SEO tag lists across Master videos and Shorts must strictly remain under **500 characters**.
-- Thumbnails must strictly remain under **2.0 MB** and obey the Mobile 3-Word Rule.
+- Master thumbnails must strictly be **16:9 widescreen (1920x1080)**, under **2.0 MB**, and obey the Mobile 3-Word Rule. Never upload square (1024x1024) or unformatted assets.
+- Thumbnails must be composited locally via Python PIL (`compose_epXX_thumbnails.py`) at $0 cost and 0 quota consumption.
 - Shorts titles must NEVER include episodic labels like `(Ep. 1)` or `Episode 4`.
 
 ## 6. COMPANION SHORTS THUMBNAILS (MANDATORY FROM EPISODE 05 ONWARD)
@@ -180,7 +181,32 @@ When an episode reaches Step 3 (Asset Generation):
 - **THE APPROVED TWO-PILLAR ZERO-COST STILL ASSET PIPELINE**:
   1. **Google AI Studio Free-Tier Scripting**:
      - All AI-generated hero stills (_PAN_ZOOM.jpg) and Google Flow base stills (_GENERATE_VIDEO.jpg) must be generated via external Python batch scripts targeting gemini-3.1-flash-lite-image.
-     - Scripts must enforce a strict **12 to 15-second sleep throttle** between calls (	ime.sleep(14)), staying strictly within the Google AI Studio Free Tier rate limits (RPM <= 4-5) at **.00 billing and 0 Antigravity quota consumption**.
+     - Scripts must enforce a strict **12 to 15-second sleep throttle** between calls (time.sleep(14)), staying strictly within the Google AI Studio Free Tier rate limits (RPM <= 4-5) at $0.00 billing and 0 Antigravity quota consumption.
   2. **Direct Public Domain Ingestion (Pillar C - 10 to 12 Cuts)**:
-     - Historical charters, 19th-century colonial lithographs (James Fergusson, Robert Gill), and Archaeological Survey of India (ASI) reports must be downloaded directly from authentic public domain repositories (Wikimedia Commons, British Library, National Museum) at ** cost and 0 API calls**.
+     - Historical charters, 19th-century colonial lithographs (James Fergusson, Robert Gill), and Archaeological Survey of India (ASI) reports must be downloaded directly from authentic public domain repositories (Wikimedia Commons, British Library, National Museum) at $0 cost and 0 API calls.
 - **SURGICAL SUBAGENT USE ONLY**: The image-generator subagent is strictly restricted to isolated, 1-off emergency single-still fixes upon explicit user request, never for batch generation.
+
+## 23. ZERO TRADEMARK & PROMPT POLLUTION BAN (THE CLEAN ASSET INVARIANT)
+- **ABSOLUTE BAN ON TRADEMARKED NAMES IN PROMPTS**:
+  - NEVER include trademarked broadcaster, publisher, stock agency, or studio names in AI prompts (e.g., "National Geographic", "NatGeo", "BBC Earth", "Discovery Channel", "History Channel", "Getty Images", "Shutterstock").
+  - Prompts containing brand names cause diffusion models to hallucinate trademarked logos, yellow box borders, and broadcast bugs directly into the canvas.
+- **MANDATORY TECHNICAL PHOTOGRAPHIC VOCABULARY**:
+  - Replace brand references with purely descriptive optical and photographic language:
+    - *Instead of "National Geographic style"*: Use "35mm archaeological field photography, tactile stone texture, natural raking sunlight, Kodachrome 64 color science, neutral documentary color grade, 8k photorealistic".
+    - *Instead of "BBC documentary look"*: Use "cinematic anamorphic lens, soft natural daylight diffusion, shallow depth of field, tactile craftsmanship macro".
+- **PRE-UPLOAD LOGO & WATERMARK SANITIZATION AUDIT**:
+  - Before any asset is committed to `thumbnail/` or `images/`, agents must verify that the asset contains strictly 0 logos, 0 watermarks, 0 TV channel badges, and 0 simulated brand typography.
+
+## 24. PRACTICAL FIDELITY & RESOLUTION CALIBRATION STANDARD
+- **MASTER DELIVERY STANDARD: 1080p FULL HD**:
+  - Master documentary renders: strictly **1920x1080 (1080p)** at 30 fps.
+  - Companion Shorts renders: strictly **1080x1920 (9:16)** at 30 fps.
+- **VIDEO GENERATION EFFICIENCY BENCHMARK**:
+  - AI video clips (Google Flow / Runway / Veo) are generated at **720p 16:9** (Omni 1.1 Flash, 15 credits/clip) and cleanly scaled/padded in FFmpeg assembly.
+  - Never request or pay for 4K video generation tiers; 1080p delivery preserves credits while matching standard mobile and desktop YouTube viewing.
+- **STILL ASSET RESOLUTION**:
+  - Hero stills: standard 1080p widescreen (1920x1080 or ~1376x768 16:9). Higher resolution (3840x2160) is used purely internally within FFmpeg `zoompan` pipelines to eliminate the 30Hz micro-jitter before downscaling back to 1080p.
+- **DETERMINISTIC LOCAL THUMBNAIL COMPOSITION**:
+  - Thumbnails must NEVER be generated via quota-burning AI subagents.
+  - Master thumbnails (1920x1080) and vertical Shorts thumbnails (1080x1920) must be composited locally via Python PIL (`compose_epXX_thumbnails.py`) using existing high-res episode frames, heavy-drop-shadow typography, and strict `< 2.0 MB` JPEG compression.
+

@@ -55,9 +55,20 @@ When creating video scripts, storyboards, visual prompt bibles, or rendering pip
 4. **Zero Antigravity Quota Burn & Free-Tier Still Image Generation Law**:
    - **STRICT PROHIBITION OF BULK SUBAGENT IMAGE GENERATION**: NEVER invoke image-generator subagents for mass batch generation of episode stills (e.g. 30–60 hero stills). Spawning subagents for bulk asset generation burns the user's **Weekly Antigravity Quota**, draining session limits needed for coding and orchestration.
    - **The Approved Zero-Cost Pipeline**:
-     - **Google AI Studio Free-Tier Scripting**: All AI stills (_PAN_ZOOM.jpg and _GENERATE_VIDEO.jpg) must be generated via external Python scripts targeting gemini-3.1-flash-lite-image with a strict **12–15s sleep throttle** (	ime.sleep(14)), staying 100% within the Free Tier rate limits (RPM <= 4-5) at **.00 billing and 0 Antigravity quota consumption**.
-     - **Direct Public Domain Ingestion (Pillar C)**: Authentic historical museum scans (James Fergusson lithographs, Robert Gill plates, ASI reports) must be downloaded directly via script or curl from Wikimedia Commons/British Library at ** cost and 0 API calls**.
+     - **Google AI Studio Free-Tier Scripting**: All AI stills (_PAN_ZOOM.jpg and _GENERATE_VIDEO.jpg) must be generated via external Python scripts targeting gemini-3.1-flash-lite-image with a strict **12–15s sleep throttle** (time.sleep(14)), staying 100% within the Free Tier rate limits (RPM <= 4-5) at $0.00 billing and 0 Antigravity quota consumption.
+     - **Direct Public Domain Ingestion (Pillar C)**: Authentic historical museum scans (James Fergusson lithographs, Robert Gill plates, ASI reports) must be downloaded directly via script or curl from Wikimedia Commons/British Library at $0 cost and 0 API calls.
    - **Single/One-Off Surgical Edits Only**: image-generator subagents are strictly restricted to isolated, 1-off emergency single-frame fixes upon explicit user request.
+
+5. **Zero Trademark & Prompt Pollution Ban (The Clean Asset Invariant)**:
+   - **ABSOLUTE BAN ON TRADEMARKED NAMES IN PROMPTS**: NEVER include trademarked broadcaster, studio, or stock agency names (e.g., "National Geographic", "NatGeo", "BBC Earth", "Discovery Channel", "History Channel", "Getty Images", "Shutterstock") in AI generation prompts.
+   - **Prompt Pollution Failure Mode**: Including brand names triggers generative models to hallucinate brand logos, yellow box borders, TV bugs, and stock watermarks directly into the image.
+   - **Descriptive Photographic Vocabulary**: Always use neutral optical language: "35mm archaeological field photography", "natural raking sunlight", "Kodachrome 64 color science", "tactile stone texture", "museum archival lighting".
+   - **Pre-Upload Sanitization Audit**: Verify that all visual assets committed to `images/` or `thumbnail/` contain strictly 0 logos, 0 watermarks, and 0 trademarked branding.
+
+6. **Practical Fidelity & Deterministic PIL Thumbnails**:
+   - **Master Delivery**: Strictly 1080p Full HD (1920x1080) for documentary master and 1080x1920 for Shorts.
+   - **Asset Generation Efficiency**: Google Flow action clips are generated at 720p 16:9 (Omni 1.1 Flash, 15 credits/clip) and cleanly scaled in FFmpeg; avoid unneeded 4K video generation credit burn.
+   - **Deterministic PIL Thumbnail Compositing**: Master (1920x1080) and vertical Shorts (1080x1920) thumbnails must be assembled locally via Python PIL scripts (`compose_epXX_thumbnails.py`) at $0 cost and 0 quota consumption, with heavy-drop-shadow typography obeying the Mobile 3-Word Rule and strict `< 2.0 MB` JPEG compression.
 
 ## 3. The Narration-to-Visual Spoken Anchor Law (Zero-Desync Invariant)
 - **STRICT PROHIBITION OF UNIFORM TIME-SLICING**: Never divide acts or scenes into uniform time slices (`duration / N` or equal weights). Uniform slicing is the root cause of narration-visual desync.
@@ -74,7 +85,7 @@ When creating video scripts, storyboards, visual prompt bibles, or rendering pip
 Every episode must reside entirely within its dedicated self-contained folder (`ajanta-ellora/episode0X/`) with these exact standardized subfolders:
 - `final_videos/`: Master preview (`episode_XX_master_preview.mp4`) + Short 1 + Short 2.
 - `publish_kit/`: Master YouTube publish kit + Short 1 kit + Short 2 kit.
-- `thumbnail/`: Master 16:9 thumbnail (<2 MB) + dedicated 9:16 vertical thumbnails for all companion Shorts (<2 MB each, mandatory from Episode 05 onward).
+- `thumbnail/`: Master 16:9 thumbnail (1920x1080, <2 MB) + dedicated 9:16 vertical thumbnails for all companion Shorts (1080x1920, <2 MB each), strictly 0 logos/watermarks, composited locally via Python PIL.
 - `script_and_storyboard/`: Full episode script, acts breakdown, micro-beat storyboard.
 - `audio/`: Full concatenated narration stem + individual act stems + shorts audio.
 - `subtitles/`: Full `.srt` (sentence-level) + individual act `.srt` + shorts `.srt`.
