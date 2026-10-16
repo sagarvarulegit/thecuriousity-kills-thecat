@@ -52,6 +52,13 @@ When creating video scripts, storyboards, visual prompt bibles, or rendering pip
 3. **Zero-Cost Visual Assets (15 to 20 Cuts)**:
    - Include kinetic motion graphics, 2D blueprint schematics, statistical callouts ("140 MPa", "400,000 Tons"), and public domain archival/satellite footage (Google Earth 3D, ASI archives, British Library sketches).
 
+4. **Zero Antigravity Quota Burn & Free-Tier Still Image Generation Law**:
+   - **STRICT PROHIBITION OF BULK SUBAGENT IMAGE GENERATION**: NEVER invoke image-generator subagents for mass batch generation of episode stills (e.g. 30–60 hero stills). Spawning subagents for bulk asset generation burns the user's **Weekly Antigravity Quota**, draining session limits needed for coding and orchestration.
+   - **The Approved Zero-Cost Pipeline**:
+     - **Google AI Studio Free-Tier Scripting**: All AI stills (_PAN_ZOOM.jpg and _GENERATE_VIDEO.jpg) must be generated via external Python scripts targeting gemini-3.1-flash-lite-image with a strict **12–15s sleep throttle** (	ime.sleep(14)), staying 100% within the Free Tier rate limits (RPM <= 4-5) at **.00 billing and 0 Antigravity quota consumption**.
+     - **Direct Public Domain Ingestion (Pillar C)**: Authentic historical museum scans (James Fergusson lithographs, Robert Gill plates, ASI reports) must be downloaded directly via script or curl from Wikimedia Commons/British Library at ** cost and 0 API calls**.
+   - **Single/One-Off Surgical Edits Only**: image-generator subagents are strictly restricted to isolated, 1-off emergency single-frame fixes upon explicit user request.
+
 ## 3. The Narration-to-Visual Spoken Anchor Law (Zero-Desync Invariant)
 - **STRICT PROHIBITION OF UNIFORM TIME-SLICING**: Never divide acts or scenes into uniform time slices (`duration / N` or equal weights). Uniform slicing is the root cause of narration-visual desync.
 - **SRT Sentence-Level Cue Binding**:
@@ -116,4 +123,4 @@ When assembling multi-episode documentary feature films (e.g. 50–90+ minute se
 - **In-Situ Visual Embedding**: Every script and storyboard HTML file must embed the actual 16:9 still image or video candidate frame for all cuts (1 to N) directly alongside the spoken narration line using `<img src="../images/<filename>" />`.
 - **Language Level**: Ensure narration uses direct, plain English accessible to non-native speakers, explicitly declaring the episode name and central premise at the start.
 - **Historical Realism**: Strip all video prompts of fantasy movie or CGI tropes; anchor prompts in tangible ancient tools, natural sunlight, organic binders, and authentic workshop craftsmanship.
-
+

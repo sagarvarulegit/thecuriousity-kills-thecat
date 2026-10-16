@@ -172,3 +172,15 @@ When an episode reaches Step 3 (Asset Generation):
     - If the narration directs the viewer to **"notice the 3D shading along his nose and jawline"**, the visual MUST be an extreme high-definition close-up of that face's shading, NEVER a textbook diagram.
 - **ZERO TOLERANCE FOR CONCEPTUAL LEAPS**:
   - Assume the viewer evaluates every cut literally. Any disconnect between what is heard and what is seen breaks viewer immersion, reduces watch time, and triggers immediate confusion.
+
+## 22. ZERO ANTIGRAVITY QUOTA BURN & FREE-TIER IMAGE GENERATION LAW
+- **STRICT PROHIBITION OF BULK SUBAGENT IMAGE GENERATION**:
+  - NEVER invoke the image-generator subagent for bulk batch image generation (e.g. generating 30–60 episode hero stills).
+  - Bulk subagent image generation rapidly burns through the user's **Weekly Antigravity Quota**, exhausting conversation credits that are vital for coding, debugging, and orchestration.
+- **THE APPROVED TWO-PILLAR ZERO-COST STILL ASSET PIPELINE**:
+  1. **Google AI Studio Free-Tier Scripting**:
+     - All AI-generated hero stills (_PAN_ZOOM.jpg) and Google Flow base stills (_GENERATE_VIDEO.jpg) must be generated via external Python batch scripts targeting gemini-3.1-flash-lite-image.
+     - Scripts must enforce a strict **12 to 15-second sleep throttle** between calls (	ime.sleep(14)), staying strictly within the Google AI Studio Free Tier rate limits (RPM <= 4-5) at **.00 billing and 0 Antigravity quota consumption**.
+  2. **Direct Public Domain Ingestion (Pillar C - 10 to 12 Cuts)**:
+     - Historical charters, 19th-century colonial lithographs (James Fergusson, Robert Gill), and Archaeological Survey of India (ASI) reports must be downloaded directly from authentic public domain repositories (Wikimedia Commons, British Library, National Museum) at ** cost and 0 API calls**.
+- **SURGICAL SUBAGENT USE ONLY**: The image-generator subagent is strictly restricted to isolated, 1-off emergency single-still fixes upon explicit user request, never for batch generation.
